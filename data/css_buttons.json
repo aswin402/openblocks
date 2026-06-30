@@ -1,0 +1,1290 @@
+[
+  {
+    "name": "CSS Button 1: Dribbble",
+    "description": "A CSS button inspired by Dribbble's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-1\">Button 1</button>\n<style>\n\n.button-1 {\n  background-color: #EA4C89;\n  border-radius: 8px;\n  border-style: none;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Haas Grot Text R Web\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  font-weight: 500;\n  height: 40px;\n  line-height: 20px;\n  list-style: none;\n  margin: 0;\n  outline: none;\n  padding: 10px 16px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transition: color 100ms;\n  vertical-align: baseline;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-1:hover,\n.button-1:focus {\n  background-color: #F082AC;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "dribbble"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 2: Dribbble",
+    "description": "A CSS button inspired by Dribbble's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-2\">Button 2</button>\n<style>\n\n.button-2 {\n  background-color: rgba(51, 51, 51, 0.05);\n  border-radius: 8px;\n  border-width: 0;\n  color: #333333;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Haas Grot Text R Web\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 20px;\n  list-style: none;\n  margin: 0;\n  padding: 10px 12px;\n  text-align: center;\n  transition: all 200ms;\n  vertical-align: baseline;\n  white-space: nowrap;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "dribbble"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 3: Github",
+    "description": "A CSS button inspired by Github's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-3\">Button 3</button>\n<style>\n\n.button-3 {\n  appearance: none;\n  background-color: #2ea44f;\n  border: 1px solid rgba(27, 31, 35, .15);\n  border-radius: 6px;\n  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system,system-ui,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\";\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  padding: 6px 16px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  white-space: nowrap;\n}\n\n.button-3:focus:not(:focus-visible):not(.focus-visible) {\n  box-shadow: none;\n  outline: none;\n}\n\n.button-3:hover {\n  background-color: #2c974b;\n}\n\n.button-3:focus {\n  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;\n  outline: none;\n}\n\n.button-3:disabled {\n  background-color: #94d3a2;\n  border-color: rgba(27, 31, 35, .1);\n  color: rgba(255, 255, 255, .8);\n  cursor: default;\n}\n\n.button-3:active {\n  background-color: #298e46;\n  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "github"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 4: Github",
+    "description": "A CSS button inspired by Github's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-4\">Button 4</button>\n<style>\n\n.button-4 {\n  appearance: none;\n  background-color: #FAFBFC;\n  border: 1px solid rgba(27, 31, 35, 0.15);\n  border-radius: 6px;\n  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;\n  box-sizing: border-box;\n  color: #24292E;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system, system-ui, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\";\n  font-size: 14px;\n  font-weight: 500;\n  line-height: 20px;\n  list-style: none;\n  padding: 6px 16px;\n  position: relative;\n  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  white-space: nowrap;\n  word-wrap: break-word;\n}\n\n.button-4:hover {\n  background-color: #F3F4F6;\n  text-decoration: none;\n  transition-duration: 0.1s;\n}\n\n.button-4:disabled {\n  background-color: #FAFBFC;\n  border-color: rgba(27, 31, 35, 0.15);\n  color: #959DA5;\n  cursor: default;\n}\n\n.button-4:active {\n  background-color: #EDEFF2;\n  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;\n  transition: none 0s;\n}\n\n.button-4:focus {\n  outline: 1px transparent;\n}\n\n.button-4:before {\n  display: none;\n}\n\n.button-4:-webkit-details-marker {\n  display: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "github"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 5: Sketch",
+    "description": "A CSS button inspired by Sketch's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-5\">Button 5</button>\n<style>\n\n.button-5 {\n  align-items: center;\n  background-clip: padding-box;\n  background-color: #fa6400;\n  border: 1px solid transparent;\n  border-radius: .25rem;\n  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: system-ui,-apple-system,system-ui,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1.25;\n  margin: 0;\n  min-height: 3rem;\n  padding: calc(.875rem - 1px) calc(1.5rem - 1px);\n  position: relative;\n  text-decoration: none;\n  transition: all 250ms;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  width: auto;\n}\n\n.button-5:hover,\n.button-5:focus {\n  background-color: #fb8332;\n  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;\n}\n\n.button-5:hover {\n  transform: translateY(-1px);\n}\n\n.button-5:active {\n  background-color: #c85000;\n  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;\n  transform: translateY(0);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "sketch"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 6: Sketch",
+    "description": "A CSS button inspired by Sketch's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-6\">Button 6</button>\n<style>\n\n.button-6 {\n  align-items: center;\n  background-color: #FFFFFF;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: .25rem;\n  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;\n  box-sizing: border-box;\n  color: rgba(0, 0, 0, 0.85);\n  cursor: pointer;\n  display: inline-flex;\n  font-family: system-ui,-apple-system,system-ui,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1.25;\n  margin: 0;\n  min-height: 3rem;\n  padding: calc(.875rem - 1px) calc(1.5rem - 1px);\n  position: relative;\n  text-decoration: none;\n  transition: all 250ms;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  width: auto;\n}\n\n.button-6:hover,\n.button-6:focus {\n  border-color: rgba(0, 0, 0, 0.15);\n  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;\n  color: rgba(0, 0, 0, 0.65);\n}\n\n.button-6:hover {\n  transform: translateY(-1px);\n}\n\n.button-6:active {\n  background-color: #F0F0F1;\n  border-color: rgba(0, 0, 0, 0.15);\n  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;\n  color: rgba(0, 0, 0, 0.65);\n  transform: translateY(0);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "sketch"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 7: Stackoverflow",
+    "description": "A CSS button inspired by Stackoverflow's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-7\">Button 7</button>\n<style>\n\n.button-7 {\n  background-color: #0095ff;\n  border: 1px solid transparent;\n  border-radius: 3px;\n  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system,system-ui,\"Segoe UI\",\"Liberation Sans\",sans-serif;\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 1.15385;\n  margin: 0;\n  outline: none;\n  padding: 8px .8em;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  white-space: nowrap;\n}\n\n.button-7:hover,\n.button-7:focus {\n  background-color: #07c;\n}\n\n.button-7:focus {\n  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);\n}\n\n.button-7:active {\n  background-color: #0064bd;\n  box-shadow: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "stackoverflow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 8: Stackoverflow",
+    "description": "A CSS button inspired by Stackoverflow's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-8\">Button 8</button>\n<style>\n\n.button-8 {\n  background-color: #e1ecf4;\n  border-radius: 3px;\n  border: 1px solid #7aa7c7;\n  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;\n  box-sizing: border-box;\n  color: #39739d;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system,system-ui,\"Segoe UI\",\"Liberation Sans\",sans-serif;\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 1.15385;\n  margin: 0;\n  outline: none;\n  padding: 8px .8em;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  white-space: nowrap;\n}\n\n.button-8:hover,\n.button-8:focus {\n  background-color: #b3d3ea;\n  color: #2c5777;\n}\n\n.button-8:focus {\n  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);\n}\n\n.button-8:active {\n  background-color: #a0c7e4;\n  box-shadow: none;\n  color: #2c5777;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "stackoverflow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 9: Stripe",
+    "description": "A CSS button inspired by Stripe's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-9\">Button 9</button>\n<style>\n\n.button-9 {\n  appearance: button;\n  backface-visibility: hidden;\n  background-color: #405cf5;\n  border-radius: 6px;\n  border-width: 0;\n  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  font-family: -apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Ubuntu,sans-serif;\n  font-size: 100%;\n  height: 44px;\n  line-height: 1.15;\n  margin: 12px 0 0;\n  outline: none;\n  overflow: hidden;\n  padding: 0 25px;\n  position: relative;\n  text-align: center;\n  text-transform: none;\n  transform: translateZ(0);\n  transition: all .2s,box-shadow .08s ease-in;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n}\n\n.button-9:disabled {\n  cursor: default;\n}\n\n.button-9:focus {\n  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "stripe"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 10: Macos Big Sur",
+    "description": "A CSS button inspired by macOS Big Sur's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-10\">Button 10</button>\n<style>\n\n.button-10 {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 6px 14px;\n  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;\n  border-radius: 6px;\n  border: none;\n\n  color: #fff;\n  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);\n   background-origin: border-box;\n  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-10:focus {\n  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);\n  outline: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "macos-big-sur"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 11: Macos Big Sur",
+    "description": "A CSS button inspired by macOS Big Sur's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-11\">Button 11</button>\n<style>\n\n.button-11 {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 6px 14px;\n  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;\n  border-radius: 6px;\n  color: #3D3D3D;\n  background: #fff;\n  border: none;\n  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-11:focus {\n  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);\n  outline: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "macos-big-sur"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 12: Macos Big Sur",
+    "description": "A CSS button inspired by macOS Big Sur's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-12\">Button 12</button>\n<style>\n\n.button-12 {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 6px 14px;\n  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;\n  border-radius: 6px;\n  border: none;\n\n  background: #6E6D70;\n  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);\n  color: #DFDEDF;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-12:focus {\n  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);\n  outline: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "macos-big-sur"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 13: Amazon",
+    "description": "A CSS button inspired by Amazon's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-13\">Button 13</button>\n<style>\n\n.button-13 {\n  background-color: #fff;\n  border: 1px solid #d5d9d9;\n  border-radius: 8px;\n  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;\n  box-sizing: border-box;\n  color: #0f1111;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Amazon Ember\",sans-serif;\n  font-size: 13px;\n  line-height: 29px;\n  padding: 0 10px 0 11px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  width: 100px;\n}\n\n.button-13:hover {\n  background-color: #f7fafa;\n}\n\n.button-13:focus {\n  border-color: #008296;\n  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;\n  outline: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "amazon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 14: Amazon",
+    "description": "A CSS button inspired by Amazon's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-14\">Button 14</button>\n<style>\n\n.button-14 {\n  background-image: linear-gradient(#f7f8fa ,#e7e9ec);\n  border-color: #adb1b8 #a2a6ac #8d9096;\n  border-style: solid;\n  border-width: 1px;\n  border-radius: 3px;\n  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;\n  box-sizing: border-box;\n  color: #0f1111;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Amazon Ember\",Arial,sans-serif;\n  font-size: 14px;\n  height: 29px;\n  font-size: 13px;\n  outline: 0;\n  overflow: hidden;\n  padding: 0 11px;\n  text-align: center;\n  text-decoration: none;\n  text-overflow: ellipsis;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n}\n\n.button-14:active {\n  border-bottom-color: #a2a6ac;\n}\n\n.button-14:active:hover {\n  border-bottom-color: #a2a6ac;\n}\n\n.button-14:hover {\n  border-color: #a2a6ac #979aa1 #82858a;\n}\n\n.button-14:focus {\n  border-color: #e77600;\n  box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;\n  outline: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "amazon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 15: Apple",
+    "description": "A CSS button inspired by Apple's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-15\">Button 15</button>\n<style>\n\n.button-15 {\n  background-image: linear-gradient(#42A1EC, #0070C9);\n  border: 1px solid #0077CC;\n  border-radius: 4px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  direction: ltr;\n  display: block;\n  font-family: \"SF Pro Text\",\"SF Pro Icons\",\"AOS Icons\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 17px;\n  font-weight: 400;\n  letter-spacing: -.022em;\n  line-height: 1.47059;\n  min-width: 30px;\n  overflow: visible;\n  padding: 4px 15px;\n  text-align: center;\n  vertical-align: baseline;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n}\n\n.button-15:disabled {\n  cursor: default;\n  opacity: .3;\n}\n\n.button-15:hover {\n  background-image: linear-gradient(#51A9EE, #147BCD);\n  border-color: #1482D0;\n  text-decoration: none;\n}\n\n.button-15:active {\n  background-image: linear-gradient(#3D94D9, #0067B9);\n  border-color: #006DBC;\n  outline: none;\n}\n\n.button-15:focus {\n  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;\n  outline: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "apple"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 16: Google",
+    "description": "A CSS button inspired by Google's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-16\">Button 16</button>\n<style>\n\n.button-16 {\n  background-color: #f8f9fa;\n  border: 1px solid #f8f9fa;\n  border-radius: 4px;\n  color: #3c4043;\n  cursor: pointer;\n  font-family: arial,sans-serif;\n  font-size: 14px;\n  height: 36px;\n  line-height: 27px;\n  min-width: 54px;\n  padding: 0 16px;\n  text-align: center;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: pre;\n}\n\n.button-16:hover {\n  border-color: #dadce0;\n  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;\n  color: #202124;\n}\n\n.button-16:focus {\n  border-color: #4285f4;\n  outline: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "google"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 17: Google",
+    "description": "A CSS button inspired by Google's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-17\">Button 17</button>\n<style>\n\n.button-17 {\n  align-items: center;\n  appearance: none;\n  background-color: #fff;\n  border-radius: 24px;\n  border-style: none;\n  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;\n  box-sizing: border-box;\n  color: #3c4043;\n  cursor: pointer;\n  display: inline-flex;\n  fill: currentcolor;\n  font-family: \"Google Sans\",Roboto,Arial,sans-serif;\n  font-size: 14px;\n  font-weight: 500;\n  height: 48px;\n  justify-content: center;\n  letter-spacing: .25px;\n  line-height: normal;\n  max-width: 100%;\n  overflow: visible;\n  padding: 2px 24px;\n  position: relative;\n  text-align: center;\n  text-transform: none;\n  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: auto;\n  will-change: transform,opacity;\n  z-index: 0;\n}\n\n.button-17:hover {\n  background: #F6F9FE;\n  color: #174ea6;\n}\n\n.button-17:active {\n  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);\n  outline: none;\n}\n\n.button-17:focus {\n  outline: none;\n  border: 2px solid #4285f4;\n}\n\n.button-17:not(:disabled) {\n  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;\n}\n\n.button-17:not(:disabled):hover {\n  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;\n}\n\n.button-17:not(:disabled):focus {\n  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;\n}\n\n.button-17:not(:disabled):active {\n  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;\n}\n\n.button-17:disabled {\n  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "google"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 18: Linkedin",
+    "description": "A CSS button inspired by Linkedin's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-18\">Button 18</button>\n<style>\n\n.button-18 {\n  align-items: center;\n  background-color: #0A66C2;\n  border: 0;\n  border-radius: 100px;\n  box-sizing: border-box;\n  color: #ffffff;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: -apple-system, system-ui, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Fira Sans\", Ubuntu, Oxygen, \"Oxygen Sans\", Cantarell, \"Droid Sans\", \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Lucida Grande\", Helvetica, Arial, sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 20px;\n  max-width: 480px;\n  min-height: 40px;\n  min-width: 0px;\n  overflow: hidden;\n  padding: 0px;\n  padding-left: 20px;\n  padding-right: 20px;\n  text-align: center;\n  touch-action: manipulation;\n  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;\n  user-select: none;\n  -webkit-user-select: none;\n  vertical-align: middle;\n}\n\n.button-18:hover,\n.button-18:focus { \n  background-color: #16437E;\n  color: #ffffff;\n}\n\n.button-18:active {\n  background: #09223b;\n  color: rgb(255, 255, 255, .7);\n}\n\n.button-18:disabled { \n  cursor: not-allowed;\n  background: rgba(0, 0, 0, .08);\n  color: rgba(0, 0, 0, .3);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "linkedin"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 19: Duolingo",
+    "description": "A CSS button inspired by Duolingo's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-19\">Button 19</button>\n<style>\n\n.button-19 {\n  appearance: button;\n  background-color: #1899D6;\n  border: solid transparent;\n  border-radius: 16px;\n  border-width: 0 0 4px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: din-round,sans-serif;\n  font-size: 15px;\n  font-weight: 700;\n  letter-spacing: .8px;\n  line-height: 20px;\n  margin: 0;\n  outline: none;\n  overflow: visible;\n  padding: 13px 16px;\n  text-align: center;\n  text-transform: uppercase;\n  touch-action: manipulation;\n  transform: translateZ(0);\n  transition: filter .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  vertical-align: middle;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.button-19:after {\n  background-clip: padding-box;\n  background-color: #1CB0F6;\n  border: solid transparent;\n  border-radius: 16px;\n  border-width: 0 0 4px;\n  bottom: -4px;\n  content: \"\";\n  left: 0;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: -1;\n}\n\n.button-19,\n.button-19:focus {\n  user-select: auto;\n}\n\n.button-19:hover:not(:disabled) {\n  filter: brightness(1.1);\n  -webkit-filter: brightness(1.1);\n}\n\n.button-19:disabled {\n  cursor: auto;\n}\n\n.button-19:active {\n  border-width: 4px 0 0;\n  background: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "duolingo"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 20: Ui.glass",
+    "description": "A CSS button inspired by ui.glass's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-20\">Button 20</button>\n<style>\n\n.button-20 {\n  appearance: button;\n  background-color: #4D4AE8;\n  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));\n  border: 1px solid #4D4AE8;\n  border-radius: 1rem;\n  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter,sans-serif;\n  font-size: 1rem;\n  font-weight: 500;\n  line-height: 1.5;\n  margin: 0;\n  padding: .5rem 1rem;\n  text-align: center;\n  text-transform: none;\n  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n}\n\n.button-20:focus:not(:focus-visible),\n.button-20:focus {\n  outline: 0;\n}\n\n.button-20:hover {\n  background-color: #3733E5;\n  border-color: #3733E5;\n}\n\n.button-20:focus {\n  background-color: #413FC5;\n  border-color: #3E3BBA;\n  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;\n}\n\n.button-20:active {\n  background-color: #3E3BBA;\n  background-image: none;\n  border-color: #3A38AE;\n  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;\n}\n\n.button-20:active:focus {\n  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;\n}\n\n.button-20:disabled {\n  background-image: none;\n  box-shadow: none;\n  opacity: .65;\n  pointer-events: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "ui-glass"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 21: Stackbit",
+    "description": "A CSS button inspired by Stackbit's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-21\">Button 21</button>\n<style>\n\n.button-21 {\n  align-items: center;\n  appearance: none;\n  background-color: #3EB2FD;\n  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);\n  background-size: calc(100% + 20px) calc(100% + 20px);\n  border-radius: 100px;\n  border-width: 0;\n  box-shadow: none;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: CircularStd,sans-serif;\n  font-size: 1rem;\n  height: auto;\n  justify-content: center;\n  line-height: 1.5;\n  padding: 6px 20px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transition: background-color .2s,background-position .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: top;\n  white-space: nowrap;\n}\n\n.button-21:active,\n.button-21:focus {\n  outline: none;\n}\n\n.button-21:hover {\n  background-position: -20px -20px;\n}\n\n.button-21:focus:not(:active) {\n  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "stackbit"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 22: Noor",
+    "description": "A CSS button inspired by Noor's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-22\">Button 22</button>\n<style>\n\n.button-22 {\n  align-items: center;\n  appearance: button;\n  background-color: #0276FF;\n  border-radius: 8px;\n  border-style: none;\n  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: \"RM Neue\",sans-serif;\n  font-size: 100%;\n  line-height: 1.15;\n  margin: 0;\n  padding: 10px 21px;\n  text-align: center;\n  text-transform: none;\n  transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-22:active {\n  background-color: #006AE8;\n}\n\n.button-22:hover {\n  background-color: #1C84FF;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "noor"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 23: Airbnb",
+    "description": "A CSS button inspired by Airbnb's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-23\">Button 23</button>\n<style>\n\n.button-23 {\n  background-color: #FFFFFF;\n  border: 1px solid #222222;\n  border-radius: 8px;\n  box-sizing: border-box;\n  color: #222222;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 20px;\n  margin: 0;\n  outline: none;\n  padding: 13px 23px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  touch-action: manipulation;\n  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;\n  user-select: none;\n  -webkit-user-select: none;\n  width: auto;\n}\n\n.button-23:focus-visible {\n  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;\n  transition: box-shadow .2s;\n}\n\n.button-23:active {\n  background-color: #F7F7F7;\n  border-color: #000000;\n  transform: scale(.96);\n}\n\n.button-23:disabled {\n  border-color: #DDDDDD;\n  color: #DDDDDD;\n  cursor: not-allowed;\n  opacity: 1;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "airbnb"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 24: Nomad List",
+    "description": "A CSS button inspired by Nomad List's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-24\">Button 24</button>\n<style>\n\n.button-24 {\n  background: #FF4742;\n  border: 1px solid #FF4742;\n  border-radius: 6px;\n  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: nunito,roboto,proxima-nova,\"proxima nova\",sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  line-height: 16px;\n  min-height: 40px;\n  outline: 0;\n  padding: 12px 14px;\n  text-align: center;\n  text-rendering: geometricprecision;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n}\n\n.button-24:hover,\n.button-24:active {\n  background-color: initial;\n  background-position: 0 0;\n  color: #FF4742;\n}\n\n.button-24:active {\n  opacity: .5;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "nomad-list"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 25: Gumroad",
+    "description": "A CSS button inspired by Gumroad's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-25\">Button 25</button>\n<style>\n\n.button-25 {\n  background-color: #36A9AE;\n  background-image: linear-gradient(#37ADB2, #329CA0);\n  border: 1px solid #2A8387;\n  border-radius: 4px;\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: block;\n  font-family: -apple-system,\".SFNSDisplay-Regular\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 17px;\n  line-height: 100%;\n  margin: 0;\n  outline: 0;\n  padding: 11px 15px 12px;\n  text-align: center;\n  transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n}\n\n.button-25:hover {\n  box-shadow: rgba(255, 255, 255, 0.3) 0 0 2px inset, rgba(0, 0, 0, 0.4) 0 1px 2px;\n  text-decoration: none;\n  transition-duration: .15s, .15s;\n}\n\n.button-25:active {\n  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px inset, rgba(0, 0, 0, 0.4) 0 1px 1px;\n}\n\n.button-25:disabled {\n  cursor: not-allowed;\n  opacity: .6;\n}\n\n.button-25:disabled:active {\n  pointer-events: none;\n}\n\n.button-25:disabled:hover {\n  box-shadow: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "gumroad"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 26: Coinbase",
+    "description": "A CSS button inspired by Coinbase's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-26\">Button 26</button>\n<style>\n\n.button-26 {\n  appearance: button;\n  background-color: #1652F0;\n  border: 1px solid #1652F0;\n  border-radius: 4px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  font-family: Graphik,-apple-system,system-ui,\"Segoe UI\",Roboto,Oxygen,Ubuntu,Cantarell,\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif;\n  font-size: 14px;\n  line-height: 1.15;\n  overflow: visible;\n  padding: 12px 16px;\n  position: relative;\n  text-align: center;\n  text-transform: none;\n  transition: all 80ms ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: fit-content;\n}\n\n.button-26:disabled {\n  opacity: .5;\n}\n\n.button-26:focus {\n  outline: 0;\n}\n\n.button-26:hover {\n  background-color: #0A46E4;\n  border-color: #0A46E4;\n}\n\n.button-26:active {\n  background-color: #0039D7;\n  border-color: #0039D7;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "coinbase"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 27: Foundation",
+    "description": "A CSS button inspired by Foundation's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-27\">Button 27</button>\n<style>\n\n.button-27 {\n  appearance: none;\n  background-color: #000000;\n  border: 2px solid #1A1A1A;\n  border-radius: 15px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Roobert,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";\n  font-size: 16px;\n  font-weight: 600;\n  line-height: normal;\n  margin: 0;\n  min-height: 60px;\n  min-width: 0;\n  outline: none;\n  padding: 16px 24px;\n  text-align: center;\n  text-decoration: none;\n  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n  will-change: transform;\n}\n\n.button-27:disabled {\n  pointer-events: none;\n}\n\n.button-27:hover {\n  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;\n  transform: translateY(-2px);\n}\n\n.button-27:active {\n  box-shadow: none;\n  transform: translateY(0);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "foundation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 28: Foundation",
+    "description": "A CSS button inspired by Foundation's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-28\">Button 28</button>\n<style>\n\n.button-28 {\n  appearance: none;\n  background-color: transparent;\n  border: 2px solid #1A1A1A;\n  border-radius: 15px;\n  box-sizing: border-box;\n  color: #3B3B3B;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Roobert,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";\n  font-size: 16px;\n  font-weight: 600;\n  line-height: normal;\n  margin: 0;\n  min-height: 60px;\n  min-width: 0;\n  outline: none;\n  padding: 16px 24px;\n  text-align: center;\n  text-decoration: none;\n  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n  will-change: transform;\n}\n\n.button-28:disabled {\n  pointer-events: none;\n}\n\n.button-28:hover {\n  color: #fff;\n  background-color: #1A1A1A;\n  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;\n  transform: translateY(-2px);\n}\n\n.button-28:active {\n  box-shadow: none;\n  transform: translateY(0);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "foundation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 29: Algolia",
+    "description": "A CSS button inspired by Algolia's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-29\">Button 29</button>\n<style>\n\n.button-29 {\n  align-items: center;\n  appearance: none;\n  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);\n  border: 0;\n  border-radius: 6px;\n  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: \"JetBrains Mono\",monospace;\n  height: 48px;\n  justify-content: center;\n  line-height: 1;\n  list-style: none;\n  overflow: hidden;\n  padding-left: 16px;\n  padding-right: 16px;\n  position: relative;\n  text-align: left;\n  text-decoration: none;\n  transition: box-shadow .15s,transform .15s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n  will-change: box-shadow,transform;\n  font-size: 18px;\n}\n\n.button-29:focus {\n  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;\n}\n\n.button-29:hover {\n  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;\n  transform: translateY(-2px);\n}\n\n.button-29:active {\n  box-shadow: #3c4fe0 0 3px 7px inset;\n  transform: translateY(2px);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "algolia"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 30: Algolia",
+    "description": "A CSS button inspired by Algolia's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-30\">Button 30</button>\n<style>\n\n.button-30 {\n  align-items: center;\n  appearance: none;\n  background-color: #FCFCFD;\n  border-radius: 4px;\n  border-width: 0;\n  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;\n  box-sizing: border-box;\n  color: #36395A;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: \"JetBrains Mono\",monospace;\n  height: 48px;\n  justify-content: center;\n  line-height: 1;\n  list-style: none;\n  overflow: hidden;\n  padding-left: 16px;\n  padding-right: 16px;\n  position: relative;\n  text-align: left;\n  text-decoration: none;\n  transition: box-shadow .15s,transform .15s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n  will-change: box-shadow,transform;\n  font-size: 18px;\n}\n\n.button-30:focus {\n  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;\n}\n\n.button-30:hover {\n  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;\n  transform: translateY(-2px);\n}\n\n.button-30:active {\n  box-shadow: #D6D6E7 0 3px 7px inset;\n  transform: translateY(2px);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "algolia"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 31: Farfetch",
+    "description": "A CSS button inspired by Farfetch's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-31\">Button 31</button>\n<style>\n\n.button-31 {\n  background-color: #222;\n  border-radius: 4px;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Farfetch Basis\",\"Helvetica Neue\",Arial,sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 1.5;\n  margin: 0;\n  max-width: none;\n  min-height: 44px;\n  min-width: 10px;\n  outline: none;\n  overflow: hidden;\n  padding: 9px 20px 8px;\n  position: relative;\n  text-align: center;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n}\n\n.button-31:hover,\n.button-31:focus {\n  opacity: .75;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "farfetch"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 32: Beachnearby",
+    "description": "A CSS button inspired by BeachNearby.com's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-32\">Button 32</button>\n<style>\n\n.button-32 {\n  background-color: #fff000;\n  border-radius: 12px;\n  color: #000;\n  cursor: pointer;\n  font-weight: bold;\n  padding: 10px 15px;\n  text-align: center;\n  transition: 200ms;\n  width: 100%;\n  box-sizing: border-box;\n  border: 0;\n  font-size: 16px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-32:not(:disabled):hover,\n.button-32:not(:disabled):focus {\n  outline: 0;\n  background: #f4e603;\n  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);\n}\n\n.button-32:disabled {\n  filter: saturate(0.2) opacity(0.5);\n  -webkit-filter: saturate(0.2) opacity(0.5);\n  cursor: not-allowed;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "beachnearby-com"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 33: Css Scan",
+    "description": "A CSS button inspired by CSS Scan's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-33\">Button 33</button>\n<style>\n\n.button-33 {\n  background-color: #c2fbd7;\n  border-radius: 100px;\n  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;\n  color: green;\n  cursor: pointer;\n  display: inline-block;\n  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;\n  padding: 7px 20px;\n  text-align: center;\n  text-decoration: none;\n  transition: all 250ms;\n  border: 0;\n  font-size: 16px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-33:hover {\n  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;\n  transform: scale(1.05) rotate(-1deg);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 34: Typedream",
+    "description": "A CSS button inspired by Typedream's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-34\">Button 34</button>\n<style>\n\n.button-34 {\n  background: #5E5DF0;\n  border-radius: 999px;\n  box-shadow: #5E5DF0 0 10px 20px -10px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  font-family: Inter,Helvetica,\"Apple Color Emoji\",\"Segoe UI Emoji\",NotoColorEmoji,\"Noto Color Emoji\",\"Segoe UI Symbol\",\"Android Emoji\",EmojiSymbols,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",\"Noto Sans\",sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n  opacity: 1;\n  outline: 0 solid transparent;\n  padding: 8px 18px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: fit-content;\n  word-break: break-word;\n  border: 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "typedream"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 35: Mouseless",
+    "description": "A CSS button inspired by Mouseless's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-35\">Button 35</button>\n<style>\n\n.button-35 {\n  align-items: center;\n  background-color: #fff;\n  border-radius: 12px;\n  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;\n  box-sizing: border-box;\n  color: #121212;\n  cursor: pointer;\n  display: inline-flex;\n  flex: 1 1 auto;\n  font-family: Inter,sans-serif;\n  font-size: 1.2rem;\n  font-weight: 700;\n  justify-content: center;\n  line-height: 1;\n  margin: 0;\n  outline: none;\n  padding: 1rem 1.2rem;\n  text-align: center;\n  text-decoration: none;\n  transition: box-shadow .2s,-webkit-box-shadow .2s;\n  white-space: nowrap;\n  border: 0;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-35:hover {\n  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "mouseless"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 36: Linear",
+    "description": "A CSS button inspired by Linear's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-36\">Button 36</button>\n<style>\n\n.button-36 {\n  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);\n  border-radius: 8px;\n  border-style: none;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  flex-shrink: 0;\n  font-family: \"Inter UI\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen,Ubuntu,Cantarell,\"Open Sans\",\"Helvetica Neue\",sans-serif;\n  font-size: 16px;\n  font-weight: 500;\n  height: 4rem;\n  padding: 0 1.6rem;\n  text-align: center;\n  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;\n  transition: all .5s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-36:hover {\n  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;\n  transition-duration: .1s;\n}\n\n@media (min-width: 768px) {\n  .button-36 {\n    padding: 0 2.6rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "linear"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 37: Mongodb",
+    "description": "A CSS button inspired by MongoDB's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-37\">Button 37</button>\n<style>\n\n.button-37 {\n  background-color: #13aa52;\n  border: 1px solid #13aa52;\n  border-radius: 4px;\n  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  font-family: \"Akzidenz Grotesk BQ Medium\", -apple-system, BlinkMacSystemFont, sans-serif;\n  font-size: 16px;\n  font-weight: 400;\n  outline: none;\n  outline: 0;\n  padding: 10px 25px;\n  text-align: center;\n  transform: translateY(0);\n  transition: transform 150ms, box-shadow 150ms;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-37:hover {\n  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;\n  transform: translateY(-2px);\n}\n\n@media (min-width: 768px) {\n  .button-37 {\n    padding: 10px 30px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "mongodb"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 38: Tailwind",
+    "description": "A CSS button inspired by Tailwind's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-38\">Button 38</button>\n<style>\n\n.button-38 {\n  background-color: #FFFFFF;\n  border: 0;\n  border-radius: .5rem;\n  box-sizing: border-box;\n  color: #111827;\n  font-family: \"Inter var\",ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: .875rem;\n  font-weight: 600;\n  line-height: 1.25rem;\n  padding: .75rem 1rem;\n  text-align: center;\n  text-decoration: none #D1D5DB solid;\n  text-decoration-thickness: auto;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-38:hover {\n  background-color: rgb(249,250,251);\n}\n\n.button-38:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n.button-38:focus-visible {\n  box-shadow: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "tailwind"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 39: Tailwind",
+    "description": "A CSS button inspired by Tailwind's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-39\">Button 39</button>\n<style>\n\n.button-39 {\n  background-color: #FFFFFF;\n  border: 1px solid rgb(209,213,219);\n  border-radius: .5rem;\n  box-sizing: border-box;\n  color: #111827;\n  font-family: \"Inter var\",ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: .875rem;\n  font-weight: 600;\n  line-height: 1.25rem;\n  padding: .75rem 1rem;\n  text-align: center;\n  text-decoration: none #D1D5DB solid;\n  text-decoration-thickness: auto;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-39:hover {\n  background-color: rgb(249,250,251);\n}\n\n.button-39:focus {\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n.button-39:focus-visible {\n  box-shadow: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "tailwind"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 40: Tailwind",
+    "description": "A CSS button inspired by Tailwind's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-40\">Button 40</button>\n<style>\n\n.button-40 {\n  background-color: #111827;\n  border: 1px solid transparent;\n  border-radius: .75rem;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  cursor: pointer;\n  flex: 0 0 auto;\n  font-family: \"Inter var\",ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 1.125rem;\n  font-weight: 600;\n  line-height: 1.5rem;\n  padding: .75rem 1.2rem;\n  text-align: center;\n  text-decoration: none #6B7280 solid;\n  text-decoration-thickness: auto;\n  transition-duration: .2s;\n  transition-property: background-color,border-color,color,fill,stroke;\n  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: auto;\n}\n\n.button-40:hover {\n  background-color: #374151;\n}\n\n.button-40:focus {\n  box-shadow: none;\n  outline: 2px solid transparent;\n  outline-offset: 2px;\n}\n\n@media (min-width: 768px) {\n  .button-40 {\n    padding: .75rem 1.5rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "tailwind"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 41: Flightconnections",
+    "description": "A CSS button inspired by FlightConnections.com's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-41\">Button 41</button>\n<style>\n\n.button-41 {\n  background-color: initial;\n  background-image: linear-gradient(-180deg, #00D775, #00BD68);\n  border-radius: 5px;\n  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter,-apple-system,system-ui,Roboto,\"Helvetica Neue\",Arial,sans-serif;\n  height: 44px;\n  line-height: 44px;\n  outline: 0;\n  overflow: hidden;\n  padding: 0 20px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  touch-action: manipulation;\n  user-select: none;\n  -webkit-user-select: none;\n  vertical-align: top;\n  white-space: nowrap;\n  width: 100%;\n  z-index: 9;\n  border: 0;\n}\n\n.button-41:hover {\n  background: #00bd68;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "flightconnections-com"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 42: Flightconnections",
+    "description": "A CSS button inspired by FlightConnections.com's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-42\">Button 42</button>\n<style>\n\n.button-42 {\n  background-color: initial;\n  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);\n  border-radius: 6px;\n  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter,-apple-system,system-ui,Roboto,\"Helvetica Neue\",Arial,sans-serif;\n  height: 40px;\n  line-height: 40px;\n  outline: 0;\n  overflow: hidden;\n  padding: 0 20px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  touch-action: manipulation;\n  user-select: none;\n  -webkit-user-select: none;\n  vertical-align: top;\n  white-space: nowrap;\n  width: 100%;\n  z-index: 9;\n  border: 0;\n  transition: box-shadow .2s;\n}\n\n.button-42:hover {\n  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "flightconnections-com"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 43: Eatmore",
+    "description": "A CSS button inspired by Eatmore.io's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-43\">Button 43</button>\n<style>\n\n.button-43 {\n  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);\n  border-radius: .5rem;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  display: flex;\n  font-size: 16px;\n  justify-content: center;\n  padding: 1rem 1.75rem;\n  text-decoration: none;\n  width: 100%;\n  border: 0;\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-43:hover {\n  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);\n}\n\n@media (min-width: 768px) {\n  .button-43 {\n    padding: 1rem 2rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "eatmore-io"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 44: Smashing Magazine",
+    "description": "A CSS button inspired by Smashing Magazine's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-44\">Button 44</button>\n<style>\n\n.button-44 {\n  background: #e62143;\n  border-radius: 11px;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,\"Roboto Slab\",\"Droid Serif\",\"Segoe UI\",system-ui,Arial,sans-serif;\n  font-size: 1.15em;\n  font-weight: 700;\n  justify-content: center;\n  line-height: 33.4929px;\n  padding: .8em 1em;\n  text-align: center;\n  text-decoration: none;\n  text-decoration-skip-ink: auto;\n  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;\n  text-underline-offset: 1px;\n  transition: all .2s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n  word-break: break-word;\n  border: 0;\n}\n\n.button-44:active,\n.button-44:focus {\n  border-bottom-style: none;\n  border-color: #dadada;\n  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;\n  outline: 0;\n}\n\n.button-44:hover {\n  border-bottom-style: none;\n  border-color: #dadada;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "smashing-magazine"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 45: Smashing Magazine",
+    "description": "A CSS button inspired by Smashing Magazine's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-45\">Button 45</button>\n<style>\n\n.button-45 {\n  align-items: center;\n  background-color: #FFE7E7;\n  background-position: 0 0;\n  border: 1px solid #FEE0E0;\n  border-radius: 11px;\n  box-sizing: border-box;\n  color: #D33A2C;\n  cursor: pointer;\n  display: flex;\n  font-size: 1rem;\n  font-weight: 700;\n  line-height: 33.4929px;\n  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;\n  padding: 2px 12px;\n  text-align: left;\n  text-decoration: none;\n  text-shadow: none;\n  text-underline-offset: 1px;\n  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n  word-break: break-word;\n}\n\n.button-45:active,\n.button-45:hover,\n.button-45:focus {\n  outline: 0;\n}\n\n\n.button-45:active {\n  background-color: #D33A2C;\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;\n  color: #FFFFFF;\n}\n\n.button-45:hover {\n  background-color: #FFE3E3;\n  border-color: #FAA4A4;\n}\n\n.button-45:active:hover,\n.button-45:focus:hover,\n.button-45:focus {\n  background-color: #D33A2C;\n  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;\n  color: #FFFFFF;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "smashing-magazine"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 46: Ls.graphics",
+    "description": "A CSS button inspired by ls.graphics's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-46\">Button 46</button>\n<style>\n\n.button-46 {\n  align-items: center;\n  background-color: rgba(240, 240, 240, 0.26);\n  border: 1px solid #DFDFDF;\n  border-radius: 16px;\n  box-sizing: border-box;\n  color: #000000;\n  cursor: pointer;\n  display: flex;\n  font-family: Inter, sans-serif;\n  font-size: 18px;\n  justify-content: center;\n  line-height: 28px;\n  max-width: 100%;\n  padding: 14px 22px;\n  text-decoration: none;\n  transition: all .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  width: 100%;\n}\n\n.button-46:active,\n.button-46:hover {\n  outline: 0;\n}\n\n.button-46:hover {\n  background-color: #FFFFFF;\n  border-color: rgba(0, 0, 0, 0.19);\n}\n\n@media (min-width: 768px) {\n  .button-46 {\n    font-size: 20px;\n    min-width: 200px;\n    padding: 14px 16px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "ls-graphics"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 47: Chakra Ui",
+    "description": "A CSS button inspired by Chakra UI's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-47\">Button 47</button>\n<style>\n\n.button-47 {\n  align-items: center;\n  background: #FFFFFF;\n  border: 0 solid #E2E8F0;\n  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n  box-sizing: border-box;\n  color: #1A202C;\n  display: inline-flex;\n  font-family: Inter, sans-serif;\n  font-size: 1rem;\n  font-weight: 700;\n  height: 56px;\n  justify-content: center;\n  line-height: 24px;\n  overflow-wrap: break-word;\n  padding: 24px;\n  text-decoration: none;\n  width: auto;\n  border-radius: 8px;\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "chakra-ui"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 48: Squarespace",
+    "description": "A CSS button inspired by Squarespace's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-48\" role=\"button\"><span class=\"text\">Button 48</span></button>\n<style>\n\n.button-48 {\n  appearance: none;\n  background-color: #FFFFFF;\n  border-width: 0;\n  box-sizing: border-box;\n  color: #000000;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Clarkson,Helvetica,sans-serif;\n  font-size: 14px;\n  font-weight: 500;\n  letter-spacing: 0;\n  line-height: 1em;\n  margin: 0;\n  opacity: 1;\n  outline: 0;\n  padding: 1.5em 2.2em;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-rendering: geometricprecision;\n  text-transform: uppercase;\n  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  white-space: nowrap;\n}\n\n.button-48:before {\n  animation: opacityFallbackOut .5s step-end forwards;\n  backface-visibility: hidden;\n  background-color: #EBEBEB;\n  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);\n  content: \"\";\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  transform: translateZ(0);\n  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);\n  width: 100%;\n}\n\n.button-48:hover:before {\n  animation: opacityFallbackIn 0s step-start forwards;\n  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);\n}\n\n.button-48:after {\n  background-color: #FFFFFF;\n}\n\n.button-48 span {\n  z-index: 1;\n  position: relative;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "squarespace"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 49: Steven Lei",
+    "description": "A CSS button inspired by Steven Lei's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-49\">Button 49</button>\n<style>\n\n.button-49,\n.button-49:after {\n  width: 150px;\n  height: 76px;\n  line-height: 78px;\n  font-size: 20px;\n  font-family: 'Bebas Neue', sans-serif;\n  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);\n  border: 0;\n  color: #fff;\n  letter-spacing: 3px;\n  box-shadow: 6px 0px 0px #00E6F6;\n  outline: transparent;\n  position: relative;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-49:after {\n  --slice-0: inset(50% 50% 50% 50%);\n  --slice-1: inset(80% -6px 0 0);\n  --slice-2: inset(50% -6px 30% 0);\n  --slice-3: inset(10% -6px 85% 0);\n  --slice-4: inset(40% -6px 43% 0);\n  --slice-5: inset(80% -6px 5% 0);\n  \n  content: 'ALTERNATE TEXT';\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);\n  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;\n  clip-path: var(--slice-0);\n}\n\n.button-49:hover:after {\n  animation: 1s glitch;\n  animation-timing-function: steps(2, end);\n}\n\n@keyframes glitch {\n  0% {\n    clip-path: var(--slice-1);\n    transform: translate(-20px, -10px);\n  }\n  10% {\n    clip-path: var(--slice-3);\n    transform: translate(10px, 10px);\n  }\n  20% {\n    clip-path: var(--slice-1);\n    transform: translate(-10px, 10px);\n  }\n  30% {\n    clip-path: var(--slice-3);\n    transform: translate(0px, 5px);\n  }\n  40% {\n    clip-path: var(--slice-2);\n    transform: translate(-5px, 0px);\n  }\n  50% {\n    clip-path: var(--slice-3);\n    transform: translate(5px, 0px);\n  }\n  60% {\n    clip-path: var(--slice-4);\n    transform: translate(5px, 10px);\n  }\n  70% {\n    clip-path: var(--slice-2);\n    transform: translate(-10px, 10px);\n  }\n  80% {\n    clip-path: var(--slice-5);\n    transform: translate(20px, -10px);\n  }\n  90% {\n    clip-path: var(--slice-1);\n    transform: translate(-10px, 0px);\n  }\n  100% {\n    clip-path: var(--slice-1);\n    transform: translate(0);\n  }\n}\n\n@media (min-width: 768px) {\n  .button-49,\n  .button-49:after {\n    width: 200px;\n    height: 86px;\n    line-height: 88px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "steven-lei"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 50: Scoot",
+    "description": "A CSS button inspired by Scoot's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-50\">Button 50</button>\n<style>\n\n.button-50 {\n  appearance: button;\n  background-color: #000;\n  background-image: none;\n  border: 1px solid #000;\n  border-radius: 4px;\n  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 20px;\n  margin: 0 5px 10px 0;\n  overflow: visible;\n  padding: 12px 40px;\n  text-align: center;\n  text-transform: none;\n  touch-action: manipulation;\n  user-select: none;\n  -webkit-user-select: none;\n  vertical-align: middle;\n  white-space: nowrap;\n}\n\n.button-50:focus {\n  text-decoration: none;\n}\n\n.button-50:hover {\n  text-decoration: none;\n}\n\n.button-50:active {\n  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;\n  outline: 0;\n}\n\n.button-50:not([disabled]):active {\n  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;\n  transform: translate(2px, 2px);\n}\n\n@media (min-width: 768px) {\n  .button-50 {\n    padding: 12px 50px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "scoot"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 51: Wilmingtonandbeaches",
+    "description": "A CSS button inspired by Wilmingtonandbeaches's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-51\">Button 51</button>\n<style>\n\n.button-51 {\n  background-color: transparent;\n  border: 1px solid #266DB6;\n  box-sizing: border-box;\n  color: #00132C;\n  font-family: \"Avenir Next LT W01 Bold\",sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n  padding: 16px 23px;\n  position: relative;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-51:hover,\n.button-51:active {\n  outline: 0;\n}\n\n.button-51:hover {\n  background-color: transparent;\n  cursor: pointer;\n}\n\n.button-51:before {\n  background-color: #D5EDF6;\n  content: \"\";\n  height: calc(100% + 3px);\n  position: absolute;\n  right: -7px;\n  top: -9px;\n  transition: background-color 300ms ease-in;\n  width: 100%;\n  z-index: -1;\n}\n\n.button-51:hover:before {\n  background-color: #6DCFF6;\n}\n\n@media (min-width: 768px) {\n  .button-51 {\n    padding: 16px 32px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "wilmingtonandbeaches"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 52: Joe Bocock",
+    "description": "A CSS button inspired by Joe Bocock's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-52\">Button 52</button>\n<style>\n\n.button-52 {\n  font-size: 16px;\n  font-weight: 200;\n  letter-spacing: 1px;\n  padding: 13px 20px 13px;\n  outline: 0;\n  border: 1px solid black;\n  cursor: pointer;\n  position: relative;\n  background-color: rgba(0, 0, 0, 0);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-52:after {\n  content: \"\";\n  background-color: #ffe54c;\n  width: 100%;\n  z-index: -1;\n  position: absolute;\n  height: 100%;\n  top: 7px;\n  left: 7px;\n  transition: 0.2s;\n}\n\n.button-52:hover:after {\n  top: 0px;\n  left: 0px;\n}\n\n@media (min-width: 768px) {\n  .button-52 {\n    padding: 13px 50px 13px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "joe-bocock"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 53: Alpine Day",
+    "description": "A CSS button inspired by Alpine Day's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-53\">Button 53</button>\n<style>\n\n.button-53 {\n  background-color: #3DD1E7;\n  border: 0 solid #E5E7EB;\n  box-sizing: border-box;\n  color: #000000;\n  display: flex;\n  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 700;\n  justify-content: center;\n  line-height: 1.75rem;\n  padding: .75rem 1.65rem;\n  position: relative;\n  text-align: center;\n  text-decoration: none #000000 solid;\n  text-decoration-thickness: auto;\n  width: 100%;\n  max-width: 460px;\n  position: relative;\n  cursor: pointer;\n  transform: rotate(-2deg);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-53:focus {\n  outline: 0;\n}\n\n.button-53:after {\n  content: '';\n  position: absolute;\n  border: 1px solid #000000;\n  bottom: 4px;\n  left: 4px;\n  width: calc(100% - 1px);\n  height: calc(100% - 1px);\n}\n\n.button-53:hover:after {\n  bottom: 2px;\n  left: 2px;\n}\n\n@media (min-width: 768px) {\n  .button-53 {\n    padding: .75rem 3rem;\n    font-size: 1.25rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "alpine-day"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 54: Michael Mcmillan",
+    "description": "A CSS button inspired by Michael McMillan's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-54\">Button 54</button>\n<style>\n\n.button-54 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  letter-spacing: 2px;\n  text-decoration: none;\n  text-transform: uppercase;\n  color: #000;\n  cursor: pointer;\n  border: 3px solid;\n  padding: 0.25em 0.5em;\n  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;\n  position: relative;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-54:active {\n  box-shadow: 0px 0px 0px 0px;\n  top: 5px;\n  left: 5px;\n}\n\n@media (min-width: 768px) {\n  .button-54 {\n    padding: 0.25em 0.75em;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "michael-mcmillan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 55: Paper Css",
+    "description": "A CSS button inspired by Paper CSS's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-55\">Button 55</button>\n<style>\n\n.button-55 {\n  align-self: center;\n  background-color: #fff;\n  background-image: none;\n  background-position: 0 90%;\n  background-repeat: repeat no-repeat;\n  background-size: 4px 3px;\n  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;\n  border-style: solid;\n  border-width: 2px;\n  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;\n  box-sizing: border-box;\n  color: #41403e;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Neucha, sans-serif;\n  font-size: 1rem;\n  line-height: 23px;\n  outline: none;\n  padding: .75rem;\n  text-decoration: none;\n  transition: all 235ms ease-in-out;\n  border-bottom-left-radius: 15px 255px;\n  border-bottom-right-radius: 225px 15px;\n  border-top-left-radius: 255px 15px;\n  border-top-right-radius: 15px 225px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-55:hover {\n  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;\n  transform: translate3d(0, 2px, 0);\n}\n\n.button-55:focus {\n  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "paper-css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 56: Squareshot",
+    "description": "A CSS button inspired by Squareshot's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-56\">Button 56</button>\n<style>\n\n.button-56 {\n  align-items: center;\n  background-color: #fee6e3;\n  border: 2px solid #111;\n  border-radius: 8px;\n  box-sizing: border-box;\n  color: #111;\n  cursor: pointer;\n  display: flex;\n  font-family: Inter,sans-serif;\n  font-size: 16px;\n  height: 48px;\n  justify-content: center;\n  line-height: 24px;\n  max-width: 100%;\n  padding: 0 25px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-56:after {\n  background-color: #111;\n  border-radius: 8px;\n  content: \"\";\n  display: block;\n  height: 48px;\n  left: 0;\n  width: 100%;\n  position: absolute;\n  top: -2px;\n  transform: translate(8px, 8px);\n  transition: transform .2s ease-out;\n  z-index: -1;\n}\n\n.button-56:hover:after {\n  transform: translate(0, 0);\n}\n\n.button-56:active {\n  background-color: #ffdeda;\n  outline: 0;\n}\n\n.button-56:hover {\n  outline: 0;\n}\n\n@media (min-width: 768px) {\n  .button-56 {\n    padding: 0 40px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "squareshot"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 57: Scott Branch",
+    "description": "A CSS button inspired by Scott Branch's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-57\" role=\"button\"><span class=\"text\">Button 57</span><span>Alternate text</span></button>\n<style>\n\n.button-57 {\n  position: relative;\n  overflow: hidden;\n  border: 1px solid #18181a;\n  color: #18181a;\n  display: inline-block;\n  font-size: 15px;\n  line-height: 15px;\n  padding: 18px 18px 17px;\n  text-decoration: none;\n  cursor: pointer;\n  background: #fff;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-57 span:first-child {\n  position: relative;\n  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);\n  z-index: 10;\n}\n\n.button-57 span:last-child {\n  color: white;\n  display: block;\n  position: absolute;\n  bottom: 0;\n  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);\n  z-index: 100;\n  opacity: 0;\n  top: 50%;\n  left: 50%;\n  transform: translateY(225%) translateX(-50%);\n  height: 14px;\n  line-height: 13px;\n}\n\n.button-57:after {\n  content: \"\";\n  position: absolute;\n  bottom: -50%;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  transform-origin: bottom center;\n  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);\n  transform: skewY(9.3deg) scaleY(0);\n  z-index: 50;\n}\n\n.button-57:hover:after {\n  transform-origin: bottom center;\n  transform: skewY(9.3deg) scaleY(2);\n}\n\n.button-57:hover span:last-child {\n  transform: translateX(-50%) translateY(-100%);\n  opacity: 1;\n  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "scott-branch"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 58: Module System Design",
+    "description": "A CSS button inspired by Module system design's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-58\">Button 58</button>\n<style>\n\n.button-58 {\n  align-items: center;\n  background-color: #06f;\n  border: 2px solid #06f;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-flex;\n  fill: #000;\n  font-family: Inter,sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  height: 48px;\n  justify-content: center;\n  letter-spacing: -.8px;\n  line-height: 24px;\n  min-width: 140px;\n  outline: 0;\n  padding: 0 17px;\n  text-align: center;\n  text-decoration: none;\n  transition: all .3s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-58:focus {\n  color: #171e29;\n}\n\n.button-58:hover {\n  background-color: #3385ff;\n  border-color: #3385ff;\n  fill: #06f;\n}\n\n.button-58:active {\n  background-color: #3385ff;\n  border-color: #3385ff;\n  fill: #06f;\n}\n\n@media (min-width: 768px) {\n  .button-58 {\n    min-width: 170px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "module-system-design"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 59: Module System Design",
+    "description": "A CSS button inspired by Module system design's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-59\">Button 59</button>\n<style>\n\n.button-59 {\n  align-items: center;\n  background-color: #fff;\n  border: 2px solid #000;\n  box-sizing: border-box;\n  color: #000;\n  cursor: pointer;\n  display: inline-flex;\n  fill: #000;\n  font-family: Inter,sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  height: 48px;\n  justify-content: center;\n  letter-spacing: -.8px;\n  line-height: 24px;\n  min-width: 140px;\n  outline: 0;\n  padding: 0 17px;\n  text-align: center;\n  text-decoration: none;\n  transition: all .3s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-59:focus {\n  color: #171e29;\n}\n\n.button-59:hover {\n  border-color: #06f;\n  color: #06f;\n  fill: #06f;\n}\n\n.button-59:active {\n  border-color: #06f;\n  color: #06f;\n  fill: #06f;\n}\n\n@media (min-width: 768px) {\n  .button-59 {\n    min-width: 170px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "module-system-design"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 60: Bulma",
+    "description": "A CSS button inspired by Bulma's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-60\">Button 60</button>\n<style>\n\n.button-60 {\n  align-items: center;\n  appearance: none;\n  background-color: #fff;\n  border: 1px solid #dbdbdb;\n  border-radius: .375em;\n  box-shadow: none;\n  box-sizing: border-box;\n  color: #363636;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen,Ubuntu,Cantarell,\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 1rem;\n  height: 2.5em;\n  justify-content: center;\n  line-height: 1.5;\n  padding: calc(.5em - 1px) 1em;\n  position: relative;\n  text-align: center;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: top;\n  white-space: nowrap;\n}\n\n.button-60:active {\n  border-color: #4a4a4a;\n  outline: 0;\n}\n\n.button-60:focus {\n  border-color: #485fc7;\n  outline: 0;\n}\n\n.button-60:hover {\n  border-color: #b5b5b5;\n}\n\n.button-60:focus:not(:active) {\n  box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "bulma"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 61: Material",
+    "description": "A CSS button inspired by Material's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-61\">Button 61</button>\n<style>\n\n.button-61 {\n  align-items: center;\n  appearance: none;\n  border-radius: 4px;\n  border-style: none;\n  box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px,rgba(0, 0, 0, .14) 0 2px 2px 0,rgba(0, 0, 0, .12) 0 1px 5px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: Roboto,sans-serif;\n  font-size: .875rem;\n  font-weight: 500;\n  height: 36px;\n  justify-content: center;\n  letter-spacing: .0892857em;\n  line-height: normal;\n  min-width: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 0 16px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  will-change: transform,opacity;\n}\n\n.button-61:hover {\n  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;\n}\n\n.button-61:disabled {\n  background-color: rgba(0, 0, 0, .12);\n  box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;\n  color: rgba(0, 0, 0, .37);\n  cursor: default;\n  pointer-events: none;\n}\n\n.button-61:not(:disabled) {\n  background-color: #6200ee;\n}\n\n.button-61:focus {\n  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;\n}\n\n.button-61:active {\n  box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;\n  background: #A46BF5;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "material"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 62: Pintura (pqina)",
+    "description": "A CSS button inspired by Pintura (pqina)'s design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-62\">Button 62</button>\n<style>\n\n.button-62 {\n  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);\n  border: 0;\n  border-radius: 12px;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system,system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  font-size: 16px;\n  font-weight: 500;\n  line-height: 2.5;\n  outline: transparent;\n  padding: 0 1rem;\n  text-align: center;\n  text-decoration: none;\n  transition: box-shadow .2s ease-in-out;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n}\n\n.button-62:not([disabled]):focus {\n  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);\n}\n\n.button-62:not([disabled]):hover {\n  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "pintura-pqina"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 63: Greenlight",
+    "description": "A CSS button inspired by Greenlight's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-63\">Button 63</button>\n<style>\n\n.button-63 {\n  align-items: center;\n  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);\n  border: 0;\n  border-radius: 8px;\n  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  display: flex;\n  font-family: Phantomsans, sans-serif;\n  font-size: 20px;\n  justify-content: center;\n  line-height: 1em;\n  max-width: 100%;\n  min-width: 140px;\n  padding: 19px 24px;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n  cursor: pointer;\n}\n\n.button-63:active,\n.button-63:hover {\n  outline: 0;\n}\n\n@media (min-width: 768px) {\n  .button-63 {\n    font-size: 24px;\n    min-width: 196px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "greenlight"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 64: Greenlight",
+    "description": "A CSS button inspired by Greenlight's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-64\" role=\"button\"><span class=\"text\">Button 64</span></button>\n<style>\n\n.button-64 {\n  align-items: center;\n  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);\n  border: 0;\n  border-radius: 8px;\n  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;\n  box-sizing: border-box;\n  color: #FFFFFF;\n  display: flex;\n  font-family: Phantomsans, sans-serif;\n  font-size: 20px;\n  justify-content: center;\n  line-height: 1em;\n  max-width: 100%;\n  min-width: 140px;\n  padding: 3px;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: nowrap;\n  cursor: pointer;\n}\n\n.button-64:active,\n.button-64:hover {\n  outline: 0;\n}\n\n.button-64 span {\n  background-color: rgb(5, 6, 45);\n  padding: 16px 24px;\n  border-radius: 6px;\n  width: 100%;\n  height: 100%;\n  transition: 300ms;\n}\n\n.button-64:hover span {\n  background: none;\n}\n\n@media (min-width: 768px) {\n  .button-64 {\n    font-size: 24px;\n    min-width: 196px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "greenlight"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 65: Siter",
+    "description": "A CSS button inspired by siter.io's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-65\">Button 65</button>\n<style>\n\n.button-65 {\n  appearance: none;\n  backface-visibility: hidden;\n  background-color: #2f80ed;\n  border-radius: 10px;\n  border-style: none;\n  box-shadow: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter,-apple-system,system-ui,\"Segoe UI\",Helvetica,Arial,sans-serif;\n  font-size: 15px;\n  font-weight: 500;\n  height: 50px;\n  letter-spacing: normal;\n  line-height: 1.5;\n  outline: none;\n  overflow: hidden;\n  padding: 14px 30px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transform: translate3d(0, 0, 0);\n  transition: all .3s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: top;\n  white-space: nowrap;\n}\n\n.button-65:hover {\n  background-color: #1366d6;\n  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;\n  opacity: 1;\n  transform: translateY(0);\n  transition-duration: .35s;\n}\n\n.button-65:hover:after {\n  opacity: .5;\n}\n\n.button-65:active {\n  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;\n  transform: translateY(2px);\n  transition-duration: .35s;\n}\n\n.button-65:active:after {\n  opacity: 1;\n}\n\n@media (min-width: 768px) {\n  .button-65 {\n    padding: 14px 22px;\n    width: 176px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "siter-io"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 66: Flagpack",
+    "description": "A CSS button inspired by Flagpack's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-66\">Button 66</button>\n<style>\n\n.button-66 {\n  background-color: #0a6bff;\n  border-radius: 4px;\n  border: 0;\n  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inherit;\n  font-family: \"Space Grotesk\",-apple-system,system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";\n  font-size: 18px;\n  font-weight: 700;\n  line-height: 24px;\n  margin: 0;\n  min-height: 56px;\n  min-width: 120px;\n  padding: 16px 20px;\n  position: relative;\n  text-align: center;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n  transition: all .2s cubic-bezier(.22, .61, .36, 1);\n}\n\n.button-66:hover {\n  background-color: #065dd8;\n  transform: translateY(-2px);\n}\n\n@media (min-width: 768px) {\n  .button-66 {\n    padding: 16px 44px;\n    min-width: 150px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "flagpack"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 67: Spltjs",
+    "description": "A CSS button inspired by spltjs's design system with hover/active/focus states. Background color: #F5F5FA.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-67\">Button 67</button>\n<style>\n\n.button-67 {\n  align-items: center;\n  background: #f5f5fa;\n  border: 0;\n  border-radius: 8px;\n  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;\n  box-sizing: border-box;\n  color: #2a1f62;\n  cursor: pointer;\n  display: flex;\n  font-family: \"Cascadia Code\",Consolas,Monaco,\"Andale Mono\",\"Ubuntu Mono\",monospace;\n  font-size: 1rem;\n  justify-content: center;\n  line-height: 1.5rem;\n  padding: 15px;\n  position: relative;\n  text-align: left;\n  transition: .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  white-space: pre;\n  width: max-content;\n  word-break: normal;\n  word-spacing: normal;\n}\n\n.button-67:hover {\n  background: #f8f8ff;\n  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;\n}\n\n@media (min-width: 768px) {\n  .button-67 {\n    padding: 24px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "spltjs"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 68: Static",
+    "description": "A CSS button inspired by static.app's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-68\">Button 68</button>\n<style>\n\n.button-68 {\n  appearance: none;\n  backface-visibility: hidden;\n  background-color: #27ae60;\n  border-radius: 8px;\n  border-style: none;\n  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter,-apple-system,system-ui,\"Segoe UI\",Helvetica,Arial,sans-serif;\n  font-size: 16px;\n  font-weight: 600;\n  letter-spacing: normal;\n  line-height: 1.5;\n  outline: none;\n  overflow: hidden;\n  padding: 13px 20px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transform: translate3d(0, 0, 0);\n  transition: all .3s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: top;\n  white-space: nowrap;\n}\n\n.button-68:hover {\n  background-color: #1e8449;\n  opacity: 1;\n  transform: translateY(0);\n  transition-duration: .35s;\n}\n\n.button-68:active {\n  transform: translateY(2px);\n  transition-duration: .35s;\n}\n\n.button-68:hover {\n  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "static-app"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 69: Sonuum",
+    "description": "A CSS button inspired by Sonuum's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-69\">Button 69</button>\n<style>\n\n.button-69 {\n  background-color: initial;\n  background-image: linear-gradient(#8614f8 0, #760be0 100%);\n  border-radius: 5px;\n  border-style: none;\n  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Inter, sans-serif;\n  font-size: 16px;\n  font-weight: 500;\n  height: 60px;\n  line-height: 60px;\n  margin-left: -4px;\n  outline: 0;\n  text-align: center;\n  transition: all .3s cubic-bezier(.05, .03, .35, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: bottom;\n  width: 190px;\n}\n\n.button-69:hover {\n  opacity: .7;\n}\n\n@media screen and (max-width: 1000px) {\n  .button-69 {\n    font-size: 14px;\n    height: 55px;\n    line-height: 55px;\n    width: 150px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "sonuum"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 70: Gra.dient",
+    "description": "A CSS button inspired by gra.dient.art's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-70\">Button 70</button>\n<style>\n\n.button-70 {\n  background-image: linear-gradient(#0dccea, #0d70ea);\n  border: 0;\n  border-radius: 4px;\n  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  font-family: Montserrat,sans-serif;\n  font-size: .9em;\n  margin: 5px;\n  padding: 10px 15px;\n  text-align: center;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "gra-dient-art"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 71: Ios6.netlify",
+    "description": "A CSS button inspired by ios6.netlify.app's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-71\">Button 71</button>\n<style>\n\n.button-71 {\n  background-color: #0078d0;\n  border: 0;\n  border-radius: 56px;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,Ubuntu,\"Helvetica Neue\",sans-serif;\n  font-size: 18px;\n  font-weight: 600;\n  outline: 0;\n  padding: 16px 21px;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  transition: all .3s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-71:before {\n  background-color: initial;\n  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);\n  border-radius: 125px;\n  content: \"\";\n  height: 50%;\n  left: 4%;\n  opacity: .5;\n  position: absolute;\n  top: 0;\n  transition: all .3s;\n  width: 92%;\n}\n\n.button-71:hover {\n  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;\n  transform: scale(1.05);\n}\n\n@media (min-width: 768px) {\n  .button-71 {\n    padding: 16px 48px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "ios6-netlify-app"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 72: Spatium",
+    "description": "A CSS button inspired by Spatium.earth's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-72\">Button 72</button>\n<style>\n\n.button-72 {\n  align-items: center;\n  background-color: initial;\n  background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);\n  border-radius: 42px;\n  border-width: 0;\n  box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;\n  color: #FFFFFF;\n  cursor: pointer;\n  display: flex;\n  font-family: Quicksand,sans-serif;\n  font-size: 18px;\n  font-weight: 700;\n  justify-content: center;\n  letter-spacing: .04em;\n  line-height: 16px;\n  margin: 0;\n  padding: 18px 18px;\n  text-align: center;\n  text-decoration: none;\n  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: baseline;\n}\n\n.button-72:hover {\n  background-image: linear-gradient(#B384C9, #391F5B 50%);\n}\n\n@media (min-width: 768px) {\n  .button-72 {\n    font-size: 21px;\n    padding: 18px 34px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "spatium-earth"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 73: Famera",
+    "description": "A CSS button inspired by Famera's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-73\">Button 73</button>\n<style>\n\n.button-73 {\n  appearance: none;\n  background-color: #FFFFFF;\n  border-radius: 40em;\n  border-style: none;\n  box-shadow: #ADCFFF 0 -12px 6px inset;\n  box-sizing: border-box;\n  color: #000000;\n  cursor: pointer;\n  display: inline-block;\n  font-family: -apple-system,sans-serif;\n  font-size: 1.2rem;\n  font-weight: 700;\n  letter-spacing: -.24px;\n  margin: 0;\n  outline: none;\n  padding: 1rem 1.3rem;\n  quotes: auto;\n  text-align: center;\n  text-decoration: none;\n  transition: all .15s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-73:hover {\n  background-color: #FFC229;\n  box-shadow: #FF6314 0 -6px 8px inset;\n  transform: scale(1.125);\n}\n\n.button-73:active {\n  transform: scale(1.025);\n}\n\n@media (min-width: 768px) {\n  .button-73 {\n    font-size: 1.5rem;\n    padding: .75rem 2rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "famera"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 74: Uiforms",
+    "description": "A CSS button inspired by UIForms's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-74\">Button 74</button>\n<style>\n\n.button-74 {\n  background-color: #fbeee0;\n  border: 2px solid #422800;\n  border-radius: 30px;\n  box-shadow: #422800 4px 4px 0 0;\n  color: #422800;\n  cursor: pointer;\n  display: inline-block;\n  font-weight: 600;\n  font-size: 18px;\n  padding: 0 18px;\n  line-height: 50px;\n  text-align: center;\n  text-decoration: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-74:hover {\n  background-color: #fff;\n}\n\n.button-74:active {\n  box-shadow: #422800 2px 2px 0 0;\n  transform: translate(2px, 2px);\n}\n\n@media (min-width: 768px) {\n  .button-74 {\n    min-width: 120px;\n    padding: 0 25px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "uiforms"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 75: Mighty",
+    "description": "A CSS button inspired by Mighty's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-75\" role=\"button\"><span class=\"text\">Button 75</span></button>\n<style>\n\n.button-75 {\n  align-items: center;\n  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);\n  border: 0;\n  border-radius: 10px;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  font-family: \"Codec cold\",sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  height: 54px;\n  justify-content: center;\n  letter-spacing: .4px;\n  line-height: 1;\n  max-width: 100%;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 3px;\n  text-decoration: none;\n  text-transform: uppercase;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-75:active {\n  outline: 0;\n}\n\n.button-75:hover {\n  outline: 0;\n}\n\n.button-75 span {\n  transition: all 200ms;\n}\n\n.button-75:hover span {\n  transform: scale(.9);\n  opacity: .75;\n}\n\n@media screen and (max-width: 991px) {\n  .button-75 {\n    font-size: 15px;\n    height: 50px;\n  }\n\n  .button-75 span {\n    line-height: 50px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "mighty"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 76: Many.link",
+    "description": "A CSS button inspired by many.link's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-76\">Button 76</button>\n<style>\n\n.button-76 {\n  background-color: #cf245f;\n  background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);\n  border: 0;\n  border-radius: .25rem;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 1.125rem; /* 18px */\n  font-weight: 600;\n  line-height: 1.75rem; /* 28px */\n  padding: 1rem 1.25rem;\n  text-align: center;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-76:hover {\n  box-shadow: none;\n}\n\n@media (min-width: 1024px) {\n  .button-76 {\n    font-size: 1.5rem; /* 24px */\n    padding: 1rem 1.5rem;\n    line-height: 2rem; /* 32px */\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "many-link"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 77: Shadow",
+    "description": "A CSS button inspired by Shadow.tech's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-77\">Button 77</button>\n<style>\n\n.button-77 {\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01,sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  width: auto;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-77 {\n    padding: 19px 32px;\n  }\n}\n\n.button-77:before,\n.button-77:after {\n  border-radius: 80px;\n}\n\n.button-77:before {\n  background-color: rgba(249, 58, 19, .32);\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-77:after {\n  background-color: initial;\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  content: \"\";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-77:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n}\n\n.button-77:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-77:active:not(:disabled):after {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-77:disabled {\n  cursor: default;\n  opacity: .24;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "shadow-tech"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 78: Shadow",
+    "description": "A CSS button inspired by Shadow.tech's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-78\">Button 78</button>\n<style>\n\n.button-78 {\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01,sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  width: auto;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-78 {\n    padding: 19px 32px;\n  }\n}\n\n.button-78:before,\n.button-78:after {\n  border-radius: 80px;\n}\n\n.button-78:before {\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-78:after {\n  background-color: initial;\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  content: \"\";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-78:hover:not(:disabled):before {\n  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);\n}\n\n.button-78:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n  opacity: 0;\n}\n\n.button-78:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-78:active:not(:disabled):before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n}\n\n.button-78:active:not(:disabled):after {\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-78:disabled {\n  cursor: default;\n  opacity: .24;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "shadow-tech"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 79: Loom",
+    "description": "A CSS button inspired by Loom's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-79\">Button 79</button>\n<style>\n\n.button-79 {\n  backface-visibility: hidden;\n  background: #332cf2;\n  border: 0;\n  border-radius: .375rem;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Circular,Helvetica,sans-serif;\n  font-size: 1.125rem;\n  font-weight: 700;\n  letter-spacing: -.01em;\n  line-height: 1.3;\n  padding: 1rem 1.25rem;\n  position: relative;\n  text-align: left;\n  text-decoration: none;\n  transform: translateZ(0) scale(1);\n  transition: transform .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-79:disabled {\n  color: #787878;\n  cursor: auto;\n}\n\n.button-79:not(:disabled):hover {\n  transform: scale(1.05);\n}\n\n.button-79:not(:disabled):hover:active {\n  transform: scale(1.05) translateY(.125rem);\n}\n\n.button-79:focus {\n  outline: 0 solid transparent;\n}\n\n.button-79:focus:before {\n  border-width: .125rem;\n  content: \"\";\n  left: calc(-1*.375rem);\n  pointer-events: none;\n  position: absolute;\n  top: calc(-1*.375rem);\n  transition: border-radius;\n  user-select: none;\n}\n\n.button-79:focus:not(:focus-visible) {\n  outline: 0 solid transparent;\n}\n\n.button-79:not(:disabled):active {\n  transform: translateY(.125rem);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "loom"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 80: Loom",
+    "description": "A CSS button inspired by Loom's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-80\">Button 80</button>\n<style>\n\n.button-80 {\n  background: #fff;\n  backface-visibility: hidden;\n  border-radius: .375rem;\n  border-style: solid;\n  border-width: .125rem;\n  box-sizing: border-box;\n  color: #212121;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Circular,Helvetica,sans-serif;\n  font-size: 1.125rem;\n  font-weight: 700;\n  letter-spacing: -.01em;\n  line-height: 1.3;\n  padding: .875rem 1.125rem;\n  position: relative;\n  text-align: left;\n  text-decoration: none;\n  transform: translateZ(0) scale(1);\n  transition: transform .2s;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-80:not(:disabled):hover {\n  transform: scale(1.05);\n}\n\n.button-80:not(:disabled):hover:active {\n  transform: scale(1.05) translateY(.125rem);\n}\n\n.button-80:focus {\n  outline: 0 solid transparent;\n}\n\n.button-80:focus:before {\n  content: \"\";\n  left: calc(-1*.375rem);\n  pointer-events: none;\n  position: absolute;\n  top: calc(-1*.375rem);\n  transition: border-radius;\n  user-select: none;\n}\n\n.button-80:focus:not(:focus-visible) {\n  outline: 0 solid transparent;\n}\n\n.button-80:focus:not(:focus-visible):before {\n  border-width: 0;\n}\n\n.button-80:not(:disabled):active {\n  transform: translateY(.125rem);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "loom"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 81: Shuffle",
+    "description": "A CSS button inspired by Shuffle's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-81\">Button 81</button>\n<style>\n\n.button-81 {\n  background-color: #fff;\n  border: 0 solid #e2e8f0;\n  border-radius: 1.5rem;\n  box-sizing: border-box;\n  color: #0d172a;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Basier circle\",-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 1.1rem;\n  font-weight: 600;\n  line-height: 1;\n  padding: 1rem 1.6rem;\n  text-align: center;\n  text-decoration: none #0d172a solid;\n  text-decoration-thickness: auto;\n  transition: all .1s cubic-bezier(.4, 0, .2, 1);\n  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-81:hover {\n  background-color: #1e293b;\n  color: #fff;\n}\n\n@media (min-width: 768px) {\n  .button-81 {\n    font-size: 1.125rem;\n    padding: 1rem 2rem;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "shuffle"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 82: Josh W Comeau",
+    "description": "A CSS button inspired by Josh W Comeau's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-82-pushable\" role=\"button\">\n            <span class=\"button-82-shadow\"></span>\n            <span class=\"button-82-edge\"></span>\n            <span class=\"button-82-front text\">\n              Button 82\n            </span>\n          </button>\n<style>\n\n.button-82-pushable {\n  position: relative;\n  border: none;\n  background: transparent;\n  padding: 0;\n  cursor: pointer;\n  outline-offset: 4px;\n  transition: filter 250ms;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-82-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border-radius: 12px;\n  background: hsl(0deg 0% 0% / 0.25);\n  will-change: transform;\n  transform: translateY(2px);\n  transition:\n    transform\n    600ms\n    cubic-bezier(.3, .7, .4, 1);\n}\n\n.button-82-edge {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border-radius: 12px;\n  background: linear-gradient(\n    to left,\n    hsl(340deg 100% 16%) 0%,\n    hsl(340deg 100% 32%) 8%,\n    hsl(340deg 100% 32%) 92%,\n    hsl(340deg 100% 16%) 100%\n  );\n}\n\n.button-82-front {\n  display: block;\n  position: relative;\n  padding: 12px 27px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  color: white;\n  background: hsl(345deg 100% 47%);\n  will-change: transform;\n  transform: translateY(-4px);\n  transition:\n    transform\n    600ms\n    cubic-bezier(.3, .7, .4, 1);\n}\n\n@media (min-width: 768px) {\n  .button-82-front {\n    font-size: 1.25rem;\n    padding: 12px 42px;\n  }\n}\n\n.button-82-pushable:hover {\n  filter: brightness(110%);\n  -webkit-filter: brightness(110%);\n}\n\n.button-82-pushable:hover .button-82-front {\n  transform: translateY(-6px);\n  transition:\n    transform\n    250ms\n    cubic-bezier(.3, .7, .4, 1.5);\n}\n\n.button-82-pushable:active .button-82-front {\n  transform: translateY(-2px);\n  transition: transform 34ms;\n}\n\n.button-82-pushable:hover .button-82-shadow {\n  transform: translateY(4px);\n  transition:\n    transform\n    250ms\n    cubic-bezier(.3, .7, .4, 1.5);\n}\n\n.button-82-pushable:active .button-82-shadow {\n  transform: translateY(1px);\n  transition: transform 34ms;\n}\n\n.button-82-pushable:focus:not(:focus-visible) {\n  outline: none;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "josh-w-comeau"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 83: React-hot-toast",
+    "description": "A CSS button inspired by react-hot-toast's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-83\">Button 83</button>\n<style>\n\n.button-83 {\n  appearance: button;\n  background-color: transparent;\n  background-image: linear-gradient(to bottom, #fff, #f8eedb);\n  border: 0 solid #e5e7eb;\n  border-radius: .5rem;\n  box-sizing: border-box;\n  color: #482307;\n  column-gap: 1rem;\n  cursor: pointer;\n  display: flex;\n  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 100%;\n  font-weight: 700;\n  line-height: 24px;\n  margin: 0;\n  outline: 2px solid transparent;\n  padding: 1rem 1.5rem;\n  text-align: center;\n  text-transform: none;\n  transition: all .1s cubic-bezier(.4, 0, .2, 1);\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);\n}\n\n.button-83:active {\n  background-color: #f3f4f6;\n  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);\n  transform: translateY(0.125rem);\n}\n\n.button-83:focus {\n  box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "react-hot-toast"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 84: Expo",
+    "description": "A CSS button inspired by Expo's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-84\">Button 84</button>\n<style>\n\n.button-84 {\n  align-items: center;\n  background-color: initial;\n  background-image: linear-gradient(#464d55, #25292e);\n  border-radius: 8px;\n  border-width: 0;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-flex;\n  flex-direction: column;\n  font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";\n  font-size: 18px;\n  height: 52px;\n  justify-content: center;\n  line-height: 1;\n  margin: 0;\n  outline: none;\n  overflow: hidden;\n  padding: 0 32px;\n  text-align: center;\n  text-decoration: none;\n  transform: translate3d(0, 0, 0);\n  transition: all 150ms;\n  vertical-align: baseline;\n  white-space: nowrap;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-84:hover {\n  box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;\n  opacity: .85;\n}\n\n.button-84:active {\n  outline: 0;\n}\n\n.button-84:focus {\n  box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;\n}\n\n@media (max-width: 420px) {\n  .button-84 {\n    height: 48px;\n  }\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "expo"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 85: Css Scan",
+    "description": "A CSS button inspired by CSS Scan's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-85\">Button 85</button>\n<style>\n\n.button-85 {\n  padding: 0.6em 2em;\n  border: none;\n  outline: none;\n  color: rgb(255, 255, 255);\n  background: #111;\n  cursor: pointer;\n  position: relative;\n  z-index: 0;\n  border-radius: 10px;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-85:before {\n  content: \"\";\n  background: linear-gradient(\n    45deg,\n    #ff0000,\n    #ff7300,\n    #fffb00,\n    #48ff00,\n    #00ffd5,\n    #002bff,\n    #7a00ff,\n    #ff00c8,\n    #ff0000\n  );\n  position: absolute;\n  top: -2px;\n  left: -2px;\n  background-size: 400%;\n  z-index: -1;\n  filter: blur(5px);\n  -webkit-filter: blur(5px);\n  width: calc(100% + 4px);\n  height: calc(100% + 4px);\n  animation: glowing-button-85 20s linear infinite;\n  transition: opacity 0.3s ease-in-out;\n  border-radius: 10px;\n}\n\n@keyframes glowing-button-85 {\n  0% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 400% 0;\n  }\n  100% {\n    background-position: 0 0;\n  }\n}\n\n.button-85:after {\n  z-index: -1;\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: #222;\n  left: 0;\n  top: 0;\n  border-radius: 10px;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 86: Gagan-gv",
+    "description": "A CSS button inspired by gagan-gv's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-86\">Button 86</button>\n<style>\n\n.button-86 {\n  all: unset;\n  width: 100px;\n  height: 30px;\n  font-size: 16px;\n  background: transparent;\n  border: none;\n  position: relative;\n  color: #f0f0f0;\n  cursor: pointer;\n  z-index: 1;\n  padding: 10px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  white-space: nowrap;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-86::after,\n.button-86::before {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  z-index: -99999;\n  transition: all .4s;\n}\n\n.button-86::before {\n  transform: translate(0%, 0%);\n  width: 100%;\n  height: 100%;\n  background: #28282d;\n  border-radius: 10px;\n}\n\n.button-86::after {\n  transform: translate(10px, 10px);\n  width: 35px;\n  height: 35px;\n  background: #ffffff15;\n  backdrop-filter: blur(5px);\n  -webkit-backdrop-filter: blur(5px);\n  border-radius: 50px;\n}\n\n.button-86:hover::before {\n  transform: translate(5%, 20%);\n  width: 110%;\n  height: 110%;\n}\n\n.button-86:hover::after {\n  border-radius: 10px;\n  transform: translate(0, 0);\n  width: 100%;\n  height: 100%;\n}\n\n.button-86:active::after {\n  transition: 0s;\n  transform: translate(0, 5%);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "gagan-gv"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 87: Gumpack",
+    "description": "A CSS button inspired by Gumpack's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-87\">Button 87</button>\n<style>\n\n.button-87 {\n  margin: 10px;\n  padding: 15px 30px;\n  text-align: center;\n  text-transform: uppercase;\n  transition: 0.5s;\n  background-size: 200% auto;\n  color: white;\n  border-radius: 10px;\n  display: block;\n  border: 0px;\n  font-weight: 700;\n  box-shadow: 0px 0px 14px -7px #f09819;\n  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-87:hover {\n  background-position: right center;\n  /* change the direction of the change here */\n  color: #fff;\n  text-decoration: none;\n}\n\n.button-87:active {\n  transform: scale(0.95);\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "gumpack"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 88: Adamgiebl",
+    "description": "A CSS button inspired by adamgiebl's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-88\">Button 88</button>\n<style>\n\n.button-88 {\n  display: flex;\n  align-items: center;\n  font-family: inherit;\n  font-weight: 500;\n  font-size: 16px;\n  padding: 0.7em 1.4em 0.7em 1.1em;\n  color: white;\n  background: #ad5389;\n  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);\n  border: none;\n  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;\n  letter-spacing: 0.05em;\n  border-radius: 20em;\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-88:hover {\n  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;\n}\n\n.button-88:active {\n  box-shadow: 0 0.3em 1em -0.5em #14a73e98;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "adamgiebl"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 89: Temani Afif",
+    "description": "A CSS button inspired by Temani Afif's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-89\">Button 89</button>\n<style>\n\n.button-89 {\n  --b: 3px;   /* border thickness */\n  --s: .45em; /* size of the corner */\n  --color: #373B44;\n  \n  padding: calc(.5em + var(--s)) calc(.9em + var(--s));\n  color: var(--color);\n  --_p: var(--s);\n  background:\n    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)\n    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));\n  transition: .3s linear, color 0s, background-color 0s;\n  outline: var(--b) solid #0000;\n  outline-offset: .6em;\n  font-size: 16px;\n\n  border: 0;\n\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-89:hover,\n.button-89:focus-visible{\n  --_p: 0px;\n  outline-color: var(--color);\n  outline-offset: .05em;\n}\n\n.button-89:active {\n  background: var(--color);\n  color: #fff;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "temani-afif"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 90: Miti",
+    "description": "A CSS button inspired by Miti's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-90\">Button 90</button>\n<style>\n\n.button-90 {\n  color: #fff;\n  padding: 15px 25px;\n  border-radius: 100px;\n  background-color: #4C43CD;\n  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);\n  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);\n  font-weight: bold;\n  font-size: 16px;\n\n  border: 0;\n\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n\n  cursor: pointer;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "miti"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 91: Miti",
+    "description": "A CSS button inspired by Miti's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-91\">Button 91</button>\n<style>\n\n.button-91 {\n  color: #fff;\n  padding: 15px 25px;\n  background-color: #38D2D2;\n  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);\n  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);\n  border-radius: 14px;\n  font-weight: bold;\n  font-size: 16px;\n\n  border: 0;\n\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n\n  cursor: pointer;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "miti"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Button 92: Aqfox",
+    "description": "A CSS button inspired by AqFox's design system with hover/active/focus states.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"button-92\">Button 92</button>\n<style>\n\n.button-92 {\n  --c: #fff;\n  /* text color */\n  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,\n    #004dff;\n  /* background color */\n  color: #0000;\n  border: none;\n  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));\n  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),\n    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;\n  outline-offset: .1em;\n  transition: 0.3s;\n}\n\n.button-92:hover,\n.button-92:focus-visible {\n  --_p: 0%;\n  --_i: 1;\n}\n\n.button-92:active {\n  text-shadow: none;\n  color: var(--c);\n  box-shadow: inset 0 0 9e9q #0005;\n  transition: 0s;\n}\n\n.button-92 {\n  font-weight: bold;\n  font-size: 2rem;\n  margin: 0;\n  cursor: pointer;\n  padding: .1em .3em;\n}\n        \n</style>",
+    "tags": [
+      "button",
+      "css",
+      "css-button",
+      "aqfox"
+    ],
+    "dependencies": []
+  }
+]

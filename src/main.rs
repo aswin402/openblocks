@@ -99,6 +99,10 @@ async fn main() -> Result<()> {
             tracing::info!("Seeding database with HeroUI React components...");
             let heroui_count = db.seed_from_file("data/heroui_components.json")?;
             eprintln!("Seeded {} HeroUI React components", heroui_count);
+
+            tracing::info!("Seeding database with CSS button components...");
+            let css_button_count = db.seed_from_file("data/css_buttons.json")?;
+            eprintln!("Seeded {} CSS button components", css_button_count);
         }
         Commands::Stats => {
             let stats = db.get_stats()?;

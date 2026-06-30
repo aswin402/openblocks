@@ -51,7 +51,7 @@ cargo run --release -- stats
 
 OpenBlocks can be run in different modes:
 - `serve` (Default): Starts the MCP server on stdio transport.
-- `seed`: Seeds the database with starter components from data files (`seed_components.json`, `uiverse_components.json`, `tailblocks_components.json`, `css_text_animations.json`, `heroui_components.json`) plus built-in palettes and gradients.
+- `seed`: Seeds the database with starter components from data files (`seed_components.json`, `uiverse_components.json`, `tailblocks_components.json`, `css_text_animations.json`, `heroui_components.json`, `css_buttons.json`) plus built-in palettes and gradients.
 - `stats`: Displays database statistics (component counts, categories, frameworks).
 
 Flags:
