@@ -1,6 +1,7 @@
 use crate::db::Database;
 use crate::models::component::{NewComponent, UpdateComponent};
 use crate::models::template::NewTemplate;
+use crate::models::palette::NewPalette;
 use crate::search::SearchEngine;
 use rmcp::{tool, tool_router, tool_handler, ServerHandler};
 use rmcp::model::{CallToolResult, Content, ErrorData};
@@ -100,6 +101,18 @@ struct ExportInput {
     category: Option<String>,
     /// Filter by framework (optional)
     framework: Option<String>,
+}
+
+#[derive(Debug, Deserialize, JsonSchema)]
+struct GetPaletteInput {
+    /// Palette UUID
+    id: String,
+}
+
+#[derive(Debug, Deserialize, JsonSchema)]
+struct DeletePaletteInput {
+    /// Palette UUID to delete
+    id: String,
 }
 
 // --- MCP Tool Router ---
@@ -409,6 +422,70 @@ impl OpenBlocksServer {
                     }
                     Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
                 }
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    // --- Color Palette Tools (Inspired by Color Hunt) ---
+
+    #[tool(description = "List all available color palettes stored in the library.")]
+    async fn list_palettes(&self) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.list_palettes() {
+            Ok(palettes) => {
+                let json = serde_json::to_string_pretty(&palettes).unwrap();
+                Ok(CallToolResult::success(vec![Content::text(json)]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Get details of a single color palette by its ID.")]
+    async fn get_palette(&self, Parameters(input): Parameters<GetPaletteInput>) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.get_palette(&input.id) {
+            Ok(palette) => {
+                let json = serde_json::to_string_pretty(&palette).unwrap();
+                Ok(CallToolResult::success(vec![Content::text(json)]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Add a new color palette to the library. Provide a name, exactly 4 hex color codes, and descriptive tags (e.g. ['dark', 'pastel', 'warm', 'nordic']).")]
+    async fn add_palette(&self, Parameters(input): Parameters<NewPalette>) -> Result<CallToolResult, ErrorData> {
+        if let Err(e) = input.validate() {
+            return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
+        }
+        let db = self.inner.db.lock().unwrap();
+        match db.insert_palette(&input) {
+            Ok(palette) => {
+                let response = serde_json::json!({
+                    "id": palette.id,
+                    "name": palette.name,
+                    "message": "Palette added successfully"
+                });
+                Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::to_string_pretty(&response).unwrap()
+                )]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Delete a color palette from the library by its ID.")]
+    async fn delete_palette(&self, Parameters(input): Parameters<DeletePaletteInput>) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.delete_palette(&input.id) {
+            Ok(()) => {
+                let response = serde_json::json!({
+                    "id": input.id,
+                    "message": "Palette deleted successfully"
+                });
+                Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::to_string_pretty(&response).unwrap()
+                )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }

@@ -83,15 +83,22 @@ async fn main() -> Result<()> {
             tracing::info!("Seeding database with starter components...");
             let count = db.seed_from_file("data/seed_components.json")?;
             eprintln!("Seeded {} components", count);
+
+            tracing::info!("Seeding database with default color palettes...");
+            let palette_count = db.seed_popular_palettes()?;
+            eprintln!("Seeded {} color palettes", palette_count);
         }
         Commands::Stats => {
             let stats = db.get_stats()?;
+            let palettes = db.list_palettes().unwrap_or_default();
             eprintln!("OpenBlocks Library Statistics:");
             eprintln!("  Components: {}", stats.total_components);
             eprintln!("  Templates:  {}", stats.total_templates);
+            eprintln!("  Palettes:   {}", palettes.len());
             eprintln!("  Categories: {}", stats.categories.len());
             eprintln!("  Frameworks: {}", stats.frameworks.len());
         }
+
     }
 
     Ok(())

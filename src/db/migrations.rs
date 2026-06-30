@@ -47,5 +47,16 @@ pub fn get_migrations() -> Migrations<'static> {
             CREATE INDEX IF NOT EXISTS idx_component_versions_cid ON component_versions(component_id);
             CREATE INDEX IF NOT EXISTS idx_templates_name ON templates(name);
         "#),
+        // Migration 2: Add palettes table
+        M::up(r#"
+            CREATE TABLE IF NOT EXISTS palettes (
+                id              TEXT PRIMARY KEY NOT NULL,
+                name            TEXT NOT NULL,
+                colors          TEXT NOT NULL DEFAULT '[]',
+                tags            TEXT NOT NULL DEFAULT '[]',
+                created_at      TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS idx_palettes_name ON palettes(name);
+        "#),
     ])
 }
