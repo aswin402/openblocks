@@ -3,11 +3,13 @@ pub mod migrations;
 pub mod components;
 pub mod templates;
 pub mod palettes;
+pub mod gradients;
 
 use crate::error::Result;
 use crate::models::component::{Component, NewComponent, UpdateComponent};
 use crate::models::template::{Template, NewTemplate};
 use crate::models::palette::{Palette, NewPalette};
+use crate::models::gradient::{Gradient, NewGradient};
 use crate::models::{Stats, CategoryCount, FrameworkCount};
 use rusqlite::{Connection, params};
 
@@ -203,5 +205,26 @@ impl Database {
 
     pub fn seed_popular_palettes(&self) -> Result<usize> {
         palettes::seed_popular_palettes(&self.conn)
+    }
+
+    // Gradient Delegation
+    pub fn insert_gradient(&self, new: &NewGradient) -> Result<Gradient> {
+        gradients::insert_gradient(&self.conn, new)
+    }
+
+    pub fn get_gradient(&self, id: &str) -> Result<Gradient> {
+        gradients::get_gradient(&self.conn, id)
+    }
+
+    pub fn list_gradients(&self) -> Result<Vec<Gradient>> {
+        gradients::list_gradients(&self.conn)
+    }
+
+    pub fn delete_gradient(&self, id: &str) -> Result<()> {
+        gradients::delete_gradient(&self.conn, id)
+    }
+
+    pub fn seed_popular_gradients(&self) -> Result<usize> {
+        gradients::seed_popular_gradients(&self.conn)
     }
 }

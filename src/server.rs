@@ -2,6 +2,7 @@ use crate::db::Database;
 use crate::models::component::{NewComponent, UpdateComponent};
 use crate::models::template::NewTemplate;
 use crate::models::palette::NewPalette;
+use crate::models::gradient::NewGradient;
 use crate::search::SearchEngine;
 use rmcp::{tool, tool_router, tool_handler, ServerHandler};
 use rmcp::model::{CallToolResult, Content, ErrorData};
@@ -112,6 +113,18 @@ struct GetPaletteInput {
 #[derive(Debug, Deserialize, JsonSchema)]
 struct DeletePaletteInput {
     /// Palette UUID to delete
+    id: String,
+}
+
+#[derive(Debug, Deserialize, JsonSchema)]
+struct GetGradientInput {
+    /// Gradient UUID
+    id: String,
+}
+
+#[derive(Debug, Deserialize, JsonSchema)]
+struct DeleteGradientInput {
+    /// Gradient UUID to delete
     id: String,
 }
 
@@ -482,6 +495,70 @@ impl OpenBlocksServer {
                 let response = serde_json::json!({
                     "id": input.id,
                     "message": "Palette deleted successfully"
+                });
+                Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::to_string_pretty(&response).unwrap()
+                )]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    // --- Color Gradient Tools (Inspired by Coolors Gradients) ---
+
+    #[tool(description = "List all available color gradients stored in the library.")]
+    async fn list_gradients(&self) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.list_gradients() {
+            Ok(gradients) => {
+                let json = serde_json::to_string_pretty(&gradients).unwrap();
+                Ok(CallToolResult::success(vec![Content::text(json)]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Get details of a single color gradient by its ID.")]
+    async fn get_gradient(&self, Parameters(input): Parameters<GetGradientInput>) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.get_gradient(&input.id) {
+            Ok(gradient) => {
+                let json = serde_json::to_string_pretty(&gradient).unwrap();
+                Ok(CallToolResult::success(vec![Content::text(json)]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Add a new color gradient to the library. Provide a name, CSS description string (e.g. 'linear-gradient(90deg, #ff007f 0%, #7f00ff 100%)'), and list of hex color codes.")]
+    async fn add_gradient(&self, Parameters(input): Parameters<NewGradient>) -> Result<CallToolResult, ErrorData> {
+        if let Err(e) = input.validate() {
+            return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
+        }
+        let db = self.inner.db.lock().unwrap();
+        match db.insert_gradient(&input) {
+            Ok(gradient) => {
+                let response = serde_json::json!({
+                    "id": gradient.id,
+                    "name": gradient.name,
+                    "message": "Gradient added successfully"
+                });
+                Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::to_string_pretty(&response).unwrap()
+                )]))
+            }
+            Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
+        }
+    }
+
+    #[tool(description = "Delete a color gradient from the library by its ID.")]
+    async fn delete_gradient(&self, Parameters(input): Parameters<DeleteGradientInput>) -> Result<CallToolResult, ErrorData> {
+        let db = self.inner.db.lock().unwrap();
+        match db.delete_gradient(&input.id) {
+            Ok(()) => {
+                let response = serde_json::json!({
+                    "id": input.id,
+                    "message": "Gradient deleted successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
                     serde_json::to_string_pretty(&response).unwrap()

@@ -87,17 +87,24 @@ async fn main() -> Result<()> {
             tracing::info!("Seeding database with default color palettes...");
             let palette_count = db.seed_popular_palettes()?;
             eprintln!("Seeded {} color palettes", palette_count);
+
+            tracing::info!("Seeding database with default color gradients...");
+            let gradient_count = db.seed_popular_gradients()?;
+            eprintln!("Seeded {} color gradients", gradient_count);
         }
         Commands::Stats => {
             let stats = db.get_stats()?;
             let palettes = db.list_palettes().unwrap_or_default();
+            let gradients = db.list_gradients().unwrap_or_default();
             eprintln!("OpenBlocks Library Statistics:");
             eprintln!("  Components: {}", stats.total_components);
             eprintln!("  Templates:  {}", stats.total_templates);
             eprintln!("  Palettes:   {}", palettes.len());
+            eprintln!("  Gradients:  {}", gradients.len());
             eprintln!("  Categories: {}", stats.categories.len());
             eprintln!("  Frameworks: {}", stats.frameworks.len());
         }
+
 
     }
 

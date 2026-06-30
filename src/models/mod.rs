@@ -2,11 +2,13 @@ pub mod component;
 pub mod enums;
 pub mod template;
 pub mod palette;
+pub mod gradient;
 
 pub use component::*;
 pub use enums::*;
 pub use template::*;
 pub use palette::*;
+pub use gradient::*;
 
 use serde::Serialize;
 

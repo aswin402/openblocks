@@ -58,5 +58,17 @@ pub fn get_migrations() -> Migrations<'static> {
             );
             CREATE INDEX IF NOT EXISTS idx_palettes_name ON palettes(name);
         "#),
+        // Migration 3: Add gradients table
+        M::up(r#"
+            CREATE TABLE IF NOT EXISTS gradients (
+                id              TEXT PRIMARY KEY NOT NULL,
+                name            TEXT NOT NULL,
+                css             TEXT NOT NULL,
+                colors          TEXT NOT NULL DEFAULT '[]',
+                tags            TEXT NOT NULL DEFAULT '[]',
+                created_at      TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS idx_gradients_name ON gradients(name);
+        "#),
     ])
 }
