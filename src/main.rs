@@ -103,6 +103,22 @@ async fn main() -> Result<()> {
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
+
+            tracing::info!("Seeding database with CSS box shadow components...");
+            let shadow_count = db.seed_from_file("data/css_shadows.json")?;
+            eprintln!("Seeded {} CSS box shadow components", shadow_count);
+
+            tracing::info!("Seeding database with CSS checkbox components...");
+            let checkbox_count = db.seed_from_file("data/css_checkboxes.json")?;
+            eprintln!("Seeded {} CSS checkbox components", checkbox_count);
+
+            tracing::info!("Seeding database with CSS radio button components...");
+            let radio_count = db.seed_from_file("data/css_radios.json")?;
+            eprintln!("Seeded {} CSS radio button components", radio_count);
+
+            tracing::info!("Seeding database with CSS shape components...");
+            let shape_count = db.seed_from_file("data/css_shapes.json")?;
+            eprintln!("Seeded {} CSS shape components", shape_count);
         }
         Commands::Stats => {
             let stats = db.get_stats()?;

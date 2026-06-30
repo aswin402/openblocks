@@ -1,0 +1,1442 @@
+[
+  {
+    "name": "CSS Box Shadow 1: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-1\">Shadow 1</div>\n<style>\n/* Shadow 1 */\n.shadow-1 {\n  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 2: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 7px 29px 0 rgba(100,100,111,.2)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-2\">Shadow 2</div>\n<style>\n/* Shadow 2 */\n.shadow-2 {\n  box-shadow: 0 7px 29px 0 rgba(100,100,111,.2);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 3: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0,0,0,.15) 1.95px 1.95px 2.6px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-3\">Shadow 3</div>\n<style>\n/* Shadow 3 */\n.shadow-3 {\n  box-shadow: rgba(0,0,0,.15) 1.95px 1.95px 2.6px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 4: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-4\">Shadow 4</div>\n<style>\n/* Shadow 4 */\n.shadow-4 {\n  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 5: 3drops",
+    "description": "A CSS box shadow example by 3drops with box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-5\">Shadow 5</div>\n<style>\n/* Shadow 5 */\n.shadow-5 {\n  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "3drops",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 6: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-6\">Shadow 6</div>\n<style>\n/* Shadow 6 */\n.shadow-6 {\n  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 7: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 2px 8px 0 rgba(99,99,99,.2)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-7\">Shadow 7</div>\n<style>\n/* Shadow 7 */\n.shadow-7 {\n  box-shadow: 0 2px 8px 0 rgba(99,99,99,.2);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 8: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, #333 0 0 0 3px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-8\">Shadow 8</div>\n<style>\n/* Shadow 8 */\n.shadow-8 {\n  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px, #333 0 0 0 3px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 9: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-9\">Shadow 9</div>\n<style>\n/* Shadow 9 */\n.shadow-9 {\n  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 10: Sketch",
+    "description": "A CSS box shadow example by Sketch with box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-10\">Shadow 10</div>\n<style>\n/* Shadow 10 */\n.shadow-10 {\n  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "sketch",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 11: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-11\">Shadow 11</div>\n<style>\n/* Shadow 11 */\n.shadow-11 {\n  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, .09) 0px -3px 5px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 12: Sketch",
+    "description": "A CSS box shadow example by Sketch with box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-12\">Shadow 12</div>\n<style>\n/* Shadow 12 */\n.shadow-12 {\n  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "sketch",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 13: Sketch",
+    "description": "A CSS box shadow example by Sketch with box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-13\">Shadow 13</div>\n<style>\n/* Shadow 13 */\n.shadow-13 {\n  box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "sketch",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 14: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-14\">Shadow 14</div>\n<style>\n/* Shadow 14 */\n.shadow-14 {\n  box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 15: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px,...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-15\">Shadow 15</div>\n<style>\n/* Shadow 15 */\n.shadow-15 {\n  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 16: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-16\">Shadow 16</div>\n<style>\n/* Shadow 16 */\n.shadow-16 {\n  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 17: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-17\">Shadow 17</div>\n<style>\n/* Shadow 17 */\n.shadow-17 {\n  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 18: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: 0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-18\">Shadow 18</div>\n<style>\n/* Shadow 18 */\n.shadow-18 {\n  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 19: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-19\">Shadow 19</div>\n<style>\n/* Shadow 19 */\n.shadow-19 {\n  box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 20: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: 0 2px 5px -1px rgba(50,50,93,.25), 0 1px 3px -1px rgba(0,0,0,.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-20\">Shadow 20</div>\n<style>\n/* Shadow 20 */\n.shadow-20 {\n  box-shadow: 0 2px 5px -1px rgba(50,50,93,.25), 0 1px 3px -1px rgba(0,0,0,.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 21: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: 0 20px 30px -10px #26394d...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-21\">Shadow 21</div>\n<style>\n/* Shadow 21 */\n.shadow-21 {\n  box-shadow: 0 20px 30px -10px #26394d;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 22: Stripe",
+    "description": "A CSS box shadow example by Stripe with box-shadow: 0 0 0 2px rgba(6,24,44,.4), 0 4px 6px -1px rgba(6,24,44,.65), inset 0 1px 0 hsla...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-22\">Shadow 22</div>\n<style>\n/* Shadow 22 */\n.shadow-22 {\n  box-shadow: 0 0 0 2px rgba(6,24,44,.4), 0 4px 6px -1px rgba(6,24,44,.65), inset 0 1px 0 hsla(0,0%,100%,.08);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "stripe",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 23: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 6px 12px -2px rgba(50,50,93,0.25),0 3px 7px -3px rgba(0,0,0,0.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-23\">Shadow 23</div>\n<style>\n/* Shadow 23 */\n.shadow-23 {\n  box-shadow: 0 6px 12px -2px rgba(50,50,93,0.25),0 3px 7px -3px rgba(0,0,0,0.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 24: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-24\">Shadow 24</div>\n<style>\n/* Shadow 24 */\n.shadow-24 {\n  box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 25: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 30px 60px -12px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-25\">Shadow 25</div>\n<style>\n/* Shadow 25 */\n.shadow-25 {\n  box-shadow: 0 30px 60px -12px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 26: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: inset 0 30px 60px -12px rgba(50,50,93,0.25),inset 0 18px 36px -18px rgba(0,0,0,0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-26\">Shadow 26</div>\n<style>\n/* Shadow 26 */\n.shadow-26 {\n  box-shadow: inset 0 30px 60px -12px rgba(50,50,93,0.25),inset 0 18px 36px -18px rgba(0,0,0,0.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 27: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-27\">Shadow 27</div>\n<style>\n/* Shadow 27 */\n.shadow-27 {\n  box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25),0 30px 60px -30px rgba(0,0,0,0.3);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 28: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-28\">Shadow 28</div>\n<style>\n/* Shadow 28 */\n.shadow-28 {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 29: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-29\">Shadow 29</div>\n<style>\n/* Shadow 29 */\n.shadow-29 {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 30: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-30\">Shadow 30</div>\n<style>\n/* Shadow 30 */\n.shadow-30 {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 31: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-31\">Shadow 31</div>\n<style>\n/* Shadow 31 */\n.shadow-31 {\n  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 32: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-32\">Shadow 32</div>\n<style>\n/* Shadow 32 */\n.shadow-32 {\n  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 33: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 6px 2px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-33\">Shadow 33</div>\n<style>\n/* Shadow 33 */\n.shadow-33 {\n  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 6px 2px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 34: Material",
+    "description": "A CSS box shadow example by Material with box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-34\">Shadow 34</div>\n<style>\n/* Shadow 34 */\n.shadow-34 {\n  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "material",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 35: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-35\">Shadow 35</div>\n<style>\n/* Shadow 35 */\n.shadow-35 {\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 36: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-36\">Shadow 36</div>\n<style>\n/* Shadow 36 */\n.shadow-36 {\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 37: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-37\">Shadow 37</div>\n<style>\n/* Shadow 37 */\n.shadow-37 {\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 38: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-38\">Shadow 38</div>\n<style>\n/* Shadow 38 */\n.shadow-38 {\n  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 39: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-39\">Shadow 39</div>\n<style>\n/* Shadow 39 */\n.shadow-39 {\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 40: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-40\">Shadow 40</div>\n<style>\n/* Shadow 40 */\n.shadow-40 {\n  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 41: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-41\">Shadow 41</div>\n<style>\n/* Shadow 41 */\n.shadow-41 {\n  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 42: Tailwind CSS",
+    "description": "A CSS box shadow example by Tailwind CSS with box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-42\">Shadow 42</div>\n<style>\n/* Shadow 42 */\n.shadow-42 {\n  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tailwind-css",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 43: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1),0 0 1px 0 rgba(0, 0, 0, 0.1)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-43\">Shadow 43</div>\n<style>\n/* Shadow 43 */\n.shadow-43 {\n  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1),0 0 1px 0 rgba(0, 0, 0, 0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 44: Tobias Ahlin",
+    "description": "A CSS box shadow example by Tobias Ahlin with box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-44\">Shadow 44</div>\n<style>\n/* Shadow 44 */\n.shadow-44 {\n  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tobias-ahlin",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 45: Tobias Ahlin",
+    "description": "A CSS box shadow example by Tobias Ahlin with box-shadow: 0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-45\">Shadow 45</div>\n<style>\n/* Shadow 45 */\n.shadow-45 {\n  box-shadow: 0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "tobias-ahlin",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 46: feedback.fish",
+    "description": "A CSS box shadow example by feedback.fish with box-shadow: rgba(0, 0, 0, 0.2) 0 18px 50px -10px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-46\">Shadow 46</div>\n<style>\n/* Shadow 46 */\n.shadow-46 {\n  box-shadow: rgba(0, 0, 0, 0.2) 0 18px 50px -10px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "feedback-fish",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 47: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-47\">Shadow 47</div>\n<style>\n/* Shadow 47 */\n.shadow-47 {\n  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 48: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.04) 0 3px 5px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-48\">Shadow 48</div>\n<style>\n/* Shadow 48 */\n.shadow-48 {\n  box-shadow: rgba(0, 0, 0, 0.04) 0 3px 5px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 49: Alligator",
+    "description": "A CSS box shadow example by Alligator with box-shadow: -5px 5px rgba(240, 46, 170, 0.4), -10px 10px rgba(240, 46, 170, 0.3), -15px 15px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-49\">Shadow 49</div>\n<style>\n/* Shadow 49 */\n.shadow-49 {\n  box-shadow: -5px 5px rgba(240, 46, 170, 0.4), -10px 10px rgba(240, 46, 170, 0.3), -15px 15px rgba(240, 46, 170, 0.2), -20px 20px rgba(240, 46, 170, 0.1), -25px 25px rgba(240, 46, 170, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "alligator",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 50: Alligator",
+    "description": "A CSS box shadow example by Alligator with box-shadow: 0 5px rgba(240, 46, 170, 0.4), 0 10px rgba(240, 46, 170, 0.3), 0 15px rgba(240, ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-50\">Shadow 50</div>\n<style>\n/* Shadow 50 */\n.shadow-50 {\n  box-shadow: 0 5px rgba(240, 46, 170, 0.4), 0 10px rgba(240, 46, 170, 0.3), 0 15px rgba(240, 46, 170, 0.2), 0 20px rgba(240, 46, 170, 0.1), 0 25px rgba(240, 46, 170, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "alligator",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 51: Alligator",
+    "description": "A CSS box shadow example by Alligator with box-shadow: 5px 5px rgba(240, 46, 170, 0.4), 10px 10px rgba(240, 46, 170, 0.3), 15px 15px rg...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-51\">Shadow 51</div>\n<style>\n/* Shadow 51 */\n.shadow-51 {\n  box-shadow: 5px 5px rgba(240, 46, 170, 0.4), 10px 10px rgba(240, 46, 170, 0.3), 15px 15px rgba(240, 46, 170, 0.2), 20px 20px rgba(240, 46, 170, 0.1), 25px 25px rgba(240, 46, 170, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "alligator",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 52: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-52\">Shadow 52</div>\n<style>\n/* Shadow 52 */\n.shadow-52 {\n  box-shadow: rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07) 0 4px 4px, rgba(0, 0, 0, 0.07) 0 8px 8px, rgba(0, 0, 0, 0.07) 0 16px 16px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 53: pqina.nl/doka",
+    "description": "A CSS box shadow example by pqina.nl/doka with box-shadow: rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-53\">Shadow 53</div>\n<style>\n/* Shadow 53 */\n.shadow-53 {\n  box-shadow: rgba(67, 71, 85, 0.27) 0 0 .25em, rgba(90, 125, 188, 0.05) 0 .25em 1em;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "pqina-nl-doka",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 54: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0,0,0,.1) 0 1px 2px 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-54\">Shadow 54</div>\n<style>\n/* Shadow 54 */\n.shadow-54 {\n  box-shadow: rgba(0,0,0,.1) 0 1px 2px 0;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 55: Github",
+    "description": "A CSS box shadow example by Github with box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-55\">Shadow 55</div>\n<style>\n/* Shadow 55 */\n.shadow-55 {\n  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "github",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 56: Github",
+    "description": "A CSS box shadow example by Github with box-shadow: rgba(3, 102, 214, 0.3) 0 0 0 3px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-56\">Shadow 56</div>\n<style>\n/* Shadow 56 */\n.shadow-56 {\n  box-shadow: rgba(3, 102, 214, 0.3) 0 0 0 3px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "github",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 57: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-57\">Shadow 57</div>\n<style>\n/* Shadow 57 */\n.shadow-57 {\n  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0, rgba(14, 30, 37, 0.32) 0 2px 16px 0;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 58: Facebook",
+    "description": "A CSS box shadow example by Facebook with box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-58\">Shadow 58</div>\n<style>\n/* Shadow 58 */\n.shadow-58 {\n  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2),0 2px 4px 0 rgba(0, 0, 0, 0.1),inset 0 0 0 1px rgba(255, 255, 255, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "facebook",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 59: Shopify",
+    "description": "A CSS box shadow example by Shopify with box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-59\">Shadow 59</div>\n<style>\n/* Shadow 59 */\n.shadow-59 {\n  box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "shopify",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 60: Shopify",
+    "description": "A CSS box shadow example by Shopify with box-shadow: rgba(33, 35, 38, 0.1) 0 10px 10px -10px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-60\">Shadow 60</div>\n<style>\n/* Shadow 60 */\n.shadow-60 {\n  box-shadow: rgba(33, 35, 38, 0.1) 0 10px 10px -10px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "shopify",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 61: Fossheim",
+    "description": "A CSS box shadow example by Fossheim with box-shadow: inset blue 0 0 0 2px, 10px -10px 0 -3px #fff, 10px -10px #1FC11B, 20px -20px 0 -...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-61\">Shadow 61</div>\n<style>\n/* Shadow 61 */\n.shadow-61 {\n  box-shadow: inset blue 0 0 0 2px, 10px -10px 0 -3px #fff, 10px -10px #1FC11B, 20px -20px 0 -3px #fff, 20px -20px #FFD913, 30px -30px 0 -3px #fff, 30px -30px #FF9C55, 40px -40px 0 -3px #fff, 40px -40px #FF5555;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "fossheim",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 62: Fossheim",
+    "description": "A CSS box shadow example by Fossheim with box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-62\">Shadow 62</div>\n<style>\n/* Shadow 62 */\n.shadow-62 {\n  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "fossheim",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 63: boxshadows.com",
+    "description": "A CSS box shadow example by boxshadows.com with box-shadow: 3px 3px 6px 0px #CCDBE8 inset, -3px -3px 6px 1px rgba(255,255,255,0.5) inset...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-63\">Shadow 63</div>\n<style>\n/* Shadow 63 */\n.shadow-63 {\n  box-shadow: 3px 3px 6px 0px #CCDBE8 inset, -3px -3px 6px 1px rgba(255,255,255,0.5) inset;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "boxshadows-com",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 64: boxshadows.com",
+    "description": "A CSS box shadow example by boxshadows.com with box-shadow: 6px 2px 16px 0px rgba(136, 165, 191, 0.48) , -6px -2px 16px 0px rgba(255, 255, 2...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-64\">Shadow 64</div>\n<style>\n/* Shadow 64 */\n.shadow-64 {\n  box-shadow: 6px 2px 16px 0px rgba(136, 165, 191, 0.48) , -6px -2px 16px 0px rgba(255, 255, 255, 0.8);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "boxshadows-com",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 65: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 1px 0px rgba(17,17,26,0.1)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-65\">Shadow 65</div>\n<style>\n/* Shadow 65 */\n.shadow-65 {\n  box-shadow: 0px 1px 0px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 66: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-66\">Shadow 66</div>\n<style>\n/* Shadow 66 */\n.shadow-66 {\n  box-shadow: 0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 67: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 0px 16px rgba(17,17,26,0.1)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-67\">Shadow 67</div>\n<style>\n/* Shadow 67 */\n.shadow-67 {\n  box-shadow: 0px 0px 16px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 68: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 4px 16px rgba(17,17,26,0.05), 0px 8px 32px rgba(17,17,26,0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-68\">Shadow 68</div>\n<style>\n/* Shadow 68 */\n.shadow-68 {\n  box-shadow: 0px 4px 16px rgba(17,17,26,0.05), 0px 8px 32px rgba(17,17,26,0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 69: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-69\">Shadow 69</div>\n<style>\n/* Shadow 69 */\n.shadow-69 {\n  box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 70: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 1px 0px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 48px r...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-70\">Shadow 70</div>\n<style>\n/* Shadow 70 */\n.shadow-70 {\n  box-shadow: 0px 1px 0px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 48px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 71: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-71\">Shadow 71</div>\n<style>\n/* Shadow 71 */\n.shadow-71 {\n  box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 72: box-shadows.co",
+    "description": "A CSS box shadow example by box-shadows.co with box-shadow: 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1), 0px 24px 80px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-72\">Shadow 72</div>\n<style>\n/* Shadow 72 */\n.shadow-72 {\n  box-shadow: 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1), 0px 24px 80px rgba(17,17,26,0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "box-shadows-co",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 73: 10er.app",
+    "description": "A CSS box shadow example by 10er.app with box-shadow: rgba(50, 50, 105, 0.15) 0 2px 5px 0, rgba(0, 0, 0, 0.05) 0 1px 1px 0...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-73\">Shadow 73</div>\n<style>\n/* Shadow 73 */\n.shadow-73 {\n  box-shadow: rgba(50, 50, 105, 0.15) 0 2px 5px 0, rgba(0, 0, 0, 0.05) 0 1px 1px 0;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "10er-app",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 74: wip.chat",
+    "description": "A CSS box shadow example by wip.chat with box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15),0 5px 10px rgba(0, 0, 0, 0.05)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-74\">Shadow 74</div>\n<style>\n/* Shadow 74 */\n.shadow-74 {\n  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15),0 5px 10px rgba(0, 0, 0, 0.05);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "wip-chat",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 75: Unknown",
+    "description": "A CSS box shadow example by Unknown with box-shadow: rgba(0,0,0,.15) 2.4px 2.4px 3.2px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-75\">Shadow 75</div>\n<style>\n/* Shadow 75 */\n.shadow-75 {\n  box-shadow: rgba(0,0,0,.15) 2.4px 2.4px 3.2px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "unknown",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 76: Airbnb",
+    "description": "A CSS box shadow example by Airbnb with box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-76\">Shadow 76</div>\n<style>\n/* Shadow 76 */\n.shadow-76 {\n  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "airbnb",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 77: Airbnb",
+    "description": "A CSS box shadow example by Airbnb with box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-77\">Shadow 77</div>\n<style>\n/* Shadow 77 */\n.shadow-77 {\n  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "airbnb",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 78: Airbnb",
+    "description": "A CSS box shadow example by Airbnb with box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-78\">Shadow 78</div>\n<style>\n/* Shadow 78 */\n.shadow-78 {\n  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "airbnb",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 79: Airbnb",
+    "description": "A CSS box shadow example by Airbnb with box-shadow: rgba(0, 0, 0, 0.18) 0 2px 4px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-79\">Shadow 79</div>\n<style>\n/* Shadow 79 */\n.shadow-79 {\n  box-shadow: rgba(0, 0, 0, 0.18) 0 2px 4px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "airbnb",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 80: ls.graphics",
+    "description": "A CSS box shadow example by ls.graphics with box-shadow: -4px 9px 25px -6px rgba(0,0,0,.1)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-80\">Shadow 80</div>\n<style>\n/* Shadow 80 */\n.shadow-80 {\n  box-shadow: -4px 9px 25px -6px rgba(0,0,0,.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "ls-graphics",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 81: ls.graphics",
+    "description": "A CSS box shadow example by ls.graphics with box-shadow: 0 60px 40px -7px rgba(0,0,0,.2)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-81\">Shadow 81</div>\n<style>\n/* Shadow 81 */\n.shadow-81 {\n  box-shadow: 0 60px 40px -7px rgba(0,0,0,.2);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "ls-graphics",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 82: Lonely Planet",
+    "description": "A CSS box shadow example by Lonely Planet with box-shadow: 0 30px 90px rgba(0,0,0,0.4)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-82\">Shadow 82</div>\n<style>\n/* Shadow 82 */\n.shadow-82 {\n  box-shadow: 0 30px 90px rgba(0,0,0,0.4);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "lonely-planet",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 83: Mac",
+    "description": "A CSS box shadow example by Mac with box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-83\">Shadow 83</div>\n<style>\n/* Shadow 83 */\n.shadow-83 {\n  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "mac",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 84: Mac",
+    "description": "A CSS box shadow example by Mac with box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-84\">Shadow 84</div>\n<style>\n/* Shadow 84 */\n.shadow-84 {\n  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "mac",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 85: Mac",
+    "description": "A CSS box shadow example by Mac with box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-85\">Shadow 85</div>\n<style>\n/* Shadow 85 */\n.shadow-85 {\n  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "mac",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 86: pqina.nl/doka",
+    "description": "A CSS box shadow example by pqina.nl/doka with box-shadow: 0 .0625em .0625em rgba(0, 0, 0, 0.25), 0 .125em .5em rgba(0, 0, 0, 0.25), inset ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-86\">Shadow 86</div>\n<style>\n/* Shadow 86 */\n.shadow-86 {\n  box-shadow: 0 .0625em .0625em rgba(0, 0, 0, 0.25), 0 .125em .5em rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.1);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "pqina-nl-doka",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 87: Typedream",
+    "description": "A CSS box shadow example by Typedream with box-shadow: rgba(0,0,0,0.09) 0px 3px 12px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-87\">Shadow 87</div>\n<style>\n/* Shadow 87 */\n.shadow-87 {\n  box-shadow: rgba(0,0,0,0.09) 0px 3px 12px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "typedream",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 88: Unknown",
+    "description": "A CSS box shadow example by Unknown with box-shadow: inset 0px -23px 25px 0 rgba(0, 0, 0, .17), inset 0 -36px 30px 0px rgba(0, 0, 0, ...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-88\">Shadow 88</div>\n<style>\n/* Shadow 88 */\n.shadow-88 {\n  box-shadow: inset 0px -23px 25px 0 rgba(0, 0, 0, .17), inset 0 -36px 30px 0px rgba(0, 0, 0, .15) ,inset 0 -79px 40px 0px rgba(0, 0, 0, .1), rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "unknown",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 89: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-89\">Shadow 89</div>\n<style>\n/* Shadow 89 */\n.shadow-89 {\n  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 90: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0px 2px 4px rgba(0, 0, 0, .4), 0px 7px 13px -3px rgba(0, 0, 0, .3), inset 0px -3...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-90\">Shadow 90</div>\n<style>\n/* Shadow 90 */\n.shadow-90 {\n  box-shadow: 0px 2px 4px rgba(0, 0, 0, .4), 0px 7px 13px -3px rgba(0, 0, 0, .3), inset 0px -3px 0px rgba(0, 0, 0, .2);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 91: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), inset rgb(209, 213, 219) 0 0 0 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-91\">Shadow 91</div>\n<style>\n/* Shadow 91 */\n.shadow-91 {\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), inset rgb(209, 213, 219) 0 0 0 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 92: CSS Scan",
+    "description": "A CSS box shadow example by CSS Scan with box-shadow: inset 0px -50px 36px -28px rgba(0,0,0,0.35)...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-92\">Shadow 92</div>\n<style>\n/* Shadow 92 */\n.shadow-92 {\n  box-shadow: inset 0px -50px 36px -28px rgba(0,0,0,0.35);\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "css-scan",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 93: Trello",
+    "description": "A CSS box shadow example by Trello with box-shadow: rgba(9, 30, 66, 0.25) 0 1px 1px, rgba(9, 30, 66, 0.13) 0 0 1px 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-93\">Shadow 93</div>\n<style>\n/* Shadow 93 */\n.shadow-93 {\n  box-shadow: rgba(9, 30, 66, 0.25) 0 1px 1px, rgba(9, 30, 66, 0.13) 0 0 1px 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "trello",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 94: Trello",
+    "description": "A CSS box shadow example by Trello with box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-94\">Shadow 94</div>\n<style>\n/* Shadow 94 */\n.shadow-94 {\n  box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "trello",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 95: Antimetal",
+    "description": "A CSS box shadow example by Antimetal with box-shadow: 0 0 0 1px #0e3f7e0a,0 1px 1px -.5px #2a33450a,0 3px 3px -1.5px #2a33460a,0 6px 6...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-95\">Shadow 95</div>\n<style>\n/* Shadow 95 */\n.shadow-95 {\n  box-shadow: 0 0 0 1px #0e3f7e0a,0 1px 1px -.5px #2a33450a,0 3px 3px -1.5px #2a33460a,0 6px 6px -3px #2a33460a,0 12px 12px -6px #0e3f7e0a,0 24px 24px -12px #0e3f7e0a;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "antimetal",
+      "shadow"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Box Shadow 96: Antimetal",
+    "description": "A CSS box shadow example by Antimetal with box-shadow: 0 0 0 1px #0e3f7e0f,0 1px 1px -.5px #2a334608,0 2px 2px -1px #2a33460a,0 3px 3px...",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shadow-96\">Shadow 96</div>\n<style>\n/* Shadow 96 */\n.shadow-96 {\n  box-shadow: 0 0 0 1px #0e3f7e0f,0 1px 1px -.5px #2a334608,0 2px 2px -1px #2a33460a,0 3px 3px -1.5px #2a33460a,0 5px 5px -2.5px #2a334608,0 10px 10px -5px #2a334608,0 24px 24px -8px #2a334608;\n}\n</style>",
+    "tags": [
+      "box-shadow",
+      "css",
+      "css-shadow",
+      "antimetal",
+      "shadow"
+    ],
+    "dependencies": []
+  }
+]

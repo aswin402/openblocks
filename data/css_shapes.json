@@ -1,0 +1,800 @@
+[
+  {
+    "name": "CSS Shape 1: Triangle Up",
+    "description": "A CSS shape: Triangle Up. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-1\"></div>\n<style>\n\n.shape-1 {\n  width: 0;\n  height: 0;\n  border-left: 25px solid transparent;\n  border-right: 25px solid transparent;\n  border-bottom: 50px solid #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-up"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 2: Triangle Down",
+    "description": "A CSS shape: Triangle Down. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-2\"></div>\n<style>\n\n.shape-2 {\n  width: 0;\n  height: 0;\n  border-left: 25px solid transparent;\n  border-right: 25px solid transparent;\n  border-top: 50px solid #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-down"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 3: Triangle Left",
+    "description": "A CSS shape: Triangle Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-3\"></div>\n<style>\n\n.shape-3 {\n  width: 0;\n  height: 0;\n  border-top: 25px solid transparent;\n  border-right: 50px solid #333;\n  border-bottom: 25px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 4: Triangle Right",
+    "description": "A CSS shape: Triangle Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-4\"></div>\n<style>\n\n.shape-4 {\n  width: 0;\n  height: 0;\n  border-top: 25px solid transparent;\n  border-left: 50px solid #333;\n  border-bottom: 25px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 5: Arrow Up",
+    "description": "A CSS shape: Arrow Up. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-5\"></div>\n<style>\n\n.shape-5 {\n  width: 33px;\n  height: 33px;\n  border: 2px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(225deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "arrow-up"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 6: Arrow Down",
+    "description": "A CSS shape: Arrow Down. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-6\"></div>\n<style>\n\n.shape-6 {\n  width: 33px;\n  height: 33px;\n  border: 2px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(45deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "arrow-down"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 7: Arrow Left",
+    "description": "A CSS shape: Arrow Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-7\"></div>\n<style>\n\n.shape-7 {\n  width: 33px;\n  height: 33px;\n  border: 2px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(135deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "arrow-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 8: Arrow Right",
+    "description": "A CSS shape: Arrow Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-8\"></div>\n<style>\n\n.shape-8 {\n  width: 33px;\n  height: 33px;\n  border: 2px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(315deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "arrow-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 9: Thick Arrow Up",
+    "description": "A CSS shape: Thick Arrow Up. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-9\"></div>\n<style>\n\n.shape-9 {\n  width: 25px;\n  height: 25px;\n  border: 10px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(225deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "thick-arrow-up"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 10: Thick Arrow Down",
+    "description": "A CSS shape: Thick Arrow Down. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-10\"></div>\n<style>\n\n.shape-10 {\n  width: 25px;\n  height: 25px;\n  border: 10px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(45deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "thick-arrow-down"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 11: Thick Arrow Left",
+    "description": "A CSS shape: Thick Arrow Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-11\"></div>\n<style>\n\n.shape-11 {\n  width: 25px;\n  height: 25px;\n  border: 10px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(135deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "thick-arrow-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 12: Thick Arrow Right",
+    "description": "A CSS shape: Thick Arrow Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-12\"></div>\n<style>\n\n.shape-12 {\n  width: 25px;\n  height: 25px;\n  border: 10px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(315deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "thick-arrow-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 13: Bubble Top",
+    "description": "A CSS shape: Bubble Top. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-13\"></div>\n<style>\n\n.shape-13 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.66);\n  background: #333;\n  border-radius: 10px;\n}\n\n.shape-13:after {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 50%;\n  width: 0;\n  height: 0;\n  border: calc(var(--size) * 0.13) solid transparent;\n  border-bottom-color: #333;\n  border-top: 0;\n  margin-left: calc(var(--size) * 0.13 * -1);\n  margin-top: calc(var(--size) * 0.13 * -1);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "bubble-top"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 14: Bubble Bottom",
+    "description": "A CSS shape: Bubble Bottom. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-14\"></div>\n<style>\n\n.shape-14 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.66);\n  background: #333;\n  border-radius: 10px;\n}\n\n.shape-14:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  left: 50%;\n  width: 0;\n  height: 0;\n  border: calc(var(--size) * 0.13) solid transparent;\n  border-top-color: #333;\n  border-bottom: 0;\n  margin-left: calc(var(--size) * 0.13 * -1);\n  margin-bottom: calc(var(--size) * 0.13 * -1);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "bubble-bottom"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 15: Bubble Left",
+    "description": "A CSS shape: Bubble Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-15\"></div>\n<style>\n\n.shape-15 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.66);\n  background: #333;\n  border-radius: 10px;\n}\n\n.shape-15:before {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: calc(var(--size) * 0.13) solid transparent;\n  border-right-color: #333;\n  border-left: 0;\n  margin-top: calc(var(--size) * 0.13 * -1);\n  margin-left: calc(var(--size) * 0.13 * -1);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "bubble-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 16: Bubble Right",
+    "description": "A CSS shape: Bubble Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-16\"></div>\n<style>\n\n.shape-16 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.66);\n  background: #333;\n  border-radius: 10px;\n}\n\n.shape-16:after {\n  content: '';\n  position: absolute;\n  right: 0;\n  top: 50%;\n  width: 0;\n  height: 0;\n  border: calc(var(--size) * 0.13) solid transparent;\n  border-left-color: #333;\n  border-right: 0;\n  margin-top: calc(var(--size) * 0.13 * -1);\n  margin-right: calc(var(--size) * 0.13 * -1);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "bubble-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 17: 5-points Star",
+    "description": "A CSS shape: 5-points Star. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-17\"></div>\n<style>\n\n.shape-17 {\n  /* Modify size here: */\n  --size: 50px;\n  --half-size: calc(var(--size) / 2);\n\n  position: relative;\n  display: block;\n  color: #333;\n  width: 0px;\n  height: 0px;\n  border-right: var(--half-size) solid transparent;\n  border-bottom: calc(var(--half-size) * 0.7) solid #333;\n  border-left: var(--half-size) solid transparent;\n  transform: rotate(35deg);\n}\n.shape-17:before {\n  border-bottom: calc(var(--half-size) * 0.8) solid #333;\n  border-left: calc(var(--half-size) * 0.3) solid transparent;\n  border-right: calc(var(--half-size) * 0.3) solid transparent;\n  position: absolute;\n  height: 0;\n  width: 0;\n  top: calc(var(--half-size) * 0.45 * -1);\n  left: calc(var(--half-size) * 0.65 * -1);\n  display: block;\n  content: '';\n  transform: rotate(-35deg);\n}\n.shape-17:after {\n  position: absolute;\n  display: block;\n  color: #333;\n  top: calc(var(--half-size) * 0.03);\n  left: calc(var(--half-size) * -1.05);\n  width: 0px;\n  height: 0px;\n  border-right: var(--half-size) solid transparent;\n  border-bottom: calc(var(--half-size) * 0.7) solid #333;\n  border-left: var(--half-size) solid transparent;\n  transform: rotate(-70deg);\n  content: '';\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "5-points-star"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 18: Heart",
+    "description": "A CSS shape: Heart. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-18\"></div>\n<style>\n\n.shape-18 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.3);\n}\n\n.shape-18:before,\n.shape-18:after {\n  position: absolute;\n  content: \"\";\n  left: calc(var(--size) * 0.55);\n  top: 0;\n  width: calc(var(--size) * 0.55);\n  height: calc(var(--size) * 0.85);\n  background: #333;\n  border-radius: calc(var(--size) * 0.55) calc(var(--size) * 0.55) 0 0;\n  transform: rotate(-45deg);\n  transform-origin: 0 100%;\n}\n\n.shape-18:after {\n  left: 0;\n  transform: rotate(45deg);\n  transform-origin: 100% 100%;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "heart"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 19: Heart with clip-path",
+    "description": "A CSS shape: Heart with clip-path. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-19\"></div>\n<style>\n\n.shape-19 {\n  display: inline-block;\n  width: 50px;\n  aspect-ratio: 1;\n  border-image: radial-gradient(#333 69%,#0000 70%) 84.5% fill/100%;\n  clip-path: polygon(-41% 0,50% 91%, 141% 0);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "heart-with-clip-path"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 20: Heart with Gradient",
+    "description": "A CSS shape: Heart with Gradient. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-20\"></div>\n<style>\n\n.shape-20 {\n  width: 50px;\n  display: inline-block;\n  -webkit-mask: \n     radial-gradient(circle at 60% 65%, red 64%, transparent 65%) top left,\n     radial-gradient(circle at 40% 65%, red 64%, transparent 65%) top right,\n     linear-gradient(to bottom left, red 43%,transparent 43%) bottom left,\n     linear-gradient(to bottom right,red 43%,transparent 43%) bottom right;\n  -webkit-mask-size: 50% 50%;\n  -webkit-mask-repeat: no-repeat;\n  mask: \n     radial-gradient(circle at 60% 65%, red 64%, transparent 65%) top left,\n     radial-gradient(circle at 40% 65%, red 64%, transparent 65%) top right,\n     linear-gradient(to bottom left, red 43%,transparent 43%) bottom left,\n     linear-gradient(to bottom right,red 43%,transparent 43%) bottom right;\n  mask-size: 50% 50%;\n  mask-repeat: no-repeat;\n  background: linear-gradient(red,blue);\n}\n\n.shape-20::before {\n  content: '';\n  display: block;\n  padding-top: 100%;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "heart-with-gradient"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 21: 12 Point Burst",
+    "description": "A CSS shape: 12 Point Burst. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-21\"></div>\n<style>\n\n.shape-21 {\n  background: #333;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  text-align: center;\n}\n.shape-21:before,\n.shape-21:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 40px;\n  width: 40px;\n  background: #333;\n}\n.shape-21:before {\n  transform: rotate(30deg);\n}\n.shape-21:after {\n  transform: rotate(60deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "12-point-burst"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 22: 8 Point Burst",
+    "description": "A CSS shape: 8 Point Burst. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-22\"></div>\n<style>\n\n.shape-22 {\n  background: #333;\n  width: 40px;\n  height: 40px;\n  position: relative;\n  text-align: center;\n  transform: rotate(20deg);\n}\n.shape-22:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 40px;\n  width: 40px;\n  background: #333;\n  transform: rotate(135deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "8-point-burst"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 23: Diamond Square",
+    "description": "A CSS shape: Diamond Square. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-23\"></div>\n<style>\n\n.shape-23 {\n  width: 0;\n  height: 0;\n  border: 25px solid transparent;\n  border-bottom-color: #333;\n  position: relative;\n  top: -25px;\n}\n.shape-23:after {\n  content: '';\n  position: absolute;\n  left: -25px;\n  top: 25px;\n  width: 0;\n  height: 0;\n  border: 25px solid transparent;\n  border-top-color: #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "diamond-square"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 24: Diamond",
+    "description": "A CSS shape: Diamond. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-24\"></div>\n<style>\n\n.shape-24 {\n  /* Modify size here: */\n  --size: 50px;\n  --quarter-size: calc(var(--size) / 4);\n\n  border-style: solid;\n  border-color: transparent transparent #333 transparent;\n  border-width: 0 var(--quarter-size) var(--quarter-size) var(--quarter-size);\n  height: 0;\n  width: calc(var(--size) / 2);\n  box-sizing: content-box;\n  position: relative;\n  margin: 0 0 calc(var(--size) / 2) 0;\n}\n.shape-24:after {\n  content: \"\";\n  position: absolute;\n  top: var(--quarter-size);\n  left: calc(var(--quarter-size) * -1);\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-color: #333 transparent transparent transparent;\n  border-width: calc(var(--size) * 0.7) calc(var(--size) / 2) 0 calc(var(--size) / 2);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "diamond"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 25: Check Mark",
+    "description": "A CSS shape: Check Mark. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-25\"></div>\n<style>\n\n.shape-25 {\n  width: 19px;\n  height: 33px;\n  border: 2px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(45deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "check-mark"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 26: Thick Check Mark",
+    "description": "A CSS shape: Thick Check Mark. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-26\"></div>\n<style>\n\n.shape-26 {\n  width: 19px;\n  height: 33px;\n  border: 10px solid #333;\n  border-left: 0;\n  border-top: 0;\n\n  transform: rotate(45deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "thick-check-mark"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 27: Triangle with Borders",
+    "description": "A CSS shape: Triangle with Borders. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-27\"></div>\n<style>\n\n.shape-27 {\n  position: relative;\n  width: 50px;\n  height: 38.6px;\n  border-left: 3px solid transparent;\n  border-bottom: 3px solid\n}\n\n.shape-27,\n.shape-27::before {\n  display: block;\n  box-sizing: border-box;\n  border-right: 3px solid transparent\n}\n\n.shape-27::before {\n  content: \"\";\n  position: absolute;\n  width: 45px;\n  height: 45px;\n  border-left: 3px solid;\n  border-top: 3px solid;\n  border-bottom: 3px solid transparent;\n  transform: rotate(45deg) skew(10deg,10deg);\n  left: -1px;\n  bottom: -25.5px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-with-borders"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 28: Cone",
+    "description": "A CSS shape: Cone. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-28\"></div>\n<style>\n\n.shape-28 {\n  width: 0;\n  height: 0;\n  border-left: 35px solid transparent;\n  border-right: 35px solid transparent;\n  border-top: 50px solid #333;\n  border-radius: 50%;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "cone"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 29: Plus",
+    "description": "A CSS shape: Plus. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-29\"></div>\n<style>\n\n.shape-29 {\n  background: #333;\n  height: 50px;\n  position: relative;\n  width: 8px;\n}\n.shape-29:after {\n  background: #333;\n  content: \"\";\n  height: 8px;\n  left: -21px;\n  position: absolute;\n  top: 21px;\n  width: 50px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "plus"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 30: Base",
+    "description": "A CSS shape: Base. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-30\"></div>\n<style>\n\n.shape-30 {\n  background: #333;\n  display: inline-block;\n  height: 27.5px;\n  position: relative;\n  width: 50px;\n}\n.shape-30:before {\n  border-bottom: 17.5px solid #333;\n  border-left: 25px solid transparent;\n  border-right: 25px solid transparent;\n  content: \"\";\n  height: 0;\n  left: 0;\n  position: absolute;\n  top: -17.5px;\n  width: 0;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "base"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 31: Yin Yang",
+    "description": "A CSS shape: Yin Yang. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-31\"></div>\n<style>\n\n.shape-31 {\n  width: 50px;\n  box-sizing: content-box;\n  height: 25px;\n  background: #fff;\n  border-color: #333;\n  border-style: solid;\n  border-width: 2px 2px 26px 2px;\n  border-radius: 100%;\n  position: relative;\n}\n.shape-31:before {\n  content: \"\";\n  position: absolute;\n  top: 50%;\n  left: 0;\n  background: #fff;\n  border: 9.4px solid #333;\n  border-radius: 100%;\n  width: 6.25px;\n  height: 6.25px;\n  box-sizing: content-box;\n}\n.shape-31:after {\n  content: \"\";\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  background: #333;\n  border: 9.4px solid #fff;\n  border-radius: 100%;\n  width: 6.25px;\n  height: 6.25px;\n  box-sizing: content-box;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "yin-yang"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 32: Octagon",
+    "description": "A CSS shape: Octagon. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-32\"></div>\n<style>\n\n.shape-32 {\n  width: 50px;\n  height: 50px;\n  background: #333;\n  position: relative;\n}\n.shape-32:before {\n  content: \"\";\n  width: 20px;\n  height: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  border-bottom: 15px solid #333;\n  border-left: 15px solid #fff;\n  border-right: 15px solid #fff;\n}\n.shape-32:after {\n  content: \"\";\n  width: 20px;\n  height: 0;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  border-top: 15px solid #333;\n  border-left: 15px solid #fff;\n  border-right: 15px solid #fff;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "octagon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 33: Oval",
+    "description": "A CSS shape: Oval. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-33\"></div>\n<style>\n\n.shape-33 {\n  width: 50px;\n  height: 38px;\n  border-radius: 50%;\n  background: #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "oval"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 34: Pac-Man",
+    "description": "A CSS shape: Pac-Man. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-34\"></div>\n<style>\n\n.shape-34 {\n  width: 0px;\n  height: 0px;\n  border-right: 29px solid transparent;\n  border-top: 29px solid #333;\n  border-left: 29px solid #333;\n  border-bottom: 29px solid #333;\n  border-top-left-radius: 29px;\n  border-top-right-radius: 29px;\n  border-bottom-left-radius: 29px;\n  border-bottom-right-radius: 29px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "pac-man"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 35: Space Invader",
+    "description": "A CSS shape: Space Invader. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-35\"></div>\n<style>\n\n.shape-35 {\n  /* Modify size here: */\n  --block-size: 5px;\n\n  box-shadow: 0 0 0 var(--block-size) #333,\n  0 var(--block-size) 0 var(--block-size) #333,\n  calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * .5) #333,\n  calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * .5) #333,\n  calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 #333,\n  calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 #333,\n  calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 #333,\n  calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 #333,\n  calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 #333,\n  calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 #333,\n  calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 #333,\n  calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 #333,\n  calc(var(--block-size) * -4) 0 0 0 #333,\n  calc(var(--block-size) * -3) 0 0 0 #333,\n  calc(var(--block-size) * 3) 0 0 0 #333,\n  calc(var(--block-size) * 4) 0 0 0 #333,\n  calc(var(--block-size) * -5) var(--block-size) 0 0 #333,\n  calc(var(--block-size) * -4) var(--block-size) 0 0 #333,\n  calc(var(--block-size) * 4) var(--block-size) 0 0 #333,\n  calc(var(--block-size) * 5) var(--block-size) 0 0 #333,\n  calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 #333,\n  calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 #333,\n  calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 #333,\n  calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 #333,\n  calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 #333,\n  calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 #333,\n  calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 #333,\n  calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 #333,\n  var(--block-size) calc(var(--block-size) * 4) 0 0 #333,\n  calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 #333;\n  background: #333;\n  width: var(--block-size);\n  height: var(--block-size);\n  overflow: hidden;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "space-invader"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 36: Moon",
+    "description": "A CSS shape: Moon. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-36\"></div>\n<style>\n\n.shape-36 {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  box-shadow: 9px 9px 0 0 #333;\n  margin-left: -25px;\n  margin-top: -25px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "moon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 37: Flag",
+    "description": "A CSS shape: Flag. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-37\"></div>\n<style>\n\n.shape-37 {\n  width: 50px;\n  height: 50px;\n  box-sizing: content-box;\n  padding-top: 15px;\n  position: relative;\n  background: #333;\n}\n.shape-37:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 13px solid #fff;\n  border-left: 25px solid transparent;\n  border-right: 25px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "flag"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 38: Triangle Top Left",
+    "description": "A CSS shape: Triangle Top Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-38\"></div>\n<style>\n\n.shape-38 {\n  width: 0;\n  height: 0;\n  border-top: 50px solid #333;\n  border-right: 50px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-top-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 39: Triangle Top Right",
+    "description": "A CSS shape: Triangle Top Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-39\"></div>\n<style>\n\n.shape-39 {\n  width: 0;\n  height: 0;\n  border-top: 50px solid #333;\n  border-left: 50px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-top-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 40: Triangle Bottom Left",
+    "description": "A CSS shape: Triangle Bottom Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-40\"></div>\n<style>\n\n.shape-40 {\n  width: 0;\n  height: 0;\n  border-bottom: 50px solid #333;\n  border-right: 50px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-bottom-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 41: Triangle Bottom Right",
+    "description": "A CSS shape: Triangle Bottom Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-41\"></div>\n<style>\n\n.shape-41 {\n  width: 0;\n  height: 0;\n  border-bottom: 50px solid #333;\n  border-left: 50px solid transparent;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-bottom-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 42: Trapezoid",
+    "description": "A CSS shape: Trapezoid. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-42\"></div>\n<style>\n\n.shape-42 {\n  border-bottom: 40px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n  height: 0;\n  width: 40px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "trapezoid"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 43: Parallelogram",
+    "description": "A CSS shape: Parallelogram. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-43\"></div>\n<style>\n\n.shape-43 {\n  width: 50px;\n  height: 50px;\n  transform: skew(20deg);\n  background: #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "parallelogram"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 44: 6-points Star",
+    "description": "A CSS shape: 6-points Star. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-44\"></div>\n<style>\n\n.shape-44 {\n  /* Modify size here: */\n  --size: 25px;\n\n  width: 0;\n  height: 0;\n  border-left: var(--size) solid transparent;\n  border-right: var(--size) solid transparent;\n  border-bottom: calc(var(--size) * 2) solid #333;\n  position: relative;\n}\n.shape-44:after {\n  width: 0;\n  height: 0;\n  border-left: var(--size) solid transparent;\n  border-right: var(--size) solid transparent;\n  border-top: calc(var(--size) * 2) solid #333;\n  position: absolute;\n  content: \"\";\n  top: calc(var(--size) / 2);\n  left: calc(var(--size) * -1);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "6-points-star"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 45: Hexagon",
+    "description": "A CSS shape: Hexagon. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-45\"></div>\n<style>\n\n.shape-45 {\n  /* Modify size here: */\n  --size: 50px;\n\n  width: var(--size);\n  height: calc(var(--size) * 0.57735);\n  background: #333;\n  position: relative;\n}\n.shape-45::before {\n  content: \"\";\n  position: absolute;\n  top: calc(var(--size) * -0.288675);\n  left: 0;\n  width: 0;\n  height: 0;\n  border-left: calc(var(--size) / 2) solid transparent;\n  border-right: calc(var(--size) / 2) solid transparent;\n  border-bottom: calc(var(--size) * 0.288675) solid #333;\n}\n.shape-45::after {\n  content: \"\";\n  position: absolute;\n  bottom: calc(var(--size) * -0.288675);\n  left: 0;\n  width: 0;\n  height: 0;\n  border-left: calc(var(--size) / 2) solid transparent;\n  border-right: calc(var(--size) / 2) solid transparent;\n  border-top: calc(var(--size) * 0.288675) solid #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "hexagon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 46: Pentagon",
+    "description": "A CSS shape: Pentagon. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-46\"></div>\n<style>\n\n.shape-46 {\n  --size: 30px;\n\n  position: relative;\n  width: var(--size);\n  box-sizing: content-box;\n  border-width: calc(var(--size) * 0.925) calc(var(--size) * 0.333) 0;\n  border-style: solid;\n  border-color: #333 transparent;\n}\n.shape-46:before {\n  content: \"\";\n  position: absolute;\n  height: 0;\n  width: 0;\n  top: calc(var(--size) * -1.574);\n  left: calc(var(--size) * -0.333);\n  border-width: 0 calc(var(--size) * 0.833) calc(var(--size) * 0.648);\n  border-style: solid;\n  border-color: transparent transparent #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "pentagon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 47: Infinity",
+    "description": "A CSS shape: Infinity. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-47\"></div>\n<style>\n\n.shape-47 {\n  /* Modify size here: */\n  --size: 50px;\n  --thickness: calc(var(--size) * 0.1);\n\n  position: relative;\n  width: var(--size);\n  height: calc(var(--size) * 0.47);\n  box-sizing: content-box;\n}\n.shape-47:before,\n.shape-47:after {\n  content: \"\";\n  box-sizing: content-box;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: calc(var(--size) * 0.28);\n  height: calc(var(--size) * 0.28);\n  border: var(--thickness) solid #333;\n  border-radius: 50px 50px 0 50px;\n  transform: rotate(-45deg);\n}\n.shape-47:after {\n  left: calc(44% + var(--thickness));\n  right: 0;\n  border-radius: 50px 50px 50px 0;\n  transform: rotate(45deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "infinity"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 48: Egg",
+    "description": "A CSS shape: Egg. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-48\"></div>\n<style>\n\n.shape-48 {\n  /* Modify size here: */\n  --size: 50px;\n\n  display: block;\n  width: var(--size);\n  height: calc(var(--size) * 1.44);\n  background-color: #333;\n  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "egg"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 49: Badge Ribbon",
+    "description": "A CSS shape: Badge Ribbon. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-49\"></div>\n<style>\n\n.shape-49 {\n  /* Modify size here: */\n  --size: 50px;\n\n  position: relative;\n  background: #333;\n  height: var(--size);\n  width: var(--size);\n  border-radius: 50px;\n}\n\n.shape-49:before,\n.shape-49:after {\n  content: '';\n  position: absolute;\n  border-bottom: calc(var(--size) * 0.7) solid #333;\n  border-left: calc(var(--size) * 0.4) solid transparent;\n  border-right: calc(var(--size) * 0.4) solid transparent;\n  top: calc(var(--size) * 0.7);\n  left: calc(var(--size) * -0.1);\n  transform: rotate(-140deg);\n}\n\n.shape-49:after {\n  left: auto;\n  right: calc(var(--size) * -0.1);\n  transform: rotate(140deg);\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "badge-ribbon"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 50: TV Screen",
+    "description": "A CSS shape: TV Screen. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-50\"></div>\n<style>\n\n.shape-50 {\n  position: relative;\n  width: 50px;\n  height: 40px;\n  background: #333;\n  border-radius: 50% / 10%;\n  color: white;\n  text-align: center;\n}\n\n.shape-50:before {\n  content: '';\n  position: absolute;\n  top: 10%;\n  bottom: 10%;\n  right: -5%;\n  left: -5%;\n  background: inherit;\n  border-radius: 5% / 50%;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "tv-screen"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 51: Cylinder",
+    "description": "A CSS shape: Cylinder. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-51\"></div>\n<style>\n\n.shape-51 {\n  width: 50px;\n  height: 70px;\n  /* border-radius: horziontal values / vertical values */\n  border-radius: 50px 50px / 20px 20px;\n  background: #333;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "cylinder"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 52: Price Tag",
+    "description": "A CSS shape: Price Tag. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-52\"></div>\n<style>\n\n.shape-52 {\n  display: inline-block;\n  \n  width: auto;\n  height: 38px;\n  \n  background-color: #333;\n  -webkit-border-radius: 3px 4px 4px 3px;\n  -moz-border-radius: 3px 4px 4px 3px;\n  border-radius: 3px 4px 4px 3px;\n  \n  border-left: 1px solid #333;\n\n  /* This makes room for the triangle */\n  margin-left: 19px;\n  \n  position: relative;\n  \n  color: white;\n  line-height: 38px;\n\n  padding: 0 10px 0 10px;\n}\n\n/* Makes the triangle */\n.shape-52:before {\n  content: \"\";\n  position: absolute;\n  display: block;\n  left: -19px;\n  width: 0;\n  height: 0;\n  border-top: 19px solid transparent;\n  border-bottom: 19px solid transparent;\n  border-right: 19px solid #333;\n}\n\n/* Makes the circle */\n.shape-52:after {\n  content: \"\";\n  background-color: white;\n  border-radius: 50%;\n  width: 4px;\n  height: 4px;\n  display: block;\n  position: absolute;\n  left: -9px;\n  top: 17px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "price-tag"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 53: Tooltip Top",
+    "description": "A CSS shape: Tooltip Top. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-53\"></div>\n<style>\n\n.shape-53 {\n  /* Modify size here: */\n  --size: 50px;\n  --padding: 10px;\n\n  position: relative;\n  width: calc(var(--size) - var(--padding));\n  height: calc(var(--size) / 2);\n  background: #333;\n  padding: var(--padding);\n}\n\n.shape-53:after {\n  content: '';\n  position: absolute;\n  top: 100%;\n  left: 50%;\n  transform: translate(-50%, -50%) rotate(45deg);\n  background: #333;\n  height: 16px;\n  width: 16px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "tooltip-top"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 54: Tooltip Bottom",
+    "description": "A CSS shape: Tooltip Bottom. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-54\"></div>\n<style>\n\n.shape-54 {\n  /* Modify size here: */\n  --size: 50px;\n  --padding: 10px;\n\n  position: relative;\n  width: calc(var(--size) - var(--padding));\n  height: calc(var(--size) / 2);\n  background: #333;\n  padding: var(--padding);\n}\n\n.shape-54:after {\n  content: '';\n  position: absolute;\n  top: 0%;\n  left: 50%;\n  transform: translate(-50%, -50%) rotate(45deg);\n  background: #333;\n  height: 16px;\n  width: 16px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "tooltip-bottom"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 55: Tooltip Left",
+    "description": "A CSS shape: Tooltip Left. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-55\"></div>\n<style>\n\n.shape-55 {\n  /* Modify size here: */\n  --size: 50px;\n  --padding: 10px;\n\n  position: relative;\n  width: calc(var(--size) - var(--padding));\n  height: calc(var(--size) / 2);\n  background: #333;\n  padding: var(--padding);\n}\n\n.shape-55:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  left: 0%;\n  transform: translate(-50%, -50%) rotate(45deg);\n  background: #333;\n  height: 16px;\n  width: 16px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "tooltip-left"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 56: Tooltip Right",
+    "description": "A CSS shape: Tooltip Right. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-56\"></div>\n<style>\n\n.shape-56 {\n  /* Modify size here: */\n  --size: 50px;\n  --padding: 10px;\n\n  position: relative;\n  width: calc(var(--size) - var(--padding));\n  height: calc(var(--size) / 2);\n  background: #333;\n  padding: var(--padding);\n}\n\n.shape-56:after {\n  content: '';\n  position: absolute;\n  top: 50%;\n  left: 100%;\n  transform: translate(-50%, -50%) rotate(45deg);\n  background: #333;\n  height: 16px;\n  width: 16px;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "tooltip-right"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Shape 57: Triangle with Partial Borders",
+    "description": "A CSS shape: Triangle with Partial Borders. Pure CSS shape created with borders and transforms.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"shape-57\"></div>\n<style>\n\n.shape-57 {\n  border: 1px solid #333;\n  padding: 1.5em;\n  position: relative;\n  width: 50px;\n}\n.shape-57:before,\n.shape-57:after {\n  content: \"\";\n  display: block;\n  height: 0; \n  left: 50%;\n  position: absolute;\n  width: 0; \n}\n.shape-57:before {\n  border-left: 8px solid transparent;\n  border-right: 8px solid transparent;\n  border-bottom: 6px solid red;\n  margin-left: -5px;\n  top: -6px;\n  z-index: 4;\n}\n.shape-57:after {\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-bottom: 5px solid #fff;\n  margin-left: -3px;\n  top: -5px;\n  z-index: 5;\n}\n        \n</style>",
+    "tags": [
+      "shape",
+      "css",
+      "css-shape",
+      "triangle-with-partial-borders"
+    ],
+    "dependencies": []
+  }
+]

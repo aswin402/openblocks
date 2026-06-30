@@ -1,0 +1,469 @@
+[
+  {
+    "name": "CSS Radio 1: Bootstrap",
+    "description": "A CSS radio button styled component inspired by Bootstrap's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-1\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-1\">Radio 1</label>\n    \n<style>\n\n      .radio-wrapper-1 {\n        color: #212529;\n        font-family: system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n        font-weight: 400;\n        line-height: 1.5;\n      }\n      \n      .radio-wrapper-1 label {\n        display: inline-block;\n        padding-left: .25em;\n      }\n      \n      .radio-wrapper-1 input[type=radio] {\n        font-family: inherit;\n        font-size: inherit;\n        line-height: inherit;\n        margin-bottom: 0;\n        margin-right: 0;\n      }\n      \n      .radio-wrapper-1 input[type=radio] {\n        background-position: center center;\n        -webkit-print-color-adjust: exact;\n        appearance: none;\n        background-color: #fff;\n        background-repeat: no-repeat;\n        background-size: contain;\n        border: 1px solid rgba(0, 0, 0, .25);\n        height: 1em;\n        margin-top: .25em;\n        vertical-align: top;\n        width: 1em;\n        border-radius: 50%;\n      }\n      \n      .radio-wrapper-1 input[type=radio]:active {\n        filter: brightness(90%);\n      }\n      \n      .radio-wrapper-1 input[type=radio]:focus {\n        border-color: #86b7fe;\n        box-shadow: rgba(13, 110, 253, .25) 0 0 0 .25rem;\n        outline: 0;\n      }\n      \n      .radio-wrapper-1 input[type=radio]:checked {\n        background-color: #0d6efd;\n        border-color: #0d6efd;\n      }\n      \n      .radio-wrapper-1 input[type=radio]:checked {\n        background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e\");\n      }\n      \n      .radio-wrapper-1 input[type=radio]:disabled {\n        filter: none;\n        opacity: .5;\n        pointer-events: none;\n      }\n      \n      .radio-wrapper-1 input[type=radio]:disabled ~ label {\n        opacity: .5;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "bootstrap"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 2: Flowbite",
+    "description": "A CSS radio button styled component inspired by Flowbite's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-2\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-2\">Radio 2</label>\n    \n<style>\n\n      .radio-wrapper-2 {\n        display: flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-2 input[type=radio] {\n        appearance: none;\n        background-origin: border-box;\n        border-width: 1px;\n        border-style: solid;\n        display: inline-block;\n        flex-shrink: 0;\n        padding: 0;\n        -webkit-print-color-adjust: exact;\n        border-radius: 100%;\n        user-select: none;\n        vertical-align: middle;\n        height: 1rem;\n        width: 1rem;\n        border-color: rgb(209 213 219);\n        background-color: rgb(243 244 246/1);\n        color: rgb(28 100 242/1);\n        margin: 0;\n      }\n      \n      .radio-wrapper-2 input[type=radio]:focus {\n        outline: 2px solid transparent;\n        outline-offset: 2px;\n        box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgb(63, 131, 248) 0px 0px 0px 4px;\n      }\n      \n      .radio-wrapper-2 input[type=radio]:checked {\n        background-color: currentcolor;\n        background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");\n        background-position: 50% center;\n        background-repeat: no-repeat;\n        background-size: initial;\n        border-color: transparent;\n      }\n\n      .radio-wrapper-2 input[type=radio]:disabled ~ label {\n        color: rgb(156 163 175)\n      }\n      \n      .radio-wrapper-2 label {\n        padding-inline-start: .5rem;\n        font-size: .875rem;\n        line-height: 1.25rem;\n        font-weight: 500;\n        color: rgb(17 24 39/1);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "flowbite"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 3: CSS Scan",
+    "description": "A CSS radio button styled component inspired by CSS Scan's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-3\">\n        <input id=\"example-3\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"circle\"></span>\n        <span>Radio 3</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-3 {\n        user-select: none;\n      }\n\n      .radio-wrapper-3 label {\n        display: inline-flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-3 .circle {\n        position: relative;\n        display: inline-block;\n        width: 18px;\n        height: 18px;\n        border-radius: 10px;\n        background-color: #fff;\n        background-image: linear-gradient(#fff, #FBFBFB);\n        box-shadow: #D1D5DB 0 0 0 1px inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0;\n        box-shadow: #e2e3e3 0 0 0 1px inset, rgb(0 0 0 / 10%) 0 1px 2px 0;\n        transition: all 0.15s ease;\n      }\n      .radio-wrapper-3 .circle:after {\n        content: \"\";\n        position: absolute;\n        display: block;\n        top: 6px;\n        left: 6px;\n        width: 6px;\n        height: 6px;\n        border-radius: 50%;\n        background: #fff;\n        opacity: 0;\n        transform: scale(0);\n      }\n      .radio-wrapper-3 .circle + span {\n        margin-left: .6em;\n      }\n      .radio-wrapper-3 input[type=\"radio\"] {\n        position: absolute;\n        opacity: 0;\n        display: none;\n        appearance: none;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n      }\n      .radio-wrapper-3 input[type=\"radio\"]:checked + .circle {\n        background-color: #4177EE;\n        background-image: linear-gradient(#4177EE, #2F6AEB);\n        box-shadow: rgb(0 0 0 / 10%) 0 1px 2px 1px, #2E69EB 0px 0px 0px 1px, rgba(255, 255, 255, 0.15) 0 1px 1px inset;\n      }\n      .radio-wrapper-3 input[type=\"radio\"]:checked + .circle:after {\n        opacity: 1;\n        transform: scale(1);\n        transition: all 0.15s ease;\n        box-shadow: #2E69EB 0px 0px 0px 1px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 4: Stripe (Inspired)",
+    "description": "A CSS radio button styled component inspired by Stripe (Inspired)'s design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-4\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-4\">Radio 4</span></label>\n    \n<style>\n\n      .radio-wrapper-4 {\n        user-select: none;\n        display: inline-flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-4 label {\n        padding-left: .6em;\n        color: #414552;\n        font-weight: 500;\n        line-height: 20px;\n        font-size: 14px;\n      }\n\n      .radio-wrapper-4 label:hover,\n      .radio-wrapper-4 input[type=\"radio\"]:hover ~ label {\n        color: #14134e;\n      }\n\n      .radio-wrapper-4 input[type=\"radio\"] {\n        appearance: none;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n        position: relative;\n        display: inline-block;\n        width: 14px;\n        height: 14px;\n        border-radius: 10px;\n        background-color: #fff;\n        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(64, 68, 82, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(64, 68, 82, 0.08) 0px 2px 5px 0px;\n        transition: all 240ms ease;\n        margin: 0;\n        vertical-align: middle;\n      }\n      .radio-wrapper-4 input[type=\"radio\"]:after {\n        content: \"\";\n        position: absolute;\n        display: block;\n        top: 50%;\n        left: 50%;\n        width: 6px;\n        height: 6px;\n        border-radius: 50%;\n        background: #fff;\n        opacity: 0;\n        transform: translate(-50%, -50%) scale(1.25);\n        transition: all 240ms ease-in-out;\n      }\n      .radio-wrapper-4 input[type=\"radio\"]:checked {\n        background-color: rgb(99, 91, 255);\n        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(99, 91, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(64, 68, 82, 0.08) 0px 2px 5px 0px;\n      }\n      .radio-wrapper-4 input[type=\"radio\"]:checked:focus {\n        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(1, 150, 237, 0.36) 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(99, 91, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(64, 68, 82, 0.08) 0px 2px 5px 0px;\n      }\n      .radio-wrapper-4 input[type=\"radio\"]:checked:after {\n        opacity: 1;\n        transform: translate(-50%, -50%) scale(1);\n        box-shadow: #2E69EB 0px 0px 0px 1px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "stripe--inspired"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 5: Material",
+    "description": "A CSS radio button styled component inspired by Material's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-5\" class=\"forCircle\">\n        <input id=\"example-5\" type=\"radio\" name=\"radio-examples\">\n        <span>\n          <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-3.5 w-3.5\" viewBox=\"0 0 16 16\" fill=\"currentColor\">\n            <circle data-name=\"ellipse\" cx=\"8\" cy=\"8\" r=\"8\"></circle>\n          </svg>\n        </span>\n      </label>\n      <label for=\"example-5\">\n        Radio 5\n      </label>\n    \n<style>\n\n      .radio-wrapper-5 {\n        line-height: 1.5;\n        display: flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-5 label.forCircle {\n        align-items: center;\n        border: 0 solid #eee;\n        border-radius: 9999px;\n        box-sizing: border-box;\n        cursor: pointer;\n        display: flex;\n        padding: .75rem;\n        position: relative;\n        scrollbar-width: thin !important;\n      }\n      \n      .radio-wrapper-5 input[type=radio] {\n        appearance: none;\n        border: 1px solid #b0bec5;\n        border-radius: 9999px;\n        box-sizing: border-box;\n        color: rgb(33 33 33/1);\n        cursor: pointer;\n        font-family: inherit;\n        font-feature-settings: inherit;\n        font-size: 100%;\n        font-variation-settings: inherit;\n        font-weight: inherit;\n        height: 1.25rem;\n        line-height: inherit;\n        margin: 0;\n        padding: 0;\n        position: relative;\n        scrollbar-width: thin !important;\n        transition: all .15s cubic-bezier(.4, 0, .2, 1);\n        width: 1.25rem;\n      }\n      \n      .radio-wrapper-5 input[type=radio]:before {\n        background-color: rgb(96 125 139/1);\n        border: 0 solid #eee;\n        border-radius: 9999px;\n        box-sizing: border-box;\n        content: '';\n        display: block;\n        height: 3rem;\n        left: 50%;\n        opacity: 0;\n        position: absolute;\n        top: 50%;\n        transform: translate(-50%, -50%);\n        transition: opacity .15s cubic-bezier(.4, 0, .2, 1);\n        width: 3rem;\n      }\n      \n      .radio-wrapper-5 input[type=radio]:placeholder {\n        color: #bdbdbd;\n        opacity: 1;\n      }\n      \n      .radio-wrapper-5 input[type=radio]:checked:before {\n        background-color: rgb(33 33 33/1);\n      }\n      \n      .radio-wrapper-5 input[type=radio]:hover:not(:disabled):before {\n        opacity: .1;\n      }\n      \n      .radio-wrapper-5 label.forCircle span {\n        border: 0 solid #eee;\n        box-sizing: border-box;\n        color: rgb(33 33 33/1);\n        left: 50%;\n        opacity: 0;\n        pointer-events: none;\n        position: absolute;\n        scrollbar-width: thin !important;\n        top: 50%;\n        transform: matrix(1, 0, 0, 1, -7, -7);\n        transition: opacity .15s cubic-bezier(.4, 0, .2, 1);\n      }\n\n      .radio-wrapper-5 input[type=radio]:checked ~ span {\n        opacity: 1;\n      }\n      \n      .radio-wrapper-5 svg {\n        display: block;\n        height: .875rem;\n        vertical-align: middle;\n        width: .875rem;\n      }\n      \n      .radio-wrapper-5 label {\n        color: rgb(97 97 97/1);\n        cursor: pointer;\n        font-weight: 300;\n        margin-top: 1px;\n        user-select: none;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "material"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 6: Aaron Iker",
+    "description": "A CSS radio button styled component inspired by Aaron Iker's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-6\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-6\">Radio 6</label>\n    \n<style>\n\n      .radio-wrapper-6 {\n        display: flex;\n        align-items: center;\n      }\n\n      @supports (-webkit-appearance: none) or (-moz-appearance: none) {\n        .radio-wrapper-6 input[type=radio] {\n          --active: #275EFE;\n          --active-inner: #fff;\n          --focus: 2px rgba(39, 94, 254, .3);\n          --border: #BBC1E1;\n          --border-hover: #275EFE;\n          --background: #fff;\n          --disabled: #F6F8FF;\n          --disabled-inner: #E1E6F9;\n          -webkit-appearance: none;\n          -moz-appearance: none;\n          height: 21px;\n          outline: none;\n          display: inline-block;\n          vertical-align: top;\n          position: relative;\n          margin: 0;\n          cursor: pointer;\n          border: 1px solid var(--bc, var(--border));\n          background: var(--b, var(--background));\n          transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;\n        }\n        .radio-wrapper-6 input[type=radio]:after {\n          content: \"\";\n          display: block;\n          left: 0;\n          top: 0;\n          position: absolute;\n          transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);\n        }\n        .radio-wrapper-6 input[type=radio]:checked {\n          --b: var(--active);\n          --bc: var(--active);\n          --d-o: .3s;\n          --d-t: .6s;\n          --d-t-e: cubic-bezier(.2, .85, .32, 1.2);\n        }\n        .radio-wrapper-6 input[type=radio]:disabled {\n          --b: var(--disabled);\n          cursor: not-allowed;\n          opacity: 0.9;\n        }\n        .radio-wrapper-6 input[type=radio]:disabled:checked {\n          --b: var(--disabled-inner);\n          --bc: var(--border);\n        }\n        .radio-wrapper-6 input[type=radio]:disabled + label {\n          cursor: not-allowed;\n          color: #8A91B4;\n        }\n        .radio-wrapper-6 input[type=radio]:hover:not(:checked):not(:disabled) {\n          --bc: var(--border-hover);\n        }\n        .radio-wrapper-6 input[type=radio]:focus {\n          box-shadow: 0 0 0 var(--focus);\n        }\n        .radio-wrapper-6 input[type=radio]:not(.switch) {\n          width: 21px;\n        }\n        .radio-wrapper-6 input[type=radio]:not(.switch):after {\n          opacity: var(--o, 0);\n        }\n        .radio-wrapper-6 input[type=radio]:not(.switch):checked {\n          --o: 1;\n        }\n        .radio-wrapper-6 input[type=radio] + label {\n          font-size: 14px;\n          line-height: 21px;\n          display: inline-block;\n          vertical-align: top;\n          cursor: pointer;\n          margin-left: .5em;\n        }\n\n        .radio-wrapper-6 input[type=radio] {\n          border-radius: 50%;\n        }\n        .radio-wrapper-6 input[type=radio]:after {\n          width: 19px;\n          height: 19px;\n          border-radius: 50%;\n          background: var(--active-inner);\n          opacity: 0;\n          transform: scale(var(--s, 0.7));\n        }\n        .radio-wrapper-6 input[type=radio]:checked {\n          --s: .5;\n        }\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "aaron-iker"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 7: Andreas Storm",
+    "description": "A CSS radio button styled component inspired by Andreas Storm's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label class=\"radio-wrapper-7\" for=\"example-7\">\n        <input id=\"example-7\" type=\"radio\" name=\"radio-examples\">\n        <span>Radio 7</span>\n      </label>\n    \n<style>\n\n      label.radio-wrapper-7 {\n        padding: 6px;\n        border-radius: 50px;\n        display: inline-flex;\n        cursor: pointer;\n        transition: background 0.2s ease;\n        -webkit-tap-highlight-color: transparent;\n      }\n      label.radio-wrapper-7:hover,\n      label.radio-wrapper-7:focus-within {\n        background: rgba(159, 159, 159, 0.1);\n      }\n      label.radio-wrapper-7 input {\n        vertical-align: middle;\n        width: 20px;\n        height: 20px;\n        border-radius: 10px;\n        background: none;\n        border: 0;\n        box-shadow: inset 0 0 0 1px #9F9F9F;\n        box-shadow: inset 0 0 0 1.5px #9F9F9F;\n        appearance: none;\n        padding: 0;\n        margin: 0;\n        transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);\n        pointer-events: none;\n      }\n      label.radio-wrapper-7 input:focus {\n        outline: none;\n      }\n      label.radio-wrapper-7 input:checked {\n        box-shadow: inset 0 0 0 6px #6743ee;\n      }\n      label.radio-wrapper-7 span {\n        vertical-align: middle;\n        display: inline-block;\n        line-height: 20px;\n        padding: 0 8px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "andreas-storm"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 8: Aaron Iker",
+    "description": "A CSS radio button styled component inspired by Aaron Iker's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label class=\"radio-wrapper-8\" for=\"example-8\">\n        <input id=\"example-8\" type=\"radio\" name=\"radio-examples\">\n        <span>Radio 8</span>\n      </label>\n    \n<style>\n\n      label.radio-wrapper-8 {\n        display: block;\n        cursor: pointer;\n      }\n      label.radio-wrapper-8 input {\n        display: none;\n        appearance: none;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n      }\n      label.radio-wrapper-8 input + span {\n        line-height: 22px;\n        height: 22px;\n        padding-left: 22px;\n        display: block;\n        position: relative;\n      }\n      label.radio-wrapper-8 input + span:not(:empty) {\n        padding-left: 30px;\n      }\n      label.radio-wrapper-8 input + span:before, label.radio-wrapper-8 input + span:after {\n        content: \"\";\n        width: 22px;\n        height: 22px;\n        display: block;\n        border-radius: 50%;\n        left: 0;\n        top: 0;\n        position: absolute;\n      }\n      label.radio-wrapper-8 input + span:before {\n        background: #D1D7E3;\n        transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n      }\n      label.radio-wrapper-8 input + span:after {\n        background: #fff;\n        transform: scale(0.78);\n        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n      }\n      label.radio-wrapper-8 input:checked + span:before {\n        transform: scale(1.04);\n        background: #5D9BFB;\n      }\n      label.radio-wrapper-8 input:checked + span:after {\n        transform: scale(0.4);\n        transition: transform 0.3s ease;\n      }\n      label.radio-wrapper-8:hover input + span:before {\n        transform: scale(0.92);\n      }\n      label.radio-wrapper-8:hover input + span:after {\n        transform: scale(0.74);\n      }\n      label.radio-wrapper-8:hover input:checked + span:after {\n        transform: scale(0.4);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "aaron-iker"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 9: Tristan White",
+    "description": "A CSS radio button styled component inspired by Tristan White's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-9\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-9\">Radio 9</label>\n    \n<style>\n\n      .radio-wrapper-9 input[type=radio] {\n        display: none;\n        appearance: none;\n      }\n      .radio-wrapper-9 input[type=radio] + label:before {\n        content: \"\";\n        background: #f4f4f4;\n        border-radius: 100%;\n        border: 1px solid #b4b4b4;\n        display: inline-block;\n        width: 1.4em;\n        height: 1.4em;\n        position: relative;\n        top: -0.1em;\n        margin-right: .6em;\n        vertical-align: middle;\n        cursor: pointer;\n        text-align: center;\n        transition: all 250ms ease;\n      }\n      .radio-wrapper-9 input[type=radio]:checked + label:before {\n        background-color: #3197EE;\n        box-shadow: inset 0 0 0 4px #f4f4f4;\n      }\n      .radio-wrapper-9 input[type=radio]:focus + label:before {\n        outline: none;\n        border-color: #3197EE;\n      }\n      .radio-wrapper-9 input[type=radio]:disabled + label:before {\n        box-shadow: inset 0 0 0 4px #f4f4f4;\n        border-color: #b4b4b4;\n        background: #b4b4b4;\n      }\n      .radio-wrapper-9 input[type=radio] + label:empty:before {\n        margin-right: 0;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "tristan-white"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 10: Kris Hedstrom",
+    "description": "A CSS radio button styled component inspired by Kris Hedstrom's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-10\">\n        <input id=\"example-10\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"inner-label\">Radio 10</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-10 {\n        display: flex;\n        font-family: \"Courier New\", monospace;\n        font-weight: bold;\n      }\n      @media (max-width: 48em) {\n        .radio-wrapper-10 {\n          flex-direction: column;\n          align-items: flex-start;\n          text-align: left;\n        }\n      }\n      \n      .radio-wrapper-10 label {\n        position: relative;\n        display: inline-block;\n        margin: 10px;\n      }\n      @media (max-width: 48em) {\n        .radio-wrapper-10 label {\n          display: block;\n          margin: 10px 0;\n        }\n      }\n      .radio-wrapper-10 label input {\n        opacity: 0;\n        position: absolute;\n      }\n      .radio-wrapper-10 label .inner-label {\n        position: relative;\n        display: inline-block;\n        padding-left: 40px;\n      }\n      .radio-wrapper-10 label .inner-label:before {\n        content: \"\";\n        position: absolute;\n        left: 0;\n        bottom: 0;\n        border-bottom: 1px dashed rgba(0, 0, 0, 0.25);\n        width: 30px;\n        transition: border-bottom 0.5s ease;\n      }\n      .radio-wrapper-10 label input:focus ~ .inner-label:before {\n        border-bottom: 1px solid rgba(0, 0, 0, 0.75);\n      }\n      .radio-wrapper-10 label input:checked ~ .inner-label:after {\n        content: \"\u2713\";\n        color: #000;\n        position: absolute;\n        font-size: 1em;\n        left: 12px;\n        top: 1px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "kris-hedstrom"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 11: Abubaker Saeed",
+    "description": "A CSS radio button styled component inspired by Abubaker Saeed's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label class=\"radio-wrapper-11\" for=\"example-11\">\n        <input id=\"example-11\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"design\"></span>\n        <span class=\"text\">Radio 11</span>\n      </label>\n    \n<style>\n\n      label.radio-wrapper-11 {\n        display: flex;\n        justify-content: flex-start;\n        align-items: center;\n        flex-wrap: nowrap;\n      \n        margin: 12px 0;\n      \n        cursor: pointer;\n        position: relative;\n\n        --primary: hsl(250, 100%, 44%);\n        --other: hsl(0, 0%, 14%);\n      }\n      \n      label.radio-wrapper-11 input[type=\"radio\"] {\n        opacity: 0;\n        position: absolute;\n        left: 50%;\n        top: 50%;\n        transform: translate(-50%, -50%);\n        z-index: -1;\n      }\n\n      label.radio-wrapper-11 .design {\n        width: 16px;\n        height: 16px;\n      \n        border: 1px solid var(--other);\n        border-radius: 100%;\n        margin-right: .9em;\n      \n        position: relative;\n      }\n      \n      label.radio-wrapper-11 .design::before,\n      label.radio-wrapper-11 .design::after {\n        content: \"\";\n        display: block;\n      \n        width: inherit;\n        height: inherit;\n      \n        border-radius: inherit;\n      \n        position: absolute;\n        transform: scale(0);\n        transform-origin: center center;\n      }\n\n      label.radio-wrapper-11 .design:before {\n        background: var(--other);\n        opacity: 0;\n        transition: .3s;\n      }\n\n      label.radio-wrapper-11 .design::after {\n        background: var(--primary);\n        opacity: .4;\n        transition: .6s;\n      }\n\n      label.radio-wrapper-11 .text {\n        color: var(--other);\n        font-weight: bold;\n      }\n\n      label.radio-wrapper-11 input:checked + .design::before {\n        opacity: 1;\n        transform: scale(.6);\n      }\n\n      label.radio-wrapper-11 input:hover + .design,\n      label.radio-wrapper-11 input:focus + .design {\n        border: 1px solid var(--primary);\n      }\n      \n      label.radio-wrapper-11 input:hover + .design:before,\n      label.radio-wrapper-11 input:focus + .design:before {\n        background: var(--primary);\n      }\n      \n      label.radio-wrapper-11 input:hover ~ .text {\n        color: var(--primary);\n      }\n      \n      label.radio-wrapper-11 input:focus + .design::after,\n      label.radio-wrapper-11 input:active + .design::after {\n        opacity: .1;\n        transform: scale(2.6);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "abubaker-saeed"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 12: Na3ar-17 + CSS Scan",
+    "description": "A CSS radio button styled component inspired by Na3ar-17 + CSS Scan's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-12\">\n        <input id=\"example-12\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"text\">Radio 12</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-12 {\n        display: flex;\n        flex-direction: column;\n        gap: 10px;\n        z-index: 3;\n      }\n      \n      .radio-wrapper-12 * {\n        box-sizing: border-box;\n        padding: 0;\n        margin: 0;\n      }\n      \n      .radio-wrapper-12 label {\n        display: flex;\n        align-items: center;\n        gap: 15px;\n        padding: 0px 20px;\n        width: 150px;\n        cursor: pointer;\n        height: 50px;\n        position: relative;\n      }\n      \n      .radio-wrapper-12 label::before {\n        position: absolute;\n        content: \"\";\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        width: 150px;\n        height: 45px;\n        z-index: -1;\n        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n        border-radius: 10px;\n        border: 2px solid transparent;\n      }\n      .radio-wrapper-12 label:hover::before {\n        transition: all 0.2s ease;\n        background-color: #F5F6FA;\n      }\n      \n      .radio-wrapper-12 label:has(input:checked)::before {\n        background-color: #E1E9FF;\n        border-color: #435dd8;\n        height: 50px;\n      }\n      .radio-wrapper-12 label .text {\n        color: #333;\n      }\n      \n      .radio-wrapper-12 label input[type=\"radio\"] {\n        background-color: #D9D9E5;\n        appearance: none;\n        width: 17px;\n        height: 17px;\n        border-radius: 50%;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        outline: 0;\n      }\n      .radio-wrapper-12 label input[type=\"radio\"]:checked {\n        background-color: #435dd8;\n        -webkit-animation: pulse-12 0.7s forwards;\n        animation: pulse-12 0.7s forwards;\n      }\n      \n      .radio-wrapper-12 label input[type=\"radio\"]:before {\n        content: \"\";\n        width: 6px;\n        height: 6px;\n        border-radius: 50%;\n        transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);\n        background-color: #fff;\n        transform: scale(0);\n      }\n      \n      .radio-wrapper-12 label input[type=\"radio\"]:checked::before {\n        transform: scale(1);\n      }\n      \n      @keyframes pulse-12 {\n        0% {\n          box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.4);\n        }\n        70% {\n          box-shadow: 0 0 0 8px rgba(0, 0, 255, 0);\n        }\n        100% {\n          box-shadow: 0 0 0 0 rgba(0, 0, 255, 0);\n        }\n      }      \n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "na3ar-17---css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 13: Andreas Storm",
+    "description": "A CSS radio button styled component inspired by Andreas Storm's design. Supports dark mode.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-13\">\n        <input id=\"example-13\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"rdo\"></span>\n        <span>Radio 13</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-13 .rdo {\n        position: relative;\n        display: block;\n        float: left;\n        width: 18px;\n        height: 18px;\n        border-radius: 10px;\n        background-color: #606062;\n        background-image: linear-gradient(#474749, #606062);\n        box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);\n        transition: all 0.15s ease;\n      }\n      .radio-wrapper-13 .rdo:after {\n        content: \"\";\n        position: absolute;\n        display: block;\n        top: 6px;\n        left: 6px;\n        width: 6px;\n        height: 6px;\n        border-radius: 50%;\n        background: #fff;\n        opacity: 0;\n        transform: scale(0);\n      }\n      .radio-wrapper-13 .rdo + span {\n        float: left;\n        margin-left: 6px;\n      }\n      .radio-wrapper-13 {\n        user-select: none;\n      }\n      .radio-wrapper-13 label {\n        display: inline-block;\n        cursor: pointer;\n      }\n      .radio-wrapper-13 input[type=\"radio\"] {\n        position: absolute;\n        opacity: 0;\n      }\n      .radio-wrapper-13 input[type=\"radio\"]:checked + .rdo {\n        background-color: #606062;\n        background-image: linear-gradient(#255cd2, #1d52c1);\n      }\n      .radio-wrapper-13 input[type=\"radio\"]:checked + .rdo:after {\n        opacity: 1;\n        transform: scale(1);\n        transition: all 0.15s ease;\n      } \n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "andreas-storm",
+      "dark-mode"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 14: Flowbite",
+    "description": "A CSS radio button styled component inspired by Flowbite's design. Supports dark mode.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-14\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-14\">Radio 14</label>\n    \n<style>\n\n      .radio-wrapper-14 {\n        display: flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-14 input[type=radio] {\n        appearance: none;\n        background-origin: border-box;\n        border-width: 1px;\n        border-style: solid;\n        display: inline-block;\n        flex-shrink: 0;\n        padding: 0;\n        -webkit-print-color-adjust: exact;\n        border-radius: 100%;\n        user-select: none;\n        vertical-align: middle;\n        height: 1rem;\n        width: 1rem;\n        border-color: rgb(75 85 99);\n        background-color: rgb(55 65 81/1);\n        color: rgb(28 100 242/1);\n        margin: 0;\n      }\n      \n      .radio-wrapper-14 input[type=radio]:focus {\n        outline: 2px solid transparent;\n        outline-offset: 2px;\n        box-shadow: #1f2937 0px 0px 0px 2px, rgb(28, 100, 242) 0px 0px 0px 4px;\n      }\n      \n      .radio-wrapper-14 input[type=radio]:checked {\n        background-color: currentcolor;\n        background-image: url(\"data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E\");\n        background-position: 50%;\n        background-repeat: no-repeat;\n        background-size: initial;\n        border-color: transparent;\n      }\n\n      .radio-wrapper-14 input[type=radio]:disabled ~ label {\n        color: rgb(107 114 128)\n      }\n      \n      .radio-wrapper-14 label {\n        padding-inline-start: .5rem;\n        font-size: .875rem;\n        line-height: 1.25rem;\n        font-weight: 500;\n        color: rgb(209 213 219/1);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "flowbite",
+      "dark-mode"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 15: Alex Bergin",
+    "description": "A CSS radio button styled component inspired by Alex Bergin's design. Supports dark mode.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <span><input id=\"example-15\" type=\"radio\" name=\"radio-examples\"></span>\n    \n<style>\n\n        .radio-wrapper-15 input[type=radio]:after {\n          -moz-transition: all 0.25s cubic-bezier(0.75, 0.01, 0.48, 2);\n          -o-transition: all 0.25s cubic-bezier(0.75, 0.01, 0.48, 2);\n          -webkit-transition: all 0.25s cubic-bezier(0.75, 0.01, 0.48, 2);\n          transition: all 0.25s cubic-bezier(0.75, 0.01, 0.48, 2);\n        }\n        \n        .radio-wrapper-15 input[type=radio]:before {\n          -moz-transition: all 0.25s ease-in-out;\n          -o-transition: all 0.25s ease-in-out;\n          -webkit-transition: all 0.25s ease-in-out;\n          transition: all 0.25s ease-in-out;\n        }\n        \n        .radio-wrapper-15 input[type=radio] {\n          position: relative;\n        }\n        .radio-wrapper-15 input[type=radio]:before,\n        .radio-wrapper-15 input[type=radio]:after {\n          content: \"\";\n          position: absolute;\n        }\n        .radio-wrapper-15 input[type=radio]:before {\n          height: 100%;\n        }\n        .radio-wrapper-15 input[type=radio] {\n          border-radius: 30px;\n        }\n        .radio-wrapper-15 input[type=radio]:before {\n          width: 100%;\n          border-radius: 30px;\n          background-color: #2c3f52;\n          box-shadow: 0 0 0 1px #2c3f52;\n        }\n        .radio-wrapper-15 input[type=radio]:after {\n          width: 100%;\n          height: 100%;\n          border-radius: 30px;\n          background-color: #15202a;\n          -moz-transform: scale(0, 0);\n          -ms-transform: scale(0, 0);\n          -webkit-transform: scale(0, 0);\n          transform: scale(0, 0);\n        }\n        .radio-wrapper-15 input[type=radio]:checked:after {\n          -moz-transform: scale(0.75, 0.75);\n          -ms-transform: scale(0.75, 0.75);\n          -webkit-transform: scale(0.75, 0.75);\n          transform: scale(0.75, 0.75);\n        }\n        .radio-wrapper-15 input[type=radio]:checked:before {\n          background-color: #85ff7a;\n          box-shadow: 0 0 0 1px #85ff7a;\n        }\n        .radio-wrapper-15 input[type=radio]:checked:before {\n          background-color: #85ff7a;\n          box-shadow: 0 0 0 1px #85ff7a;\n        }\n        \n        .radio-wrapper-15 * {\n          -webkit-tap-highlight-color: transparent;\n          -webkit-touch-callout: none;\n          -webkit-user-select: none;\n          -khtml-user-select: none;\n          -moz-user-select: none;\n          -ms-user-select: none;\n          user-select: none;\n        }\n\n        .radio-wrapper-15 input[type=radio] {\n          cursor: pointer;\n          width: 30px;\n          height: 30px;\n        }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "alex-bergin",
+      "dark-mode"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 16: CSS Scan",
+    "description": "A CSS radio button styled component inspired by CSS Scan's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-16\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-16\">Tag 16</label>\n    \n<style>\n\n      .radio-wrapper-16 label {\n        background: #fff;\n        padding: 6px 12px;\n        border-radius: 50px;\n        cursor: pointer;\n        transition: all 0.2s ease;\n        -webkit-tap-highlight-color: transparent;\n        box-shadow: #EDEDED 0 0 0 1px inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0;\n        display: inline-block;\n      }\n      .radio-wrapper-16 label:hover {\n        background: rgba(0, 0, 0, 0.03);\n        box-shadow: #CFCFCF 0 0 0 1px inset, rgba(0, 0, 0, 0.1) 0 1px 2px;\n      }\n      .radio-wrapper-16 input {\n        appearance: none;\n        display: none;\n      }\n      .radio-wrapper-16 input:focus {\n        outline: none;\n      }\n      .radio-wrapper-16 input:checked ~ label {\n        box-shadow: #0B88FF 0 0 0 2px inset, rgba(0, 0, 0, 0.1) 0 1px 2px 1px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 17: Mert Cukuren",
+    "description": "A CSS radio button styled component inspired by Mert Cukuren's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"rating-17-5\" type=\"radio\" name=\"radio-examples\">\n      <label class=\"rating-5\" for=\"rating-17-5\"></label>\n      <input id=\"rating-17-4\" type=\"radio\" name=\"radio-examples\">\n      <label class=\"rating-4\" for=\"rating-17-4\"></label>\n      <input id=\"rating-17-3\" type=\"radio\" name=\"radio-examples\">\n      <label class=\"rating-3\" for=\"rating-17-3\"></label>\n      <input id=\"rating-17-2\" type=\"radio\" name=\"radio-examples\">\n      <label class=\"rating-2\" for=\"rating-17-2\"></label>\n      <input id=\"rating-17-1\" type=\"radio\" name=\"radio-examples\">\n      <label class=\"rating-1\" for=\"rating-17-1\"></label>\n    \n<style>\n\n      .radio-wrapper-17 {\n        display: flex;\n        flex-direction: row-reverse;\n      }\n\n      .radio-wrapper-17 input[type=\"radio\"] {\n        display: none;\n        appearance: none;\n      }\n\n      .radio-wrapper-17 > label {\n        cursor: pointer;\n        width: 30px;\n        height: 30px;\n        margin-top: auto;\n        background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e\");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: 76%;\n        transition: .3s;\n        display: inline-block;\n      }\n\n      .radio-wrapper-17 > input:checked ~ label,\n      .radio-wrapper-17 > input:checked ~ label ~ label {\n        background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e\");\n      }\n\n      .radio-wrapper-17 > input:not(:checked) ~ label:hover,\n      .radio-wrapper-17 > input:not(:checked) ~ label:hover ~ label {\n        background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e\");\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "mert-cukuren"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 18: amikambs",
+    "description": "A CSS radio button styled component inspired by amikambs's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"rating-18-5\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"rating-18-5\" title=\"text\">\n        <svg viewBox=\"0 0 576 512\" height=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z\"></path>\n        </svg>\n      </label>\n      <input id=\"rating-18-4\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"rating-18-4\" title=\"text\">\n        <svg viewBox=\"0 0 576 512\" height=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z\"></path>\n        </svg>\n      </label>\n      <input id=\"rating-18-3\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"rating-18-3\" title=\"text\">\n        <svg viewBox=\"0 0 576 512\" height=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z\"></path>\n        </svg>\n      </label>\n      <input id=\"rating-18-2\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"rating-18-2\" title=\"text\">\n        <svg viewBox=\"0 0 576 512\" height=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z\"></path>\n        </svg>\n      </label>\n      <input id=\"rating-18-1\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"rating-18-1\" title=\"text\">\n        <svg viewBox=\"0 0 576 512\" height=\"1em\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z\"></path>\n        </svg>\n      </label>\n    \n<style>\n\n      .radio-wrapper-18 > input {\n        position: absolute;\n        appearance: none;\n      }\n      \n      .radio-wrapper-18 > label {\n        float: right;\n        cursor: pointer;\n        font-size: 30px;\n        fill: #666;\n      }\n      \n      .radio-wrapper-18 > label > svg {\n        fill: #666; /* Set default color for SVG */\n        transition: fill 0.3s ease; /* Add a transition effect */\n      }\n      \n      .radio-wrapper-18 > input:checked + label:hover,\n      .radio-wrapper-18 > input:checked + label:hover ~ label,\n      .radio-wrapper-18 > input:checked ~ label:hover,\n      .radio-wrapper-18 > input:checked ~ label:hover ~ label,\n      .radio-wrapper-18 > label:hover ~ input:checked ~ label {\n        fill: #e58e09;\n      }\n      \n      .radio-wrapper-18 > label:hover,\n      .radio-wrapper-18 > label:hover ~ label {\n        fill: #ff9e0b;\n      }\n      \n      .radio-wrapper-18 > input:checked ~ label > svg {\n        fill: #ffa723; /* Set color for selected stars */\n      }          \n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "amikambs"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 19: Yaya12085",
+    "description": "A CSS radio button styled component inspired by Yaya12085's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <div class=\"radio-inputs-19\">\n        <label for=\"example-19-1\">\n          <input id=\"example-19-1\" type=\"radio\" name=\"radio-examples\">\n          <span class=\"name\">Tab 1</span>\n        </label>\n        <label for=\"example-19-2\">\n          <input id=\"example-19-2\" type=\"radio\" name=\"radio-examples\">\n          <span class=\"name\">Tab 2</span>\n        </label>\n      </div>\n    \n<style>\n\n      .radio-inputs-19 {\n        position: relative;\n        display: flex;\n        flex-wrap: wrap;\n        border-radius: 0.5rem;\n        background-color: #EEE;\n        box-sizing: border-box;\n        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);\n        padding: 0.25rem;\n        width: 150px;\n        font-size: 14px;\n      }\n      \n      .radio-inputs-19 label {\n        flex: 1 1 auto;\n        text-align: center;\n      }\n      \n      .radio-inputs-19 label input {\n        display: none;\n      }\n      \n      .radio-inputs-19 label .name {\n        display: flex;\n        cursor: pointer;\n        align-items: center;\n        justify-content: center;\n        border-radius: 0.5rem;\n        border: none;\n        padding: .5rem 0;\n        color: rgba(51, 65, 85, 1);\n        transition: all .15s ease-in-out;\n      }\n      \n      .radio-inputs-19 label input:checked + .name {\n        background-color: #fff;\n        font-weight: 600;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "yaya12085"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 20: Pradeepsaranbishnoi",
+    "description": "A CSS radio button styled component inspired by Pradeepsaranbishnoi's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-20-1\">\n        <input id=\"example-20-1\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"name\">Tab 1</span>\n      </label>\n      <label for=\"example-20-2\">\n        <input id=\"example-20-2\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"name\">Tab 2</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-20 input[type=\"radio\"]:focus {\n        outline: 0;\n        border-color: #2260ff;\n        box-shadow: 0 0 0 4px #b5c9fc;\n      }\n      \n      .radio-wrapper-20 {\n        display: flex;\n        flex-wrap: wrap;\n        margin-top: 0.5rem;\n        justify-content: center;\n      }\n      \n      .radio-wrapper-20 input[type=\"radio\"] {\n        clip: rect(0 0 0 0);\n        clip-path: inset(100%);\n        height: 1px;\n        overflow: hidden;\n        position: absolute;\n        white-space: nowrap;\n        width: 1px;\n      }\n      \n      .radio-wrapper-20 input[type=\"radio\"]:checked + span {\n        box-shadow: 0 0 0 0.0625em #0043ed;\n        background-color: #dee7ff;\n        z-index: 1;\n        color: #0043ed;\n      }\n      \n      .radio-wrapper-20 label span {\n        display: block;\n        cursor: pointer;\n        background-color: #fff;\n        padding: 0.375em .75em;\n        position: relative;\n        margin-left: .0625em;\n        box-shadow: 0 0 0 0.0625em #b5bfd9;\n        letter-spacing: .05em;\n        color: #3e4963;\n        text-align: center;\n        transition: background-color .5s ease;\n      }\n      \n      .radio-wrapper-20 label:first-child span {\n        border-radius: .375em 0 0 .375em;\n      }\n      \n      .radio-wrapper-20 label:last-child span {\n        border-radius: 0 .375em .375em 0;\n      }      \n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "pradeepsaranbishnoi"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 21: Stripe (Inspired)",
+    "description": "A CSS radio button styled component inspired by Stripe (Inspired)'s design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-21\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-21\">\n        <span class=\"title\">Option 21</span>\n        <small><span class=\"description\">Description</span></small>\n      </label>\n    \n<style>\n\n      .radio-wrapper-21 label {\n        background: #fff;\n        padding: 11px;\n        border: none;\n        border-radius: 6px;\n        cursor: pointer;\n        display: inline-block;\n        box-sizing: border-box;\n        text-align: left;\n        box-shadow: 0 0 0 1px #d8dee4;\n        transition: all 0.2s ease;\n      }\n      .radio-wrapper-21 label:hover {\n        background: #f5f6f8;\n      }\n      .radio-wrapper-21 input {\n        clip: rect(0, 0, 0, 0);\n        border-width: 0;\n        height: 1px;\n        margin: -1px;\n        overflow: hidden;\n        padding: 0;\n        position: absolute;\n        white-space: nowrap;\n        width: 1px;\n      }\n      .radio-wrapper-21 input:checked ~ label {\n        box-shadow: 0 0 0 1.5px #675dff;\n        color: #533afd;\n      }\n      .radio-wrapper-21 input:focus ~ label {\n        box-shadow: 0 0 0 1.5px #675dff, 0 0 0 4px rgba(1, 150, 237, .36);\n      }\n      .radio-wrapper-21 input ~ label .title {\n        font-weight: 600;\n        margin-bottom: .5em;\n      }\n      .radio-wrapper-21 input ~ label .title,\n      .radio-wrapper-21 input ~ label .description {\n        display: block;\n        font-size: 12px;\n      }\n      .radio-wrapper-21 input ~ label .description {\n        color: #596171;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "stripe--inspired"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 22: H\u00e5vard Brynjulfsen",
+    "description": "A CSS radio button styled component inspired by H\u00e5vard Brynjulfsen's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label class=\"radio-wrapper\" for=\"example-22\">\n        <input type=\"radio\" class=\"radio-input\" name=\"radio-examples\" id=\"example-22\" />\n        <span class=\"radio-tile\">\n          <span class=\"radio-icon\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"192\" height=\"192\" fill=\"currentColor\" viewBox=\"0 0 256 256\">\n              <rect width=\"256\" height=\"256\" fill=\"none\"></rect>\n              <polygon points=\"72 40 184 40 240 104 128 224 16 104 72 40\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"12\"></polygon>\n              <polygon points=\"177.091 104 128 224 78.909 104 128 40 177.091 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"12\"></polygon>\n              <line x1=\"16\" y1=\"104\" x2=\"240\" y2=\"104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"12\"></line>\n            </svg>\n          </span>\n          <span class=\"radio-label\">Sketch</span>\n        </span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-22 *,\n      .radio-wrapper-22 *:after,\n      .radio-wrapper-22 *:before {\n        box-sizing: border-box;\n      }\n\n      .radio-wrapper-22 .radio-input {\n        clip: rect(0 0 0 0);\n        -webkit-clip-path: inset(100%);\n                clip-path: inset(100%);\n        height: 1px;\n        overflow: hidden;\n        position: absolute;\n        white-space: nowrap;\n        width: 1px;\n      }\n      .radio-wrapper-22 .radio-input:checked + .radio-tile {\n        border-color: #2260ff;\n        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n        color: #2260ff;\n      }\n      .radio-wrapper-22 .radio-input:checked + .radio-tile:before {\n        transform: scale(1);\n        opacity: 1;\n        background-color: #2260ff;\n        border-color: #2260ff;\n      }\n      .radio-wrapper-22 .radio-input:checked + .radio-tile .radio-icon,\n      .radio-wrapper-22 .radio-input:checked + .radio-tile .radio-label {\n        color: #2260ff;\n      }\n      .radio-wrapper-22 .radio-input:focus + .radio-tile {\n        border-color: #2260ff;\n        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;\n      }\n      .radio-wrapper-22 .radio-input:focus + .radio-tile:before {\n        transform: scale(1);\n        opacity: 1;\n      }\n\n      .radio-wrapper-22 .radio-tile {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        width: 7rem;\n        min-height: 7rem;\n        border-radius: 0.5rem;\n        border: 2px solid #b5bfd9;\n        background-color: #fff;\n        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n        transition: 0.15s ease;\n        cursor: pointer;\n        position: relative;\n      }\n      .radio-wrapper-22 .radio-tile:before {\n        content: \"\";\n        position: absolute;\n        display: block;\n        width: 1.25rem;\n        height: 1.25rem;\n        border: 2px solid #b5bfd9;\n        background-color: #fff;\n        border-radius: 50%;\n        top: 0.25rem;\n        left: 0.25rem;\n        opacity: 0;\n        transform: scale(0);\n        transition: 0.25s ease;\n        background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E\");\n        background-size: 12px;\n        background-repeat: no-repeat;\n        background-position: 50% 50%;\n      }\n      .radio-wrapper-22 .radio-tile:hover {\n        border-color: #2260ff;\n      }\n      .radio-wrapper-22 .radio-tile:hover:before {\n        transform: scale(1);\n        opacity: 1;\n      }\n\n      .radio-wrapper-22 .radio-icon {\n        transition: 0.375s ease;\n        color: #494949;\n      }\n      .radio-wrapper-22 .radio-icon svg {\n        width: 3rem;\n        height: 3rem;\n      }\n\n      .radio-wrapper-22 .radio-label {\n        color: #707070;\n        transition: 0.375s ease;\n        text-align: center;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "h-vard-brynjulfsen"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 23: WIP",
+    "description": "A CSS radio button styled component inspired by WIP's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-23\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-23\">\n        Option 23\n        <span class=\"emoji\">\ud83d\udd25</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-23 label {\n        background: #fff;\n        padding: .75rem 1rem;\n        border: 2px solid #e5e5e5;\n        border-radius: .25rem;\n        cursor: pointer;\n        display: inline-block;\n        box-sizing: border-box;\n        font-weight: 500;\n        position: relative;\n        min-width: 140px;\n        text-align: left;\n      }\n      .radio-wrapper-23 input {\n        clip: rect(0, 0, 0, 0);\n        border-width: 0;\n        height: 1px;\n        margin: -1px;\n        overflow: hidden;\n        padding: 0;\n        position: absolute;\n        white-space: nowrap;\n        width: 1px;\n      }\n      .radio-wrapper-23 input:checked ~ label {\n        box-shadow: rgb(220 38 38) 0 0 0 2px;\n        color: rgb(220 38 38);\n        background: rgb(254 242 242);\n        border-color: transparent;\n      }\n\n      .radio-wrapper-23 label .emoji {\n        position: absolute;\n        right: 1rem;\n        top: auto;\n        bottom: auto;\n        margin: auto;\n        display: none;\n      }\n\n      .radio-wrapper-23 input:checked ~ label .emoji {\n        display: initial;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "wip"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 24: Sailboat UI",
+    "description": "A CSS radio button styled component inspired by Sailboat UI's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-24\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-24\">Radio 24</label>\n    \n<style>\n\n      .radio-wrapper-24 {\n        display: flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-24 label {\n        color: rgb(55 65 81);\n        font-weight: 500;\n        font-size: .875rem;\n        line-height: 1.25rem;\n        padding-left: .5rem;\n      }\n\n      .radio-wrapper-24 input {\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        padding: 0;\n        -webkit-print-color-adjust: exact;\n        print-color-adjust: exact;\n        display: inline-block;\n        vertical-align: middle;\n        background-origin: border-box;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        user-select: none;\n        color: rgb(37 99 235);\n\n        border: 1px solid rgb(209 213 219);\n\n        box-shadow: 0 1px 2px 0 #0000000d;\n        border-radius: 9999px;\n        width: 1rem;\n        height: 1rem;\n\n        margin: 0;\n      }\n\n      .radio-wrapper-24 input:checked {\n        border-color: #0000;\n        background-color: currentColor;\n        background-size: 100% 100%;\n        background-position: 50%;\n        background-repeat: no-repeat;\n        background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYgMTYiIGZpbGw9IiNmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjMiLz48L3N2Zz4=);\n      }\n\n      .radio-wrapper-24 input:focus {\n        box-shadow: 0 0 0 3px rgb(191 219 254), 0 1px 2px 0 #0000000d;\n      }\n\n      .radio-wrapper-24 input:disabled {\n        color: rgb(156 163 175);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "sailboat-ui"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 25: Sailboat UI",
+    "description": "A CSS radio button styled component inspired by Sailboat UI's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-25\">\n        <div>\n          <span class=\"title\">Radio 25</span>\n          <span class=\"desc\">Description</span>\n        </div>\n        <input id=\"example-25\" type=\"radio\" name=\"radio-examples\">\n      </label>\n    \n<style>\n\n      .radio-wrapper-25 label {\n        display: flex;\n        align-items: flex-start;\n        text-align: left;\n        min-width: 140px;\n        justify-content: space-between;\n        border-top: 1px solid rgb(229 231 235);\n        border-bottom: 1px solid rgb(229 231 235);\n        padding-top: .75rem;\n        padding-bottom: .75rem;\n      }\n\n      .radio-wrapper-25 label div {\n        color: rgb(55 65 81);\n        font-size: .875rem;\n        line-height: 1.25rem;\n\n        display: flex;\n        flex-direction: column;\n      }\n\n      .radio-wrapper-25 label .title {\n        font-weight: 500;\n      }\n\n      .radio-wrapper-25 label .desc {\n        color: rgb(107 114 128);\n      }\n\n      .radio-wrapper-25 input {\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        padding: 0;\n        -webkit-print-color-adjust: exact;\n        print-color-adjust: exact;\n        display: inline-block;\n        vertical-align: middle;\n        background-origin: border-box;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        user-select: none;\n        color: rgb(37 99 235);\n\n        border: 1px solid rgb(209 213 219);\n\n        box-shadow: 0 1px 2px 0 #0000000d;\n        border-radius: 9999px;\n        width: 1rem;\n        height: 1rem;\n\n        margin: 2px 0 0;\n      }\n\n      .radio-wrapper-25 input:checked {\n        border-color: #0000;\n        background-color: currentColor;\n        background-size: 100% 100%;\n        background-position: 50%;\n        background-repeat: no-repeat;\n        background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYgMTYiIGZpbGw9IiNmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjMiLz48L3N2Zz4=);\n      }\n\n      .radio-wrapper-25 input:focus {\n        box-shadow: 0 0 0 3px rgb(191 219 254), 0 1px 2px 0 #0000000d;\n      }\n\n      .radio-wrapper-25 input:disabled {\n        color: rgb(156 163 175);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "sailboat-ui"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 26: CSS Scan",
+    "description": "A CSS radio button styled component inspired by CSS Scan's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-26\">\n        <div class=\"inputAndLeftText\">\n          <input id=\"example-26\" type=\"radio\" name=\"radio-examples\">\n          <div>\n            <span class=\"title\">Radio 26</span>\n            <span class=\"desc\">Description</span>\n          </div>\n        </div>\n        <span class=\"price\">$90</span>\n      </label>\n    \n<style>\n\n      .radio-wrapper-26 {\n        width: 90%;\n      }\n\n      .radio-wrapper-26 label {\n        display: flex;\n        align-items: flex-start;\n        text-align: left;\n        min-width: 140px;\n        justify-content: space-between;\n        padding: 11px;\n        border: none;\n        border-radius: 6px;\n        box-shadow: 0 0 0 1px #d8dee4;\n        transition: all 0.2s ease;\n        font-size: .875rem;\n      }\n\n      .radio-wrapper-26 label:not(:has(input:disabled)):hover {\n        background: #f5f6f8;\n      }\n\n      .radio-wrapper-26 label:has(input:disabled) {\n        opacity: .8;\n        cursor: not-allowed;\n        background: #f5f6f8;\n      }\n\n      .radio-wrapper-26 label:has(input:checked) {\n        box-shadow: 0 0 0 1.5px rgb(37 99 235), 0 0 0 1px #d8dee4;\n      }\n\n      .radio-wrapper-26 label:has(input:focus) {\n        box-shadow: 0 0 0 1.5px rgb(37 99 235), 0 0 0 4px rgb(191 219 254), 0 0 0 1px #d8dee4;\n      }\n\n      .radio-wrapper-26 label .inputAndLeftText {\n        display: flex;\n        gap: .75em;\n      }\n\n      .radio-wrapper-26 label .inputAndLeftText div {\n        color: rgb(55 65 81);\n        line-height: 1.25rem;\n\n        display: flex;\n        flex-direction: column;\n      }\n\n      .radio-wrapper-26 label .title,\n      .radio-wrapper-26 label .price {\n        font-weight: 500;\n      }\n\n      .radio-wrapper-26 label .desc {\n        color: rgb(107 114 128);\n      }\n\n      .radio-wrapper-26 input,\n      .radio-wrapper-26 label .price {\n        color: rgb(37 99 235);\n      }\n\n      .radio-wrapper-26 label .price {\n        margin-top: 1px;\n      }\n\n      .radio-wrapper-26 input {\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        padding: 0;\n        -webkit-print-color-adjust: exact;\n        print-color-adjust: exact;\n        display: inline-block;\n        vertical-align: middle;\n        background-origin: border-box;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        user-select: none;\n\n        border: 1px solid rgb(209 213 219);\n\n        box-shadow: 0 1px 2px 0 #0000000d;\n        border-radius: 9999px;\n        width: 1rem;\n        height: 1rem;\n\n        margin: 2px 0 0;\n      }\n\n      .radio-wrapper-26 input:checked {\n        border-color: #0000;\n        background-color: currentColor;\n        background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYgMTYiIGZpbGw9IiNmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjMiLz48L3N2Zz4=);\n      }\n\n      .radio-wrapper-26 input:focus {\n        box-shadow: 0 0 0 3px rgb(191 219 254), 0 1px 2px 0 #0000000d;\n      }\n\n      .radio-wrapper-26 input:disabled,\n      .radio-wrapper-26 label:has(input:disabled) .price {\n        color: rgb(156 163 175);\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "css-scan"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 27: daisyUI",
+    "description": "A CSS radio button styled component inspired by daisyUI's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-27\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-27\">Radio 27</label>\n    \n<style>\n\n      .radio-wrapper-27 {\n        display: flex;\n        align-items: center;\n        --bc: 27.8078% .029596 256.847952;\n      }\n\n      .radio-wrapper-27 label {\n        padding-left: .6em;\n        font-size: .875rem;\n        line-height: 1.25rem;\n        --tw-text-opacity: 1;\n        color: oklch(var(--bc)/var(--tw-text-opacity));\n      }\n\n      .radio-wrapper-27 input[type=\"radio\"] {\n        margin: 0;\n        padding: 0;\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        height: 1.5rem;\n        width: 1.5rem;\n        cursor: pointer;\n        border-radius: 9999px;\n        border-width: 1px;\n        border-style: solid;\n        border-color: oklch(var(--bc) / var(--tw-border-opacity));\n        --tw-border-opacity: .2;\n        --chkbg: var(--bc);\n        --b1: 100% 0 0;\n      }\n\n      .radio-wrapper-27 input[type=\"radio\"]:checked,\n      .radio-wrapper-27 input[type=\"radio\"][aria-checked=true] {\n        --tw-bg-opacity: 1;\n        background-color: oklch(var(--bc) / var(--tw-bg-opacity));\n        background-image: none;\n        animation: radiomark-27 var(--animation-input, .2s) ease-out;\n        box-shadow: 0 0 0 4px oklch(var(--b1) / 1) inset, 0 0 0 4px oklch(var(--b1) / 1) inset;\n      }\n\n      @keyframes radiomark-27 {\n        0% {\n          box-shadow: 0 0 0 12px oklch(var(--b1) /1) inset, 0 0 0 12px oklch(var(--b1) /1) inset;\n        }\n        50% {\n          box-shadow: 0 0 0 3px oklch(var(--b1) /1) inset, 0 0 0 3px oklch(var(--b1) /1) inset;\n        }\n        100% {\n          box-shadow: 0 0 0 4px oklch(var(--b1) /1) inset, 0 0 0 4px oklch(var(--b1) /1) inset;\n        }\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "daisyui"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 28: daisyUI",
+    "description": "A CSS radio button styled component inspired by daisyUI's design. Supports dark mode.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-28\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-28\">Radio 28</label>\n    \n<style>\n\n      .radio-wrapper-28 {\n        display: flex;\n        align-items: center;\n        --bc: 74.6477% .0216 264.435964;\n      }\n\n      .radio-wrapper-28 label {\n        padding-left: .6em;\n        font-size: .875rem;\n        line-height: 1.25rem;\n        --tw-text-opacity: 1;\n        color: oklch(var(--bc)/var(--tw-text-opacity));\n      }\n\n      .radio-wrapper-28 input[type=\"radio\"] {\n        margin: 0;\n        padding: 0;\n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        height: 1.5rem;\n        width: 1.5rem;\n        cursor: pointer;\n        border-radius: 9999px;\n        border-width: 1px;\n        border-style: solid;\n        border-color: oklch(var(--bc) / var(--tw-border-opacity));\n        --tw-border-opacity: .2;\n        --chkbg: var(--bc);\n        --b1: 25.3267% .015896 252.417568;\n      }\n\n      .radio-wrapper-28 input[type=\"radio\"]:checked,\n      .radio-wrapper-28 input[type=\"radio\"][aria-checked=true] {\n        --tw-bg-opacity: 1;\n        background-color: oklch(var(--bc) / var(--tw-bg-opacity));\n        background-image: none;\n        animation: radiomark-28 var(--animation-input, .2s) ease-out;\n        box-shadow: 0 0 0 4px oklch(var(--b1) / 1) inset, 0 0 0 4px oklch(var(--b1) / 1) inset;\n      }\n\n      @keyframes radiomark-28 {\n        0% {\n          box-shadow: 0 0 0 12px oklch(var(--b1) /1) inset, 0 0 0 12px oklch(var(--b1) /1) inset;\n        }\n        50% {\n          box-shadow: 0 0 0 3px oklch(var(--b1) /1) inset, 0 0 0 3px oklch(var(--b1) /1) inset;\n        }\n        100% {\n          box-shadow: 0 0 0 4px oklch(var(--b1) /1) inset, 0 0 0 4px oklch(var(--b1) /1) inset;\n        }\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "daisyui",
+      "dark-mode"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 29: Brandon McConnell",
+    "description": "A CSS radio button styled component inspired by Brandon McConnell's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-29-1\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-29-1\" data-amount=\"$50k-$100k\"></label>\n      <input id=\"example-29-2\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-29-2\" data-amount=\"$100k+\"></label>\n      <div class=\"amount-pos\"></div>\n    \n<style>\n\n      .radio-wrapper-29 {\n        display: flex;\n        flex-direction: row;\n        align-content: stretch;\n        position: relative;\n        width: 100%;\n        height: 50px;\n        --number-of-options: 2;\n        -webkit-user-select: none;\n          -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n        margin-bottom: 1.2em;\n      }\n      .radio-wrapper-29::before {\n        content: \" \";\n        position: absolute;\n        height: 2px;\n        width: 100%;\n        width: calc(100% * (calc(var(--number-of-options) - 1) / var(--number-of-options)));\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        background: #000;\n      }\n      .radio-wrapper-29 input, .radio-wrapper-29 label {\n        box-sizing: border-box;\n        flex: 1;\n        -webkit-user-select: none;\n          -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n        cursor: pointer;\n      }\n      .radio-wrapper-29 label {\n        display: inline-block;\n        position: relative;\n        width: 20%;\n        height: 100%;\n        -webkit-user-select: none;\n          -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n      }\n      .radio-wrapper-29 label::before {\n        content: attr(data-amount);\n        position: absolute;\n        left: 50%;\n        padding-top: 10px;\n        transform: translate(-50%, 45px);\n        font-size: 14px;\n        letter-spacing: 0.4px;\n        font-weight: 400;\n        white-space: nowrap;\n        opacity: 0.85;\n        transition: all 0.15s ease-in-out;\n      }\n      .radio-wrapper-29 label::after {\n        content: \" \";\n        position: absolute;\n        left: 50%;\n        top: 50%;\n        transform: translate(-50%, -50%);\n        width: 30px;\n        height: 30px;\n        border: 2px solid #000;\n        background: #fff;\n        border-radius: 50%;\n        pointer-events: none;\n        -webkit-user-select: none;\n          -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n        z-index: 1;\n        cursor: pointer;\n        transition: all 0.15s ease-in-out;\n      }\n      .radio-wrapper-29 label:hover::after {\n        transform: translate(-50%, -50%) scale(1.25);\n      }\n      .radio-wrapper-29 input {\n        display: none;\n      }\n      .radio-wrapper-29 input:checked + label::before {\n        font-weight: 800;\n        opacity: 1;\n      }\n      .radio-wrapper-29 input:checked + label::after {\n        border-width: 4px;\n        transform: translate(-50%, -50%) scale(0.75);\n      }\n      .radio-wrapper-29 input:checked ~ .amount-pos {\n        opacity: 1;\n      }\n      .radio-wrapper-29 input:checked:nth-child(1) ~ .amount-pos {\n        left: 25%;\n      }\n      .radio-wrapper-29 input:checked:nth-child(3) ~ .amount-pos {\n        left: 75%;\n      }\n      .radio-wrapper-29 .amount-pos {\n        display: block;\n        position: absolute;\n        top: 50%;\n        width: 12px;\n        height: 12px;\n        background: #000;\n        border-radius: 50%;\n        transition: all 0.15s ease-in-out;\n        transform: translate(-50%, -50%);\n        border: 2px solid #fff;\n        opacity: 0;\n        z-index: 2;\n        left: 25%;\n        pointer-events: none;\n      }\n      .radio-wrapper-29 input + label::before {\n        transform: translate(-50%, 45px) scale(0.9);\n        transition: all 0.15s linear;\n      }\n      .radio-wrapper-29 input:checked + label::before {\n        transform: translate(-50%, 45px) scale(1.1);\n        transition: all 0.15s linear;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "brandon-mcconnell"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 30: Kenan Yusuf",
+    "description": "A CSS radio button styled component inspired by Kenan Yusuf's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-30\">\n        Radio 30\n        <input id=\"example-30\" type=\"radio\" name=\"radio-examples\">\n        <div class=\"control__indicator\"></div>\n      </label>\n    \n<style>\n\n      .radio-wrapper-30 label {\n        display: block;\n        position: relative;\n        padding-left: 30px;\n        margin-bottom: 15px;\n        cursor: pointer;\n        font-size: 18px;\n      }\n      .radio-wrapper-30 input {\n        position: absolute;\n        z-index: -1;\n        opacity: 0;\n        appearance: none;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n      }\n      .radio-wrapper-30 .control__indicator {\n        position: absolute;\n        top: 2px;\n        left: 0;\n        height: 20px;\n        width: 20px;\n        background: #e6e6e6;\n        border-radius: 50%;\n      }\n      .radio-wrapper-30:hover input ~ .control__indicator,\n      .radio-wrapper-30 input:focus ~ .control__indicator {\n        background: #ccc;\n      }\n      .radio-wrapper-30 input:checked ~ .control__indicator {\n        background: #2aa1c0;\n      }\n      .radio-wrapper-30:hover input:not([disabled]):checked ~ .control__indicator,\n      .radio-wrapper-30 input:checked:focus ~ .control__indicator {\n        background: #0e647d;\n      }\n      .radio-wrapper-30 input:disabled ~ .control__indicator {\n        background: #e6e6e6;\n        opacity: 0.6;\n        pointer-events: none;\n      }\n      .radio-wrapper-30 .control__indicator:after {\n        content: '';\n        position: absolute;\n        display: none;\n      }\n      .radio-wrapper-30 input:checked ~ .control__indicator:after {\n        display: block;\n      }\n      .radio-wrapper-30 .control__indicator:after {\n        left: 7px;\n        top: 7px;\n        height: 6px;\n        width: 6px;\n        border-radius: 50%;\n        background: #fff;\n      }\n      .radio-wrapper-30 input:disabled ~ .control__indicator:after {\n        background: #7b7b7b;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "kenan-yusuf"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 31: Andreas Storm",
+    "description": "A CSS radio button styled component inspired by Andreas Storm's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-31\">\n        <input id=\"example-31\" type=\"radio\" name=\"radio-examples\">\n        <span class=\"label\"></span>\n        Radio 31\n      </label>\n    \n<style>\n\n      .radio-wrapper-31 * {\n        box-sizing: border-box;\n      }\n\n      .radio-wrapper-31 label {\n        position: relative;\n        cursor: pointer;\n        line-height: 20px;\n        font-size: 14px;\n        padding: 3px 0;\n      }\n\n      .radio-wrapper-31 .label {\n        position: relative;\n        display: block;\n        float: left;\n        margin-right: 10px;\n        width: 20px;\n        height: 20px;\n        border: 2px solid #c8ccd4;\n        border-radius: 100%;\n        -webkit-tap-highlight-color: transparent;\n        margin-top: 1px;\n      }\n      .radio-wrapper-31 .label:after {\n        content: '';\n        position: absolute;\n        top: 3px;\n        left: 3px;\n        width: 10px;\n        height: 10px;\n        border-radius: 100%;\n        background: #225cff;\n        transform: scale(0);\n        transition: all 0.2s ease;\n        opacity: 0.08;\n        pointer-events: none;\n      }\n      .radio-wrapper-31:hover .label:after {\n        transform: scale(3.6);\n      }\n      .radio-wrapper-31 input[type=\"radio\"]:checked + .label {\n        border-color: #225cff;\n      }\n      .radio-wrapper-31 input[type=\"radio\"]:checked + .label:after {\n        transform: scale(1);\n        transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);\n        opacity: 1;\n      }\n      .radio-wrapper-31 input[type=\"radio\"] {\n        display: none;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "andreas-storm"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 32: simurai",
+    "description": "A CSS radio button styled component inspired by simurai's design. Supports dark mode.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <input id=\"example-32\" type=\"radio\" name=\"radio-examples\">\n      <label for=\"example-32\">Radio 32</label>\n    \n<style>\n\n      .radio-wrapper-32 {\n        display: flex;\n        align-items: center;\n      }\n\n      .radio-wrapper-32 label {\n        color: #A0ACB2;\n      }\n\n      .radio-wrapper-32 input {\n        -webkit-appearance: none; /* remove default */\n        display: block;\n        margin-right: 10px;\n        width: 24px;\n        height: 24px;\n        border-radius: 12px;\n        cursor: pointer;\n        vertical-align: middle;\n        box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;\n        background-color: hsla(0,0%,0%,.2);\n        background-image: -webkit-radial-gradient( hsla(200,100%,90%,1) 0%, hsla(200,100%,70%,1) 15%, hsla(200,100%,60%,.3) 28%, hsla(200,100%,30%,0) 70% );\n        background-repeat: no-repeat;\n        -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),\n          -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);\n        outline: none;\n      }\n      .radio-wrapper-32 input:checked {\n        -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),\n          -webkit-transform .25s cubic-bezier(0, 0, .2, 1);\n      }\n      .radio-wrapper-32 input:active {\n        -webkit-transform: scale(1.5);\n        -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);\n      }\n\n      .radio-wrapper-32 input,\n      .radio-wrapper-32 input:active {\n        background-position: 0 24px;\n      }\n      .radio-wrapper-32 input:checked {\n        background-position: 0 0;\n      }\n      .radio-wrapper-32 input:checked ~ input,\n      .radio-wrapper-32 input:checked ~ input:active {\n        background-position: 0 -24px;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "simurai",
+      "dark-mode"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "CSS Radio 33: Colin + CSS Scan",
+    "description": "A CSS radio button styled component inspired by Colin + CSS Scan's design.",
+    "category": "other",
+    "framework": "css",
+    "code": "\n      <label for=\"example-33\">\n        <input id=\"example-33\" type=\"radio\" name=\"radio-examples\">\n        Radio 33\n      </label>\n    \n<style>\n\n      .radio-wrapper-33 label {\n        display: inline-flex;\n        align-items: center;\n        background: #fff;\n        padding: 5px 15px;\n        margin: 0;\n        border: 1px solid #eeeeee;\n        -webkit-transition: all 0.1s linear;\n        -moz-transition: all 0.1s linear;\n        transition: all 0.1s linear;\n        line-height: 1.55;\n        color: #737373;\n      }\n\n      .radio-wrapper-33 input {\n        margin: 0;\n        margin-right: .5em;\n        color: #2dceb1;\n        appearance: none;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n        border: 2px solid #2dceb1;\n        width: 14px;\n        height: 14px;\n        border-radius: 100px;\n      }\n\n      .radio-wrapper-33 label:has(input:checked) {\n        background: #50d9c0;\n      }\n\n      .radio-wrapper-33 label:has(input:checked) input {\n        border-color: #1f8f7b;\n        background: #1f8f7b;\n        box-shadow: #4fd9c0 0px 0px 0px 2px inset;\n      }\n    \n</style>",
+    "tags": [
+      "radio",
+      "css",
+      "css-radio",
+      "colin---css-scan"
+    ],
+    "dependencies": []
+  }
+]
