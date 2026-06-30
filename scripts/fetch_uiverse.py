@@ -3,6 +3,7 @@ import os
 import urllib.request
 import urllib.error
 import re
+import subprocess
 
 # Mapping from Uiverse directory names to OpenBlocks categories
 CATEGORY_MAPPING = {
@@ -19,11 +20,31 @@ CATEGORY_MAPPING = {
     "loaders": "loading"
 }
 
+def get_github_token():
+    # 1. Try environment variable
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        return token
+        
+    # 2. Try running gh CLI
+    try:
+        result = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, check=True)
+        tok = result.stdout.strip()
+        if tok:
+            return tok
+    except Exception:
+        pass
+        
+    return None
+
+GITHUB_TOKEN = get_github_token()
+
 def http_get(url):
-    req = urllib.request.Request(
-        url, 
-        headers={'User-Agent': 'OpenBlocks-Fetcher/1.0'}
-    )
+    headers = {'User-Agent': 'OpenBlocks-Fetcher/1.0'}
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f'token {GITHUB_TOKEN}'
+        
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req) as response:
             return response.read()
@@ -31,8 +52,16 @@ def http_get(url):
         print(f"HTTP Error: {e} for URL: {url}")
         return None
 
+def react_jsx_to_html(code):
+    return code
+
 def fetch_uiverse():
     print("Fetching Uiverse component list from GitHub (uiverse-io/galaxy)...")
+    if GITHUB_TOKEN:
+        print("Using authenticated GitHub API requests (higher rate limits).")
+    else:
+        print("Warning: No GITHUB_TOKEN set. Requests might get rate-limited.")
+        
     api_url = "https://api.github.com/repos/uiverse-io/galaxy/contents"
     
     response_data = http_get(api_url)
@@ -43,8 +72,8 @@ def fetch_uiverse():
     directories = json.loads(response_data.decode('utf-8'))
     components = []
     
-    # Fetch 3 high-quality variants per category to keep it fast
-    MAX_VARIANTS_PER_CAT = 3
+    # Fetch 20 variations per category for a much larger dataset!
+    MAX_VARIANTS_PER_CAT = 20
     
     for item in directories:
         dir_name = item['name']
@@ -68,7 +97,7 @@ def fetch_uiverse():
             if not file_name.endswith('.html'):
                 continue
                 
-            # Clean up variant name (e.g. "ercnersoy_spicy-turkey-3.html" -> "Spicy Turkey 3")
+            # Clean up variant name
             clean_name = file_name.replace('.html', '')
             if '_' in clean_name:
                 parts = clean_name.split('_', 1)
@@ -87,18 +116,17 @@ def fetch_uiverse():
                 
             html_code = raw_content.decode('utf-8')
             
-            # Detect framework: if contains <style> tag, it's vanilla CSS. Else, Tailwind CSS.
+            # Detect framework
             framework = "css"
             dependencies = []
             if "<style>" in html_code:
                 framework = "css"
             else:
-                # Check if it uses tailwind classes (class=)
                 if "class=" in html_code:
                     framework = "tailwind"
                     dependencies = ["tailwindcss"]
                     
-            # Parse tags from header comments if present (e.g. "/* From Uiverse.io by ... - Tags: button */")
+            # Parse tags
             tags = [dir_name.lower(), "uiverse", "ui-element"]
             tag_match = re.search(r'Tags:\s*([a-zA-Z0-9,\s\-]+)', html_code)
             if tag_match:
@@ -130,8 +158,6 @@ def fetch_uiverse():
         
     print(f"\nSuccess! Fetched {len(components)} Uiverse components.")
     print(f"Components saved to '{output_path}'.")
-    print("\nTo seed the database with these components, run:")
-    print("cargo run -- --db-path openblocks.db seed")
 
 if __name__ == "__main__":
     fetch_uiverse()
