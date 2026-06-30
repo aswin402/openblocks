@@ -701,5 +701,433 @@
     "dependencies": [
       "tailwindcss"
     ]
+  },
+  {
+    "name": "Uiverse Button: Hungry Penguin 30 (by 0x-Sarthak)",
+    "description": "A beautiful community-designed Button element from Uiverse.io.",
+    "category": "other",
+    "framework": "css",
+    "code": "<button class=\"cta\">\n  <span>Contact Us &nbsp;</span>\n  <svg viewBox=\"0 0 13 10\" height=\"10px\" width=\"15px\">\n    <path d=\"M1,5 L11,5\"></path>\n    <polyline points=\"8 1 12 5 8 9\"></polyline>\n  </svg>\n</button>\n\n<style>\n/* From Uiverse.io by 0x-Sarthak  - Tags: button, hover, rounded, animated, hover button */\n.cta {\n  position: relative;\n  margin: auto;\n  padding: 11.5px 18px;\n  transition: all 0.2s ease;\n  border: 3px solid #552da8;\n  border-radius: 50px;\n  background: #552da8;\n  cursor: pointer;\n}\n\n.cta:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: 0;\n  display: block;\n  border-radius: 50px;\n  background: white;\n  width: 45px;\n  height: 45px;\n  transition: all 0.8s ease;\n}\n\n.cta span {\n  position: relative;\n  font-family: Montserrat;\n  font-size: 18px;\n  color: white;\n  font-weight: 400;\n  letter-spacing: 0.05em;\n}\n\n.cta svg {\n  position: relative;\n  top: 0;\n  margin-left: 10px;\n  fill: none;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke: white;\n  stroke-width: 2;\n  transform: translateX(-5px);\n  transition: all 0.5s ease;\n}\n\n.cta:hover:before {\n  width: 100%;\n  background: #1c1c1c;\n}\n\n.cta:hover svg {\n  transform: translateX(0);\n  transition: all 2s ease;\n}\n\n.cta:active {\n  transform: scale(0.95);\n  transition: all 2s ease;\n}\n\n</style>\n    ",
+    "tags": [
+      "buttons",
+      "uiverse",
+      "ui-element",
+      "button",
+      "hover",
+      "rounded",
+      "animated",
+      "hover button"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Button: Afraid Eagle 38 (by 0x3ther)",
+    "description": "A beautiful community-designed Button element from Uiverse.io.",
+    "category": "other",
+    "framework": "tailwind",
+    "code": "<!-- From Uiverse.io by 0x3ther  - Tags: simple, button, social media, hover button, tailwind, tailwindcss -->\n<div class=\"flex items-center justify-center h-full\">\n  <button\n    class=\"text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2\"\n    type=\"button\"\n  >\n    Facebook\n  </button>\n  <button\n    class=\"text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2\"\n    type=\"button\"\n  >\n    YouTube\n  </button>\n  <button\n    class=\"text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-400/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2\"\n    type=\"button\"\n  >\n    Twitter\n  </button>\n  <button\n    class=\"text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2\"\n    type=\"button\"\n  >\n    Instagram\n  </button>\n</div>\n\n\n    ",
+    "tags": [
+      "buttons",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "button",
+      "social media",
+      "hover button",
+      "tailwind",
+      "tailwindcss --"
+    ],
+    "dependencies": [
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Uiverse Button: Heavy Dragon 56 (by 0x3ther)",
+    "description": "A beautiful community-designed Button element from Uiverse.io.",
+    "category": "other",
+    "framework": "tailwind",
+    "code": "<!-- From Uiverse.io by 0x3ther  - Tags: icon, animation, button, navigation, hover effect, tailwindbutton, tailwindcss -->\n<div class=\"flex items-center gap-2\">\n  <button\n    class=\"relative inline-flex items-center justify-center gap-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white hover:bg-[#F5F5F5] h-9 rounded-md px-3 group\"\n  >\n    <svg\n      class=\"lucide lucide-arrow-left\"\n      stroke-linejoin=\"round\"\n      stroke-linecap=\"round\"\n      stroke-width=\"2\"\n      stroke=\"currentColor\"\n      fill=\"none\"\n      viewBox=\"0 0 24 24\"\n      height=\"22\"\n      width=\"22\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path d=\"m12 19-7-7 7-7\"></path>\n      <path d=\"M19 12H5\"></path>\n    </svg>\n    <span class=\"origin-left scale-0 transition-transform group-hover:scale-100\"\n      >Back</span\n    >\n  </button>\n  <button\n    class=\"cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#06B6D4] h-9 rounded-md px-3\"\n  >\n    <svg\n      class=\"lucide lucide-rocket text-cyan-500 dark:text-cyan-400\"\n      stroke-linejoin=\"round\"\n      stroke-linecap=\"round\"\n      stroke-width=\"2\"\n      stroke=\"#06B6D4\"\n      fill=\"none\"\n      viewBox=\"0 0 24 24\"\n      height=\"22\"\n      width=\"22\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"\n      ></path>\n      <path\n        d=\"m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"\n      ></path>\n      <path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"></path>\n      <path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"></path>\n    </svg>\n    Dashboard\n  </button>\n  <button\n    class=\"cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#60A5FA] h-9 rounded-md px-3\"\n  >\n    <svg\n      class=\"lucide lucide-newspaper text-blue-400 dark:text-blue-600\"\n      stroke-linejoin=\"round\"\n      stroke-linecap=\"round\"\n      stroke-width=\"2\"\n      stroke=\"#60A5FA\"\n      fill=\"none\"\n      viewBox=\"0 0 24 24\"\n      height=\"22\"\n      width=\"22\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        d=\"M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2\"\n      ></path>\n      <path d=\"M18 14h-8\"></path>\n      <path d=\"M15 18h-5\"></path>\n      <path d=\"M10 6h8v4h-8V6Z\"></path>\n    </svg>\n    Articles\n  </button>\n  <button\n    class=\"cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FACC14] h-9 rounded-md px-3\"\n  >\n    <svg\n      class=\"lucide lucide-sticky-note text-yellow-400 dark:text-yellow-600\"\n      stroke-linejoin=\"round\"\n      stroke-linecap=\"round\"\n      stroke-width=\"2\"\n      stroke=\"#FACC14\"\n      fill=\"none\"\n      viewBox=\"0 0 24 24\"\n      height=\"22\"\n      width=\"22\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        d=\"M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z\"\n      ></path>\n      <path d=\"M15 3v6h6\"></path>\n    </svg>\n    Notes\n  </button>\n  <button\n    class=\"cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FB923C] h-9 rounded-md px-3\"\n  >\n    <svg\n      class=\"lucide lucide-star text-orange-400 dark:text-orange-600\"\n      stroke-linejoin=\"round\"\n      stroke-linecap=\"round\"\n      stroke-width=\"2\"\n      stroke=\"#FB923C\"\n      fill=\"#FB923C\"\n      viewBox=\"0 0 24 24\"\n      height=\"22\"\n      width=\"22\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <polygon\n        points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"\n      ></polygon>\n    </svg>\n    Reviews\n  </button>\n</div>\n\n\n    ",
+    "tags": [
+      "buttons",
+      "uiverse",
+      "ui-element",
+      "icon",
+      "animation",
+      "button",
+      "navigation",
+      "hover effect",
+      "tailwindbutton",
+      "tailwindcss --"
+    ],
+    "dependencies": [
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Uiverse Card: Thin Sloth 31 (by 05akalan57)",
+    "description": "A beautiful community-designed Card element from Uiverse.io.",
+    "category": "card",
+    "framework": "tailwind",
+    "code": "<!-- From Uiverse.io by 05akalan57  - Tags: card, border, css effect -->\n<div\n  class=\"relative drop-shadow-xl w-48 h-64 overflow-hidden rounded-xl bg-[#3d3c3d]\"\n>\n  <div\n    class=\"absolute flex items-center justify-center text-white z-[1] opacity-90 rounded-xl inset-0.5 bg-[#323132]\"\n  >\n    CARD\n  </div>\n  <div class=\"absolute w-56 h-48 bg-white blur-[50px] -left-1/2 -top-1/2\"></div>\n</div>\n\n\n    ",
+    "tags": [
+      "cards",
+      "uiverse",
+      "ui-element",
+      "card",
+      "border",
+      "css effect --"
+    ],
+    "dependencies": [
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Uiverse Card: Warm Cheetah 38 (by 0senno)",
+    "description": "A beautiful community-designed Card element from Uiverse.io.",
+    "category": "card",
+    "framework": "css",
+    "code": "<div class=\"card\">\n  <img\n    src=\"https://uiverse.io/build/_assets/astronaut-WTFWARES.png\"\n    alt=\"\"\n    class=\"image\"\n  />\n  <div class=\"heading\">We're on Social Media</div>\n  <div class=\"icons\">\n    <a href=\"https://www.instagram.com/uiverse.io/\" class=\"instagram\">\n      <svg\n        width=\"24\"\n        height=\"25\"\n        viewBox=\"0 0 24 25\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          d=\"M17.0459 7.5H17.0559M3.0459 12.5C3.0459 9.986 3.0459 8.73 3.3999 7.72C3.71249 6.82657 4.22237 6.01507 4.89167 5.34577C5.56096 4.67647 6.37247 4.16659 7.2659 3.854C8.2759 3.5 9.5329 3.5 12.0459 3.5C14.5599 3.5 15.8159 3.5 16.8269 3.854C17.7202 4.16648 18.5317 4.67621 19.201 5.34533C19.8702 6.01445 20.3802 6.82576 20.6929 7.719C21.0459 8.729 21.0459 9.986 21.0459 12.5C21.0459 15.014 21.0459 16.27 20.6929 17.28C20.3803 18.1734 19.8704 18.9849 19.2011 19.6542C18.5318 20.3235 17.7203 20.8334 16.8269 21.146C15.8169 21.5 14.5599 21.5 12.0469 21.5C9.5329 21.5 8.2759 21.5 7.2659 21.146C6.37268 20.8336 5.56131 20.324 4.89202 19.6551C4.22274 18.9862 3.71274 18.1751 3.3999 17.282C3.0459 16.272 3.0459 15.015 3.0459 12.501V12.5ZM15.8239 11.94C15.9033 12.4387 15.8829 12.9481 15.7641 13.4389C15.6453 13.9296 15.4304 14.392 15.1317 14.7991C14.833 15.2063 14.4566 15.5501 14.0242 15.8108C13.5917 16.0715 13.1119 16.2439 12.6124 16.318C12.1129 16.392 11.6037 16.3663 11.1142 16.2422C10.6248 16.1182 10.1648 15.8983 9.76082 15.5953C9.35688 15.2923 9.01703 14.9123 8.76095 14.4771C8.50486 14.0419 8.33762 13.5602 8.2689 13.06C8.13201 12.0635 8.39375 11.0533 8.99727 10.2487C9.6008 9.44407 10.4974 8.91002 11.4923 8.76252C12.4873 8.61503 13.5002 8.86599 14.3112 9.46091C15.1222 10.0558 15.6658 10.9467 15.8239 11.94Z\"\n          stroke=\"currentColor\"\n          stroke-width=\"2\"\n          stroke-linecap=\"round\"\n          stroke-linejoin=\"round\"\n        ></path>\n      </svg>\n    </a>\n    <a href=\"https://twitter.com/uiverse_io\" class=\"x\">\n      <svg\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          d=\"M19.8003 3L13.5823 10.105L19.9583 19.106C20.3923 19.719 20.6083 20.025 20.5983 20.28C20.594 20.3896 20.5657 20.4969 20.5154 20.5943C20.4651 20.6917 20.3941 20.777 20.3073 20.844C20.1043 21 19.7293 21 18.9793 21H17.2903C16.8353 21 16.6083 21 16.4003 20.939C16.2168 20.8847 16.0454 20.7957 15.8953 20.677C15.7253 20.544 15.5943 20.358 15.3313 19.987L10.6813 13.421L4.64033 4.894C4.20733 4.281 3.99033 3.975 4.00033 3.72C4.00478 3.61035 4.03323 3.50302 4.08368 3.40557C4.13414 3.30812 4.20536 3.22292 4.29233 3.156C4.49433 3 4.87033 3 5.62033 3H7.30833C7.76333 3 7.99033 3 8.19733 3.061C8.38119 3.1152 8.55295 3.20414 8.70333 3.323C8.87333 3.457 9.00433 3.642 9.26733 4.013L13.5833 10.105M4.05033 21L10.6823 13.421\"\n          stroke=\"currentColor\"\n          stroke-width=\"2\"\n          stroke-linecap=\"round\"\n          stroke-linejoin=\"round\"\n        ></path>\n      </svg>\n    </a>\n    <a href=\"https://discord.gg/KD8ba2uUpT\" class=\"discord\">\n      <svg\n        width=\"25\"\n        height=\"25\"\n        viewBox=\"0 0 25 25\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path\n          d=\"M11.5989 6.5003H14.2919C14.3851 6.5003 14.4764 6.47427 14.5555 6.42515C14.6347 6.37603 14.6985 6.30577 14.7399 6.2223L15.4179 4.8543C15.4664 4.75358 15.5488 4.67313 15.6506 4.62706C15.7524 4.58098 15.8673 4.57222 15.9749 4.6023C16.6309 4.7903 18.0049 5.2433 19.1029 6.0003C22.9669 8.8973 22.6069 15.3903 22.5779 16.7603C22.5765 16.8444 22.5541 16.9269 22.5129 17.0003C20.5299 20.5003 17.0899 20.5003 17.0899 20.5003L15.9239 18.0743M15.9239 18.0743C16.4479 17.9163 17.0029 17.7253 17.6029 17.5003M15.9239 18.0743C13.4799 18.8093 11.7219 18.8083 9.27791 18.0733M13.5989 6.5003H10.9109C10.8179 6.50039 10.7266 6.47451 10.6475 6.42557C10.5683 6.37664 10.5044 6.30659 10.4629 6.2233L9.77991 4.8533C9.73146 4.75279 9.64925 4.6725 9.54762 4.62644C9.446 4.58038 9.33142 4.57148 9.22391 4.6013C8.56891 4.7893 7.19291 5.2433 6.09391 6.0003C2.23091 8.8973 2.59091 15.3903 2.61991 16.7603C2.62132 16.8445 2.64366 16.9269 2.68491 17.0003C4.66791 20.5003 8.10791 20.5003 8.10791 20.5003L9.27791 18.0733M9.27791 18.0733C8.75491 17.9163 8.19891 17.7253 7.59891 17.5003M10.6009 12.5003C10.6009 12.7655 10.4956 13.0199 10.308 13.2074C10.1205 13.3949 9.86612 13.5003 9.60091 13.5003C9.33569 13.5003 9.08134 13.3949 8.8938 13.2074C8.70626 13.0199 8.60091 12.7655 8.60091 12.5003C8.60091 12.2351 8.70626 11.9807 8.8938 11.7932C9.08134 11.6057 9.33569 11.5003 9.60091 11.5003C9.86612 11.5003 10.1205 11.6057 10.308 11.7932C10.4956 11.9807 10.6009 12.2351 10.6009 12.5003ZM16.6029 12.5003C16.6029 12.7655 16.4976 13.0199 16.31 13.2074C16.1225 13.3949 15.8681 13.5003 15.6029 13.5003C15.3377 13.5003 15.0833 13.3949 14.8958 13.2074C14.7083 13.0199 14.6029 12.7655 14.6029 12.5003C14.6029 12.2351 14.7083 11.9807 14.8958 11.7932C15.0833 11.6057 15.3377 11.5003 15.6029 11.5003C15.8681 11.5003 16.1225 11.6057 16.31 11.7932C16.4976 11.9807 16.6029 12.2351 16.6029 12.5003Z\"\n          stroke=\"currentColor\"\n          stroke-width=\"2\"\n          stroke-linecap=\"round\"\n          stroke-linejoin=\"round\"\n        ></path>\n      </svg>\n    </a>\n  </div>\n</div>\n\n<style>\n/* From Uiverse.io by 0senno  - Tags: simple, card, Discord, smooth */\n.card {\n  max-width: 500px;\n  margin: 0 auto;\n  background-color: #1e1e1e;\n  border-radius: 10px;\n  overflow: hidden;\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);\n}\n\n.image {\n  width: 100%;\n  max-width: 180px;\n  display: block;\n  margin: auto;\n}\n\n.heading {\n  font-size: 1.5rem;\n  color: #fff;\n  padding: 20px 0;\n}\n\n.icons {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  padding: 20px;\n}\n\n.icons a {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 50px;\n  height: 50px;\n  background-color: #2e2e2e;\n  border-radius: 50%;\n  transition: background-color 0.3s ease;\n}\n\n.icons a:hover {\n  background-color: #405de6;\n}\n\n.icons svg {\n  fill: #fff;\n  width: 30px;\n  height: 30px;\n}\n\n</style>\n    ",
+    "tags": [
+      "cards",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "card",
+      "discord",
+      "smooth"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Card: Average Mole 62 (by 0xnihilism)",
+    "description": "A beautiful community-designed Card element from Uiverse.io.",
+    "category": "card",
+    "framework": "css",
+    "code": "<div class=\"card\">\n  <div class=\"banner\">\n    <span class=\"banner-text\">SUBSCRIBE</span>\n    <span class=\"banner-text\">JOIN US</span>\n  </div>\n  <span class=\"card__title\">Nihilism</span>\n  <p class=\"card__subtitle\">Get fresh void to your inbox every week.</p>\n  <form class=\"card__form\">\n    <input placeholder=\"Your Email\" type=\"email\" required=\"\" />\n    <button class=\"sign-up\">Sign up</button>\n  </form>\n</div>\n\n<style>\n/* From Uiverse.io by 0xnihilism  - Tags: 3d, card, clean, Brutalism */\n.card {\n  width: 320px;\n  padding: 30px;\n  background: #fff;\n  border: 8px solid #000;\n  box-shadow: 15px 15px 0 #000;\n  transform: rotate(-2deg);\n  transition: all 0.3s ease;\n  position: relative;\n  overflow: hidden;\n}\n.card:active {\n  animation: shake 0.5s ease-in-out;\n}\n.card:hover {\n  transform: rotate(0deg) scale(1.02);\n  box-shadow: 20px 20px 0 #000;\n}\n.banner {\n  position: absolute;\n  top: 3px;\n  right: -95px;\n  background: #000;\n  color: #fff;\n  padding: 15px;\n  width: 350px;\n  text-align: center;\n  transform: rotate(45deg);\n  font-weight: bold;\n  font-size: 18px;\n  letter-spacing: 2px;\n  overflow: hidden;\n  transition: background 0.5s ease;\n}\n.banner-text {\n  display: inline-block;\n  transition: opacity 0.5s ease, transform 0.5s ease;\n  width: 100%;\n  position: absolute;\n  left: 13%;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.banner:hover .banner-text:first-child {\n  opacity: 0;\n  transform: translateY(-100%);\n}\n.banner:hover .banner-text:last-child {\n  opacity: 1;\n  transform: translateY(-40%);\n}\n.banner-text:last-child {\n  opacity: 0;\n  transform: translateY(60%);\n}\n.banner:hover {\n  background: red;\n}\n.card__title {\n  font-size: 24px;\n  font-weight: 700;\n  color: #000;\n  text-transform: uppercase;\n  margin-bottom: 10px;\n  display: block;\n  border-bottom: 2px solid #000;\n  width: 50%; /* or any other percentage or pixel value */\n}\n.card__subtitle {\n  font-size: 16px;\n  line-height: 1.4;\n  color: #333;\n  margin-bottom: 20px;\n  padding-bottom: 10px;\n}\n.card__form {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n.card__form input {\n  padding: 12px;\n  border: 4px solid #000;\n  font-size: 16px;\n  font-family: \"Proxima Nova\", sans-serif;\n  transition: all 0.3s ease;\n  background-color: #fff;\n}\n.card__form input:focus {\n  outline: none;\n  transform: scale(1.05);\n}\n.sign-up {\n  border: 4px solid #000;\n  background: #000;\n  color: #fff;\n  padding: 12px;\n  font-size: 18px;\n  font-weight: bold;\n  text-transform: uppercase;\n  cursor: pointer;\n  transition: all 0.3s ease;\n}\n.sign-up:hover {\n  background: #fff;\n  color: #000;\n  transform: translateY(-5px);\n  box-shadow: 0 5px 0 #000;\n}\n.sign-up:active {\n  animation: shake 0.5s ease-in-out;\n  transform: translateY(0);\n  box-shadow: none;\n}\n@keyframes shake {\n  0% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-5px);\n  }\n  50% {\n    transform: translateX(5px);\n  }\n  75% {\n    transform: translateX(-5px);\n  }\n  100% {\n    transform: translateX(0);\n  }\n}\n\n</style>\n    ",
+    "tags": [
+      "cards",
+      "uiverse",
+      "ui-element",
+      "3d",
+      "card",
+      "clean",
+      "brutalism"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Checkboxe: Empty Falcon 21 (by 010binary)",
+    "description": "A beautiful community-designed Checkboxe element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"radio-input\">\n  <input checked=\"\" value=\"color-1\" name=\"color\" id=\"color-1\" type=\"radio\" />\n  <label for=\"color-1\">\n    <span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n        <g stroke-width=\"0\" id=\"SVGRepo_bgCarrier\"></g>\n        <g\n          stroke-linejoin=\"round\"\n          stroke-linecap=\"round\"\n          id=\"SVGRepo_tracerCarrier\"\n        ></g>\n        <g id=\"SVGRepo_iconCarrier\">\n          <g id=\"Interface / Check\">\n            <path\n              stroke-linejoin=\"round\"\n              stroke-linecap=\"round\"\n              stroke-width=\"2\"\n              stroke=\"#ffffff\"\n              d=\"M6 12L10.2426 16.2426L18.727 7.75732\"\n              id=\"Vector\"\n            ></path>\n          </g>\n        </g>\n      </svg>\n    </span>\n  </label>\n\n  <input value=\"color-2\" name=\"color\" id=\"color-2\" type=\"radio\" />\n  <label for=\"color-2\">\n    <span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n        <g stroke-width=\"0\" id=\"SVGRepo_bgCarrier\"></g>\n        <g\n          stroke-linejoin=\"round\"\n          stroke-linecap=\"round\"\n          id=\"SVGRepo_tracerCarrier\"\n        ></g>\n        <g id=\"SVGRepo_iconCarrier\">\n          <g id=\"Interface / Check\">\n            <path\n              stroke-linejoin=\"round\"\n              stroke-linecap=\"round\"\n              stroke-width=\"2\"\n              stroke=\"#ffffff\"\n              d=\"M6 12L10.2426 16.2426L18.727 7.75732\"\n              id=\"Vector\"\n            ></path>\n          </g>\n        </g>\n      </svg>\n    </span>\n  </label>\n\n  <input value=\"color-3\" name=\"color\" id=\"color-3\" type=\"radio\" />\n  <label for=\"color-3\">\n    <span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n        <g stroke-width=\"0\" id=\"SVGRepo_bgCarrier\"></g>\n        <g\n          stroke-linejoin=\"round\"\n          stroke-linecap=\"round\"\n          id=\"SVGRepo_tracerCarrier\"\n        ></g>\n        <g id=\"SVGRepo_iconCarrier\">\n          <g id=\"Interface / Check\">\n            <path\n              stroke-linejoin=\"round\"\n              stroke-linecap=\"round\"\n              stroke-width=\"2\"\n              stroke=\"#ffffff\"\n              d=\"M6 12L10.2426 16.2426L18.727 7.75732\"\n              id=\"Vector\"\n            ></path>\n          </g>\n        </g>\n      </svg>\n    </span>\n  </label>\n</div>\n\n<style>\n/* From Uiverse.io by 010binary  - Tags: simple, material design, icon, active, checkbox */\n.radio-input {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 20px;\n  display: flex;\n}\n\n.radio-input input[type=\"radio\"] {\n  display: none;\n}\n\n.radio-input input[type=\"radio\"] + label {\n  color: #333;\n  font-family: Arial, sans-serif;\n  font-size: 14px;\n}\n\n.radio-input input[type=\"radio\"] + label span {\n  display: inline-block;\n  width: 40px;\n  height: 40px;\n  margin: -1px 4px 0 0;\n  vertical-align: middle;\n  cursor: pointer;\n  border-radius: 50%;\n  border: 2px solid #ffffff;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);\n  background-repeat: no-repeat;\n  background-position: center;\n  text-align: center;\n  line-height: 44px;\n  transition: background-color 0.3s ease;\n}\n\n.radio-input input[type=\"radio\"] + label span svg {\n  opacity: 0;\n  transition: all 0.3s ease;\n}\n\n.radio-input input[type=\"radio\"]#color-1 + label span {\n  background-color: #b0b0b0;\n}\n\n.radio-input input[type=\"radio\"]#color-2 + label span {\n  background-color: #b0b0b0;\n}\n\n.radio-input input[type=\"radio\"]#color-3 + label span {\n  background-color: #b0b0b0;\n}\n\n.radio-input input[type=\"radio\"]:checked + label span {\n  background-color: #ff4500; /* Change to orange when checked */\n}\n\n.radio-input input[type=\"radio\"]:checked + label span svg {\n  opacity: 1;\n}\n\n.radio-input input[type=\"radio\"]#color-1:checked ~ label[for=\"color-2\"] span,\n.radio-input input[type=\"radio\"]#color-1:checked ~ label[for=\"color-3\"] span {\n  background-color: #b0b0b0; /* Gray color when not checked */\n}\n\n.radio-input input[type=\"radio\"]#color-2:checked ~ label[for=\"color-1\"] span,\n.radio-input input[type=\"radio\"]#color-2:checked ~ label[for=\"color-3\"] span {\n  background-color: #b0b0b0; /* Gray color when not checked */\n}\n\n.radio-input input[type=\"radio\"]#color-3:checked ~ label[for=\"color-1\"] span,\n.radio-input input[type=\"radio\"]#color-3:checked ~ label[for=\"color-2\"] span {\n  background-color: #b0b0b0; /* Gray color when not checked */\n}\n\n</style>\n    ",
+    "tags": [
+      "checkboxes",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "material design",
+      "icon",
+      "active",
+      "checkbox"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Checkboxe: Angry Grasshopper 50 (by 3bdel3ziz-T)",
+    "description": "A beautiful community-designed Checkboxe element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"burger-icon\">\n  <label class=\"burger\" for=\"burger\">\n    <input class=\"line\" type=\"checkbox\" id=\"burger\" />\n  </label>\n</div>\n\n<style>\n/* From Uiverse.io by 3bdel3ziz-T  - Tags: material design, animation, checkbox, hamburger, menu, click effect, click animation, close */\n.burger {\n  width: 40px;\n  height: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  user-select: none;\n  cursor: pointer;\n  transition: 300ms;\n  border-radius: 10px;\n}\n.burger input[type=\"checkbox\"] {\n  appearance: none;\n  transition: 300ms;\n}\n\n.burger::before,\n.burger::after {\n  content: \"\";\n  transition: 300ms;\n  transform-origin: center center;\n}\n\n.burger::before {\n  transform: translateY(8px);\n}\n.burger::after {\n  transform: translateY(-8px);\n}\n.burger .line,\n.burger::before,\n.burger::after {\n  width: 25px;\n  height: 2.1px;\n  display: block;\n  background-color: black;\n  border-radius: 5px;\n  position: absolute;\n}\n\n.burger .line:checked {\n  width: 0;\n  transition-delay: 100ms;\n}\n.burger:has(.line:checked)::before {\n  animation: animation1 400ms ease-out 0s 1 both;\n}\n.burger:has(.line:checked)::after {\n  animation: animation2 400ms ease-out 0s 1 both;\n}\n\n.burger:hover {\n  background: #aeaeae;\n  border-radius: 50%;\n}\n\n.burger:hover .line,\n.burger:hover::before,\n.burger:hover::after {\n  background: #e8e8e8;\n}\n\n.burger:active {\n  scale: 0.95;\n}\n@keyframes animation1 {\n  0% {\n    transform: translateY(8px) rotate(0deg);\n  }\n  50% {\n    transform: translateY(0px) rotate(0deg);\n  }\n  100% {\n    transform: translateY(0px) rotate(45deg);\n  }\n}\n@keyframes animation2 {\n  0% {\n    transform: translateY(-8px) rotate(0deg);\n  }\n  50% {\n    transform: translateY(0px) rotate(0deg);\n  }\n  100% {\n    transform: translateY(0px) rotate(-45deg);\n  }\n}\n\n</style>\n    ",
+    "tags": [
+      "checkboxes",
+      "uiverse",
+      "ui-element",
+      "material design",
+      "animation",
+      "checkbox",
+      "hamburger",
+      "menu",
+      "click effect",
+      "click animation",
+      "close"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Checkboxe: Hungry Robin 21 (by AIVIIID)",
+    "description": "A beautiful community-designed Checkboxe element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "\n\t<label class=\"container\">\n\t\t<input type=\"checkbox\" checked=\"checked\">\n\t\t<div class=\"checkmark\"></div>\n\t</label>\n\n\n\n<style>\n/* From Uiverse.io by AIVIIID - Tags: checkbox */\n/* Hide the default checkbox */\n.container input {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer;\n  height: 0;\n  width: 0;\n}\n\n.container {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  font-size: 25px;\n  user-select: none;\n}\n\n/* Create a custom checkbox */\n.checkmark {\n  position: relative;\n  top: 0;\n  left: 0;\n  height: 1.3em;\n  width: 1.3em;\n  background: black;\n  border-radius: 50px;\n  transition: all 0.7s;\n  --spread: 20px;\n}\n\n/* When the checkbox is checked, add a blue background */\n.container input:checked ~ .checkmark {\n  background: black;\n  box-shadow: -10px -10px var(--spread) 0px #FFD700, 0 -10px var(--spread) 0px #FFD700, 10px -10px var(--spread) 0px #FFD700, 10px 0 var(--spread) 0px #FFD700, 10px 10px var(--spread) 0px #FFD700, 0 10px var(--spread) 0px #FFD700, -10px 10px var(--spread) 0px #FFD700;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n\n/* Show the checkmark when checked */\n.container input:checked ~ .checkmark:after {\n  display: block;\n  animation: checkmark 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;\n}\n\n/* Style the checkmark/indicator */\n.container .checkmark:after {\n  left: 0.45em;\n  top: 0.25em;\n  width: 0.25em;\n  height: 0.5em;\n  border: solid #FFD700;\n  border-width: 0 0.15em 0.15em 0;\n  transform: rotate(45deg);\n}\n\n/* Add animation for checkmark */\n@keyframes checkmark {\n  from {\n    transform: rotate(-45deg) scale(0);\n  }\n\n  to {\n    transform: rotate(45deg) scale(1);\n  }\n}\n\n/* Style the label text */\n.container span {\n  margin-left: 2em;\n  color: black;\n  font-weight: bold;\n}\n\n</style>\n",
+    "tags": [
+      "checkboxes",
+      "uiverse",
+      "ui-element",
+      "checkbox"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Form: Helpless Wasp 32 (by 3bdel3ziz-T)",
+    "description": "A beautiful community-designed Form element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<section class=\"add-card page\">\n  <form class=\"form\">\n    <label for=\"name\" class=\"label\">\n      <span class=\"title\">Card holder full name</span>\n      <input\n        class=\"input-field\"\n        type=\"text\"\n        name=\"input-name\"\n        title=\"Input title\"\n        placeholder=\"Enter your full name\"\n      />\n    </label>\n    <label for=\"serialCardNumber\" class=\"label\">\n      <span class=\"title\">Card Number</span>\n      <input\n        id=\"serialCardNumber\"\n        class=\"input-field\"\n        type=\"number\"\n        name=\"input-name\"\n        title=\"Input title\"\n        placeholder=\"0000 0000 0000 0000\"\n      />\n    </label>\n    <div class=\"split\">\n      <label for=\"ExDate\" class=\"label\">\n        <span class=\"title\">Expiry Date</span>\n        <input\n          id=\"ExDate\"\n          class=\"input-field\"\n          type=\"text\"\n          name=\"input-name\"\n          title=\"Expiry Date\"\n          placeholder=\"01/23\"\n        />\n      </label>\n      <label for=\"cvv\" class=\"label\">\n        <span class=\"title\"> CVV</span>\n        <input\n          id=\"cvv\"\n          class=\"input-field\"\n          type=\"number\"\n          name=\"cvv\"\n          title=\"CVV\"\n          placeholder=\"CVV\"\n        />\n      </label>\n    </div>\n    <input class=\"checkout-btn\" type=\"button\" value=\"Checkout\" />\n  </form>\n</section>\n\n<style>\n/* From Uiverse.io by 3bdel3ziz-T  - Tags: material design, tooltip, form, text animation, click animation, cool card, cardhover , card animation */\n.form {\n  background: #0c0f14;\n  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),\n    0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),\n    0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);\n  width: 320px;\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n  padding: 20px;\n  position: relative;\n  border-radius: 25px;\n}\n.form .label {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.form .label:has(input:focus) .title {\n  top: 0;\n  left: 0;\n  color: #d17842;\n}\n.form .label .title {\n  padding: 0 10px;\n  transition: all 300ms;\n  font-size: 12px;\n  color: #8b8e98;\n  font-weight: 600;\n  width: -moz-fit-content;\n  width: fit-content;\n  top: 14px;\n  position: relative;\n  left: 15px;\n  background: #0c0f14;\n}\n.form .input-field {\n  width: auto;\n  height: 50px;\n  text-indent: 15px;\n  border-radius: 15px;\n  outline: none;\n  background-color: transparent;\n  border: 1px solid #21262e;\n  transition: all 0.3s;\n  caret-color: #d17842;\n  color: #aeaeae;\n}\n\n.form .input-field:hover {\n  border-color: rgba(209, 121, 66, 0.5);\n}\n\n.form .input-field:focus {\n  border-color: #d17842;\n}\n.form .split {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 100%;\n  gap: 15px;\n}\n.form .split label {\n  width: 130px;\n}\n.form .checkout-btn {\n  margin-top: 20px;\n  padding: 20px 0;\n  border-radius: 25px;\n  font-weight: 700;\n  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  border: none;\n  justify-content: center;\n  fill: #fff;\n  color: #fff;\n  border: 2px solid transparent;\n  background: #d17842;\n  transition: all 200ms;\n}\n.form .checkout-btn:active {\n  scale: 0.95;\n}\n\n.form .checkout-btn:hover {\n  color: #d17842;\n  border: 2px solid #d17842;\n  background: transparent;\n}\n\n</style>\n    ",
+    "tags": [
+      "forms",
+      "uiverse",
+      "ui-element",
+      "material design",
+      "tooltip",
+      "form",
+      "text animation",
+      "click animation",
+      "cool card",
+      "cardhover",
+      "card animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Form: Shy Gecko 42 (by Admin12121)",
+    "description": "A beautiful community-designed Form element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"container\">\n\t\n\t<div class=\"modal\">\n\t\t<div class=\"modal__header\">\n\t\t\t<span class=\"modal__title\">New project</span><button class=\"button button--icon\"><svg width=\"24\" viewBox=\"0 0 24 24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<path fill=\"none\" d=\"M0 0h24v24H0V0z\"></path>\n\t\t\t\t\t<path d=\"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z\"></path></svg></button>\n\t\t</div>\n\t\t<div class=\"modal__body\">\n\t\t\t<div class=\"input\">\n\t\t\t\t<label class=\"input__label\">Project title</label>\n\t\t\t\t<input class=\"input__field\" type=\"text\"> \n\t\t\t\t<p class=\"input__description\">The title must contain a maximum of 32 characters</p>\n\t\t\t</div>\n\t\t\t<div class=\"input\">\n\t\t\t\t\t\t\t\t<label class=\"input__label\">Description</label>\n\t\t\t\t<textarea class=\"input__field input__field--textarea\"></textarea>\n\t\t\t\t\t<p class=\"input__description\">Give your project a good description so everyone know what's it for</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"modal__footer\">\n\t\t\t<button class=\"button button--primary\">Create project</button>\n\t\t</div>\n\t</div>\n</div>\n<style>\n/* From Uiverse.io by Admin12121 - Tags: form, contacts form, coolform */\n.button {\n  appaerance: none;\n  font: inherit;\n  border: none;\n  background: none;\n  cursor: pointer;\n}\n\n.container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1.5rem;\n}\n\n.modal {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  max-width: 500px;\n  background-color: #fff;\n  box-shadow: 0 15px 30px 0 rgba(0, 125, 171, 0.15);\n  border-radius: 10px;\n}\n\n.modal__header {\n  padding: 1rem 1.5rem;\n  border-bottom: 1px solid #ddd;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.modal__body {\n  padding: 1rem 1rem;\n}\n\n.modal__footer {\n  padding: 0 1.5rem 1.5rem;\n}\n\n.modal__title {\n  font-weight: 700;\n  font-size: 1.25rem;\n}\n\n.button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.15s ease;\n}\n\n.button--icon {\n  width: 2.5rem;\n  height: 2.5rem;\n  background-color: transparent;\n  border-radius: 0.25rem;\n}\n\n.button--icon:focus, .button--icon:hover {\n  background-color: #ededed;\n}\n\n.button--primary {\n  background-color: #007dab;\n  color: #FFF;\n  padding: 0.75rem 1.25rem;\n  border-radius: 0.25rem;\n  font-weight: 500;\n  font-size: 0.875rem;\n}\n\n.button--primary:hover {\n  background-color: #006489;\n}\n\n.input {\n  display: flex;\n  flex-direction: column;\n}\n\n.input + .input {\n  margin-top: 1.75rem;\n}\n\n.input__label {\n  font-weight: 700;\n  font-size: 0.875rem;\n}\n\n.input__field {\n  display: block;\n  margin-top: 0.5rem;\n  border: 1px solid #DDD;\n  border-radius: 0.25rem;\n  padding: 0.75rem 0.75rem;\n  transition: 0.15s ease;\n}\n\n.input__field:focus {\n  outline: none;\n  border-color: #007dab;\n  box-shadow: 0 0 0 1px #007dab, 0 0 0 4px rgba(0, 125, 171, 0.25);\n}\n\n.input__field--textarea {\n  min-height: 100px;\n  max-width: 100%;\n}\n\n.input__description {\n  font-size: 0.875rem;\n  margin-top: 0.5rem;\n  color: #8d8d8d;\n}\n</style>\n",
+    "tags": [
+      "forms",
+      "uiverse",
+      "ui-element",
+      "form",
+      "contacts form",
+      "coolform"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Form: Stale Snail 53 (by AmIt-DasIT)",
+    "description": "A beautiful community-designed Form element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"container\">\n    <input type=\"checkbox\" id=\"signup_toggle\">\n    <form class=\"form\">\n        <div class=\"form_front\">\n            <div class=\"form_details\">Login</div>\n            <input placeholder=\"Username\" class=\"input\" type=\"text\">\n            <input placeholder=\"Password\" class=\"input\" type=\"text\">\n            <button class=\"btn\">Login</button>\n            <span class=\"switch\">Don't have an account? \n                <label class=\"signup_tog\" for=\"signup_toggle\">\n                    Sign Up\n                </label>\n            </span>\n        </div>\n        <div class=\"form_back\">\n            <div class=\"form_details\">SignUp</div>\n            <input placeholder=\"Firstname\" class=\"input\" type=\"text\">\n            <input placeholder=\"Username\" class=\"input\" type=\"text\">\n            <input placeholder=\"Password\" class=\"input\" type=\"text\">\n            <input placeholder=\"Confirm Password\" class=\"input\" type=\"text\">\n            <button class=\"btn\">Signup</button>\n            <span class=\"switch\">Already have an account? \n                <label class=\"signup_tog\" for=\"signup_toggle\">\n                    Sign In\n                </label>\n            </span>\n        </div>\n    </form>\n</div>\n<style>\n/* From Uiverse.io by AmIt-DasIT - Tags: form, 3d card, 3d cool effect */\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform-style: preserve-3d;\n  transition: all 1s ease;\n}\n\n.form .form_front {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  position: absolute;\n  backface-visibility: hidden;\n  padding: 65px 45px;\n  border-radius: 15px;\n  box-shadow: inset 2px 2px 10px rgba(0,0,0,1),\n  inset -1px -1px 5px rgba(255, 255, 255, 0.6);\n}\n\n.form .form_back {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  position: absolute;\n  backface-visibility: hidden;\n  transform: rotateY(-180deg);\n  padding: 65px 45px;\n  border-radius: 15px;\n  box-shadow: inset 2px 2px 10px rgba(0,0,0,1),\n  inset -1px -1px 5px rgba(255, 255, 255, 0.6);\n}\n\n.form_details {\n  font-size: 25px;\n  font-weight: 600;\n  padding-bottom: 10px;\n  color: white;\n}\n\n.input {\n  width: 245px;\n  min-height: 45px;\n  color: #fff;\n  outline: none;\n  transition: 0.35s;\n  padding: 0px 7px;\n  background-color: #212121;\n  border-radius: 6px;\n  border: 2px solid #212121;\n  box-shadow: 6px 6px 10px rgba(0,0,0,1),\n  1px 1px 10px rgba(255, 255, 255, 0.6);\n}\n\n.input::placeholder {\n  color: #999;\n}\n\n.input:focus.input::placeholder {\n  transition: 0.3s;\n  opacity: 0;\n}\n\n.input:focus {\n  transform: scale(1.05);\n  box-shadow: 6px 6px 10px rgba(0,0,0,1),\n  1px 1px 10px rgba(255, 255, 255, 0.6),\n  inset 2px 2px 10px rgba(0,0,0,1),\n  inset -1px -1px 5px rgba(255, 255, 255, 0.6);\n}\n\n.btn {\n  padding: 10px 35px;\n  cursor: pointer;\n  background-color: #212121;\n  border-radius: 6px;\n  border: 2px solid #212121;\n  box-shadow: 6px 6px 10px rgba(0,0,0,1),\n  1px 1px 10px rgba(255, 255, 255, 0.6);\n  color: #fff;\n  font-size: 15px;\n  font-weight: bold;\n  transition: 0.35s;\n}\n\n.btn:hover {\n  transform: scale(1.05);\n  box-shadow: 6px 6px 10px rgba(0,0,0,1),\n  1px 1px 10px rgba(255, 255, 255, 0.6),\n  inset 2px 2px 10px rgba(0,0,0,1),\n  inset -1px -1px 5px rgba(255, 255, 255, 0.6);\n}\n\n.btn:focus {\n  transform: scale(1.05);\n  box-shadow: 6px 6px 10px rgba(0,0,0,1),\n  1px 1px 10px rgba(255, 255, 255, 0.6),\n  inset 2px 2px 10px rgba(0,0,0,1),\n  inset -1px -1px 5px rgba(255, 255, 255, 0.6);\n}\n\n.form .switch {\n  font-size: 13px;\n  color: white;\n}\n\n.form .switch .signup_tog {\n  font-weight: 700;\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n.container #signup_toggle {\n  display: none;\n}\n\n.container #signup_toggle:checked + .form {\n  transform: rotateY(-180deg);\n}\n</style>\n",
+    "tags": [
+      "forms",
+      "uiverse",
+      "ui-element",
+      "form",
+      "3d card",
+      "3d cool effect"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Input: Calm Baboon 55 (by 0xnihilism)",
+    "description": "A beautiful community-designed Input element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"brutalist-container\">\n  <input\n    placeholder=\"TYPE HERE\"\n    class=\"brutalist-input smooth-type\"\n    type=\"text\"\n  />\n  <label class=\"brutalist-label\">SMOOTH BRUTALIST</label>\n</div>\n\n<style>\n/* From Uiverse.io by 0xnihilism  - Tags: simple, input, smooth, flip, hover button, brutalist */\n.brutalist-container {\n  position: relative;\n  width: 250px;\n  font-family: monospace;\n}\n\n.brutalist-input {\n  width: 100%;\n  padding: 15px;\n  font-size: 18px;\n  font-weight: bold;\n  color: #000;\n  background-color: #fff;\n  border: 4px solid #000;\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  outline: none;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;\n}\n\n@keyframes glitch {\n  0% {\n    transform: translate(0);\n  }\n  20% {\n    transform: translate(-2px, 2px);\n  }\n  40% {\n    transform: translate(-2px, -2px);\n  }\n  60% {\n    transform: translate(2px, 2px);\n  }\n  80% {\n    transform: translate(2px, -2px);\n  }\n  100% {\n    transform: translate(0);\n  }\n}\n\n.brutalist-input:focus {\n  animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,\n    glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;\n}\n\n.brutalist-input:focus::after {\n  content: \"\";\n  position: absolute;\n  top: -2px;\n  left: -2px;\n  right: -2px;\n  bottom: -2px;\n  background: white;\n  z-index: -1;\n}\n\n.brutalist-input:focus::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: black;\n  z-index: -2;\n  clip-path: inset(0 100% 0 0);\n  animation: glitch-slice 4s steps(2, end) infinite;\n}\n\n@keyframes glitch-slice {\n  0% {\n    clip-path: inset(0 100% 0 0);\n  }\n  10% {\n    clip-path: inset(0 5% 0 0);\n  }\n  20% {\n    clip-path: inset(0 80% 0 0);\n  }\n  30% {\n    clip-path: inset(0 10% 0 0);\n  }\n  40% {\n    clip-path: inset(0 50% 0 0);\n  }\n  50% {\n    clip-path: inset(0 30% 0 0);\n  }\n  60% {\n    clip-path: inset(0 70% 0 0);\n  }\n  70% {\n    clip-path: inset(0 15% 0 0);\n  }\n  80% {\n    clip-path: inset(0 90% 0 0);\n  }\n  90% {\n    clip-path: inset(0 5% 0 0);\n  }\n  100% {\n    clip-path: inset(0 100% 0 0);\n  }\n}\n\n.brutalist-label {\n  position: absolute;\n  left: -3px;\n  top: -35px;\n  font-size: 14px;\n  font-weight: bold;\n  color: #fff;\n  background-color: #000;\n  padding: 5px 10px;\n  transform: rotate(-1deg);\n  z-index: 1;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n\n.brutalist-input:focus + .brutalist-label {\n  transform: rotate(0deg) scale(1.05);\n  background-color: #4a90e2;\n}\n\n.smooth-type {\n  position: relative;\n  overflow: hidden;\n}\n\n.smooth-type::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);\n  z-index: 1;\n  opacity: 0;\n  transition: opacity 0.3s ease;\n}\n\n.smooth-type:focus::before {\n  opacity: 1;\n  animation: type-gradient 2s linear infinite;\n}\n\n@keyframes type-gradient {\n  0% {\n    background-position: 300px 0;\n  }\n  100% {\n    background-position: 0 0;\n  }\n}\n\n.brutalist-input::placeholder {\n  color: #888;\n  transition: color 0.3s ease;\n}\n\n.brutalist-input:focus::placeholder {\n  color: transparent;\n}\n\n.brutalist-input:focus {\n  animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;\n}\n\n@keyframes focus-pulse {\n  0%,\n  100% {\n    border-color: #000;\n  }\n  50% {\n    border-color: #4a90e2;\n  }\n}\n\n</style>\n    ",
+    "tags": [
+      "inputs",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "input",
+      "smooth",
+      "flip",
+      "hover button",
+      "brutalist"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Input: Silly Quail 9 (by 0xnihilism)",
+    "description": "A beautiful community-designed Input element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"input-container\">\n  <input\n    class=\"input\"\n    name=\"text\"\n    type=\"text\"\n    placeholder=\"Search the internet...\"\n  />\n</div>\n\n<style>\n/* From Uiverse.io by 0xnihilism  - Tags:  */\n.input {\n  width: 100%;\n  max-width: 270px;\n  height: 60px;\n  padding: 12px;\n  font-size: 18px;\n  font-family: \"Courier New\", monospace;\n  color: #000;\n  background-color: #fff;\n  border: 4px solid #000;\n  border-radius: 0;\n  outline: none;\n  transition: all 0.3s ease;\n  box-shadow: 8px 8px 0 #000;\n}\n\n.input::placeholder {\n  color: #888;\n}\n\n.input:hover {\n  transform: translate(-4px, -4px);\n  box-shadow: 12px 12px 0 #000;\n}\n\n.input:focus {\n  background-color: #000;\n  color: #fff;\n  border-color: #ffffff;\n}\n\n.input:focus::placeholder {\n  color: #fff;\n}\n\n@keyframes typing {\n  from {\n    width: 0;\n  }\n  to {\n    width: 100%;\n  }\n}\n\n@keyframes blink {\n  50% {\n    border-color: transparent;\n  }\n}\n\n.input:focus::after {\n  content: \"|\";\n  position: absolute;\n  right: 10px;\n  animation: blink 0.7s step-end infinite;\n}\n\n.input:valid {\n  animation: typing 2s steps(30, end);\n}\n.input-container {\n  position: relative;\n  width: 100%;\n  max-width: 270px;\n}\n\n.input {\n  width: 100%;\n  height: 60px;\n  padding: 12px;\n  font-size: 18px;\n  font-family: \"Courier New\", monospace;\n  color: #000;\n  background-color: #fff;\n  border: 4px solid #000;\n  border-radius: 0;\n  outline: none;\n  transition: all 0.3s ease;\n  box-shadow: 8px 8px 0 #000;\n}\n\n.input::placeholder {\n  color: #888;\n}\n\n.input:hover {\n  transform: translate(-4px, -4px);\n  box-shadow: 12px 12px 0 #000;\n}\n\n.input:focus {\n  background-color: #010101;\n  color: #fff;\n  border-color: #d6d9dd;\n}\n\n.input:focus::placeholder {\n  color: #fff;\n}\n\n@keyframes shake {\n  0% {\n    transform: translateX(0);\n  }\n  25% {\n    transform: translateX(-5px) rotate(-5deg);\n  }\n  50% {\n    transform: translateX(5px) rotate(5deg);\n  }\n  75% {\n    transform: translateX(-5px) rotate(-5deg);\n  }\n  100% {\n    transform: translateX(0);\n  }\n}\n\n.input:focus {\n  animation: shake 0.5s ease-in-out;\n}\n\n@keyframes glitch {\n  0% {\n    transform: none;\n    opacity: 1;\n  }\n  7% {\n    transform: skew(-0.5deg, -0.9deg);\n    opacity: 0.75;\n  }\n  10% {\n    transform: none;\n    opacity: 1;\n  }\n  27% {\n    transform: none;\n    opacity: 1;\n  }\n  30% {\n    transform: skew(0.8deg, -0.1deg);\n    opacity: 0.75;\n  }\n  35% {\n    transform: none;\n    opacity: 1;\n  }\n  52% {\n    transform: none;\n    opacity: 1;\n  }\n  55% {\n    transform: skew(-1deg, 0.2deg);\n    opacity: 0.75;\n  }\n  50% {\n    transform: none;\n    opacity: 1;\n  }\n  72% {\n    transform: none;\n    opacity: 1;\n  }\n  75% {\n    transform: skew(0.4deg, 1deg);\n    opacity: 0.75;\n  }\n  80% {\n    transform: none;\n    opacity: 1;\n  }\n  100% {\n    transform: none;\n    opacity: 1;\n  }\n}\n\n.input:not(:placeholder-shown) {\n  animation: glitch 1s linear infinite;\n}\n\n.input-container::after {\n  content: \"|\";\n  position: absolute;\n  right: 10px;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #000;\n  animation: blink 0.7s step-end infinite;\n}\n\n@keyframes blink {\n  50% {\n    opacity: 0;\n  }\n}\n\n.input:focus + .input-container::after {\n  color: #fff;\n}\n\n.input:not(:placeholder-shown) {\n  font-weight: bold;\n  letter-spacing: 1px;\n  text-shadow: 0px 0px 0 #000;\n}\n\n</style>\n    ",
+    "tags": [
+      "inputs",
+      "uiverse",
+      "ui-element",
+      ""
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Input: Wise Lizard 57 (by 0xnihilism)",
+    "description": "A beautiful community-designed Input element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"input__container\">\n  <div class=\"shadow__input\"></div>\n  <button class=\"input__button__shadow\">\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      fill=\"#000000\"\n      width=\"20px\"\n      height=\"20px\"\n    >\n      <path d=\"M0 0h24v24H0z\" fill=\"none\"></path>\n      <path\n        d=\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\"\n      ></path>\n    </svg>\n  </button>\n  <input\n    type=\"text\"\n    name=\"username\"\n    class=\"input__search\"\n    placeholder=\"Enter username\"\n  />\n</div>\n\n<style>\n/* From Uiverse.io by 0xnihilism  - Tags: 3d, input, username, brutalism, raw */\n.input__container {\n  position: relative;\n  background: #f0f0f0;\n  padding: 20px;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 15px;\n  border: 4px solid #000;\n  max-width: 350px;\n  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);\n  transform-style: preserve-3d;\n  transform: rotateX(10deg) rotateY(-10deg);\n  perspective: 1000px;\n  box-shadow: 10px 10px 0 #000;\n}\n\n.input__container:hover {\n  transform: rotateX(5deg) rotateY(1 deg) scale(1.05);\n  box-shadow: 25px 25px 0 -5px #e9b50b, 25px 25px 0 0 #000;\n}\n\n.shadow__input {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  bottom: 0;\n  z-index: -1;\n  transform: translateZ(-50px);\n  background: linear-gradient(\n    45deg,\n    rgba(255, 107, 107, 0.4) 0%,\n    rgba(255, 107, 107, 0.1) 100%\n  );\n  filter: blur(20px);\n}\n\n.input__button__shadow {\n  cursor: pointer;\n  border: 3px solid #000;\n  background: #e9b50b;\n  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 10px;\n  transform: translateZ(20px);\n  position: relative;\n  z-index: 3;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.input__button__shadow:hover {\n  background: #e9b50b;\n  transform: translateZ(10px) translateX(-5px) translateY(-5px);\n  box-shadow: 5px 5px 0 0 #000;\n}\n\n.input__button__shadow svg {\n  fill: #000;\n  width: 25px;\n  height: 25px;\n}\n\n.input__search {\n  width: 100%;\n  outline: none;\n  border: 3px solid #000;\n  padding: 15px;\n  font-size: 18px;\n  background: #fff;\n  color: #000;\n  transform: translateZ(10px);\n  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);\n  position: relative;\n  z-index: 3;\n  font-family: \"Roboto\", Arial, sans-serif;\n  letter-spacing: -0.5px;\n}\n\n.input__search::placeholder {\n  color: #666;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.input__search:hover,\n.input__search:focus {\n  background: #f0f0f0;\n  transform: translateZ(20px) translateX(-5px) translateY(-5px);\n  box-shadow: 5px 5px 0 0 #000;\n}\n\n.input__container::before {\n  content: \"USERNAME\";\n  position: absolute;\n  top: -15px;\n  left: 20px;\n  background: #e9b50b;\n  color: #000;\n  font-weight: bold;\n  padding: 5px 10px;\n  font-size: 14px;\n  transform: translateZ(50px);\n  z-index: 4;\n  border: 2px solid #000;\n}\n\n</style>\n    ",
+    "tags": [
+      "inputs",
+      "uiverse",
+      "ui-element",
+      "3d",
+      "input",
+      "username",
+      "brutalism",
+      "raw"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Notification: Fuzzy Fly 47 (by ActiveIceDigital)",
+    "description": "A beautiful community-designed Notification element from Uiverse.io.",
+    "category": "notification",
+    "framework": "css",
+    "code": "<div class=\"notification\">\n  <span>Congratulatioins Champion!</span>\n  <div id=\"level\">\n    <div class=\"one\">\u2191</div>\n    <div id=\"lvl\">Level 10</div>\n    <div class=\"one\">\u2191</div>\n  </div>\n</div>\n<style>\n/* From Uiverse.io by ActiveIceDigital - Tags: notification */\n@keyframes ud {\n  0% {\n    transform: translateY(-1px);\n    opacity: 0;\n  }\n\n  50% {\n    transform: translateY(-5px);\n    opacity: 1;\n  }\n\n  100% {\n    transform: translateY(-1px);\n    opacity: 0;\n  }\n}\n\n.notification {\n  width: 250px;\n  height: 60px;\n  background: rgba(0, 0, 0, 0.5);\n  border-radius: 14px;\n  padding: 5px 15px;\n  text-align: center;\n  box-shadow: 2px 2px 0px 1px rgba(255, 0, 0, 0.5) inset, \n  -2px -2px 0px 1px rgba(255, 0, 0, 0.8) inset,\n  0px 2px 5px 0px rgba(0, 0, 0, .25);\n}\n\n#lvl {\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n  font-size: 20px;\n}\n\n.notification > span {\n  font-size: 11px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n#level {\n  display: flex;\n  justify-content: center;\n  margin-top: 5px;\n  gap: 5px;\n}\n\n.one {\n  display: inline-block;\n  font-size: 25px;\n  line-height: 25px;\n  animation: ud 1s ease-in-out infinite;\n  color: rgba(255, 0, 0, 0.95);\n}\n</style>\n",
+    "tags": [
+      "notifications",
+      "uiverse",
+      "ui-element",
+      "notification"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Notification: Slimy Vampirebat 16 (by Fujitawa)",
+    "description": "A beautiful community-designed Notification element from Uiverse.io.",
+    "category": "notification",
+    "framework": "css",
+    "code": "<div class=\"notification\"> <div class=\"txt\"> Mission passed! <div class=\"lvl\"> 10</div> </div> <button class=\"ff3\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M15.4695 11.2929C15.0789 10.9024 14.4458 10.9024 14.0553 11.2929C13.6647 11.6834 13.6647 12.3166 14.0553 12.7071C14.4458 13.0976 15.0789 13.0976 15.4695 12.7071C15.86 12.3166 15.86 11.6834 15.4695 11.2929Z\" fill=\"currentColor\"></path>\n  <path d=\"M16.1766 9.17156C16.5671 8.78103 17.2003 8.78103 17.5908 9.17156C17.9813 9.56208 17.9813 10.1952 17.5908 10.5858C17.2003 10.9763 16.5671 10.9763 16.1766 10.5858C15.7861 10.1952 15.7861 9.56208 16.1766 9.17156Z\" fill=\"currentColor\"></path>\n  <path d=\"M19.7121 11.2929C19.3216 10.9024 18.6885 10.9024 18.2979 11.2929C17.9074 11.6834 17.9074 12.3166 18.2979 12.7071C18.6885 13.0976 19.3216 13.0976 19.7121 12.7071C20.1027 12.3166 20.1027 11.6834 19.7121 11.2929Z\" fill=\"currentColor\"></path>\n  <path d=\"M16.1766 13.4142C16.5671 13.0237 17.2003 13.0237 17.5908 13.4142C17.9813 13.8048 17.9813 14.4379 17.5908 14.8284C17.2003 15.219 16.5671 15.219 16.1766 14.8284C15.7861 14.4379 15.7861 13.8048 16.1766 13.4142Z\" fill=\"currentColor\"></path>\n  <path d=\"M6 13H4V11H6V9H8V11H10V13H8V15H6V13Z\" fill=\"currentColor\"></path>\n  <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 5C3.13401 5 0 8.13401 0 12C0 15.866 3.13401 19 7 19H17C20.866 19 24 15.866 24 12C24 8.13401 20.866 5 17 5H7ZM17 7H7C4.23858 7 2 9.23858 2 12C2 14.7614 4.23858 17 7 17H17C19.7614 17 22 14.7614 22 12C22 9.23858 19.7614 7 17 7Z\" fill=\"currentColor\"></path>\n</svg> Next </button> </div>\n<style>\n/* From Uiverse.io by Fujitawa - Tags: notification */\n.notification {\n  width: 250px;\n  height: 60px;\n  color: black;\n  background: white;\n  border-radius: 3px;\n  display: grid;\n  grid-auto-flow: column;\n  align-items: center;\n  justify-items: center;\n  -webkit-animation-name: pulse;\n  animation-name: pulse;\n  -webkit-animation-duration: 1s;\n  animation-duration: 1s;\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n  animation-iteration-count: infinite;\n  border: 3px solid #ece0b4;\n}\n\n.notification:hover  button.ff3 {\n  background-color: #f4e0a6;\n}\n\n.notification:hover {\n  border-color: #f4e0a6;\n}\n\n.notification:hover .lvl {\n  border-color: #f4e0a6;\n}\n\nbutton.ff3 {\n  background-color: #ece0b4;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  width: 100%;\n  justify-content: center;\n  flex-direction: column;\n  gap: 3px;\n  cursor: pointer;\n  border: 0;\n  transition: .5s;\n  font-weight: bold;\n}\n\n.lvl {\n  background: white;\n  padding: 6px;\n  border-radius: 100px;\n  border: 3px solid #ece0b4;\n  position: absolute;\n  left: -10px;\n  transform: scale(.8);\n  top: -10px;\n}\n\n@-webkit-keyframes pulse {\n  0% {\n    -webkit-transform: scale3d(1, 1, 1);\n    transform: scale3d(1, 1, 1);\n  }\n\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  100% {\n    -webkit-transform: scale3d(1, 1, 1);\n    transform: scale3d(1, 1, 1);\n  }\n}\n\n@keyframes pulse {\n  0% {\n    -webkit-transform: scale3d(1, 1, 1);\n    transform: scale3d(1, 1, 1);\n  }\n\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n    transform: scale3d(1.05, 1.05, 1.05);\n  }\n\n  100% {\n    -webkit-transform: scale3d(1, 1, 1);\n    transform: scale3d(1, 1, 1);\n  }\n} \n\n</style>\n",
+    "tags": [
+      "notifications",
+      "uiverse",
+      "ui-element",
+      "notification"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Notification: Funny Impala 78 (by Gianluks90)",
+    "description": "A beautiful community-designed Notification element from Uiverse.io.",
+    "category": "notification",
+    "framework": "css",
+    "code": "<div class=\"notification gradient-border\">\n  <div class=\"icon\">\n    \u2764\ufe0f\n  </div>\n  <div class=\"message-container\">\n    <div class=\"title\">Congratulations!</div>\n    <div class=\"message\">You've reached a new level\n!</div>\n  </div>\n\n</div>\n<style>\n/* From Uiverse.io by Gianluks90 - Tags: notification */\n.notification {\n  width: 255px;\n  height: 60px;\n  background: white;\n  border-radius: 25px;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n}\n\n.icon {\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  background-color: rgb(236, 236, 236);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 2px;\n}\n\n.message-container {\n  display: flex;\n  flex-direction: column;\n}\n\n.title {\n  padding: 2px;\n  text-transform: uppercase;\n  color: black;\n  font-weight: 600;\n}\n\n.message {\n  padding: 2px;\n  color: black;\n  font-size: small;\n}\n\n.gradient-border {\n  --borderSize: 3px;\n  position: relative;\n  border-radius: var(--borderSize);\n}\n\n.gradient-border:after {\n  content: '';\n  position: absolute;\n  top: calc(-1 * var(--borderSize));\n  left: calc(-1 * var(--borderSize));\n  height: calc(100% + var(--borderSize) * 2);\n  width: calc(100% + var(--borderSize) * 2);\n  background: linear-gradient(75deg, #E50000, #FF8D00, #FFEE00, #008121, #004CFF, #760188);\n  border-radius: calc(2 * var(--borderSize));\n  z-index: -1;\n  animation: gradientAnimation 4s ease alternate infinite;\n  background-size: 300% 300%;\n}\n\n@keyframes gradientAnimation {\n  0% {\n    background-position: 0% 50%;\n  }\n\n  50% {\n    background-position: 100% 50%;\n  }\n\n  100% {\n    background-position: 0% 50%;\n  }\n}\n</style>\n",
+    "tags": [
+      "notifications",
+      "uiverse",
+      "ui-element",
+      "notification"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Pattern: Curly Robin 90 (by 16alves02)",
+    "description": "A beautiful community-designed Pattern element from Uiverse.io.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"container\"></div>\n<style>\n/* From Uiverse.io by 16alves02 - Tags: simple, green, blue, pattern */\n.container {\n  width: 100%;\n  height: 100%;\n  background: repeating-linear-gradient(45deg, #3498db, #3498db 30px, #2ecc71 30px, #2ecc71 60px),\n    repeating-linear-gradient(135deg, #e74c3c, #e74c3c 30px, #f1c40f 30px, #f1c40f 60px);\n}\n\n</style>\n",
+    "tags": [
+      "patterns",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "green",
+      "blue",
+      "pattern"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Pattern: Tender Cougar 31 (by 16alves02)",
+    "description": "A beautiful community-designed Pattern element from Uiverse.io.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"container\"></div>\n\n<style>\n/* From Uiverse.io by 16alves02  - Tags: red, green, css, pattern */\n.container {\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(\n    to right,\n    #289a6a 0%,\n    #289a6a 30%,\n    #ffcd00 30%,\n    #ffcd00 70%,\n    #ef3340 70%,\n    #ef3340 100%\n  );\n  background-size: 120px 100%;\n  background-repeat: repeat;\n}\n\n</style>\n    ",
+    "tags": [
+      "patterns",
+      "uiverse",
+      "ui-element",
+      "red",
+      "green",
+      "css",
+      "pattern"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Pattern: Rotten Catfish 64 (by AmruthGowda91200)",
+    "description": "A beautiful community-designed Pattern element from Uiverse.io.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"container\"></div>\n\n<style>\n/* From Uiverse.io by AmruthGowda91200  - Tags: simple, blue, minimalist, html, css, pattern */\n.container {\n  width: 100%;\n  height: 100%;\n  background: repeating-linear-gradient(\n      -45deg,\n      #ff7e5f,\n      #ff7e5f 10px,\n      #3f51b5 10px,\n      #3f51b5 20px\n    ),\n    repeating-linear-gradient(\n      45deg,\n      #3f51b5,\n      #3f51b5 10px,\n      #ff7e5f 10px,\n      #ff7e5f 20px\n    ),\n    repeating-linear-gradient(\n      -30deg,\n      #3f51b5,\n      #3f51b5 10px,\n      #ff7e5f 10px,\n      #ff7e5f 20px\n    ),\n    repeating-linear-gradient(\n      30deg,\n      #ff7e5f,\n      #ff7e5f 10px,\n      #3f51b5 10px,\n      #3f51b5 20px\n    );\n}\n\n</style>\n    ",
+    "tags": [
+      "patterns",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "blue",
+      "minimalist",
+      "html",
+      "css",
+      "pattern"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Radio-button: Curly Duck 62 (by 3bdel3ziz-T)",
+    "description": "A beautiful community-designed Radio-button element from Uiverse.io.",
+    "category": "form",
+    "framework": "tailwind",
+    "code": "<!-- From Uiverse.io by 3bdel3ziz-T  - Tags: simple, material design, icon, animation, radio, light&dark, creative, tailwindcss -->\n<div\n  class=\"flex flex-col justify-center items-center relative transition-all duration-[450ms] ease-in-out w-16\"\n>\n  <article\n    class=\"border border-solid border-gray-700 w-full ease-in-out duration-500 left-0 rounded-2xl inline-block shadow-lg shadow-black/15 bg-white\"\n  >\n    <label\n      for=\"dashboard\"\n      class=\"has-[:checked]:shadow-lg relative w-full h-16 p-4 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center text-black rounded-xl\"\n    >\n      <input\n        class=\"hidden peer/expand\"\n        type=\"radio\"\n        name=\"path\"\n        id=\"dashboard\"\n      />\n      <svg\n        class=\"peer-hover/expand:scale-125 peer-hover/expand:text-blue-400 peer-hover/expand:fill-blue-400 peer-checked/expand:text-blue-400 peer-checked/expand:fill-blue-400 text-2xl peer-checked/expand:scale-125 ease-in-out duration-300\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          d=\"M4 13h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1zm-1 7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v4zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v7zm1-10h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1z\"\n        ></path>\n      </svg>\n    </label>\n    <label\n      for=\"profile\"\n      class=\"has-[:checked]:shadow-lg relative w-full h-16 p-4 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center text-black rounded-xl\"\n    >\n      <input class=\"hidden peer/expand\" type=\"radio\" name=\"path\" id=\"profile\" />\n      <svg\n        class=\"peer-hover/expand:scale-125 peer-hover/expand:text-blue-400 peer-hover/expand:fill-blue-400 peer-checked/expand:text-blue-400 peer-checked/expand:fill-blue-400 text-2xl peer-checked/expand:scale-125 ease-in-out duration-300\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          d=\"M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z\"\n        ></path>\n      </svg>\n    </label>\n    <label\n      for=\"messages\"\n      class=\"has-[:checked]:shadow-lg relative w-full h-16 p-4 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center text-black rounded-xl\"\n    >\n      <input\n        class=\"hidden peer/expand\"\n        type=\"radio\"\n        name=\"path\"\n        id=\"messages\"\n      />\n      <svg\n        class=\"peer-hover/expand:scale-125 peer-hover/expand:text-blue-400 peer-hover/expand:fill-blue-400 peer-checked/expand:text-blue-400 peer-checked/expand:fill-blue-400 text-2xl peer-checked/expand:scale-125 ease-in-out duration-300\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          d=\"M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z\"\n        ></path>\n        <path\n          d=\"M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z\"\n        ></path>\n      </svg>\n    </label>\n    <label\n      for=\"help\"\n      class=\"has-[:checked]:shadow-lg relative w-full h-16 p-4 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center text-black rounded-xl\"\n    >\n      <input class=\"hidden peer/expand\" type=\"radio\" name=\"path\" id=\"help\" />\n      <svg\n        class=\"peer-hover/expand:scale-125 peer-hover/expand:text-blue-400 peer-hover/expand:fill-blue-400 peer-checked/expand:text-blue-400 peer-checked/expand:fill-blue-400 text-2xl peer-checked/expand:scale-125 ease-in-out duration-300\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          d=\"M11.953 2C6.465 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.493 2 11.953 2zM12 20c-4.411 0-8-3.589-8-8s3.567-8 7.953-8C16.391 4 20 7.589 20 12s-3.589 8-8 8z\"\n        ></path>\n        <path d=\"M11 7h2v7h-2zm0 8h2v2h-2z\"></path>\n      </svg>\n    </label>\n    <label\n      for=\"settings\"\n      class=\"has-[:checked]:shadow-lg relative w-full h-16 p-4 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center text-black rounded-xl\"\n    >\n      <input\n        class=\"hidden peer/expand\"\n        type=\"radio\"\n        name=\"path\"\n        id=\"settings\"\n      />\n      <svg\n        class=\"peer-hover/expand:scale-125 peer-hover/expand:text-blue-400 peer-hover/expand:fill-blue-400 peer-checked/expand:text-blue-400 peer-checked/expand:fill-blue-400 text-2xl peer-checked/expand:scale-125 ease-in-out duration-300\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          d=\"M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z\"\n        ></path>\n        <path\n          d=\"m2.845 16.136 1 1.73c.531.917 1.809 1.261 2.73.73l.529-.306A8.1 8.1 0 0 0 9 19.402V20c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-.598a8.132 8.132 0 0 0 1.896-1.111l.529.306c.923.53 2.198.188 2.731-.731l.999-1.729a2.001 2.001 0 0 0-.731-2.732l-.505-.292a7.718 7.718 0 0 0 0-2.224l.505-.292a2.002 2.002 0 0 0 .731-2.732l-.999-1.729c-.531-.92-1.808-1.265-2.731-.732l-.529.306A8.1 8.1 0 0 0 15 4.598V4c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2v.598a8.132 8.132 0 0 0-1.896 1.111l-.529-.306c-.924-.531-2.2-.187-2.731.732l-.999 1.729a2.001 2.001 0 0 0 .731 2.732l.505.292a7.683 7.683 0 0 0 0 2.223l-.505.292a2.003 2.003 0 0 0-.731 2.733zm3.326-2.758A5.703 5.703 0 0 1 6 12c0-.462.058-.926.17-1.378a.999.999 0 0 0-.47-1.108l-1.123-.65.998-1.729 1.145.662a.997.997 0 0 0 1.188-.142 6.071 6.071 0 0 1 2.384-1.399A1 1 0 0 0 11 5.3V4h2v1.3a1 1 0 0 0 .708.956 6.083 6.083 0 0 1 2.384 1.399.999.999 0 0 0 1.188.142l1.144-.661 1 1.729-1.124.649a1 1 0 0 0-.47 1.108c.112.452.17.916.17 1.378 0 .461-.058.925-.171 1.378a1 1 0 0 0 .471 1.108l1.123.649-.998 1.729-1.145-.661a.996.996 0 0 0-1.188.142 6.071 6.071 0 0 1-2.384 1.399A1 1 0 0 0 13 18.7l.002 1.3H11v-1.3a1 1 0 0 0-.708-.956 6.083 6.083 0 0 1-2.384-1.399.992.992 0 0 0-1.188-.141l-1.144.662-1-1.729 1.124-.651a1 1 0 0 0 .471-1.108z\"\n        ></path>\n      </svg>\n    </label>\n  </article>\n</div>\n\n\n    ",
+    "tags": [
+      "radio-buttons",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "material design",
+      "icon",
+      "animation",
+      "radio",
+      "light"
+    ],
+    "dependencies": [
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Uiverse Radio-button: Gentle Vampirebat 46 (by 3bdel3ziz-T)",
+    "description": "A beautiful community-designed Radio-button element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<div class=\"select\">\n  <div\n    class=\"selected\"\n    data-default=\"All\"\n    data-one=\"option-1\"\n    data-two=\"option-2\"\n    data-three=\"option-3\"\n  >\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      height=\"1em\"\n      viewBox=\"0 0 512 512\"\n      class=\"arrow\"\n    >\n      <path\n        d=\"M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z\"\n      ></path>\n    </svg>\n  </div>\n  <div class=\"options\">\n    <div title=\"all\">\n      <input id=\"all\" name=\"option\" type=\"radio\" checked=\"\" />\n      <label class=\"option\" for=\"all\" data-txt=\"All\"></label>\n    </div>\n    <div title=\"option-1\">\n      <input id=\"option-1\" name=\"option\" type=\"radio\" />\n      <label class=\"option\" for=\"option-1\" data-txt=\"option-1\"></label>\n    </div>\n    <div title=\"option-2\">\n      <input id=\"option-2\" name=\"option\" type=\"radio\" />\n      <label class=\"option\" for=\"option-2\" data-txt=\"option-2\"></label>\n    </div>\n    <div title=\"option-3\">\n      <input id=\"option-3\" name=\"option\" type=\"radio\" />\n      <label class=\"option\" for=\"option-3\" data-txt=\"option-3\"></label>\n    </div>\n  </div>\n</div>\n\n<style>\n/* From Uiverse.io by 3bdel3ziz-T  - Tags: simple, minimalist, input, dark, light, radio, custom, css */\n.select {\n  width: fit-content;\n  cursor: pointer;\n  position: relative;\n  transition: 300ms;\n  color: white;\n  overflow: hidden;\n}\n\n.selected {\n  background-color: #2a2f3b;\n  padding: 5px;\n  margin-bottom: 3px;\n  border-radius: 5px;\n  position: relative;\n  z-index: 100000;\n  font-size: 15px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.arrow {\n  position: relative;\n  right: 0px;\n  height: 10px;\n  transform: rotate(-90deg);\n  width: 25px;\n  fill: white;\n  z-index: 100000;\n  transition: 300ms;\n}\n\n.options {\n  display: flex;\n  flex-direction: column;\n  border-radius: 5px;\n  padding: 5px;\n  background-color: #2a2f3b;\n  position: relative;\n  top: -100px;\n  opacity: 0;\n  transition: 300ms;\n}\n\n.select:hover > .options {\n  opacity: 1;\n  top: 0;\n}\n\n.select:hover > .selected .arrow {\n  transform: rotate(0deg);\n}\n\n.option {\n  border-radius: 5px;\n  padding: 5px;\n  transition: 300ms;\n  background-color: #2a2f3b;\n  width: 150px;\n  font-size: 15px;\n}\n.option:hover {\n  background-color: #323741;\n}\n\n.options input[type=\"radio\"] {\n  display: none;\n}\n\n.options label {\n  display: inline-block;\n}\n.options label::before {\n  content: attr(data-txt);\n}\n\n.options input[type=\"radio\"]:checked + label {\n  display: none;\n}\n\n.options input[type=\"radio\"]#all:checked + label {\n  display: none;\n}\n\n.select:has(.options input[type=\"radio\"]#all:checked) .selected::before {\n  content: attr(data-default);\n}\n.select:has(.options input[type=\"radio\"]#option-1:checked) .selected::before {\n  content: attr(data-one);\n}\n.select:has(.options input[type=\"radio\"]#option-2:checked) .selected::before {\n  content: attr(data-two);\n}\n.select:has(.options input[type=\"radio\"]#option-3:checked) .selected::before {\n  content: attr(data-three);\n}\n\n</style>\n    ",
+    "tags": [
+      "radio-buttons",
+      "uiverse",
+      "ui-element",
+      "simple",
+      "minimalist",
+      "input",
+      "dark",
+      "light",
+      "radio",
+      "custom",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Uiverse Radio-button: Lucky Bullfrog 15 (by 3bdel3ziz-T)",
+    "description": "A beautiful community-designed Radio-button element from Uiverse.io.",
+    "category": "form",
+    "framework": "css",
+    "code": "<section>\n  <label title=\"home\" for=\"home\" class=\"label\">\n    <input id=\"home\" name=\"page\" type=\"radio\" checked=\"\" />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 21 20\"\n      height=\"20\"\n      width=\"21\"\n      class=\"icon home\"\n    >\n      <path\n        fill=\"inherit\"\n        d=\"M18.9999 6.01002L12.4499 0.770018C11.1699 -0.249982 9.16988 -0.259982 7.89988 0.760018L1.34988 6.01002C0.409885 6.76002 -0.160115 8.26002 0.0398848 9.44002L1.29988 16.98C1.58988 18.67 3.15988 20 4.86988 20H15.4699C17.1599 20 18.7599 18.64 19.0499 16.97L20.3099 9.43002C20.4899 8.26002 19.9199 6.76002 18.9999 6.01002ZM10.9199 16C10.9199 16.41 10.5799 16.75 10.1699 16.75C9.75988 16.75 9.41988 16.41 9.41988 16V13C9.41988 12.59 9.75988 12.25 10.1699 12.25C10.5799 12.25 10.9199 12.59 10.9199 13V16Z\"\n      ></path>\n    </svg>\n  </label>\n  <label title=\"cart\" for=\"cart\" class=\"label\">\n    <input id=\"cart\" name=\"page\" type=\"radio\" />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"inherit\"\n      viewBox=\"0 0 18 20\"\n      height=\"20\"\n      width=\"18\"\n      class=\"icon cart\"\n    >\n      <path\n        fill=\"inherit\"\n        d=\"M16.8035 6.96427C16.1335 6.22427 15.1235 5.79427 13.7235 5.64427V4.88427C13.7235 3.51427 13.1435 2.19427 12.1235 1.27427C11.6202 0.812823 11.025 0.462927 10.3771 0.247511C9.72909 0.032095 9.04292 -0.0439787 8.3635 0.0242742C5.9735 0.254274 3.9635 2.56427 3.9635 5.06427V5.64427C2.5635 5.79427 1.5535 6.22427 0.883496 6.96427C-0.0865043 8.04427 -0.0565042 9.48427 0.0534958 10.4843L0.753496 16.0543C0.963496 18.0043 1.7535 20.0043 6.0535 20.0043H11.6335C15.9335 20.0043 16.7235 18.0043 16.9335 16.0643L17.6335 10.4743C17.7435 9.48427 17.7635 8.04427 16.8035 6.96427ZM8.5035 1.41427C8.98813 1.36559 9.47758 1.41913 9.94023 1.57143C10.4029 1.72372 10.8284 1.97138 11.1894 2.29841C11.5503 2.62544 11.8387 3.02456 12.0357 3.46998C12.2328 3.91539 12.3343 4.39721 12.3335 4.88427V5.58427H5.3535V5.06427C5.3535 3.28427 6.8235 1.57427 8.5035 1.41427ZM5.2635 11.1543H5.2535C4.7035 11.1543 4.2535 10.7043 4.2535 10.1543C4.2535 9.60427 4.7035 9.15427 5.2535 9.15427C5.8135 9.15427 6.2635 9.60427 6.2635 10.1543C6.2635 10.7043 5.8135 11.1543 5.2635 11.1543ZM12.2635 11.1543H12.2535C11.7035 11.1543 11.2535 10.7043 11.2535 10.1543C11.2535 9.60427 11.7035 9.15427 12.2535 9.15427C12.8135 9.15427 13.2635 9.60427 13.2635 10.1543C13.2635 10.7043 12.8135 11.1543 12.2635 11.1543Z\"\n      ></path>\n    </svg>\n  </label>\n  <label title=\"favorite\" for=\"favorite\" class=\"label\">\n    <input id=\"favorite\" name=\"page\" type=\"radio\" />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"inherit\"\n      viewBox=\"0 0 20 18\"\n      height=\"18\"\n      width=\"20\"\n      class=\"icon favorite\"\n    >\n      <path\n        fill=\"inherit\"\n        d=\"M14.44 0C12.63 0 11.01 0.88 10 2.23C9.48413 1.53881 8.81426 0.977391 8.04353 0.590295C7.27281 0.203198 6.42247 0.00108555 5.56 0C2.49 0 0 2.5 0 5.59C0 6.78 0.19 7.88 0.52 8.9C2.1 13.9 6.97 16.89 9.38 17.71C9.72 17.83 10.28 17.83 10.62 17.71C13.03 16.89 17.9 13.9 19.48 8.9C19.81 7.88 20 6.78 20 5.59C20 2.5 17.51 0 14.44 0Z\"\n      ></path>\n    </svg>\n  </label>\n  <label title=\"notifications\" for=\"notifications\" class=\"label\">\n    <input id=\"notifications\" name=\"page\" type=\"radio\" />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"inherit\"\n      viewBox=\"0 0 16 20\"\n      height=\"20\"\n      width=\"16\"\n      class=\"icon history\"\n    >\n      <path\n        fill=\"inherit\"\n        d=\"M15.0294 12.4902L14.0294 10.8302C13.8194 10.4602 13.6294 9.76016 13.6294 9.35016V6.82016C13.6282 5.70419 13.3111 4.61137 12.7147 3.66813C12.1183 2.72489 11.267 1.96978 10.2594 1.49016C10.0022 1.0335 9.62709 0.654303 9.17324 0.392195C8.71939 0.130087 8.20347 -0.00530784 7.6794 0.000159243C6.5894 0.000159243 5.6094 0.590159 5.0894 1.52016C3.1394 2.49016 1.7894 4.50016 1.7894 6.82016V9.35016C1.7894 9.76016 1.5994 10.4602 1.3894 10.8202L0.379396 12.4902C-0.0206039 13.1602 -0.110604 13.9002 0.139396 14.5802C0.379396 15.2502 0.949396 15.7702 1.6894 16.0202C3.6294 16.6802 5.6694 17.0002 7.7094 17.0002C9.7494 17.0002 11.7894 16.6802 13.7294 16.0302C14.4294 15.8002 14.9694 15.2702 15.2294 14.5802C15.4894 13.8902 15.4194 13.1302 15.0294 12.4902ZM10.5194 18.0102C10.3091 18.5923 9.92467 19.0956 9.41835 19.4516C8.91203 19.8077 8.30837 19.9992 7.6894 20.0002C6.8994 20.0002 6.1194 19.6802 5.5694 19.1102C5.2494 18.8102 5.0094 18.4102 4.8694 18.0002C4.9994 18.0202 5.1294 18.0302 5.2694 18.0502C5.4994 18.0802 5.7394 18.1102 5.9794 18.1302C6.5494 18.1802 7.1294 18.2102 7.7094 18.2102C8.2794 18.2102 8.8494 18.1802 9.4094 18.1302C9.6194 18.1102 9.8294 18.1002 10.0294 18.0702L10.5194 18.0102Z\"\n      ></path>\n    </svg>\n  </label>\n</section>\n\n<style>\n/* From Uiverse.io by 3bdel3ziz-T  - Tags: hover, switch, radio, svg, custom, creative, transition, hover effect */\nsection {\n  --col-orange: #d17842;\n  --col-dark: #0c0f14;\n  --col-darkGray: #52555a;\n  --col-gray: #aeaeae;\n\n  width: fit-content;\n  display: flex;\n  align-items: center;\n  justify-content: space-evenly;\n  background-color: var(--col-dark);\n  border-radius: 30px;\n}\n.label {\n  padding: 8px 18px;\n  transition: all 200ms;\n  display: inline-block;\n}\n\n.label input[type=\"radio\"] {\n  display: none;\n}\n.label > svg {\n  transition: all 200ms;\n  fill: var(--col-gray);\n  width: 14px;\n}\n.label:hover:not(:has(input:checked)) > svg {\n  fill: #d17842;\n  opacity: 0.6;\n}\n.label::before {\n  content: \"\";\n  display: block;\n  width: 0%;\n  height: 2px;\n  border-radius: 5px;\n  position: relative;\n  left: 50%;\n  top: 20px;\n  background: var(--col-orange);\n  transition: all 200ms;\n}\n.label > svg {\n  transition: 300ms;\n  fill: var(--col-darkGray);\n  margin-top: 0;\n}\n.label:has(input:checked) > svg {\n  fill: var(--col-orange);\n  scale: 1.2;\n  margin-top: -5px;\n}\n\n.label:has(input:checked)::before {\n  width: 100%;\n  left: 0;\n  top: 25px;\n}\n\n</style>\n    ",
+    "tags": [
+      "radio-buttons",
+      "uiverse",
+      "ui-element",
+      "hover",
+      "switch",
+      "radio",
+      "svg",
+      "custom",
+      "creative",
+      "transition",
+      "hover effect"
+    ],
+    "dependencies": []
   }
 ]
