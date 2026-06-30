@@ -58,6 +58,7 @@ pub enum Framework {
     Css,
     Scss,
     Shadcn,
+    React,
 }
 
 impl fmt::Display for Framework {
@@ -77,6 +78,7 @@ impl FromStr for Framework {
             "css" | "vanillacss" => "css",
             "scss" | "sass" => "scss",
             "shadcn" | "shadcnui" => "shadcn",
+            "react" | "reactjs" | "jsx" | "tsx" => "react",
             other => other,
         };
         serde_json::from_str(&format!("\"{}\"", normalized))

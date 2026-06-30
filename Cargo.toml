@@ -1,6 +1,6 @@
 [package]
 name = "openblocks"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "A Rust-native MCP server for web development — pre-built UI components, blocks, and templates for AI agents"
 license = "MIT"

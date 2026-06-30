@@ -1,0 +1,623 @@
+[
+  {
+    "name": "Neon Glow Text",
+    "description": "A vibrant neon glow text effect with pulsing animation that alternates between two neon colors, creating a retro cyberpunk aesthetic.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"neon-glow-text\">\n  <h1>NEON</h1>\n  <style>\n    .neon-glow-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0a0a0a;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .neon-glow-text h1 {\n      font-size: 4rem;\n      color: #fff;\n      text-shadow:\n        0 0 7px #fff,\n        0 0 10px #fff,\n        0 0 21px #fff,\n        0 0 42px #0fa,\n        0 0 82px #0fa,\n        0 0 92px #0fa,\n        0 0 102px #0fa,\n        0 0 151px #0fa;\n      animation: neonPulse 1.5s ease-in-out infinite alternate;\n    }\n    @keyframes neonPulse {\n      0% { text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa; }\n      50% { text-shadow: 0 0 4px #fff, 0 0 7px #fff, 0 0 18px #fff, 0 0 38px #f0f, 0 0 73px #f0f, 0 0 80px #f0f, 0 0 94px #f0f, 0 0 140px #f0f; }\n      100% { text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "neon",
+      "glow",
+      "cyberpunk",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Wavy Letter Text",
+    "description": "Individual letters animate in a wave-like motion with staggered delays, creating a playful ripple effect across the text.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"wavy-text\">\n  <h1>\n    <span style=\"--i:1\">W</span>\n    <span style=\"--i:2\">A</span>\n    <span style=\"--i:3\">V</span>\n    <span style=\"--i:4\">E</span>\n  </h1>\n  <style>\n    .wavy-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #1a1a2e;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .wavy-text h1 {\n      display: flex;\n      font-size: 5rem;\n      color: #e94560;\n    }\n    .wavy-text h1 span {\n      display: inline-block;\n      animation: wave 1.5s ease-in-out infinite;\n      animation-delay: calc(0.1s * var(--i));\n    }\n    @keyframes wave {\n      0%, 100% { transform: translateY(0); }\n      50% { transform: translateY(-30px); color: #0f3460; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "wavy",
+      "letters",
+      "bounce",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "3D Spin Text",
+    "description": "Text rotates continuously in 3D space on the Y-axis with vibrant text-shadow layers that create a convincing 3D depth effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"spin-3d-text\">\n  <h1>SPIN</h1>\n  <style>\n    .spin-3d-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: linear-gradient(135deg, #0c0c1d, #1a1a3e);\n      font-family: 'Arial Black', sans-serif;\n      perspective: 800px;\n    }\n    .spin-3d-text h1 {\n      font-size: 5rem;\n      color: #f5c842;\n      text-shadow:\n        0 1px 0 #d4a832,\n        0 2px 0 #b8922a,\n        0 3px 0 #9c7d22,\n        0 4px 0 #80671a,\n        0 5px 0 #645212,\n        0 6px 10px rgba(0,0,0,0.5);\n      transform-style: preserve-3d;\n      animation: spin3d 3s linear infinite;\n    }\n    @keyframes spin3d {\n      0% { transform: rotateY(0deg); }\n      100% { transform: rotateY(360deg); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "3d",
+      "spin",
+      "rotate",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Glitch Distortion Text",
+    "description": "A glitch effect that uses pseudo-elements and clip-path to create digital distortion across the text, simulating a corrupted display.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"glitch-text\">\n  <h1 data-text=\"GLITCH\">GLITCH</h1>\n  <style>\n    .glitch-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #111;\n      font-family: 'Courier New', monospace;\n    }\n    .glitch-text h1 {\n      position: relative;\n      font-size: 5rem;\n      color: #fff;\n      letter-spacing: 5px;\n    }\n    .glitch-text h1::before,\n    .glitch-text h1::after {\n      content: attr(data-text);\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      background: #111;\n    }\n    .glitch-text h1::before {\n      color: #ff00c1;\n      animation: glitchShift 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;\n      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);\n    }\n    .glitch-text h1::after {\n      color: #00ffea;\n      animation: glitchShift 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s infinite;\n      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);\n    }\n    @keyframes glitchShift {\n      0% { transform: translate(0); }\n      20% { transform: translate(-5px, 3px); }\n      40% { transform: translate(5px, -3px); }\n      60% { transform: translate(-3px, 5px); }\n      80% { transform: translate(3px, -5px); }\n      100% { transform: translate(0); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "glitch",
+      "distortion",
+      "cyberpunk",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Text Mask Shimmer",
+    "description": "A background image is clipped to the text shape and animated horizontally, creating a sleek shimmering metallic sweep effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"masked-text\">\n  <h1>SHIMMER</h1>\n  <style>\n    .masked-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0a0a0a;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .masked-text h1 {\n      font-size: 5rem;\n      font-weight: 900;\n      color: transparent;\n      background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);\n      background-size: 200% 100%;\n      -webkit-background-clip: text;\n      background-clip: text;\n      animation: shimmer 3s linear infinite;\n    }\n    @keyframes shimmer {\n      0% { background-position: 200% 0; }\n      100% { background-position: -200% 0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "mask",
+      "shimmer",
+      "gradient",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Typewriter Cursor Text",
+    "description": "A classic typewriter effect where text is revealed letter-by-letter with a blinking cursor, using only CSS width animation and border tricks.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"typewriter-text\">\n  <div class=\"typewriter\">\n    <h1>Hello, World!</h1>\n  </div>\n  <style>\n    .typewriter-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #1e1e2e;\n      font-family: 'Courier New', monospace;\n      padding: 20px;\n    }\n    .typewriter h1 {\n      overflow: hidden;\n      white-space: nowrap;\n      font-size: 2rem;\n      color: #00ff88;\n      border-right: 3px solid #00ff88;\n      width: 0;\n      animation:\n        typing 3s steps(13) 1s forwards,\n        blink 0.75s step-end infinite;\n    }\n    @keyframes typing {\n      from { width: 0; }\n      to { width: 100%; }\n    }\n    @keyframes blink {\n      50% { border-color: transparent; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "typewriter",
+      "typing",
+      "cursor",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Dancing Shadow Text",
+    "description": "Text shadows dynamically shift in diagonal directions with alternating colors, creating a lively dancing shadow effect around the letters.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"dance-shadow\">\n  <h1>DANCE</h1>\n  <style>\n    .dance-shadow {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #1a1a2e;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .dance-shadow h1 {\n      font-size: 5rem;\n      color: #e94560;\n      animation: shadowDance 2s ease-in-out infinite;\n    }\n    @keyframes shadowDance {\n      0% { text-shadow: 0 0 0 #0f3460, 0 0 0 #16213e; }\n      25% { text-shadow: 10px -10px 0 #0f3460, -10px 10px 0 #16213e; }\n      50% { text-shadow: -10px -10px 0 #0f3460, 10px 10px 0 #16213e; }\n      75% { text-shadow: 10px 10px 0 #0f3460, -10px -10px 0 #16213e; }\n      100% { text-shadow: 0 0 0 #0f3460, 0 0 0 #16213e; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "shadow",
+      "dance",
+      "playful",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Slide-In Split Text",
+    "description": "Two halves of text slide in from opposite directions and snap together at the center, creating a dramatic reveal entrance animation.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"split-text\">\n  <div class=\"split-inner\">\n    <span class=\"left\">CON</span><span class=\"right\">NECT</span>\n  </div>\n  <style>\n    .split-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0f0f23;\n      font-family: 'Arial Black', sans-serif;\n      overflow: hidden;\n    }\n    .split-inner {\n      font-size: 5rem;\n      color: #00d2ff;\n    }\n    .left {\n      display: inline-block;\n      animation: slideLeft 1s ease-out forwards;\n    }\n    .right {\n      display: inline-block;\n      animation: slideRight 1s ease-out forwards;\n    }\n    @keyframes slideLeft {\n      0% { transform: translateX(-200px); opacity: 0; }\n      100% { transform: translateX(0); opacity: 1; }\n    }\n    @keyframes slideRight {\n      0% { transform: translateX(200px); opacity: 0; }\n      100% { transform: translateX(0); opacity: 1; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "slide-in",
+      "split",
+      "reveal",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Pulse Glow Text",
+    "description": "A pulsing heartbeat glow effect where the text rhythmically brightens and dims, simulating a neon sign power fluctuation.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"pulse-glow\">\n  <h1>PULSE</h1>\n  <style>\n    .pulse-glow {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0b0b1a;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .pulse-glow h1 {\n      font-size: 5rem;\n      color: #ff6b6b;\n      animation: pulseGlow 2s ease-in-out infinite;\n    }\n    @keyframes pulseGlow {\n      0%, 100% {\n        text-shadow: 0 0 5px #ff6b6b, 0 0 10px #ff6b6b, 0 0 20px #ee5a24, 0 0 40px #ee5a24;\n        opacity: 0.8;\n      }\n      50% {\n        text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 40px #ee5a24, 0 0 80px #ee5a24;\n        opacity: 1;\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "pulse",
+      "glow",
+      "neon",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Fade In Blur Text",
+    "description": "Text transitions from a blurred, invisible state to sharp clarity, creating a cinematic focus reveal effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"blur-reveal\">\n  <h1>FOCUS</h1>\n  <style>\n    .blur-reveal {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #1a1a2e;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .blur-reveal h1 {\n      font-size: 5rem;\n      color: #f5c842;\n      animation: blurReveal 2s ease-out forwards;\n      opacity: 0;\n    }\n    @keyframes blurReveal {\n      0% {\n        opacity: 0;\n        filter: blur(20px);\n        letter-spacing: 40px;\n      }\n      100% {\n        opacity: 1;\n        filter: blur(0);\n        letter-spacing: normal;\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "blur",
+      "reveal",
+      "fade",
+      "cinematic",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Bouncing Letter Text",
+    "description": "Each letter independently bounces up and down like a basketball with staggered timing, creating an energetic, playful typographic animation.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"bounce-text\">\n  <h1>\n    <span style=\"--i:1\">B</span>\n    <span style=\"--i:2\">O</span>\n    <span style=\"--i:3\">U</span>\n    <span style=\"--i:4\">N</span>\n    <span style=\"--i:5\">C</span>\n    <span style=\"--i:6\">E</span>\n  </h1>\n  <style>\n    .bounce-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0f3460;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .bounce-text h1 {\n      display: flex;\n      font-size: 5rem;\n      color: #e94560;\n    }\n    .bounce-text h1 span {\n      display: inline-block;\n      animation: bounceLetter 0.6s ease-in-out infinite;\n      animation-delay: calc(0.08s * var(--i));\n    }\n    @keyframes bounceLetter {\n      0%, 100% { transform: translateY(0); }\n      50% { transform: translateY(-40px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "bounce",
+      "letters",
+      "playful",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Flip 3D Reveal Text",
+    "description": "Text performs a 3D flip on the X-axis from invisible to fully visible, with perspective depth for a realistic card-flip effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"flip-text\">\n  <h1>FLIP</h1>\n  <style>\n    .flip-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: linear-gradient(135deg, #0c0c1d, #1a1a3e);\n      font-family: 'Arial Black', sans-serif;\n      perspective: 600px;\n    }\n    .flip-text h1 {\n      font-size: 5rem;\n      color: #f5c842;\n      animation: flipReveal 1.5s ease-out forwards;\n      transform-style: preserve-3d;\n      opacity: 0;\n    }\n    @keyframes flipReveal {\n      0% {\n        opacity: 0;\n        transform: rotateX(90deg);\n      }\n      100% {\n        opacity: 1;\n        transform: rotateX(0deg);\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "flip",
+      "3d",
+      "reveal",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Rainbow Gradient Text",
+    "description": "An animated rainbow gradient scrolls continuously through the text, cycling through the full color spectrum for a vibrant, colorful effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"rainbow-text\">\n  <h1>RAINBOW</h1>\n  <style>\n    .rainbow-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0a0a0a;\n      font-family: 'Arial Black', sans-serif;\n    }\n    .rainbow-text h1 {\n      font-size: 5rem;\n      font-weight: 900;\n      background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);\n      background-size: 400% 100%;\n      -webkit-background-clip: text;\n      background-clip: text;\n      color: transparent;\n      animation: rainbowScroll 4s linear infinite;\n    }\n    @keyframes rainbowScroll {\n      0% { background-position: 0% 50%; }\n      100% { background-position: 400% 50%; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "rainbow",
+      "gradient",
+      "colorful",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Scale Burst Text",
+    "description": "Text rapidly scales up from nothing with a burst effect, accompanied by a radial burst ring that expands and fades outward.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"burst-text\">\n  <h1>BOOM</h1>\n  <style>\n    .burst-text {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0a0a0a;\n      font-family: 'Arial Black', sans-serif;\n      overflow: hidden;\n    }\n    .burst-text h1 {\n      font-size: 5rem;\n      color: #ff3366;\n      animation: burstIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;\n      opacity: 0;\n      z-index: 2;\n    }\n    .burst-text::before {\n      content: '';\n      position: absolute;\n      width: 100px;\n      height: 100px;\n      background: radial-gradient(circle, rgba(255,51,102,0.3), transparent);\n      border-radius: 50%;\n      animation: burstRing 0.8s ease-out forwards;\n      z-index: 1;\n    }\n    @keyframes burstIn {\n      0% { transform: scale(0); opacity: 0; }\n      60% { transform: scale(1.2); opacity: 1; }\n      100% { transform: scale(1); opacity: 1; }\n    }\n    @keyframes burstRing {\n      0% { transform: scale(0); opacity: 1; }\n      100% { transform: scale(8); opacity: 0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "burst",
+      "scale",
+      "explosive",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Matrix Rain Text",
+    "description": "A Matrix-inspired digital rain effect with green glowing text, a repeating gradient rain background, and subtle glitch clip-path distortion.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"matrix-text\">\n  <h1>MATRIX</h1>\n  <style>\n    .matrix-text {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #000;\n      font-family: 'Courier New', monospace;\n      overflow: hidden;\n    }\n    .matrix-text::before {\n      content: '';\n      position: absolute;\n      inset: 0;\n      background: repeating-linear-gradient(\n        0deg,\n        transparent,\n        transparent 2px,\n        rgba(0, 255, 0, 0.03) 2px,\n        rgba(0, 255, 0, 0.03) 4px\n      );\n      animation: rain 2s linear infinite;\n    }\n    .matrix-text h1 {\n      position: relative;\n      font-size: 5rem;\n      color: #00ff41;\n      text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff41;\n      animation: glitchMatrix 3s infinite;\n      z-index: 2;\n    }\n    @keyframes rain {\n      0% { transform: translateY(-100%); }\n      100% { transform: translateY(100%); }\n    }\n    @keyframes glitchMatrix {\n      0%, 100% { clip-path: none; }\n      92% { clip-path: inset(20% 0 30% 0); transform: translate(-3px, 2px); }\n      94% { clip-path: inset(50% 0 10% 0); transform: translate(3px, -2px); }\n      96% { clip-path: inset(10% 0 60% 0); transform: translate(-1px, 1px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "matrix",
+      "digital",
+      "glitch",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Explosive Letter Burst on Hover",
+    "description": "An explosive visual effect triggered on hover where the text enlarges and two circular bursts radiate outward using ::before/::after pseudo-elements with radial gradients, simulating a colorful explosion.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"explosive-burst\">\n  <h1>BURST</h1>\n  <style>\n    .explosive-burst {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a0a2e;\n      font-family: \"Arial Black\", sans-serif;\n      cursor: pointer;\n    }\n    .explosive-burst h1 {\n      font-size: 5rem;\n      color: #fff;\n      z-index: 2;\n      transition: transform 0.3s ease;\n    }\n    .explosive-burst:hover h1 {\n      transform: scale(1.15);\n    }\n    .explosive-burst::before,\n    .explosive-burst::after {\n      content: \"\";\n      position: absolute;\n      width: 0;\n      height: 0;\n      border-radius: 50%;\n      background: radial-gradient(circle, rgba(255, 51, 102, 0.6), transparent 70%);\n      transition: all 0.5s ease-out;\n      z-index: 1;\n    }\n    .explosive-burst::before {\n      background: radial-gradient(circle, rgba(255, 204, 0, 0.5), transparent 70%);\n    }\n    .explosive-burst:hover::before {\n      width: 300px;\n      height: 300px;\n      animation: burstOut 0.6s ease-out forwards;\n    }\n    .explosive-burst:hover::after {\n      width: 400px;\n      height: 400px;\n      animation: burstOut 0.6s ease-out 0.15s forwards;\n    }\n    @keyframes burstOut {\n      0% { transform: scale(0); opacity: 1; }\n      100% { transform: scale(2); opacity: 0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "explosive",
+      "burst",
+      "hover",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Melting Text",
+    "description": "A melting text effect where the text visually appears to droop and dissolve downward, resembling liquid dripping, using pseudo-elements with blur filters and drip keyframes.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"melt-text\">\n  <h1>MELT</h1>\n  <style>\n    .melt-text {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #2d1b2e;\n      font-family: \"Arial Black\", sans-serif;\n      overflow: hidden;\n    }\n    .melt-text h1 {\n      position: relative;\n      font-size: 5rem;\n      color: #ff6b9d;\n      z-index: 2;\n      animation: melt 3s ease-in-out infinite;\n    }\n    .melt-text::before {\n      content: attr(data-text);\n      position: absolute;\n      font-size: 5rem;\n      font-family: \"Arial Black\", sans-serif;\n      color: rgba(255, 107, 157, 0.4);\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      animation: drip 3s ease-in-out infinite;\n      z-index: 1;\n    }\n    .melt-text::after {\n      content: attr(data-text);\n      position: absolute;\n      font-size: 5rem;\n      font-family: \"Arial Black\", sans-serif;\n      color: rgba(255, 107, 157, 0.2);\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      filter: blur(10px);\n      animation: drip 3s ease-in-out 0.5s infinite;\n      z-index: 0;\n    }\n    @keyframes melt {\n      0%, 100% { transform: translateY(0) scaleY(1); }\n      50% { transform: translateY(10px) scaleY(0.95); }\n    }\n    @keyframes drip {\n      0%, 100% { transform: translate(-50%, -50%) scaleY(1); opacity: 0.4; }\n      50% { transform: translate(-50%, 10%) scaleY(1.3); opacity: 0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "melt",
+      "drip",
+      "liquid",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Glowing 3D Text",
+    "description": "A glowing 3D text effect by Bennett Feely that combines dynamic 3D rotation with color-transitioning glow, using multiple stacked text layers at different Z depths with preserve-3d and rotate3d transforms.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"glow-3d-text\">\n  <h1>3D GLOW</h1>\n  <style>\n    .glow-3d-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 300px;\n      background: #0a0a1a;\n      font-family: \"Arial Black\", sans-serif;\n      perspective: 1000px;\n    }\n    .glow-3d-text h1 {\n      font-size: 5rem;\n      color: #fff;\n      text-shadow:\n        0 0 10px #0ff,\n        0 0 20px #0ff,\n        0 0 40px #0ff,\n        0 0 80px #f0f,\n        0 0 120px #f0f;\n      transform-style: preserve-3d;\n      animation: wobbleGlow 4s ease-in-out infinite;\n    }\n    @keyframes wobbleGlow {\n      0%, 100% { transform: rotate3d(1, 1, 0, 0deg); text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #f0f; }\n      25% { transform: rotate3d(1, 1, 0, 15deg); text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 40px #f0f, 0 0 80px #0ff; }\n      50% { transform: rotate3d(1, 1, 0, -10deg); text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0, 0 0 80px #0f0; }\n      75% { transform: rotate3d(1, 1, 0, 20deg); text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #ff0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "3d",
+      "glow",
+      "rotate",
+      "neon",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "HEY 3D Pulsing Text",
+    "description": "A vibrant 3D pulsing text animation by Radu Bratan that uses dynamic shadows and CSS transforms to create a heartbeat-like effect, with bold colors and energetic movement.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"hey-3d\">\n  <h1>HEY!</h1>\n  <style>\n    .hey-3d {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: linear-gradient(135deg, #1a0033, #0d001a);\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .hey-3d h1 {\n      font-size: 6rem;\n      color: #ff3366;\n      text-shadow:\n        0 1px 0 #cc2952,\n        0 2px 0 #992040,\n        0 3px 0 #66152b,\n        0 5px 10px rgba(255, 51, 102, 0.3),\n        0 10px 20px rgba(255, 51, 102, 0.2);\n      animation: heartbeat 1.5s ease-in-out infinite;\n      transform-style: preserve-3d;\n    }\n    @keyframes heartbeat {\n      0%, 100% { transform: scale(1) rotateX(0deg); text-shadow: 0 1px 0 #cc2952, 0 2px 0 #992040, 0 3px 0 #66152b, 0 5px 10px rgba(255, 51, 102, 0.3); }\n      15% { transform: scale(1.15) rotateX(10deg); text-shadow: 0 1px 0 #cc2952, 0 3px 0 #992040, 0 6px 0 #66152b, 0 8px 15px rgba(255, 51, 102, 0.5); }\n      30% { transform: scale(1) rotateX(0deg); text-shadow: 0 1px 0 #cc2952, 0 2px 0 #992040, 0 3px 0 #66152b, 0 5px 10px rgba(255, 51, 102, 0.3); }\n      45% { transform: scale(1.1) rotateX(-5deg); text-shadow: 0 1px 0 #cc2952, 0 3px 0 #992040, 0 5px 0 #66152b, 0 8px 15px rgba(255, 51, 102, 0.5); }\n      60% { transform: scale(1) rotateX(0deg); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "3d",
+      "pulse",
+      "heartbeat",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "3D Text Marquee Effect",
+    "description": "A 3D text marquee by Comehope that creates the illusion of text passing through the corner of a 3D box by combining perspective transforms, clipping, and smooth marquee motion.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"marquee-3d\">\n  <div class=\"marquee-inner\">\n    <span>SCROLLING TEXT IN 3D SPACE \u2014 </span>\n    <span>SCROLLING TEXT IN 3D SPACE \u2014 </span>\n  </div>\n  <style>\n    .marquee-3d {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 280px;\n      background: #0f0f1a;\n      font-family: \"Arial\", sans-serif;\n      perspective: 600px;\n      overflow: hidden;\n    }\n    .marquee-inner {\n      display: flex;\n      font-size: 4rem;\n      font-weight: 900;\n      color: #00d4ff;\n      transform-style: preserve-3d;\n      transform: rotateX(20deg) rotateY(-10deg);\n      white-space: nowrap;\n    }\n    .marquee-inner span {\n      display: inline-block;\n      animation: scrollMarquee 8s linear infinite;\n      text-shadow: 0 2px 5px rgba(0, 212, 255, 0.3), 0 5px 15px rgba(0, 212, 255, 0.1);\n    }\n    @keyframes scrollMarquee {\n      0% { transform: translateX(0); }\n      100% { transform: translateX(-50%); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "3d",
+      "marquee",
+      "scroll",
+      "perspective",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Nabla Color Font Animation",
+    "description": "A pulsing 3D depth effect by Scott Kellum using the Nabla variable color font with font-variation-settings to dynamically adjust extrusion depth, creating a cascading staggered animation across letters.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"nabla-text\">\n  <h1>\n    <span style=\"--i:1\">C</span>\n    <span style=\"--i:2\">O</span>\n    <span style=\"--i:3\">L</span>\n    <span style=\"--i:4\">O</span>\n    <span style=\"--i:5\">R</span>\n  </h1>\n  <style>\n    @import url(\"https://fonts.googleapis.com/css2?family=Nabla&display=swap\");\n    .nabla-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a1a2e;\n      font-family: \"Nabla\", system-ui, sans-serif;\n    }\n    .nabla-text h1 {\n      display: flex;\n      font-size: 5rem;\n      gap: 5px;\n    }\n    .nabla-text h1 span {\n      display: inline-block;\n      animation: pulseDepth 2s ease-in-out infinite;\n      animation-delay: calc(0.15s * var(--i));\n      font-variation-settings: \"EDPT\" 100;\n    }\n    @keyframes pulseDepth {\n      0%, 100% { font-variation-settings: \"EDPT\" 100; transform: translateZ(0); }\n      50% { font-variation-settings: \"EDPT\" 200; transform: translateZ(10px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "nabla",
+      "variable-font",
+      "color-font",
+      "3d",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "3D Cylinder Rotate Text",
+    "description": "A 3D rotation animation by Emilio where text rotates continuously along the X-axis and is arranged in a circular cylinder formation using preserve-3d, perspective, and transforms.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"cylinder-text\">\n  <div class=\"cylinder\">\n    <span>EAT SLEEP RAVE REPEAT </span>\n    <span>EAT SLEEP RAVE REPEAT </span>\n  </div>\n  <style>\n    .cylinder-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 300px;\n      background: #0a0a1a;\n      font-family: \"Arial Black\", sans-serif;\n      perspective: 500px;\n    }\n    .cylinder {\n      font-size: 3rem;\n      font-weight: 900;\n      color: #ff6b9d;\n      transform-style: preserve-3d;\n      animation: spinCylinder 10s linear infinite;\n      white-space: nowrap;\n      text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);\n    }\n    .cylinder span {\n      display: inline-block;\n    }\n    @keyframes spinCylinder {\n      0% { transform: rotateX(0deg); }\n      100% { transform: rotateX(360deg); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "3d",
+      "cylinder",
+      "rotate",
+      "perspective",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Slide-In Text with Cycling Background",
+    "description": "A slide-in text animation by Yemon that combines classic slide-in text reveal with cycling background colors, using roll and bg keyframes to drop text into view while the background shifts through a color palette.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"slide-bg-text\">\n  <div class=\"slide-bg-inner\">\n    <h1>WELCOME</h1>\n  </div>\n  <style>\n    .slide-bg-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      font-family: \"Arial Black\", sans-serif;\n      animation: bgCycle 8s linear infinite;\n      overflow: hidden;\n    }\n    .slide-bg-inner {\n      overflow: hidden;\n    }\n    .slide-bg-text h1 {\n      font-size: 5rem;\n      color: #fff;\n      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);\n      animation: slideRoll 1.5s ease-out forwards;\n      transform: translateY(100%);\n    }\n    @keyframes slideRoll {\n      0% { transform: translateY(100%) rotateX(40deg); opacity: 0; }\n      100% { transform: translateY(0) rotateX(0); opacity: 1; }\n    }\n    @keyframes bgCycle {\n      0% { background: #ff6b6b; }\n      25% { background: #4ecdc4; }\n      50% { background: #45b7d1; }\n      75% { background: #f7dc6f; }\n      100% { background: #ff6b6b; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "slide-in",
+      "background",
+      "cycling",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Gooey Marquee Text",
+    "description": "A gooey marquee effect by Amit Sheen where text melts out of one side of a glowing wall and melts into the other side, using CSS filters to create a fluid, organic ghost-like motion.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"gooey-marquee\">\n  <div class=\"gooey-track\">\n    <span>GOOEY TEXT EFFECT \u2014 </span>\n    <span>GOOEY TEXT EFFECT \u2014 </span>\n  </div>\n  <style>\n    .gooey-marquee {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0d0d1a;\n      font-family: \"Arial Black\", sans-serif;\n      overflow: hidden;\n    }\n    .gooey-marquee::before {\n      content: \"\";\n      position: absolute;\n      left: 50%;\n      top: 50%;\n      transform: translate(-50%, -50%);\n      width: 120px;\n      height: 120px;\n      background: rgba(0, 212, 255, 0.15);\n      border-radius: 50%;\n      filter: blur(20px);\n      z-index: 1;\n    }\n    .gooey-track {\n      display: flex;\n      font-size: 4rem;\n      font-weight: 900;\n      color: #00d4ff;\n      filter: url(\"#goo\");\n      white-space: nowrap;\n      z-index: 2;\n    }\n    .gooey-track span {\n      display: inline-block;\n      animation: gooeyScroll 6s linear infinite;\n      text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);\n    }\n    @keyframes gooeyScroll {\n      0% { transform: translateX(0); }\n      100% { transform: translateX(-50%); }\n    }\n  </style>\n  <svg style=\"position:absolute;height:0;width:0\">\n    <defs>\n      <filter id=\"goo\">\n        <feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"6\" result=\"blur\"/>\n        <feColorMatrix in=\"blur\" mode=\"matrix\" values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7\" result=\"goo\"/>\n        <feBlend in=\"SourceGraphic\" in2=\"goo\"/>\n      </filter>\n    </defs>\n  </svg>\n</div>",
+    "tags": [
+      "text-animation",
+      "gooey",
+      "marquee",
+      "filter",
+      "liquid",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Ghosts and Ghouls Text Effect",
+    "description": "A ghost-like animation by Sicontis where a ghost icon passes through text using mix-blend-mode: exclusion, creating a dynamic color inversion effect as the ghost moves across the words.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"ghost-text\">\n  <h1>\ud83d\udc7b GHOSTS</h1>\n  <div class=\"ghost-icon\">\ud83d\udc7b</div>\n  <style>\n    .ghost-text {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a0a2e;\n      font-family: \"Arial Black\", sans-serif;\n      overflow: hidden;\n    }\n    .ghost-text h1 {\n      font-size: 5rem;\n      color: #fff;\n      z-index: 2;\n      mix-blend-mode: difference;\n    }\n    .ghost-icon {\n      position: absolute;\n      font-size: 6rem;\n      animation: ghostMove 4s ease-in-out infinite;\n      z-index: 1;\n      mix-blend-mode: exclusion;\n    }\n    @keyframes ghostMove {\n      0% { transform: translateX(-200px) scale(1); opacity: 0; }\n      10% { opacity: 1; }\n      50% { transform: translateX(200px) scale(1.2); opacity: 1; }\n      90% { opacity: 1; }\n      100% { transform: translateX(400px) scale(1); opacity: 0; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "ghost",
+      "mix-blend-mode",
+      "exclusion",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Schitt's Creek Title Animation",
+    "description": "A multi-keyframe title reveal by Rob that animates text groups with pop-word rotation, shimmer sparkle effects, and staggered bar reveals for a polished TV title sequence style.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"schitts-title\">\n  <h1>\n    <span class=\"title-word\">SCHITT</span>\n    <span class=\"title-word\" style=\"--i:2\">CREEK</span>\n    <sup class=\"title-sup\">s</sup>\n  </h1>\n  <style>\n    .schitts-title {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a0a0a;\n      font-family: \"Georgia\", serif;\n    }\n    .schitts-title h1 {\n      font-size: 4.5rem;\n      color: #ffd700;\n      display: flex;\n      align-items: flex-start;\n      gap: 10px;\n    }\n    .title-word {\n      display: inline-block;\n      animation: popWord 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;\n      opacity: 0;\n    }\n    .title-word:nth-child(2) {\n      animation-delay: 0.4s;\n    }\n    .title-sup {\n      font-size: 2rem;\n      display: inline-block;\n      animation: shimmerReveal 1s ease-out 0.8s forwards;\n      opacity: 0;\n      position: relative;\n    }\n    .title-sup::after {\n      content: \"\";\n      position: absolute;\n      bottom: -2px;\n      left: 0;\n      width: 0;\n      height: 3px;\n      background: #ffd700;\n      animation: barScale 0.5s ease-out 1.2s forwards;\n    }\n    @keyframes popWord {\n      0% { transform: rotate(-15deg) scale(0.5); opacity: 0; }\n      100% { transform: rotate(0) scale(1); opacity: 1; }\n    }\n    @keyframes shimmerReveal {\n      0% { opacity: 0; text-shadow: none; }\n      100% { opacity: 1; text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; }\n    }\n    @keyframes barScale {\n      0% { width: 0; }\n      100% { width: 100%; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "title",
+      "reveal",
+      "pop",
+      "sparkle",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Text Frame Border Rotation",
+    "description": "A unique animation by Fernando Cohen where individual characters rotate around the edges of a picture frame using the rotate() function within a frameMove keyframe, with interactive hover effects.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"frame-rotate\">\n  <div class=\"frame\">\n    <div class=\"frame-content\">\n      <div class=\"frame-text\">\n        <span style=\"--i:1\">R</span>\n        <span style=\"--i:2\">O</span>\n        <span style=\"--i:3\">T</span>\n        <span style=\"--i:4\">A</span>\n        <span style=\"--i:5\">T</span>\n        <span style=\"--i:6\">E</span>\n      </div>\n    </div>\n  </div>\n  <style>\n    .frame-rotate {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 300px;\n      background: #1a1a2e;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .frame {\n      position: relative;\n      width: 250px;\n      height: 250px;\n      border: 4px solid #e94560;\n      border-radius: 8px;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      background: #16213e;\n      transition: transform 0.5s ease;\n    }\n    .frame:hover {\n      transform: scale(1.05);\n      border-color: #ff6b6b;\n      box-shadow: 0 0 30px rgba(233, 69, 96, 0.4);\n    }\n    .frame-text {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      top: 0;\n      left: 0;\n    }\n    .frame-text span {\n      position: absolute;\n      font-size: 1.5rem;\n      color: #e94560;\n      animation: frameMove 4s linear infinite;\n      animation-delay: calc(-0.3s * var(--i));\n    }\n    .frame-text span:nth-child(1) { top: -30px; left: 50%; transform: translateX(-50%); }\n    .frame-text span:nth-child(2) { top: 50%; right: -25px; transform: translateY(-50%); }\n    .frame-text span:nth-child(3) { bottom: -30px; left: 50%; transform: translateX(-50%); }\n    .frame-text span:nth-child(4) { top: 50%; left: -25px; transform: translateY(-50%); }\n    .frame-text span:nth-child(5) { top: -30px; left: 50%; transform: translateX(-50%); }\n    .frame-text span:nth-child(6) { top: 50%; right: -25px; transform: translateY(-50%); }\n    @keyframes frameMove {\n      0%, 100% { opacity: 1; }\n      50% { opacity: 0.3; transform: rotate(180deg) scale(1.2); }\n    }\n    .frame-content {\n      font-size: 2rem;\n      color: #fff;\n      text-align: center;\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "frame",
+      "border",
+      "rotate",
+      "hover",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Typewriter Text Animation Variant",
+    "description": "A second typewriter text effect with a blinking cursor and multi-line reveal, using width animation and border tricks to type out text character by character in pure CSS.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"typewriter-v2\">\n  <div class=\"tw-wrapper\">\n    <h1>Hello, World!</h1>\n    <h1>This is CSS</h1>\n  </div>\n  <style>\n    .typewriter-v2 {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0f0f23;\n      font-family: \"Courier New\", monospace;\n      padding: 30px;\n    }\n    .tw-wrapper h1 {\n      overflow: hidden;\n      white-space: nowrap;\n      font-size: 1.8rem;\n      color: #ffd700;\n      border-right: 2px solid #ffd700;\n      width: 0;\n      animation:\n        typingStep 3s steps(12) 0.5s forwards,\n        blinkCursor 0.6s step-end infinite;\n    }\n    .tw-wrapper h1:nth-child(2) {\n      animation-delay: 3.5s;\n      border-color: #ff6b6b;\n      color: #ff6b6b;\n    }\n    @keyframes typingStep {\n      from { width: 0; }\n      to { width: 100%; }\n    }\n    @keyframes blinkCursor {\n      50% { border-color: transparent; }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "typewriter",
+      "typing",
+      "cursor",
+      "variant",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Smoke Dissolve Text",
+    "description": "Letters dissolve upward into smoke-like particles using CSS filter blur and opacity transitions with staggered delays, creating an ethereal disappearing effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"smoke-text\">\n  <h1>\n    <span style=\"--i:0\">S</span>\n    <span style=\"--i:1\">M</span>\n    <span style=\"--i:2\">O</span>\n    <span style=\"--i:3\">K</span>\n    <span style=\"--i:4\">E</span>\n  </h1>\n  <style>\n    .smoke-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0a0a1a;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .smoke-text h1 {\n      display: flex;\n      font-size: 5rem;\n      color: #ccc;\n      gap: 5px;\n    }\n    .smoke-text h1 span {\n      display: inline-block;\n      animation: smokeRise 4s ease-in-out infinite;\n      animation-delay: calc(0.3s * var(--i));\n    }\n    @keyframes smokeRise {\n      0%, 100% {\n        transform: translateY(0) scale(1);\n        opacity: 1;\n        filter: blur(0);\n      }\n      50% {\n        transform: translateY(-60px) scale(1.5);\n        opacity: 0;\n        filter: blur(8px);\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "smoke",
+      "dissolve",
+      "blur",
+      "ethereal",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Electric Shock Text",
+    "description": "A high-voltage electric effect where text jitters with neon yellow sparks using clip-path glitch segments and rapid translation for a stunning shock visual.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"shock-text\">\n  <h1 data-text=\"\u26a1SHOCK\u26a1\">\u26a1SHOCK\u26a1</h1>\n  <style>\n    .shock-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #050510;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .shock-text h1 {\n      position: relative;\n      font-size: 5rem;\n      color: #ffdd00;\n      text-shadow: 0 0 10px #ffdd00, 0 0 20px #ffaa00, 0 0 40px #ff8800;\n      animation: shockJitter 0.15s infinite;\n    }\n    .shock-text h1::before,\n    .shock-text h1::after {\n      content: attr(data-text);\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      background: #050510;\n    }\n    .shock-text h1::before {\n      color: #00ddff;\n      animation: shockGlitch 0.2s infinite;\n      clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);\n    }\n    .shock-text h1::after {\n      color: #ff00dd;\n      animation: shockGlitch 0.2s 0.1s infinite;\n      clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);\n    }\n    @keyframes shockJitter {\n      0%, 100% { transform: translate(0); }\n      25% { transform: translate(-3px, 2px); }\n      75% { transform: translate(3px, -2px); }\n    }\n    @keyframes shockGlitch {\n      0%, 100% { transform: translate(0); }\n      20% { transform: translate(-8px, 5px); }\n      40% { transform: translate(8px, -5px); }\n      60% { transform: translate(-4px, 3px); }\n      80% { transform: translate(4px, -3px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "electric",
+      "shock",
+      "glitch",
+      "neon",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Text Color Cycling Effect",
+    "description": "A smooth continuous color cycling animation where the text hue shifts through the full spectrum using filter hue-rotate, creating a simple but captivating rainbow morphing effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"color-cycle\">\n  <h1>COLORS</h1>\n  <style>\n    .color-cycle {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0a0a0a;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .color-cycle h1 {\n      font-size: 5rem;\n      color: #ff3366;\n      animation: hueShift 4s linear infinite;\n    }\n    @keyframes hueShift {\n      0% { filter: hue-rotate(0deg); }\n      100% { filter: hue-rotate(360deg); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "color-cycle",
+      "hue",
+      "rotate",
+      "rainbow",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Perspective Tilt Text",
+    "description": "Text that dynamically tilts in 3D space on hover using perspective and rotateX/rotateY transforms that respond to cursor position with a smooth transition for an interactive depth effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"tilt-text\">\n  <h1>TILT</h1>\n  <style>\n    .tilt-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a1a2e;\n      font-family: \"Arial Black\", sans-serif;\n      perspective: 600px;\n    }\n    .tilt-text h1 {\n      font-size: 5rem;\n      color: #e94560;\n      text-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);\n      transform-style: preserve-3d;\n      transition: transform 0.3s ease;\n      cursor: pointer;\n    }\n    .tilt-text:hover h1 {\n      transform: rotateX(15deg) rotateY(-15deg) translateZ(20px);\n      text-shadow: 0 5px 20px rgba(233, 69, 96, 0.5), 0 10px 40px rgba(233, 69, 96, 0.2);\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "tilt",
+      "perspective",
+      "3d",
+      "hover",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Kinetic Pendulum Text",
+    "description": "Individual letters swing back and forth like pendulums with varying pivot points and staggered timing, creating an energetic kinetic typography effect.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"pendulum-text\">\n  <h1>\n    <span style=\"--i:1\">S</span>\n    <span style=\"--i:2\">W</span>\n    <span style=\"--i:3\">I</span>\n    <span style=\"--i:4\">N</span>\n    <span style=\"--i:5\">G</span>\n  </h1>\n  <style>\n    .pendulum-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0f3460;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .pendulum-text h1 {\n      display: flex;\n      font-size: 5rem;\n      color: #e94560;\n      gap: 3px;\n    }\n    .pendulum-text h1 span {\n      display: inline-block;\n      transform-origin: top center;\n      animation: pendulumSwing 2s ease-in-out infinite;\n      animation-delay: calc(0.1s * var(--i));\n    }\n    @keyframes pendulumSwing {\n      0%, 100% { transform: rotate(0deg); }\n      25% { transform: rotate(20deg); }\n      50% { transform: rotate(0deg); }\n      75% { transform: rotate(-20deg); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "pendulum",
+      "swing",
+      "kinetic",
+      "letters",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Text Stroke Fill Animation",
+    "description": "Text transitions from an outlined stroke-only state to a filled solid state, with the stroke color dynamically cycling, creating a bold reveal effect reminiscent of comic book lettering.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"stroke-fill\">\n  <h1>STROKE</h1>\n  <style>\n    .stroke-fill {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0a0a0a;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .stroke-fill h1 {\n      font-size: 5rem;\n      color: transparent;\n      -webkit-text-stroke: 2px #ff3366;\n      animation: strokeReveal 3s ease-in-out infinite;\n    }\n    @keyframes strokeReveal {\n      0%, 100% {\n        -webkit-text-stroke: 2px #ff3366;\n        color: transparent;\n      }\n      50% {\n        -webkit-text-stroke: 0;\n        color: #ff3366;\n        text-shadow: 0 0 20px rgba(255, 51, 102, 0.5);\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "stroke",
+      "fill",
+      "reveal",
+      "outline",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Countdown Number Wheel",
+    "description": "A vertical number wheel that cycles through digits like a countdown timer, using transform translateY to scroll numbers into view with a slot-machine style animation.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"countdown-wheel\">\n  <div class=\"wheel-container\">\n    <div class=\"wheel\">\n      <span>3</span><span>2</span><span>1</span><span>0</span>\n    </div>\n  </div>\n  <style>\n    .countdown-wheel {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a1a2e;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .wheel-container {\n      width: 120px;\n      height: 120px;\n      overflow: hidden;\n      border: 4px solid #e94560;\n      border-radius: 12px;\n      background: #0f3460;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n    .wheel {\n      display: flex;\n      flex-direction: column;\n      animation: wheelSpin 4s steps(4) infinite;\n    }\n    .wheel span {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      height: 120px;\n      font-size: 5rem;\n      color: #e94560;\n      text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);\n    }\n    @keyframes wheelSpin {\n      0% { transform: translateY(0); }\n      100% { transform: translateY(-480px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "countdown",
+      "wheel",
+      "numbers",
+      "slot-machine",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Word Rotating Carousel",
+    "description": "A vertical word carousel where words rotate into view one after another with a smooth sliding animation, perfect for showcasing multiple phrases in a single text space.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"word-rotator\">\n  <div class=\"rotator-wrapper\">\n    <span class=\"rotator-text\">CREATE</span>\n    <span class=\"rotator-text\">BUILD</span>\n    <span class=\"rotator-text\">DESIGN</span>\n    <span class=\"rotator-text\">CREATE</span>\n  </div>\n  <style>\n    .word-rotator {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 200px;\n      background: #0f0f23;\n      font-family: \"Arial Black\", sans-serif;\n      overflow: hidden;\n    }\n    .rotator-wrapper {\n      height: 80px;\n      overflow: hidden;\n    }\n    .rotator-text {\n      display: block;\n      font-size: 4rem;\n      color: #00d2ff;\n      text-align: center;\n      line-height: 80px;\n      animation: wordSlide 6s ease-in-out infinite;\n      text-shadow: 0 0 15px rgba(0, 210, 255, 0.3);\n    }\n    @keyframes wordSlide {\n      0%, 20% { transform: translateY(0); }\n      25%, 45% { transform: translateY(-80px); }\n      50%, 70% { transform: translateY(-160px); }\n      75%, 100% { transform: translateY(-240px); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "word",
+      "rotator",
+      "carousel",
+      "slide",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Shutter Reveal Text",
+    "description": "A dramatic shutter/blinds reveal effect where vertical bars parting from the center reveal text beneath, using clip-path animation on a pseudo-element overlay.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"shutter-text\">\n  <h1>REVEAL</h1>\n  <style>\n    .shutter-text {\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #1a1a2e;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .shutter-text h1 {\n      font-size: 5rem;\n      color: #e94560;\n      position: relative;\n      z-index: 1;\n    }\n    .shutter-text::before {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      background: #e94560;\n      z-index: 2;\n      animation: shutterOpen 2s ease-out forwards;\n    }\n    @keyframes shutterOpen {\n      0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }\n      50% { clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }\n      100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "shutter",
+      "reveal",
+      "blinds",
+      "clip-path",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Water Ripple Text Effect",
+    "description": "A tranquil water ripple effect where text gently undulates with wave-like motion, using translateY and scale transforms with staggered delays to simulate rippling water.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"ripple-text\">\n  <h1>\n    <span style=\"--i:0\">W</span>\n    <span style=\"--i:1\">A</span>\n    <span style=\"--i:2\">V</span>\n    <span style=\"--i:3\">E</span>\n    <span style=\"--i:4\">S</span>\n  </h1>\n  <style>\n    .ripple-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: linear-gradient(180deg, #0a1628, #1a2a4e);\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .ripple-text h1 {\n      display: flex;\n      font-size: 5rem;\n      color: #4fc3f7;\n      gap: 5px;\n      text-shadow: 0 0 15px rgba(79, 195, 247, 0.4);\n    }\n    .ripple-text h1 span {\n      display: inline-block;\n      animation: ripple 2.5s ease-in-out infinite;\n      animation-delay: calc(0.1s * var(--i));\n    }\n    @keyframes ripple {\n      0%, 100% { transform: translateY(0) scale(1); }\n      25% { transform: translateY(-15px) scale(1.05); }\n      50% { transform: translateY(0) scale(1); }\n      75% { transform: translateY(-8px) scale(1.02); }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "ripple",
+      "water",
+      "wave",
+      "ocean",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Burning Fire Text",
+    "description": "A blazing fire text effect with flickering orange, red, and yellow gradients, combined with a subtle blur and scale animation to simulate crackling flames consuming the letters.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"fire-text\">\n  <h1>FIRE</h1>\n  <style>\n    .fire-text {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #0a0000;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .fire-text h1 {\n      font-size: 5rem;\n      color: #ff4500;\n      text-shadow:\n        0 0 5px #ff4500,\n        0 0 10px #ff6600,\n        0 0 20px #ff8800,\n        0 0 40px #ffaa00,\n        0 0 80px #ff4400;\n      animation: fireFlicker 0.5s ease-in-out infinite alternate;\n    }\n    @keyframes fireFlicker {\n      0% {\n        text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6600, 0 0 20px #ff8800, 0 0 40px #ffaa00;\n        transform: scale(1);\n      }\n      50% {\n        text-shadow: 0 0 8px #ff6600, 0 0 15px #ff8800, 0 0 30px #ffaa00, 0 0 60px #ff4400;\n        transform: scale(1.02);\n      }\n      100% {\n        text-shadow: 0 0 5px #ff8800, 0 0 10px #ffaa00, 0 0 20px #ff4400, 0 0 40px #ff6600;\n        transform: scale(0.98);\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "fire",
+      "flame",
+      "burn",
+      "flicker",
+      "css-animation"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Neon Sign Flicker Text",
+    "description": "A realistic broken neon sign effect where the text flickers on and off intermittently with varying speed, simulating an old neon tube that struggles to stay lit.",
+    "category": "section",
+    "framework": "css",
+    "code": "<div class=\"flicker-neon\">\n  <h1>OPEN</h1>\n  <style>\n    .flicker-neon {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 250px;\n      background: #050510;\n      font-family: \"Arial Black\", sans-serif;\n    }\n    .flicker-neon h1 {\n      font-size: 5rem;\n      color: #ff1493;\n      text-shadow:\n        0 0 7px #ff1493,\n        0 0 10px #ff1493,\n        0 0 21px #ff1493,\n        0 0 42px #ff1493,\n        0 0 82px #ff1493;\n      animation: neonFlicker 3s ease-in-out infinite;\n    }\n    @keyframes neonFlicker {\n      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {\n        opacity: 1;\n        text-shadow: 0 0 7px #ff1493, 0 0 10px #ff1493, 0 0 21px #ff1493, 0 0 42px #ff1493, 0 0 82px #ff1493;\n      }\n      20%, 24%, 55% {\n        opacity: 0.4;\n        text-shadow: none;\n      }\n    }\n  </style>\n</div>",
+    "tags": [
+      "text-animation",
+      "neon",
+      "flicker",
+      "sign",
+      "broken",
+      "css-animation"
+    ],
+    "dependencies": []
+  }
+]

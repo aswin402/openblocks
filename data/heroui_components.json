@@ -1,0 +1,479 @@
+[
+  {
+    "name": "HeroUI Button Primary",
+    "description": "A primary action button with hover/active/focus states, built on React Aria patterns with Tailwind CSS.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Button({ children, variant = 'primary', size = 'md', disabled = false, fullWidth = false, onPress, ...props }) {\n  const [isHovered, setIsHovered] = useState(false);\n  const [isPressed, setIsPressed] = useState(false);\n\n  const base = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:opacity-50 disabled:pointer-events-none';\n\n  const variants = {\n    primary: 'bg-primary text-white hover:bg-primary/90 shadow-sm active:scale-[0.97]',\n    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm active:scale-[0.97]',\n    outline: 'border-2 border-border bg-transparent hover:bg-muted active:scale-[0.97]',\n    ghost: 'bg-transparent hover:bg-muted active:scale-[0.97]',\n    danger: 'bg-danger text-white hover:bg-danger/90 shadow-sm active:scale-[0.97]',\n  };\n\n  const sizes = {\n    sm: 'h-8 px-3 text-xs gap-1.5',\n    md: 'h-10 px-4 text-sm gap-2',\n    lg: 'h-12 px-6 text-base gap-2.5',\n  };\n\n  return (\n    <button\n      className={base + ' ' + variants[variant] + ' ' + sizes[size] + (fullWidth ? ' w-full' : '')}\n      disabled={disabled}\n      onMouseEnter={() => setIsHovered(true)}\n      onMouseLeave={() => { setIsHovered(false); setIsPressed(false); }}\n      onMouseDown={() => setIsPressed(true)}\n      onMouseUp={() => setIsPressed(false)}\n      onClick={onPress}\n      data-hovered={isHovered || undefined}\n      data-pressed={isPressed || undefined}\n      {...props}\n    >\n      {children}\n    </button>\n  );\n}",
+    "tags": [
+      "button",
+      "react",
+      "action",
+      "primary",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Card",
+    "description": "A flexible container for grouping related content with header, content, and footer sections. Supports variants and custom styling.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function Card({ children, variant = 'default', className = '' }) {\n  const variants = {\n    default: 'bg-surface text-foreground shadow-sm',\n    transparent: 'bg-transparent',\n    secondary: 'bg-surface-secondary shadow-sm',\n    tertiary: 'bg-surface-tertiary shadow-md',\n  };\n\n  return (\n    <div className={(variants[variant] || variants.default) + ' rounded-2xl border border-border p-6 ' + className}>\n      {children}\n    </div>\n  );\n}\n\nCard.Header = function CardHeader({ children, className = '' }) {\n  return <div className={'flex flex-col gap-1 pb-4 ' + className}>{children}</div>;\n};\n\nCard.Title = function CardTitle({ children, className = '' }) {\n  return <h3 className={'text-lg font-semibold text-foreground ' + className}>{children}</h3>;\n};\n\nCard.Description = function CardDescription({ children, className = '' }) {\n  return <p className={'text-sm text-muted-foreground ' + className}>{children}</p>;\n};\n\nCard.Content = function CardContent({ children, className = '' }) {\n  return <div className={'py-2 ' + className}>{children}</div>;\n};\n\nCard.Footer = function CardFooter({ children, className = '' }) {\n  return <div className={'flex items-center gap-3 pt-4 border-t border-border mt-4 ' + className}>{children}</div>;\n};",
+    "tags": [
+      "card",
+      "react",
+      "container",
+      "layout",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Modal Dialog",
+    "description": "A dialog overlay for focused user interactions with backdrop, sizing variants, and keyboard dismiss support.",
+    "category": "modal",
+    "framework": "react",
+    "code": "import { useState, useEffect, useCallback } from 'react';\nimport { createPortal } from 'react-dom';\n\nexport function Modal({ isOpen, onOpenChange, children }) {\n  if (!isOpen) return null;\n\n  return createPortal(\n    <div className=\"fixed inset-0 z-50 flex items-center justify-center\">\n      <Modal.Backdrop isOpen={isOpen} onOpenChange={onOpenChange} />\n      <Modal.Container>\n        <Modal.Dialog>{children}</Modal.Dialog>\n      </Modal.Container>\n    </div>,\n    document.body\n  );\n}\n\nModal.Backdrop = function Backdrop({ isOpen, onOpenChange }) {\n  return (\n    <div\n      className=\"absolute inset-0 bg-black/50\"\n      onClick={() => onOpenChange?.(false)}\n    />\n  );\n};\n\nModal.Container = function Container({ size = 'md', children }) {\n  const sizes = { xs: 'max-w-sm', sm: 'max-w-md', md: 'max-w-lg', lg: 'max-w-2xl', xl: 'max-w-4xl' };\n  return <div className={'relative w-full ' + (sizes[size] || sizes.md) + ' mx-4'}>{children}</div>;\n};\n\nModal.Dialog = function Dialog({ children }) {\n  return (\n    <div className=\"relative bg-background rounded-2xl shadow-2xl border border-border p-6 max-h-[85vh] overflow-y-auto\" role=\"dialog\" aria-modal=\"true\">\n      {children}\n    </div>\n  );\n};\n\nModal.CloseTrigger = function CloseTrigger({ onClose }) {\n  return (\n    <button\n      onClick={onClose}\n      className=\"absolute top-4 right-4 rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40\"\n      aria-label=\"Close\"\n    >\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"M18 6L6 18\"/><path d=\"M6 6l12 12\"/></svg>\n    </button>\n  );\n};\n\nModal.Header = function Header({ children }) {\n  return <div className=\"flex flex-col gap-1 mb-4\">{children}</div>;\n};\n\nModal.Heading = function Heading({ children }) {\n  return <h2 className=\"text-xl font-semibold text-foreground\">{children}</h2>;\n};\n\nModal.Body = function Body({ children }) {\n  return <div className=\"py-2\">{children}</div>;\n};\n\nModal.Footer = function Footer({ children }) {\n  return <div className=\"flex items-center justify-end gap-3 pt-4 mt-4 border-t border-border\">{children}</div>;\n};",
+    "tags": [
+      "modal",
+      "dialog",
+      "react",
+      "overlay",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "react-dom",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Input Field",
+    "description": "A primitive single-line text input with hover, focus, invalid, and disabled states. Supports all standard HTML input attributes.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState, forwardRef } from 'react';\n\nexport const Input = forwardRef(function Input({\n  className = '', variant = 'primary', type = 'text', label, error, fullWidth = false, ...props\n}, ref) {\n  const [isFocused, setIsFocused] = useState(false);\n\n  const variants = {\n    primary: 'bg-background border-border shadow-sm focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20',\n    secondary: 'bg-surface-secondary border-border/70 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20',\n  };\n\n  return (\n    <div className={'flex flex-col gap-1.5 ' + (fullWidth ? 'w-full' : '')}>\n      {label && <label className=\"text-sm font-medium text-foreground\">{label}</label>}\n      <input\n        ref={ref}\n        type={type}\n        className={'rounded-xl border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors outline-none hover:border-border/80 hover:bg-surface-secondary disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-muted aria-invalid:border-danger aria-invalid:ring-2 aria-invalid:ring-danger/20 ' + (variants[variant] || variants.primary) + ' ' + (fullWidth ? 'w-full' : '') + ' ' + className}\n        onFocus={(e) => { setIsFocused(true); props.onFocus?.(e); }}\n        onBlur={(e) => { setIsFocused(false); props.onBlur?.(e); }}\n        aria-invalid={error ? 'true' : undefined}\n        {...props}\n      />\n      {error && <span className=\"text-xs text-danger\">{error}</span>}\n    </div>\n  );\n});",
+    "tags": [
+      "input",
+      "form",
+      "react",
+      "text-field",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Accordion",
+    "description": "A collapsible content panel for organizing information in a compact space. Supports multiple expanded items.",
+    "category": "section",
+    "framework": "react",
+    "code": "import { useState, createContext, useContext } from 'react';\n\nconst AccordionCtx = createContext(null);\n\nexport function Accordion({ children, multiple = false, className = '' }) {\n  const [expandedItems, setExpandedItems] = useState(new Set());\n\n  const toggle = (id) => {\n    setExpandedItems(prev => {\n      const next = new Set(multiple ? prev : []);\n      if (prev.has(id)) next.delete(id);\n      else if (multiple) next.add(id);\n      else next.add(id);\n      return next;\n    });\n  };\n\n  return (\n    <AccordionCtx.Provider value={{ expandedItems, toggle }}>\n      <div className={'divide-y divide-border rounded-xl border border-border bg-background ' + className}>\n        {children}\n      </div>\n    </AccordionCtx.Provider>\n  );\n}\n\nAccordion.Item = function AccordionItem({ id, title, children, disabled = false }) {\n  const { expandedItems, toggle } = useContext(AccordionCtx);\n  const isExpanded = expandedItems.has(id);\n\n  return (\n    <div className={disabled ? 'opacity-50 pointer-events-none' : ''}>\n      <button\n        className=\"flex w-full items-center justify-between px-5 py-4 text-left text-sm font-medium text-foreground hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/40\"\n        onClick={() => !disabled && toggle(id)}\n        disabled={disabled}\n        aria-expanded={isExpanded}\n      >\n        {title}\n        <svg className={'size-4 text-muted-foreground transition-transform duration-200 ' + (isExpanded ? 'rotate-180' : '')} xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"m6 9 6 6 6-6\"/></svg>\n      </button>\n      <div className={'overflow-hidden transition-all duration-200 ' + (isExpanded ? 'max-h-96' : 'max-h-0')}>\n        <div className=\"px-5 pb-4 text-sm text-muted-foreground\">{children}</div>\n      </div>\n    </div>\n  );\n};",
+    "tags": [
+      "accordion",
+      "collapsible",
+      "react",
+      "section",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Alert",
+    "description": "Display important messages and notifications with status indicators for success, warning, error, and info variants.",
+    "category": "notification",
+    "framework": "react",
+    "code": "export function Alert({ children, status = 'info', className = '' }) {\n  const styles = {\n    info: 'bg-info/10 border-info/30 text-info',\n    success: 'bg-success/10 border-success/30 text-success',\n    warning: 'bg-warning/10 border-warning/30 text-warning',\n    danger: 'bg-danger/10 border-danger/30 text-danger',\n    accent: 'bg-accent/10 border-accent/30 text-accent',\n  };\n\n  const icons = {\n    info: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h2V7zm0 8h-2v2h2v-2z',\n    success: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',\n    warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',\n    danger: 'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z',\n  };\n\n  return (\n    <div className={'flex items-start gap-3 rounded-2xl border p-4 ' + (styles[status] || styles.info) + ' ' + className} role=\"alert\">\n      <svg className=\"size-5 shrink-0 mt-0.5\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d={(icons)[status] || icons.info} />\n      </svg>\n      <div className=\"flex flex-col gap-0.5 flex-1\">{children}</div>\n    </div>\n  );\n}\n\nAlert.Title = function Title({ children }) {\n  return <p className=\"font-semibold text-sm\">{children}</p>;\n};\n\nAlert.Description = function Description({ children }) {\n  return <p className=\"text-sm opacity-80\">{children}</p>;\n};",
+    "tags": [
+      "alert",
+      "notification",
+      "react",
+      "feedback",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Avatar",
+    "description": "Display user profile images with customizable fallback content (initials or icon). Supports sizes, colors, and avatar groups.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Avatar({ src, alt = '', fallback, size = 'md', color = 'default', className = '' }) {\n  const [imgError, setImgError] = useState(false);\n  const [loaded, setLoaded] = useState(false);\n\n  const sizes = { sm: 'size-8 text-xs', md: 'size-10 text-sm', lg: 'size-12 text-base', xl: 'size-16 text-lg' };\n  const colors = {\n    default: 'bg-muted text-foreground',\n    primary: 'bg-primary/20 text-primary',\n    success: 'bg-success/20 text-success',\n    warning: 'bg-warning/20 text-warning',\n    danger: 'bg-danger/20 text-danger',\n  };\n\n  const initials = fallback || (alt ? alt.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) : '?');\n\n  return (\n    <div className={'relative inline-flex items-center justify-center rounded-full overflow-hidden ' + (sizes[size] || sizes.md) + ' ' + (colors[color] || colors.default) + ' ' + className}>\n      {src && !imgError && (\n        <img\n          src={src}\n          alt={alt}\n          className={'absolute inset-0 size-full object-cover ' + (loaded ? 'opacity-100' : 'opacity-0')}\n          onLoad={() => setLoaded(true)}\n          onError={() => setImgError(true)}\n        />\n      )}\n      {(!src || imgError) && (\n        <span className=\"font-medium\">{initials}</span>\n      )}\n    </div>\n  );\n}\n\nexport function AvatarGroup({ children, max = 4, size = 'md' }) {\n  const childrenArray = Array.isArray(children) ? children : [children];\n  const visible = childrenArray.slice(0, max);\n  const overflow = childrenArray.length - max;\n\n  return (\n    <div className=\"flex -space-x-2\">\n      {visible.map((child, i) => (\n        <div key={i} className=\"ring-2 ring-background rounded-full\">{child}</div>\n      ))}\n      {overflow > 0 && (\n        <div className=\"inline-flex items-center justify-center rounded-full ring-2 ring-background bg-muted text-muted-foreground text-xs font-medium size-10\">\n          +{overflow}\n        </div>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "avatar",
+      "react",
+      "user",
+      "profile",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Badge",
+    "description": "Displays a small indicator positioned relative to another element for notification counts, status dots, and labels.",
+    "category": "other",
+    "framework": "react",
+    "code": "export function Badge({ children, color = 'primary', size = 'md', variant = 'solid', placement = 'top-right', ...props }) {\n  const colors = {\n    primary: 'bg-primary text-white',\n    success: 'bg-success text-white',\n    warning: 'bg-warning text-warning-foreground',\n    danger: 'bg-danger text-white',\n    default: 'bg-muted text-muted-foreground',\n  };\n\n  const sizes = { sm: 'min-w-[18px] h-[18px] px-1 text-[10px]', md: 'min-w-[22px] h-[22px] px-1.5 text-xs', lg: 'min-w-[26px] h-[26px] px-2 text-sm' };\n\n  const placements = {\n    'top-right': '-top-1 -right-1',\n    'top-left': '-top-1 -left-1',\n    'bottom-right': '-bottom-1 -right-1',\n    'bottom-left': '-bottom-1 -left-1',\n  };\n\n  if (!children) {\n    return (\n      <span className={'absolute size-2.5 rounded-full ring-2 ring-background ' + (colors[color] || colors.primary) + ' ' + (placements[placement] || placements['top-right'])} />\n    );\n  }\n\n  return (\n    <span className={'absolute inline-flex items-center justify-center rounded-full font-medium ring-2 ring-background ' + (colors[color] || colors.primary) + ' ' + (sizes[size] || sizes.md) + ' ' + (placements[placement] || placements['top-right'])}>\n      {typeof children === 'number' && children > 99 ? '99+' : children}\n    </span>\n  );\n}\n\nBadge.Anchor = function Anchor({ children }) {\n  return <div className=\"relative inline-flex\">{children}</div>;\n};\n\nBadge.Label = function Label({ children }) {\n  return <span>{children}</span>;\n};",
+    "tags": [
+      "badge",
+      "react",
+      "notification",
+      "indicator",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Tabs",
+    "description": "Tab-based navigation organizing content into multiple sections with animated indicator and keyboard navigation.",
+    "category": "section",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Tabs({ defaultValue, value, onValueChange, children, className = '', orientation = 'horizontal' }) {\n  const [internalValue, setInternalValue] = useState(defaultValue || '');\n  const selected = value !== undefined ? value : internalValue;\n\n  const handleChange = (val) => {\n    if (onValueChange) onValueChange(val);\n    else setInternalValue(val);\n  };\n\n  return (\n    <div className={'flex flex-col gap-4 ' + (orientation === 'vertical' ? 'sm:flex-row' : '') + ' ' + className}>\n      {typeof children === 'function' ? children({ selected, onSelect: handleChange }) : children}\n    </div>\n  );\n}\n\nTabs.List = function TabList({ children, className = '' }) {\n  return (\n    <div className={'inline-flex h-10 items-center rounded-xl bg-muted p-1 text-muted-foreground ' + className}>\n      {children}\n    </div>\n  );\n};\n\nTabs.Tab = function Tab({ value, children, selected, onSelect, disabled = false, className = '' }) {\n  const isSelected = selected === value;\n  return (\n    <button\n      className={'inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:pointer-events-none disabled:opacity-50 ' + (isSelected ? 'bg-background text-foreground shadow-sm' : 'hover:text-foreground') + ' ' + className}\n      onClick={() => onSelect?.(value)}\n      disabled={disabled}\n      role=\"tab\"\n      aria-selected={isSelected}\n    >\n      {children}\n    </button>\n  );\n};\n\nTabs.Panel = function Panel({ value, selected, children, className = '' }) {\n  if (selected !== value) return null;\n  return (\n    <div className={className} role=\"tabpanel\">\n      {children}\n    </div>\n  );\n};",
+    "tags": [
+      "tabs",
+      "react",
+      "navigation",
+      "section",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Select Dropdown",
+    "description": "A select component displaying a collapsible list of options with trigger, popover, and list box sections.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState, useRef, useEffect } from 'react';\n\nexport function Select({ children, placeholder = 'Select an option', value, onChange, label, error, fullWidth = false, variant = 'primary' }) {\n  const [isOpen, setIsOpen] = useState(false);\n  const [internalValue, setInternalValue] = useState(value || '');\n  const ref = useRef(null);\n\n  const selectedValue = value !== undefined ? value : internalValue;\n\n  const handleSelect = (val) => {\n    if (onChange) onChange(val);\n    else setInternalValue(val);\n    setIsOpen(false);\n  };\n\n  useEffect(() => {\n    const handleClickOutside = (e) => {\n      if (ref.current && !ref.current.contains(e.target)) setIsOpen(false);\n    };\n    document.addEventListener('mousedown', handleClickOutside);\n    return () => document.removeEventListener('mousedown', handleClickOutside);\n  }, []);\n\n  const variants = {\n    primary: 'bg-background border-border shadow-sm',\n    secondary: 'bg-surface-secondary border-border/70',\n  };\n\n  return (\n    <div className={'relative flex flex-col gap-1.5 ' + (fullWidth ? 'w-full' : '')} ref={ref}>\n      {label && <label className=\"text-sm font-medium text-foreground\">{label}</label>}\n      <button\n        className={'flex items-center justify-between rounded-xl border px-4 py-2.5 text-sm text-left transition-colors outline-none hover:border-border/80 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 ' + (variants[variant] || variants.primary) + ' ' + (fullWidth ? 'w-full' : 'min-w-[200px]') + ' ' + (error ? 'border-danger ring-2 ring-danger/20' : '')}\n        onClick={() => setIsOpen(!isOpen)}\n        aria-expanded={isOpen}\n      >\n        <span className={selectedValue ? 'text-foreground' : 'text-muted-foreground/60'}>\n          {selectedValue || placeholder}\n        </span>\n        <svg className={'size-4 text-muted-foreground transition-transform ' + (isOpen ? 'rotate-180' : '')} xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"m6 9 6 6 6-6\"/></svg>\n      </button>\n      {error && <span className=\"text-xs text-danger\">{error}</span>}\n      {isOpen && (\n        <div className=\"absolute top-full mt-1 z-50 w-full min-w-[200px] rounded-xl border border-border bg-background shadow-lg p-1\" role=\"listbox\">\n          {typeof children === 'function' ? children({ selectedValue, onSelect: handleSelect }) : children}\n        </div>\n      )}\n    </div>\n  );\n}\n\nSelect.Option = function Option({ value, children, selectedValue, onSelect, disabled = false }) {\n  const isSelected = selectedValue === value;\n  return (\n    <button\n      className={'flex w-full items-center rounded-lg px-3 py-2 text-sm text-left transition-colors ' + (isSelected ? 'bg-primary/10 text-primary font-medium' : 'text-foreground hover:bg-muted') + ' ' + (disabled ? 'opacity-50 cursor-not-allowed' : '')}\n      onClick={() => !disabled && onSelect?.(value)}\n      role=\"option\"\n      aria-selected={isSelected}\n    >\n      <span className=\"flex-1\">{children}</span>\n      {isSelected && (\n        <svg className=\"size-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"M20 6L9 17l-5-5\"/></svg>\n      )}\n    </button>\n  );\n};",
+    "tags": [
+      "select",
+      "dropdown",
+      "form",
+      "react",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Tooltip",
+    "description": "A tooltip that displays informative text when users hover over an element. Supports placement variants.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState, useRef } from 'react';\n\nexport function Tooltip({ children, content, placement = 'top', delay = 200 }) {\n  const [isVisible, setIsVisible] = useState(false);\n  const timeoutRef = useRef(null);\n\n  const placements = {\n    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',\n    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',\n    left: 'right-full top-1/2 -translate-y-1/2 mr-2',\n    right: 'left-full top-1/2 -translate-y-1/2 ml-2',\n  };\n\n  const arrows = {\n    top: 'top-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-b-transparent border-t-muted',\n    bottom: 'bottom-full left-1/2 -translate-x-1/2 border-l-transparent border-r-transparent border-t-transparent border-b-muted',\n    left: 'left-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-r-transparent border-l-muted',\n    right: 'right-full top-1/2 -translate-y-1/2 border-t-transparent border-b-transparent border-l-transparent border-r-muted',\n  };\n\n  const show = () => {\n    clearTimeout(timeoutRef.current);\n    timeoutRef.current = setTimeout(() => setIsVisible(true), delay);\n  };\n\n  const hide = () => {\n    clearTimeout(timeoutRef.current);\n    setIsVisible(false);\n  };\n\n  return (\n    <div className=\"relative inline-flex\" onMouseEnter={show} onMouseLeave={hide} onFocus={show} onBlur={hide}>\n      {children}\n      {isVisible && content && (\n        <div className={'absolute z-50 ' + (placements[placement] || placements.top)} role=\"tooltip\">\n          <div className=\"rounded-lg bg-muted text-muted-foreground text-xs px-3 py-1.5 shadow-md whitespace-nowrap\">\n            {content}\n          </div>\n          <div className={'absolute size-0 border-4 ' + (arrows[placement] || arrows.top)} />\n        </div>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "tooltip",
+      "react",
+      "popover",
+      "hover",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Spinner",
+    "description": "A loading spinner indicating an indeterminate loading state with customizable size and color.",
+    "category": "loading",
+    "framework": "react",
+    "code": "export function Spinner({ size = 'md', color = 'primary', label }) {\n  const sizes = { sm: 'size-4 border-2', md: 'size-6 border-2', lg: 'size-8 border-3', xl: 'size-12 border-3' };\n  const colors = {\n    primary: 'border-primary/30 border-t-primary',\n    foreground: 'border-foreground/30 border-t-foreground',\n    muted: 'border-muted-foreground/30 border-t-muted-foreground',\n    white: 'border-white/30 border-t-white',\n  };\n\n  return (\n    <div className=\"inline-flex flex-col items-center justify-center gap-2\">\n      <div className={'animate-spin rounded-full ' + (sizes[size] || sizes.md) + ' ' + (colors[color] || colors.primary)} />\n      {label && <span className=\"text-xs text-muted-foreground\">{label}</span>}\n    </div>\n  );\n}",
+    "tags": [
+      "spinner",
+      "loading",
+      "react",
+      "progress",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Progress Bar",
+    "description": "A progress bar showing determinate or indeterminate progress with customizable value, label, and color.",
+    "category": "loading",
+    "framework": "react",
+    "code": "export function ProgressBar({ value = 0, max = 100, color = 'primary', size = 'md', label, showValue = false, className = '' }) {\n  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);\n  const sizes = { sm: 'h-1.5', md: 'h-2.5', lg: 'h-4' };\n  const colors = {\n    primary: 'bg-primary',\n    success: 'bg-success',\n    warning: 'bg-warning',\n    danger: 'bg-danger',\n    accent: 'bg-accent',\n  };\n\n  return (\n    <div className={'flex flex-col gap-1.5 ' + className}>\n      {(label || showValue) && (\n        <div className=\"flex items-center justify-between\">\n          {label && <span className=\"text-sm font-medium text-foreground\">{label}</span>}\n          {showValue && <span className=\"text-xs text-muted-foreground\">{Math.round(percentage)}%</span>}\n        </div>\n      )}\n      <div className={'w-full overflow-hidden rounded-full bg-muted ' + (sizes[size] || sizes.md)} role=\"progressbar\" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>\n        <div\n          className={'h-full rounded-full transition-all duration-500 ease-out ' + (colors[color] || colors.primary)}\n          style={{ width: percentage + '%' }}\n        />\n      </div>\n    </div>\n  );\n}\n\nexport function ProgressCircle({ value = 0, size = 'md', color = 'primary', showValue = false }) {\n  const percentage = Math.min(Math.max((value / 100) * 100, 0), 100);\n  const sizes = { sm: 32, md: 48, lg: 64 };\n  const strokeWidths = { sm: 3, md: 4, lg: 5 };\n  const dim = sizes[size] || sizes.md;\n  const sw = strokeWidths[size] || strokeWidths.md;\n  const radius = (dim - sw) / 2;\n  const circumference = 2 * Math.PI * radius;\n  const offset = circumference - (percentage / 100) * circumference;\n  const colors = { primary: 'stroke-primary', success: 'stroke-success', warning: 'stroke-warning', danger: 'stroke-danger' };\n\n  return (\n    <div className=\"relative inline-flex items-center justify-center\">\n      <svg width={dim} height={dim} className=\"-rotate-90\">\n        <circle cx={dim/2} cy={dim/2} r={radius} fill=\"none\" stroke=\"currentColor\" strokeWidth={sw} className=\"text-muted\" />\n        <circle cx={dim/2} cy={dim/2} r={radius} fill=\"none\" strokeWidth={sw} strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap=\"round\" className={'transition-all duration-500 ' + (colors[color] || colors.primary)} />\n      </svg>\n      {showValue && <span className=\"absolute text-xs font-medium text-foreground\">{Math.round(percentage)}%</span>}\n    </div>\n  );\n}",
+    "tags": [
+      "progress",
+      "loading",
+      "react",
+      "bar",
+      "circle",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Skeleton",
+    "description": "A skeleton placeholder for loading states that mimics the shape of content with a shimmer animation.",
+    "category": "loading",
+    "framework": "react",
+    "code": "export function Skeleton({ children, isLoading = true, className = '', variant = 'default' }) {\n  if (!isLoading) return children;\n\n  const variants = {\n    default: 'rounded-lg',\n    circle: 'rounded-full',\n    text: 'rounded h-4',\n    title: 'rounded h-6 w-2/3',\n  };\n\n  const base = 'animate-pulse bg-muted/60';\n\n  if (!children) {\n    return <div className={base + ' ' + (variants[variant] || variants.default) + ' ' + className} />;\n  }\n\n  return (\n    <div className={base + ' ' + (variants[variant] || variants.default) + ' ' + className}>\n      <div className=\"invisible\">{children}</div>\n    </div>\n  );\n}\n\nexport function SkeletonCard() {\n  return (\n    <div className=\"rounded-2xl border border-border p-6 space-y-4\">\n      <Skeleton variant=\"title\" />\n      <Skeleton className=\"h-32 w-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton variant=\"text\" className=\"w-full\" />\n        <Skeleton variant=\"text\" className=\"w-4/5\" />\n        <Skeleton variant=\"text\" className=\"w-3/5\" />\n      </div>\n      <div className=\"flex gap-3\">\n        <Skeleton className=\"h-10 w-24 rounded-xl\" />\n        <Skeleton className=\"h-10 w-24 rounded-xl\" />\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "skeleton",
+      "loading",
+      "react",
+      "placeholder",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Switch Toggle",
+    "description": "A toggle switch component for binary settings with labels and disabled state support.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Switch({ checked, onCheckedChange, label, disabled = false, size = 'md' }) {\n  const [internalChecked, setInternalChecked] = useState(false);\n  const isChecked = checked !== undefined ? checked : internalChecked;\n\n  const handleToggle = () => {\n    if (disabled) return;\n    const newValue = !isChecked;\n    if (onCheckedChange) onCheckedChange(newValue);\n    else setInternalChecked(newValue);\n  };\n\n  const sizes = {\n    sm: { track: 'h-5 w-9', thumb: 'size-4' },\n    md: { track: 'h-6 w-11', thumb: 'size-5' },\n    lg: { track: 'h-7 w-14', thumb: 'size-6' },\n  };\n\n  const s = sizes[size] || sizes.md;\n\n  return (\n    <label className={'inline-flex items-center gap-3 ' + (disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer')}>\n      <button\n        className={'relative inline-flex shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 ' + (isChecked ? 'bg-primary' : 'bg-muted-foreground/30') + ' ' + s.track}\n        onClick={handleToggle}\n        disabled={disabled}\n        role=\"switch\"\n        aria-checked={isChecked}\n        data-checked={isChecked || undefined}\n      >\n        <span\n          className={'pointer-events-none block rounded-full bg-white shadow-sm ring-0 transition-transform duration-200 ' + s.thumb + ' ' + (isChecked ? 'translate-x-full' : 'translate-x-0')}\n          data-checked={isChecked || undefined}\n        />\n      </button>\n      {label && <span className=\"text-sm font-medium text-foreground\">{label}</span>}\n    </label>\n  );\n}",
+    "tags": [
+      "switch",
+      "toggle",
+      "form",
+      "react",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Checkbox",
+    "description": "A checkbox input for selecting multiple items from a list. Supports indeterminate state, labels, and disabled.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Checkbox({ checked, onCheckedChange, label, disabled = false, indeterminate = false }) {\n  const [internalChecked, setInternalChecked] = useState(false);\n  const isChecked = checked !== undefined ? checked : internalChecked;\n\n  const handleToggle = () => {\n    if (disabled) return;\n    const newValue = !isChecked;\n    if (onCheckedChange) onCheckedChange(newValue);\n    else setInternalChecked(newValue);\n  };\n\n  return (\n    <label className={'inline-flex items-center gap-2.5 ' + (disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer')}>\n      <button\n        className={'flex size-5 items-center justify-center rounded-md border-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ' + (isChecked || indeterminate ? 'bg-primary border-primary text-white' : 'border-border bg-background hover:border-primary/50')}\n        onClick={handleToggle}\n        disabled={disabled}\n        role=\"checkbox\"\n        aria-checked={indeterminate ? 'mixed' : isChecked}\n        data-checked={isChecked || undefined}\n      >\n        {indeterminate ? (\n          <svg className=\"size-3\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"3\"><path d=\"M5 12h14\"/></svg>\n        ) : isChecked ? (\n          <svg className=\"size-3\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"3\"><path d=\"M20 6L9 17l-5-5\"/></svg>\n        ) : null}\n      </button>\n      {label && <span className=\"text-sm text-foreground\">{label}</span>}\n    </label>\n  );\n}",
+    "tags": [
+      "checkbox",
+      "form",
+      "react",
+      "selection",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Breadcrumbs",
+    "description": "Navigation breadcrumbs showing the current page location within a hierarchy with separators.",
+    "category": "section",
+    "framework": "react",
+    "code": "export function Breadcrumbs({ children, separator = '/' }) {\n  const items = Array.isArray(children) ? children : [children];\n  return (\n    <nav aria-label=\"Breadcrumb\" className=\"flex items-center\">\n      <ol className=\"flex items-center gap-1.5 text-sm text-muted-foreground\">\n        {items.map((child, i) => (\n          <li key={i} className=\"flex items-center gap-1.5\">\n            {i > 0 && <span className=\"text-muted-foreground/50\">{separator}</span>}\n            {child}\n          </li>\n        ))}\n      </ol>\n    </nav>\n  );\n}\n\nBreadcrumbs.Item = function BreadcrumbItem({ href, children, isCurrent = false }) {\n  if (isCurrent) {\n    return <span className=\"text-foreground font-medium\" aria-current=\"page\">{children}</span>;\n  }\n  return (\n    <a href={href} className=\"hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded\">\n      {children}\n    </a>\n  );\n};",
+    "tags": [
+      "breadcrumbs",
+      "navigation",
+      "react",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Pagination",
+    "description": "A pagination component for navigating through multiple pages with ellipsis truncation.",
+    "category": "other",
+    "framework": "react",
+    "code": "export function Pagination({ total, page, onChange, siblings = 1, boundaries = 1 }) {\n  const range = (start, end) => Array.from({ length: end - start + 1 }, (_, i) => start + i);\n\n  const generatePages = () => {\n    const totalPages = Math.max(total, 1);\n    const pages = new Set();\n\n    range(1, boundaries).forEach(p => pages.add(p));\n    range(totalPages - boundaries + 1, totalPages).forEach(p => pages.add(p));\n\n    range(page - siblings, page + siblings).forEach(p => {\n      if (p >= 1 && p <= totalPages) pages.add(p);\n    });\n\n    return Array.from(pages).sort((a, b) => a - b);\n  };\n\n  const pages = generatePages();\n  const items = [];\n\n  for (let i = 0; i < pages.length; i++) {\n    if (i > 0 && pages[i] - pages[i-1] > 1) {\n      items.push('ellipsis');\n    }\n    items.push(pages[i]);\n  }\n\n  const buttonBase = 'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:opacity-50 disabled:pointer-events-none';\n\n  return (\n    <nav aria-label=\"Pagination\" className=\"flex items-center gap-1\">\n      <button className={buttonBase + ' size-9 hover:bg-muted'} disabled={page <= 1} onClick={() => onChange?.(page - 1)} aria-label=\"Previous page\">\n        <svg className=\"size-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"m15 18-6-6 6-6\"/></svg>\n      </button>\n\n      {items.map((item, i) =>\n        item === 'ellipsis' ? (\n          <span key={'e-' + i} className=\"flex size-9 items-center justify-center text-muted-foreground\">...</span>\n        ) : (\n          <button\n            key={item}\n            className={buttonBase + ' size-9 ' + (item === page ? 'bg-primary text-white shadow-sm' : 'hover:bg-muted text-foreground')}\n            onClick={() => onChange?.(item)}\n            aria-current={item === page ? 'page' : undefined}\n            aria-label={'Page ' + item}\n          >\n            {item}\n          </button>\n        )\n      )}\n\n      <button className={buttonBase + ' size-9 hover:bg-muted'} disabled={page >= total} onClick={() => onChange?.(page + 1)} aria-label=\"Next page\">\n        <svg className=\"size-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"m9 18 6-6-6-6\"/></svg>\n      </button>\n    </nav>\n  );\n}",
+    "tags": [
+      "pagination",
+      "navigation",
+      "react",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Chip Tag",
+    "description": "A compact chip component for displaying tags, labels, or status indicators with optional dismiss and icon.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function Chip({ children, color = 'default', variant = 'solid', size = 'md', onClose, startContent, endContent, className = '' }) {\n  const [visible, setVisible] = useState(true);\n\n  if (!visible) return null;\n\n  const colors = {\n    default: { solid: 'bg-muted text-muted-foreground', bordered: 'border-border bg-background text-foreground', flat: 'bg-muted/50 text-foreground' },\n    primary: { solid: 'bg-primary text-white', bordered: 'border-primary/50 bg-primary/5 text-primary', flat: 'bg-primary/10 text-primary' },\n    success: { solid: 'bg-success text-white', bordered: 'border-success/50 bg-success/5 text-success', flat: 'bg-success/10 text-success' },\n    warning: { solid: 'bg-warning text-warning-foreground', bordered: 'border-warning/50 bg-warning/5 text-warning', flat: 'bg-warning/10 text-warning' },\n    danger: { solid: 'bg-danger text-white', bordered: 'border-danger/50 bg-danger/5 text-danger', flat: 'bg-danger/10 text-danger' },\n  };\n\n  const sizes = { sm: 'h-6 px-2 text-[11px] gap-1', md: 'h-7 px-2.5 text-xs gap-1.5', lg: 'h-9 px-3 text-sm gap-2' };\n\n  const handleClose = (e) => {\n    e.stopPropagation();\n    if (onClose) onClose();\n    else setVisible(false);\n  };\n\n  const colorSet = (colors)[color] || colors.default;\n  const variantStyle = colorSet[variant] || colorSet.solid;\n\n  return (\n    <span className={'inline-flex items-center rounded-full font-medium ' + variantStyle + ' ' + (sizes[size] || sizes.md) + ' ' + (variant === 'bordered' ? 'border' : '') + ' ' + className}>\n      {startContent}\n      {children}\n      {endContent}\n      {onClose !== undefined && (\n        <button onClick={handleClose} className=\"ml-0.5 rounded-full hover:bg-black/10 p-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40\" aria-label=\"Remove\">\n          <svg className=\"size-3\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"M18 6L6 18\"/><path d=\"M6 6l12 12\"/></svg>\n        </button>\n      )}\n    </span>\n  );\n}",
+    "tags": [
+      "chip",
+      "tag",
+      "badge",
+      "react",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Dropdown Menu",
+    "description": "A dropdown menu displaying a list of actions or options triggered by a button click with keyboard navigation.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState, useRef, useEffect } from 'react';\n\nexport function Dropdown({ trigger, children, align = 'start' }) {\n  const [isOpen, setIsOpen] = useState(false);\n  const ref = useRef(null);\n\n  useEffect(() => {\n    const handleClickOutside = (e) => {\n      if (ref.current && !ref.current.contains(e.target)) setIsOpen(false);\n    };\n    document.addEventListener('mousedown', handleClickOutside);\n    return () => document.removeEventListener('mousedown', handleClickOutside);\n  }, []);\n\n  useEffect(() => {\n    const handleEscape = (e) => {\n      if (e.key === 'Escape') setIsOpen(false);\n    };\n    if (isOpen) document.addEventListener('keydown', handleEscape);\n    return () => document.removeEventListener('keydown', handleEscape);\n  }, [isOpen]);\n\n  const alignments = { start: 'left-0', center: 'left-1/2 -translate-x-1/2', end: 'right-0' };\n\n  return (\n    <div className=\"relative inline-flex\" ref={ref}>\n      <div onClick={() => setIsOpen(!isOpen)}>{trigger}</div>\n      {isOpen && (\n        <div className={'absolute top-full mt-1 z-50 min-w-[180px] rounded-xl border border-border bg-background shadow-lg p-1 ' + (alignments[align] || alignments.start)} role=\"menu\">\n          {typeof children === 'function' ? children({ onClose: () => setIsOpen(false) }) : children}\n        </div>\n      )}\n    </div>\n  );\n}\n\nDropdown.Item = function DropdownItem({ children, onSelect, danger = false, disabled = false, shortcut }) {\n  return (\n    <button\n      className={'flex w-full items-center rounded-lg px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ' + (danger ? 'text-danger hover:bg-danger/10' : 'text-foreground hover:bg-muted') + ' ' + (disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer')}\n      onClick={() => !disabled && onSelect?.()}\n      disabled={disabled}\n      role=\"menuitem\"\n    >\n      <span className=\"flex-1 text-left\">{children}</span>\n      {shortcut && <span className=\"ml-6 text-xs text-muted-foreground\">{shortcut}</span>}\n    </button>\n  );\n};\n\nDropdown.Separator = function DropdownSeparator() {\n  return <div className=\"my-1 border-t border-border\" />;\n};",
+    "tags": [
+      "dropdown",
+      "menu",
+      "react",
+      "navigation",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Table",
+    "description": "A table component for displaying structured data with header, body, row, and cell subcomponents.",
+    "category": "table",
+    "framework": "react",
+    "code": "export function Table({ children, className = '' }) {\n  return (\n    <div className={'w-full overflow-auto rounded-xl border border-border ' + className}>\n      <table className=\"w-full caption-bottom text-sm\">{children}</table>\n    </div>\n  );\n}\n\nTable.Header = function TableHeader({ children }) {\n  return <thead className=\"[&_tr]:border-b bg-muted/50\">{children}</thead>;\n};\n\nTable.Body = function TableBody({ children }) {\n  return <tbody className=\"[&_tr:last-child]:border-0\">{children}</tbody>;\n};\n\nTable.Row = function TableRow({ children, className = '' }) {\n  return (\n    <tr className={'border-b border-border transition-colors hover:bg-muted/30 data-[state=selected]:bg-muted ' + className}>\n      {children}\n    </tr>\n  );\n};\n\nTable.Head = function TableHead({ children, className = '' }) {\n  return (\n    <th className={'h-12 px-4 text-left align-middle font-medium text-muted-foreground ' + className}>\n      {children}\n    </th>\n  );\n};\n\nTable.Cell = function TableCell({ children, className = '' }) {\n  return (\n    <td className={'p-4 align-middle ' + className}>\n      {children}\n    </td>\n  );\n};\n\nTable.Caption = function TableCaption({ children }) {\n  return <caption className=\"mt-4 text-xs text-muted-foreground\">{children}</caption>;\n};",
+    "tags": [
+      "table",
+      "data",
+      "react",
+      "grid",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Toast Notification",
+    "description": "A toast notification system for displaying brief, auto-dismissing messages with stacking and animation.",
+    "category": "notification",
+    "framework": "react",
+    "code": "import { useState, useEffect, useCallback } from 'react';\nimport { createPortal } from 'react-dom';\n\nexport function ToastContainer({ toasts, removeToast }) {\n  if (!toasts || toasts.length === 0) return null;\n\n  return createPortal(\n    <div className=\"fixed bottom-4 right-4 z-[100] flex flex-col gap-2 max-w-sm\">\n      {toasts.map((toast) => (\n        <Toast key={toast.id} toast={toast} onDismiss={() => removeToast?.(toast.id)} />\n      ))}\n    </div>,\n    document.body\n  );\n}\n\nfunction Toast({ toast, onDismiss }) {\n  const [isExiting, setIsExiting] = useState(false);\n\n  useEffect(() => {\n    if (toast.duration === Infinity) return;\n    const timer = setTimeout(() => {\n      setIsExiting(true);\n      setTimeout(onDismiss, 200);\n    }, toast.duration || 4000);\n    return () => clearTimeout(timer);\n  }, [toast, onDismiss]);\n\n  const styles = {\n    info: 'border-info/30 bg-info/5 text-info',\n    success: 'border-success/30 bg-success/5 text-success',\n    warning: 'border-warning/30 bg-warning/5 text-warning',\n    error: 'border-danger/30 bg-danger/5 text-danger',\n  };\n\n  const icons = {\n    info: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h2V7zm0 8h-2v2h2v-2z',\n    success: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',\n    warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',\n    error: 'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z',\n  };\n\n  return (\n    <div className={'flex items-start gap-3 rounded-xl border p-4 shadow-lg backdrop-blur-sm transition-all duration-200 ' + (isExiting ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0') + ' ' + (styles[toast.type] || styles.info)} role=\"alert\">\n      <svg className=\"size-5 shrink-0 mt-0.5\" viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d={(icons)[toast.type] || icons.info} />\n      </svg>\n      <div className=\"flex-1 min-w-0\">\n        {toast.title && <p className=\"font-semibold text-sm\">{toast.title}</p>}\n        {toast.description && <p className=\"text-sm opacity-80\">{toast.description}</p>}\n      </div>\n      <button onClick={onDismiss} className=\"shrink-0 rounded-full p-0.5 hover:bg-black/10 transition-colors focus-visible:outline-none focus-visible:ring-2\" aria-label=\"Dismiss\">\n        <svg className=\"size-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"M18 6L6 18\"/><path d=\"M6 6l12 12\"/></svg>\n      </button>\n    </div>\n  );\n}\n\nexport function useToast() {\n  const [toasts, setToasts] = useState([]);\n\n  const addToast = useCallback((toast) => {\n    const id = Date.now() + Math.random();\n    setToasts(prev => [...prev, { ...toast, id }]);\n    return id;\n  }, []);\n\n  const removeToast = useCallback((id) => {\n    setToasts(prev => prev.filter(t => t.id !== id));\n  }, []);\n\n  const toast = {\n    success: (msg) => addToast({ type: 'success', title: 'Success', description: msg, duration: 4000 }),\n    error: (msg) => addToast({ type: 'error', title: 'Error', description: msg, duration: 5000 }),\n    info: (msg) => addToast({ type: 'info', title: 'Info', description: msg, duration: 3000 }),\n    warning: (msg) => addToast({ type: 'warning', title: 'Warning', description: msg, duration: 4000 }),\n  };\n\n  return { toasts, addToast, removeToast, toast };\n}",
+    "tags": [
+      "toast",
+      "notification",
+      "react",
+      "feedback",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "react-dom",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Link",
+    "description": "An accessible link component with underline hover effect, variants for inline and standalone usage.",
+    "category": "other",
+    "framework": "react",
+    "code": "export function Link({ href, children, variant = 'default', isExternal = false, className = '', ...props }) {\n  const variants = {\n    default: 'text-primary hover:text-primary/80 underline-offset-4 hover:underline',\n    muted: 'text-muted-foreground hover:text-foreground underline-offset-4 hover:underline',\n    subtle: 'text-foreground no-underline hover:text-primary hover:underline underline-offset-4',\n    danger: 'text-danger hover:text-danger/80 underline-offset-4 hover:underline',\n  };\n\n  return (\n    <a\n      href={href}\n      className={'inline-flex items-center gap-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded ' + (variants[variant] || variants.default) + ' ' + className}\n      target={isExternal ? '_blank' : undefined}\n      rel={isExternal ? 'noopener noreferrer' : undefined}\n      {...props}\n    >\n      {children}\n      {isExternal && (\n        <svg className=\"size-3.5\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\">\n          <path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/>\n          <polyline points=\"15 3 21 3 21 9\"/>\n          <line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/>\n        </svg>\n      )}\n    </a>\n  );\n}",
+    "tags": [
+      "link",
+      "react",
+      "navigation",
+      "anchor",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI TextArea",
+    "description": "A multi-line text input for longer form content with resizing, character count, and label support.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { forwardRef, useState } from 'react';\n\nexport const TextArea = forwardRef(function TextArea({ label, error, maxLength, showCount = false, variant = 'primary', fullWidth = false, className = '', ...props }, ref) {\n  const [charCount, setCharCount] = useState(0);\n\n  const variants = {\n    primary: 'bg-background border-border shadow-sm focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20',\n    secondary: 'bg-surface-secondary border-border/70 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20',\n  };\n\n  return (\n    <div className={'flex flex-col gap-1.5 ' + (fullWidth ? 'w-full' : '')}>\n      {label && <label className=\"text-sm font-medium text-foreground\">{label}</label>}\n      <textarea\n        ref={ref}\n        className={'min-h-[80px] rounded-xl border px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors outline-none resize-y hover:border-border/80 hover:bg-surface-secondary disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-muted focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 aria-invalid:border-danger aria-invalid:ring-2 aria-invalid:ring-danger/20 ' + (variants[variant] || variants.primary) + ' ' + (fullWidth ? 'w-full' : '') + ' ' + className}\n        onChange={(e) => { setCharCount(e.target.value.length); props.onChange?.(e); }}\n        maxLength={maxLength}\n        aria-invalid={error ? 'true' : undefined}\n        {...props}\n      />\n      <div className=\"flex items-center justify-between\">\n        {error && <span className=\"text-xs text-danger\">{error}</span>}\n        {showCount && maxLength && (\n          <span className={'text-xs ml-auto ' + (charCount > maxLength * 0.9 ? 'text-danger' : 'text-muted-foreground')}>\n            {charCount}/{maxLength}\n          </span>\n        )}\n      </div>\n    </div>\n  );\n});",
+    "tags": [
+      "textarea",
+      "form",
+      "react",
+      "input",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "HeroUI Drawer Panel",
+    "description": "A slide-out panel for additional content and navigation, commonly used for mobile menus and side panels.",
+    "category": "sidebar",
+    "framework": "react",
+    "code": "import { useState, useEffect } from 'react';\nimport { createPortal } from 'react-dom';\n\nexport function Drawer({ isOpen, onClose, children, placement = 'right', size = 'md' }) {\n  const [isAnimating, setIsAnimating] = useState(false);\n\n  useEffect(() => {\n    if (isOpen) {\n      setIsAnimating(true);\n      document.body.style.overflow = 'hidden';\n    } else {\n      document.body.style.overflow = '';\n    }\n    return () => { document.body.style.overflow = ''; };\n  }, [isOpen]);\n\n  useEffect(() => {\n    const handleEscape = (e) => { if (e.key === 'Escape') onClose?.(); };\n    if (isOpen) document.addEventListener('keydown', handleEscape);\n    return () => document.removeEventListener('keydown', handleEscape);\n  }, [isOpen, onClose]);\n\n  const placements = {\n    left: { container: 'left-0 top-0 h-full', translateFrom: '-translate-x-full', translateTo: 'translate-x-0' },\n    right: { container: 'right-0 top-0 h-full', translateFrom: 'translate-x-full', translateTo: 'translate-x-0' },\n    top: { container: 'top-0 left-0 w-full', translateFrom: '-translate-y-full', translateTo: 'translate-y-0' },\n    bottom: { container: 'bottom-0 left-0 w-full', translateFrom: 'translate-y-full', translateTo: 'translate-y-0' },\n  };\n\n  const sizes = { sm: 'max-w-sm', md: 'max-w-md', lg: 'max-w-lg', xl: 'max-w-xl', full: 'max-w-full' };\n\n  if (!isOpen && !isAnimating) return null;\n\n  const pl = placements[placement] || placements.right;\n\n  return createPortal(\n    <div className=\"fixed inset-0 z-50\">\n      <div\n        className={'absolute inset-0 bg-black/50 transition-opacity duration-300 ' + (isOpen ? 'opacity-100' : 'opacity-0')}\n        onClick={onClose}\n      />\n      <div\n        className={'absolute bg-background shadow-2xl border-border ' + pl.container + ' ' + (sizes[size] || sizes.md) + ' transition-transform duration-300 ease-in-out ' + (isOpen ? pl.translateTo : pl.translateFrom)}\n        onTransitionEnd={() => { if (!isOpen) setIsAnimating(false); }}\n      >\n        <div className=\"flex items-center justify-between p-4 border-b border-border\">\n          <h2 className=\"text-lg font-semibold text-foreground\">Drawer</h2>\n          <button onClick={onClose} className=\"rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40\">\n            <svg className=\"size-5\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\"><path d=\"M18 6L6 18\"/><path d=\"M6 6l12 12\"/></svg>\n          </button>\n        </div>\n        <div className=\"p-4 overflow-y-auto\" style={{ maxHeight: 'calc(100vh - 73px)' }}>\n          {children}\n        </div>\n      </div>\n    </div>,\n    document.body\n  );\n}",
+    "tags": [
+      "drawer",
+      "sidebar",
+      "react",
+      "panel",
+      "heroui"
+    ],
+    "dependencies": [
+      "@heroui/react",
+      "react",
+      "react-dom",
+      "tailwindcss"
+    ]
+  }
+]

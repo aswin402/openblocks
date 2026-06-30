@@ -12,7 +12,7 @@ By providing a structured interface for UI building blocks, OpenBlocks significa
 
 ## 🚀 Core Features
 
-- **Component Registry**: Store and manage modular UI components (HTML, CSS, SCSS, Tailwind, Shadcn UI).
+- **Component Registry**: Store and manage modular UI components (HTML, CSS, SCSS, Tailwind, Shadcn UI, React).
 - **Fuzzy Search Engine**: Local fuzzy indexing of component names, descriptions, and tags.
 - **Template System**: Combine components into full website templates and scaffold complete pages using MiniJinja rendering.
 - **Version Control**: Auto-track history of modified components.
@@ -51,7 +51,7 @@ cargo run --release -- stats
 
 OpenBlocks can be run in different modes:
 - `serve` (Default): Starts the MCP server on stdio transport.
-- `seed`: Seeds the database with default components from `data/seed_components.json`.
+- `seed`: Seeds the database with starter components from data files (`seed_components.json`, `uiverse_components.json`, `tailblocks_components.json`, `css_text_animations.json`, `heroui_components.json`) plus built-in palettes and gradients.
 - `stats`: Displays database statistics (component counts, categories, frameworks).
 
 Flags:
@@ -68,7 +68,7 @@ OpenBlocks exposes 15 tools to connected AI agents:
 1. `search_components`: Fuzzy search against component metadata (name, description, tags).
 2. `get_component`: Retrieve the full source code and dependencies of a component by ID.
 3. `list_categories`: View all categories (navbar, hero, footer, card, etc.) with counts.
-4. `list_frameworks`: View supported frameworks (tailwind, css, scss, shadcn) with counts.
+4. `list_frameworks`: View supported frameworks (tailwind, css, scss, shadcn, react) with counts.
 5. `get_stats`: Retrieve library-wide stats.
 
 ### Component CRUD (Mutations)

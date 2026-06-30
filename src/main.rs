@@ -91,6 +91,14 @@ async fn main() -> Result<()> {
             tracing::info!("Seeding database with default color gradients...");
             let gradient_count = db.seed_popular_gradients()?;
             eprintln!("Seeded {} color gradients", gradient_count);
+
+            tracing::info!("Seeding database with CSS text animation components...");
+            let text_anim_count = db.seed_from_file("data/css_text_animations.json")?;
+            eprintln!("Seeded {} CSS text animation components", text_anim_count);
+
+            tracing::info!("Seeding database with HeroUI React components...");
+            let heroui_count = db.seed_from_file("data/heroui_components.json")?;
+            eprintln!("Seeded {} HeroUI React components", heroui_count);
         }
         Commands::Stats => {
             let stats = db.get_stats()?;

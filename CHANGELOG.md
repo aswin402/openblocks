@@ -4,6 +4,21 @@ All notable changes to the OpenBlocks project will be documented in this file.
 
 ---
 
+## [0.0.2] - 2026-06-30
+
+### Added
+- **Color Gradients Support**: Expanded seeded gradients from 10 to 40 with diverse color combinations inspired by WebGradients.com.
+- **CSS Text Animation Collection**: Seeded 40 CSS text animation components (typewriter, glitch, neon, 3D, kinetic, and more) sourced from CodePen examples and creative patterns.
+- **HeroUI React Components**: Added 25 production-grade React/JSX components inspired by HeroUI (Button, Card, Modal, Input, Accordion, Alert, Avatar, Badge, Tabs, Select, Tooltip, Spinner, ProgressBar, Skeleton, Switch, Checkbox, Breadcrumbs, Pagination, Chip, Dropdown, Table, Toast, Link, TextArea, Drawer).
+- **"react" Framework Enum**: Extended the `Framework` enum to support React/JSX/TSX components alongside tailwind, css, scss, and shadcn.
+- **Seed Data Expansion**: Database seeding now loads from 5 JSON data files plus built-in palettes and gradients (264 base + 44 tailblocks + 24 uiverse + 40 text animations + 25 HeroUI + 10 palettes + 40 gradients).
+
+### Changed
+- **Library Total**: Over 440 pre-built UI components available after seeding.
+- **Seed CLI command**: Seeds all data sources automatically.
+
+---
+
 ## [0.0.1] - 2026-06-30
 
 ### Added
