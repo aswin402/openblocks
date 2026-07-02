@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **React Bits & Community Components**: Added `data/react_bits_components.json` containing 4 premium components from React Bits, React Components, and official Shadcn Blocks (Tilted Card, True Focus Text, Glass Time Card, and Shadcn UI Sidebar Navigation).
 - **React Animated Components**: Added a new database seed file `data/animated_components.json` containing 6 premium interactive React blocks inspired by Motion Primitives, Aceternity UI, and BuildUI (Sparkles Background, Magnified Dock, Text Reveal, Glowing Grid, Resizable Panel, Magnetic Hover).
 - **Shadcn UI React Components**: Added a new database seed file `data/shadcn_components.json` containing 6 premium, responsive React + Tailwind CSS blocks (Product Card, Login Form, Pricing Deck, Hero Banner, Bento Grid, Accordion FAQ).
 - **GitHub Actions Workflows (CI/CD)**: Added `.github/workflows/ci.yml` (automating `cargo fmt`, `cargo clippy`, and `cargo test` checks) and `.github/workflows/release.yml` (cross-compiling and packaging the server release for Linux x86_64/aarch64, macOS Apple Silicon/Intel, and Windows on version tag push).
