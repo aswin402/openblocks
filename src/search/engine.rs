@@ -25,6 +25,7 @@ impl SearchEngine {
     }
 
     /// Remove a component from the index by rebuilding without it
+    #[allow(dead_code)]
     pub fn remove_component(&mut self, components: &[Component], remove_id: &Uuid) {
         self.index = SimSearch::new();
         for c in components {

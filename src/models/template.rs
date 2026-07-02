@@ -26,6 +26,7 @@ pub struct NewTemplate {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, JsonSchema)]
+#[allow(dead_code)]
 pub struct ScaffoldRequest {
     /// Template ID to scaffold from
     pub template_id: String,

@@ -1,6 +1,7 @@
 use thiserror::Error;
 
 #[derive(Error, Debug)]
+#[allow(dead_code)]
 pub enum OpenBlocksError {
     #[error("Component not found: {0}")]
     ComponentNotFound(String),

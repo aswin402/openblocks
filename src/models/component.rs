@@ -140,6 +140,7 @@ impl UpdateComponent {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, JsonSchema)]
+#[allow(dead_code)]
 pub struct SearchQuery {
     /// Search text (fuzzy matched against name, description, tags)
     pub query: String,
@@ -154,12 +155,14 @@ pub struct SearchQuery {
     pub limit: usize,
 }
 
+#[allow(dead_code)]
 fn default_limit() -> usize {
     10
 }
 
 /// A search result (component metadata without full code)
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[allow(dead_code)]
 pub struct SearchResult {
     pub id: Uuid,
     pub name: String,
