@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F20089" />
+      <stop offset="100%" stop-color="#8900F2" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* Keyframe Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; filter: drop-shadow(0 0 15px rgba(127, 0, 255, 0.6)); }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes blockAssemble {
+      0% { transform: translate(-20px, -20px); opacity: 0; }
+      100% { transform: translate(0, 0); opacity: 1; }
+    }
+    @keyframes blockAssembleReverse {
+      0% { transform: translate(20px, 20px); opacity: 0; }
+      100% { transform: translate(0, 0); opacity: 1; }
+    }
+
+    /* Styles */
+    .bg { fill: #0b0c10; rx: 16px; }
+    .text-title { font-family: 'Outfit', 'Inter', 'Segoe UI', sans-serif; font-weight: 800; font-size: 56px; fill: #ffffff; letter-spacing: 2px; }
+    .text-subtitle { font-family: 'Inter', 'Segoe UI', sans-serif; font-weight: 500; font-size: 18px; fill: #c5c6c7; letter-spacing: 1px; }
+    
+    .logo-mark { transform-origin: 120px 125px; animation: float 6s ease-in-out infinite; }
+    .title-group { animation: slideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    
+    .block-1 { animation: blockAssemble 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .block-2 { animation: blockAssembleReverse 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: 0.2s; }
+    .block-3 { animation: blockAssemble 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: 0.4s; }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="250" />
+
+  <!-- Grid decoration -->
+  <g opacity="0.05">
+    <path d="M 0,50 L 800,50 M 0,100 L 800,100 M 0,150 L 800,150 M 0,200 L 800,200" stroke="#ffffff" stroke-width="1"/>
+    <path d="M 100,0 L 100,250 M 200,0 L 200,250 M 300,0 L 300,250 M 400,0 L 400,250 M 500,0 L 500,250 M 600,0 L 600,250 M 700,0 L 700,250" stroke="#ffffff" stroke-width="1"/>
+  </g>
+
+  <!-- Animated Logo Mark (Isometric Blocks) -->
+  <g class="logo-mark">
+    <!-- Block 1 (Top Left) -->
+    <g class="block-1" transform="translate(60, 50)">
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#5A189A" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7B2CBF" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad1)"/>
+    </g>
+
+    <!-- Block 2 (Bottom Middle) -->
+    <g class="block-2" transform="translate(95, 100)">
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#03001e" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7303c0" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad3)"/>
+    </g>
+
+    <!-- Block 3 (Top Right) -->
+    <g class="block-3" transform="translate(130, 50)">
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#0077b6" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#0096c7" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad2)"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <g class="title-group" transform="translate(280, 110)">
+    <!-- Main Title -->
+    <text class="text-title" x="0" y="20">Open<tspan fill="url(#grad1)">Blocks</tspan></text>
+    <!-- Subtitle -->
+    <text class="text-subtitle" x="5" y="60">Rust-Native MCP Server for Web Development</text>
+  </g>
+</svg>

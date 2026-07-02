@@ -1,8 +1,13 @@
-# 🧱 OpenBlocks
+<p align="center">
+  <img src="logo.svg" alt="OpenBlocks Logo" width="800">
+</p>
 
-[![Rust](https://img.shields.io/badge/rust-stable-orange.svg)](https://www.rust-lang.org)
-[![MCP](https://img.shields.io/badge/mcp-protocol-blue.svg)](https://modelcontextprotocol.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/rust-stable-orange.svg" alt="Rust"></a>
+  <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/mcp-protocol-blue.svg" alt="MCP"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
+
 
 **OpenBlocks** is a fast, local-first, Rust-native Model Context Protocol (MCP) server designed specifically for web development. It enables AI coding agents (like Claude Desktop, Cursor, Cline, or Roo Code) to query, retrieve, write, and modify pre-built UI components and website templates rather than building them from scratch.
 

@@ -4,6 +4,19 @@ All notable changes to the OpenBlocks project will be documented in this file.
 
 ---
 
+## [0.0.3] - 2026-07-02
+
+### Added
+- **GitHub Actions Workflows (CI/CD)**: Added `.github/workflows/ci.yml` (automating `cargo fmt`, `cargo clippy`, and `cargo test` checks) and `.github/workflows/release.yml` (cross-compiling and packaging the server release for Linux x86_64/aarch64, macOS Apple Silicon/Intel, and Windows on version tag push).
+- **Automated Installer Script**: Added `scripts/install.sh` script to auto-detect platform, download the pre-compiled binary from GitHub releases, and run database initialization/seeding.
+- **Project Logo**: Created an animated SVG logo banner (`logo.svg`) showcasing isometric cascading blocks styled with premium gradients and pulsing drop-shadow keyframe effects.
+
+### Changed
+- **Client Configuration Guide**: Updated client configuration instructions for Claude Desktop and Cursor IDE to use the pre-compiled binary by default.
+- **Codebase Linting**: Resolved multiple `cargo clippy` suggestions (collapsible nested `if` statements) and reformatted code with `cargo fmt`.
+
+---
+
 ## [0.0.2] - 2026-06-30
 
 ### Added
