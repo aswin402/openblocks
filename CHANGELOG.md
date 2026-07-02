@@ -4,6 +4,14 @@ All notable changes to the OpenBlocks project will be documented in this file.
 
 ---
 
+## [0.0.4] - 2026-07-02
+
+### Added
+- **Component database expansion**: Expanded library to **1022** total components with the addition of 300 programmatically generated responsive design elements (Cards, Buttons, Navbars, Inputs, and metrics Widgets) and 60 premium website components directly from investigated platforms (Flowbite React, 21st.dev, SvelteBits, and Motion.dev).
+- **Expanded Gradients**: Seeded 30 new color gradients programmatically, raising the total gradients in the system to **212**.
+- **Expanded Color Palettes**: Programmed 90 new distinct color palettes, increasing the total palette assets to **105**.
+- **New animated SVG Logo**: Re-designed `logo.svg` to feature staggering floating animations for each isometric block and a pulsing background grid.
+
 ## [0.0.3] - 2026-07-02
 
 ### Added

@@ -17,7 +17,9 @@ By providing a structured interface for UI building blocks, OpenBlocks significa
 
 ## 🚀 Core Features
 
-- **Component Registry**: Store and manage modular UI components (HTML, CSS, SCSS, Tailwind, Shadcn UI, React).
+- **Component Registry**: Store and manage over 1,000 modular UI components (HTML, CSS, SCSS, Tailwind, Shadcn UI, React, Svelte).
+- **Color Palettes & Gradients**: Access over 100 color palettes and 200 color gradients to style generated layouts.
+- **MCP Prompts**: Request pre-built prompts to guide layout generation and component registration.
 - **Fuzzy Search Engine**: Local fuzzy indexing of component names, descriptions, and tags.
 - **Template System**: Combine components into full website templates and scaffold complete pages using MiniJinja rendering.
 - **Version Control**: Auto-track history of modified components.
@@ -59,7 +61,7 @@ cargo build --release
 
 OpenBlocks can be run in different modes:
 - `serve` (Default): Starts the MCP server on stdio transport.
-- `seed`: Seeds the database with starter components from data files (`seed_components.json`, `uiverse_components.json`, `tailblocks_components.json`, `css_text_animations.json`, `heroui_components.json`, `css_buttons.json`) plus built-in palettes and gradients.
+- `seed`: Seeds the database with starter components from data files (`seed_components.json`, `uiverse_components.json`, `tailblocks_components.json`, `css_text_animations.json`, `heroui_components.json`, `css_buttons.json`, `premium_scraped_components.json`, `generated_components.json`, etc.) plus 105 palettes and 212 gradients.
 - `stats`: Displays database statistics (component counts, categories, frameworks).
 
 Flags:
@@ -70,7 +72,7 @@ Flags:
 
 ## 🧩 MCP Tools Reference
 
-OpenBlocks exposes 15 tools to connected AI agents:
+OpenBlocks exposes 23 tools to connected AI agents:
 
 ### Component Discovery & Retrieval
 1. `search_components`: Fuzzy search against component metadata (name, description, tags).
@@ -91,9 +93,19 @@ OpenBlocks exposes 15 tools to connected AI agents:
 12. `delete_template`: Delete a template layout by ID.
 13. `scaffold_page`: Compile and render complete HTML pages from templates with variable injection.
 
+### Color Palettes & Gradients
+14. `list_palettes`: List all available color palettes stored in the library.
+15. `get_palette`: Get details of a single color palette by ID.
+16. `add_palette`: Add a new color palette to the library (exactly 4 hex codes).
+17. `delete_palette`: Delete a color palette from the library by ID.
+18. `list_gradients`: List all available color gradients stored in the library.
+19. `get_gradient`: Get details of a single gradient by ID.
+20. `add_gradient`: Add a new color gradient to the library (CSS string, color hexes).
+21. `delete_gradient`: Delete a gradient from the library by ID.
+
 ### Import / Export
-14. `import_components`: Batch import components from a local JSON file.
-15. `export_components`: Export library components to a local JSON file.
+22. `import_components`: Batch import components from a local JSON file.
+23. `export_components`: Export library components to a local JSON file.
 
 ---
 
