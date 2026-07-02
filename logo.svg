@@ -13,111 +13,78 @@
       <stop offset="0%" stop-color="#F20089" />
       <stop offset="100%" stop-color="#8900F2" />
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
 
-  <style>
-    /* Keyframe Animations */
-    @keyframes float-overall {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
-    }
-    @keyframes float-block1 {
-      0%, 100% { transform: translate(0px, 0px); }
-      50% { transform: translate(-3px, -7px); }
-    }
-    @keyframes float-block2 {
-      0%, 100% { transform: translate(0px, 0px); }
-      50% { transform: translate(4px, -10px); }
-    }
-    @keyframes float-block3 {
-      0%, 100% { transform: translate(0px, 0px); }
-      50% { transform: translate(-5px, -5px); }
-    }
-    @keyframes pulse-glow {
-      0%, 100% { opacity: 0.2; filter: drop-shadow(0 0 5px rgba(127, 0, 255, 0.4)); }
-      50% { opacity: 0.4; filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.8)); }
-    }
-    @keyframes slideIn {
-      from { transform: translateX(-30px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-
-    /* Styles */
-    .bg { fill: #0b0c10; rx: 16px; }
-    .text-title { font-family: 'Outfit', 'Inter', 'Segoe UI', sans-serif; font-weight: 800; font-size: 56px; fill: #ffffff; letter-spacing: 2px; }
-    .text-subtitle { font-family: 'Inter', 'Segoe UI', sans-serif; font-weight: 500; font-size: 18px; fill: #c5c6c7; letter-spacing: 1px; }
-    
-    .logo-mark { transform-origin: 120px 125px; animation: float-overall 6s ease-in-out infinite; }
-    .title-group { animation: slideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    
-    .block-1 { animation: float-block1 4.5s ease-in-out infinite; }
-    .block-2 { animation: float-block2 5.5s ease-in-out infinite; }
-    .block-3 { animation: float-block3 6.5s ease-in-out infinite; }
-    .grid-glow { animation: pulse-glow 8s ease-in-out infinite; }
-  </style>
-
   <!-- Background -->
-  <rect class="bg" width="800" height="250" />
+  <rect width="800" height="250" rx="16" fill="#0b0c10" />
 
   <!-- Grid decoration with glowing pulses -->
-  <g class="grid-glow" opacity="0.1">
+  <g opacity="0.06">
     <path d="M 0,50 L 800,50 M 0,100 L 800,100 M 0,150 L 800,150 M 0,200 L 800,200" stroke="#ffffff" stroke-width="1"/>
     <path d="M 100,0 L 100,250 M 200,0 L 200,250 M 300,0 L 300,250 M 400,0 L 400,250 M 500,0 L 500,250 M 600,0 L 600,250 M 700,0 L 700,250" stroke="#ffffff" stroke-width="1"/>
   </g>
 
   <!-- Animated Logo Mark (Isometric Blocks) -->
-  <g class="logo-mark">
+  <g>
+    <!-- Overall float -->
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 0,-5; 0,0" keyTimes="0; 0.5; 1"
+      dur="6s" repeatCount="indefinite" additive="sum" />
+
     <!-- Block 1 (Top Left) -->
     <g transform="translate(60, 50)">
-      <g class="block-1">
-        <!-- Left Side -->
-        <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#5A189A" opacity="0.8"/>
-        <!-- Right Side -->
-        <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7B2CBF" opacity="0.9"/>
-        <!-- Top Side -->
-        <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad1)"/>
-      </g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -2,-6; 0,0" keyTimes="0; 0.5; 1"
+        dur="4.5s" repeatCount="indefinite" additive="sum" />
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#5A189A" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7B2CBF" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad1)"/>
     </g>
 
     <!-- Block 2 (Bottom Middle) -->
     <g transform="translate(95, 100)">
-      <g class="block-2">
-        <!-- Left Side -->
-        <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#03001e" opacity="0.8"/>
-        <!-- Right Side -->
-        <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7303c0" opacity="0.9"/>
-        <!-- Top Side -->
-        <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad3)"/>
-      </g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 3,-8; 0,0" keyTimes="0; 0.5; 1"
+        dur="5.5s" repeatCount="indefinite" additive="sum" />
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#03001e" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#7303c0" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad3)"/>
     </g>
 
     <!-- Block 3 (Top Right) -->
     <g transform="translate(130, 50)">
-      <g class="block-3">
-        <!-- Left Side -->
-        <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#0077b6" opacity="0.8"/>
-        <!-- Right Side -->
-        <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#0096c7" opacity="0.9"/>
-        <!-- Top Side -->
-        <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad2)"/>
-      </g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; -4,-4; 0,0" keyTimes="0; 0.5; 1"
+        dur="6.5s" repeatCount="indefinite" additive="sum" />
+      <!-- Left Side -->
+      <path d="M0,30 L0,70 L35,90 L35,50 Z" fill="#0077b6" opacity="0.8"/>
+      <!-- Right Side -->
+      <path d="M35,50 L35,90 L70,70 L70,30 Z" fill="#0096c7" opacity="0.9"/>
+      <!-- Top Side -->
+      <path d="M0,30 L35,50 L70,30 L35,10 Z" fill="url(#grad2)"/>
     </g>
   </g>
 
-  <!-- Typography with layout wrap to prevent CSS animation override cut-offs -->
+  <!-- Typography using inline Presentation Attributes to prevent CSS override bugs -->
   <g transform="translate(280, 100)">
-    <g class="title-group">
-      <!-- Main Title -->
-      <text class="text-title" x="0" y="20">Open<tspan fill="url(#grad1)">Blocks</tspan></text>
-      <!-- Subtitle -->
-      <text class="text-subtitle" x="5" y="60">Rust-Native MCP Server for Web Development</text>
-    </g>
+    <animateTransform attributeName="transform" type="translate"
+      from="250,100" to="280,100" dur="1.2s" fill="freeze"
+      calcMode="spline" keySplines="0.16, 1, 0.3, 1" />
+    
+    <!-- Main Title -->
+    <text font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="800" font-size="56" fill="#ffffff" letter-spacing="2" x="0" y="20">
+      Open<tspan fill="url(#grad1)">Blocks</tspan>
+    </text>
+    
+    <!-- Subtitle -->
+    <text font-family="'Inter', 'Segoe UI', sans-serif" font-weight="500" font-size="18" fill="#c5c6c7" letter-spacing="1" x="5" y="60">
+      Rust-Native MCP Server for Web Development
+    </text>
   </g>
 </svg>
