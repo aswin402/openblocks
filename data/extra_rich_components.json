@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Flowbite React Custom Chronological Timeline",
+    "description": "A vertical responsive timeline layout featuring status badges, visual icon indicators, date logs, and action buttons.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Calendar, CheckCircle, Clock } from 'lucide-react';\n\nexport function CustomTimeline() {\n  const events = [\n    { id: 1, date: \"June 30, 2026\", title: \"MCP Prompts Protocol Ingested\", desc: \"Implemented list_prompts and get_prompt endpoints in server handler.\", done: true },\n    { id: 2, date: \"July 01, 2026\", title: \"Seeded Creative UI Elements\", desc: \"Ingested creative button, input, and particle components from community sites.\", done: true },\n    { id: 3, date: \"July 02, 2026\", title: \"WebGL Three.js Sandboxes Registered\", desc: \"Seeded icosahedron wireframes and shooting star buffer trails.\", done: false }\n  ];\n\n  return (\n    <div className=\"w-full max-w-md mx-auto p-6 border border-border bg-card text-card-foreground rounded-2xl shadow-xl\">\n      <h4 className=\"font-bold tracking-tight text-foreground mb-6\">Development Roadmap</h4>\n      \n      <div className=\"relative border-l border-border/80 ml-3 space-y-8\">\n        {events.map((event) => (\n          <div key={event.id} className=\"relative pl-8\">\n            {/* Bullet Icon Point */}\n            <span className={`absolute -left-[17px] top-1.5 flex h-8 w-8 items-center justify-center rounded-full border bg-card transition-colors ${\n              event.done ? 'border-emerald-500 text-emerald-500' : 'border-primary text-primary'\n            }`}>\n              {event.done ? <CheckCircle className=\"h-4 w-4\" /> : <Clock className=\"h-4 w-4 animate-pulse\" />}\n            </span>\n\n            <div>\n              <span className=\"flex items-center gap-1.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">\n                <Calendar className=\"h-3.5 w-3.5\" />\n                <span>{event.date}</span>\n              </span>\n              <h5 className=\"text-sm font-bold text-foreground mt-1.5\">{event.title}</h5>\n              <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">{event.desc}</p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "timeline",
+      "roadmap",
+      "flowbite",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "21st.dev AI Tool Call Execution Simulator",
+    "description": "An interactive terminal component mockup depicting AI model tool request schemas with permission controls (Allow/Deny).",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ShieldAlert, Terminal } from 'lucide-react';\n\nexport function ToolCallSimulator() {\n  const [decision, setDecision] = useState(\"pending\"); // pending, allowed, denied\n\n  return (\n    <div className=\"w-full max-w-md mx-auto border border-border bg-neutral-950 text-white rounded-2xl overflow-hidden shadow-2xl p-4 font-mono text-xs\">\n      {/* Terminal Header */}\n      <div className=\"flex items-center justify-between border-b border-white/5 pb-3 mb-4\">\n        <div className=\"flex items-center gap-2 text-neutral-400\">\n          <Terminal className=\"h-4 w-4\" />\n          <span>openblocks-sandbox-runner</span>\n        </div>\n        <span className=\"text-[10px] uppercase font-bold text-amber-500 flex items-center gap-1\">\n          <ShieldAlert className=\"h-3 w-3\" />\n          <span>Permission Prompt</span>\n        </span>\n      </div>\n\n      {/* Request Details Block */}\n      <div className=\"bg-neutral-900/60 border border-white/5 p-4 rounded-xl space-y-3\">\n        <div>\n          <span className=\"text-neutral-500\">tool:</span>\n          <span className=\"text-[#00adb5] ml-2\">run_command</span>\n        </div>\n        <div>\n          <span className=\"text-neutral-500\">arguments:</span>\n          <pre className=\"bg-neutral-950/80 p-2.5 rounded-lg text-[10px] text-amber-400 mt-1 border border-white/5 overflow-x-auto\">\n            {`{\n  \"CommandLine\": \"cargo test\",\n  \"Cwd\": \"/workspace/openblocks\"\n}`}\n          </pre>\n        </div>\n      </div>\n\n      {/* Interactive Authorization Action Buttons */}\n      <div className=\"mt-5 flex items-center gap-3\">\n        {decision === \"pending\" ? (\n          <>\n            <button \n              onClick={() => setDecision(\"denied\")}\n              className=\"flex-1 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 transition-all font-semibold\"\n            >\n              Deny\n            </button>\n            <button \n              onClick={() => setDecision(\"allowed\")}\n              className=\"flex-1 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all font-bold\"\n            >\n              Allow Execution\n            </button>\n          </>\n        ) : (\n          <div className={`w-full py-2.5 rounded-xl border text-center font-bold ${\n            decision === \"allowed\"\n              ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'\n              : 'bg-rose-500/10 border-rose-500/20 text-rose-400'\n          }`}>\n            {decision === \"allowed\" ? \"✓ Command authorized. Spawning test worker...\" : \"✗ Tool execution rejected by developer.\"}\n          </div>\n        )}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "mcp",
+      "toolcall",
+      "simulation",
+      "terminal",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "yui540 comimi Single Page Slide Reader",
+    "description": "An interactive manga panel viewer supporting vertical page scaling, page navigation markers, and slide transitions.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { BookOpen, RefreshCw, ZoomIn, ZoomOut } from 'lucide-react';\n\nexport function SinglePageReader() {\n  const [scale, setScale] = useState(1);\n  const [page, setPage] = useState(1);\n  const totalPages = 4;\n\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-neutral-900 text-white rounded-2xl overflow-hidden shadow-2xl p-4\">\n      {/* Viewer Header Options */}\n      <div className=\"flex items-center justify-between border-b border-white/5 pb-3 mb-4\">\n        <div className=\"flex items-center gap-2\">\n          <BookOpen className=\"h-5 w-5 text-primary\" />\n          <span className=\"text-xs font-semibold\">Comimi Slide View</span>\n        </div>\n        \n        <div className=\"flex items-center gap-1.5\">\n          <button \n            onClick={() => setScale((s) => Math.max(0.8, s - 0.1))}\n            className=\"p-1.5 bg-white/5 hover:bg-white/10 rounded-lg text-xs transition-all border border-white/10\"\n          >\n            <ZoomOut className=\"h-3.5 w-3.5\" />\n          </button>\n          <button \n            onClick={() => setScale((s) => Math.min(1.5, s + 0.1))}\n            className=\"p-1.5 bg-white/5 hover:bg-white/10 rounded-lg text-xs transition-all border border-white/10\"\n          >\n            <ZoomIn className=\"h-3.5 w-3.5\" />\n          </button>\n        </div>\n      </div>\n\n      {/* Comic Page Viewport Panel */}\n      <div className=\"relative aspect-[3/4] bg-neutral-950 rounded-xl overflow-hidden flex items-center justify-center border border-white/5\">\n        <div \n          style={{ transform: `scale(${scale})` }}\n          className=\"bg-neutral-800/40 border border-white/10 rounded-lg h-5/6 w-5/6 flex items-center justify-center text-center p-6 transition-transform duration-200\"\n        >\n          <div>\n            <span className=\"text-[10px] text-muted-foreground uppercase font-bold tracking-wider\">Single Page Panel</span>\n            <h3 className=\"text-4xl font-extrabold text-white mt-2\">Page {page}</h3>\n            <p className=\"text-[10px] text-neutral-400 mt-2\">Zoom scale: {Math.round(scale * 100)}%</p>\n          </div>\n        </div>\n      </div>\n\n      {/* Navigation Controls footer */}\n      <div className=\"flex items-center justify-between mt-4\">\n        <button \n          disabled={page <= 1}\n          onClick={() => setPage(page - 1)}\n          className=\"px-3 py-1.5 bg-white/5 hover:bg-white/10 disabled:opacity-40 rounded-xl transition-all text-xs font-semibold border border-white/10\"\n        >\n          Prev\n        </button>\n        \n        <span className=\"text-xs text-neutral-400 font-mono\">Page {page} of {totalPages}</span>\n\n        <button \n          disabled={page >= totalPages}\n          onClick={() => setPage(page + 1)}\n          className=\"px-3 py-1.5 bg-white/5 hover:bg-white/10 disabled:opacity-40 rounded-xl transition-all text-xs font-semibold border border-white/10\"\n        >\n          Next\n        </button>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "manga",
+      "viewer",
+      "comimi",
+      "singlepage",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Fontshare Typography Pair Matcher",
+    "description": "An interactive typography pairing playground demonstrating header/body matching options with styled live previews.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Type } from 'lucide-react';\n\nexport function FontshareMatcher() {\n  const [headerFont, setHeaderFont] = useState(\"serif\");\n  const [bodyFont, setBodyFont] = useState(\"sans-serif\");\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl space-y-6\">\n      {/* Selection Control Panels */}\n      <div className=\"grid grid-cols-2 gap-4 border-b border-border pb-6\">\n        <div>\n          <label className=\"text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">Header Font (H1)</label>\n          <select \n            value={headerFont}\n            onChange={(e) => setHeaderFont(e.target.value)}\n            className=\"w-full mt-1.5 p-2.5 bg-muted border border-border rounded-xl text-xs focus:outline-none text-foreground\"\n          >\n            <option value=\"serif\">System Serif (Classic)</option>\n            <option value=\"sans-serif\">System Sans (Modern)</option>\n            <option value=\"monospace\">System Monospace (Tech)</option>\n          </select>\n        </div>\n\n        <div>\n          <label className=\"text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">Body Font (P)</label>\n          <select \n            value={bodyFont}\n            onChange={(e) => setBodyFont(e.target.value)}\n            className=\"w-full mt-1.5 p-2.5 bg-muted border border-border rounded-xl text-xs focus:outline-none text-foreground\"\n          >\n            <option value=\"sans-serif\">System Sans (Clean)</option>\n            <option value=\"serif\">System Serif (Editorial)</option>\n            <option value=\"monospace\">System Monospace (Structured)</option>\n          </select>\n        </div>\n      </div>\n\n      {/* Live Blog Post Pairing Mockup Preview */}\n      <div className=\"border border-border/80 bg-muted/20 p-6 rounded-xl space-y-3\">\n        <h2 \n          style={{ fontFamily: headerFont }}\n          className=\"text-xl font-bold tracking-tight text-foreground leading-tight\"\n        >\n          Sourcing Design Principles from Typographic Repositories\n        </h2>\n        <p \n          style={{ fontFamily: bodyFont }}\n          className=\"text-xs text-muted-foreground leading-relaxed\"\n        >\n          Pairing fonts effectively sets the pacing and cadence of editorial copy. Modern libraries like Fontshare provide developers with free type systems that combine clean, geometry-inspired frames with highly legible details.\n        </p>\n        <div className=\"flex items-center gap-1.5 text-[10px] text-muted-foreground pt-3 border-t border-border/40\">\n          <Type className=\"h-3.5 w-3.5\" />\n          <span>Fontshare Pairing Sandbox</span>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "font",
+      "pairing",
+      "fontshare",
+      "sandbox",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

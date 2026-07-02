@@ -152,6 +152,10 @@ async fn main() -> Result<()> {
             let motion_svelte_count = db.seed_from_file("data/motion_svelte_components.json")?;
             eprintln!("Seeded {} Motion & SvelteBits components", motion_svelte_count);
 
+            tracing::info!("Seeding database with Extra Rich UI elements...");
+            let extra_rich_count = db.seed_from_file("data/extra_rich_components.json")?;
+            eprintln!("Seeded {} Extra Rich UI elements", extra_rich_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);

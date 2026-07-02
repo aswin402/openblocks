@@ -7,6 +7,8 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **Extra Rich UI Elements**: Added `data/extra_rich_components.json` containing 4 premium components (Flowbite React Custom Chronological Timeline, 21st.dev AI Tool Call Execution Simulator, yui540 comimi Single Page Slide Reader, and Fontshare Typography Pair Matcher).
+- **Expanded Color Palettes**: Added 5 new premium color palettes inspired by design ecosystems (Bauhaus Modernism, Fontshare Editorial, LiveKit Aura, Aceternity Dark, Muted Autumn).
 - **Motion & SvelteBits Components**: Added `data/motion_svelte_components.json` containing 2 premium components (Motion Expanding Modal Overlay and SvelteBits Decrypted Text Effect).
 - **LiveKit, Fontshare & comimi Components**: Added `data/agents_font_components.json` containing 3 premium components (LiveKit Agents UI Live Audio Speech Visualizer, Fontshare Typeface Tester Playground, and yui540 comimi Manga Comic Viewer).
 - **blocks.so, Flowbite React & 21st.dev Components**: Added `data/blocks_so_components.json` containing 3 premium components (blocks.so SaaS Plan Approval Card, Flowbite React Mega Menu, and 21st.dev AI Prompt Diff View).
