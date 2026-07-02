@@ -1,0 +1,77 @@
+[
+  {
+    "name": "ReactBits Tilted Card",
+    "description": "A creative card wrapper that tilts dynamically relative to the mouse hover coordinates with perspective overlays.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { useRef, useState } from 'react';\n\nexport function TiltedCard({\n  children,\n  maxTilt = 15,\n  perspective = 1000,\n  className = \"\"\n}) {\n  const ref = useRef(null);\n  const [tilt, setTilt] = useState({ x: 0, y: 0 });\n\n  const handleMouseMove = (e) => {\n    if (!ref.current) return;\n    const { left, top, width, height } = ref.current.getBoundingClientRect();\n    const x = (e.clientX - left) / width; // 0 to 1\n    const y = (e.clientY - top) / height; // 0 to 1\n    \n    // Convert scale coordinates to angle limits\n    const tiltX = (y - 0.5) * -maxTilt;\n    const tiltY = (x - 0.5) * maxTilt;\n    setTilt({ x: tiltX, y: tiltY });\n  };\n\n  const handleMouseLeave = () => {\n    setTilt({ x: 0, y: 0 });\n  };\n\n  return (\n    <div\n      ref={ref}\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n      style={{\n        transform: `perspective(${perspective}px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,\n        transition: 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1)',\n        transformStyle: 'preserve-3d'\n      }}\n      className={`inline-block overflow-hidden rounded-2xl border border-border bg-card shadow-lg ${className}`}\n    >\n      <div style={{ transform: 'translateZ(20px)' }} className=\"p-6\">\n        {children}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "tilt",
+      "card",
+      "hover",
+      "reactbits",
+      "3d",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "ReactBits True Focus Text",
+    "description": "An interactive hover-based text effect that focuses individual words while blurring adjacent ones using viewport intersection checks.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TrueFocusText({\n  text = \"Bring visual focus to key messages dynamically.\",\n  className = \"\"\n}) {\n  const [focusedIndex, setFocusedIndex] = useState(null);\n  const words = text.split(\" \");\n\n  return (\n    <div className={`flex flex-wrap gap-x-3 gap-y-1.5 text-2xl font-bold tracking-tight select-none ${className}`}>\n      {words.map((word, idx) => {\n        const isFocused = focusedIndex === idx;\n        const hasHovered = focusedIndex !== null;\n        let blurStyle = {};\n        \n        if (hasHovered) {\n          blurStyle = isFocused \n            ? { filter: 'blur(0px)', color: 'var(--primary)', scale: '1.05' }\n            : { filter: 'blur(3px)', opacity: 0.45, scale: '0.98' };\n        }\n\n        return (\n          <span\n            key={idx}\n            onMouseEnter={() => setFocusedIndex(idx)}\n            onMouseLeave={() => setFocusedIndex(null)}\n            style={{\n              transition: 'filter 0.2s ease, opacity 0.2s ease, color 0.2s ease, transform 0.2s ease',\n              display: 'inline-block',\n              transformOrigin: 'center center',\n              ...blurStyle\n            }}\n            className=\"cursor-pointer text-foreground\"\n          >\n            {word}\n          </span>\n        );\n      })}\n    </div>\n  );\n}",
+    "tags": [
+      "text",
+      "focus",
+      "blur",
+      "reactbits",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "ReactComponents Glass Time Card",
+    "description": "A glassmorphism-styled card displaying a digital clock, calendar details, and local timezone headers.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { useEffect, useState } from 'react';\nimport { Calendar, Clock, Globe } from 'lucide-react';\n\nexport function GlassTimeCard({ timezone = \"UTC\" }) {\n  const [time, setTime] = useState(new Date());\n\n  useEffect(() => {\n    const timer = setInterval(() => setTime(new Date()), 1000);\n    return () => clearInterval(timer);\n  }, []);\n\n  const timeString = time.toLocaleTimeString('en-US', {\n    hour: '2-digit',\n    minute: '2-digit',\n    second: '2-digit',\n    hour12: true,\n    timeZone: timezone\n  });\n\n  const dateString = time.toLocaleDateString('en-US', {\n    weekday: 'short',\n    month: 'short',\n    day: 'numeric',\n    year: 'numeric',\n    timeZone: timezone\n  });\n\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/40 p-6 text-white backdrop-blur-lg shadow-2xl\">\n      <div className=\"flex items-center justify-between border-b border-white/10 pb-4\">\n        <div className=\"flex items-center gap-2\">\n          <Globe className=\"h-4 w-4 text-primary\" />\n          <span className=\"text-xs font-semibold uppercase tracking-wider text-muted-foreground\">\n            Timezone: {timezone}\n          </span>\n        </div>\n        <span className=\"h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse\" />\n      </div>\n      <div className=\"py-6 text-center\">\n        <div className=\"inline-flex items-center justify-center gap-2.5 text-4xl font-extrabold tracking-tight\">\n          <Clock className=\"h-8 w-8 text-primary\" />\n          <span className=\"font-mono\">{timeString}</span>\n        </div>\n      </div>\n      <div className=\"flex items-center justify-center gap-2 border-t border-white/10 pt-4 text-sm text-muted-foreground\">\n        <Calendar className=\"h-4 w-4\" />\n        <span>{dateString}</span>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "clock",
+      "glassmorphism",
+      "time",
+      "reactcomponents",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Sidebar Navigation",
+    "description": "An administrative sidebar navigation menu featuring logo areas, collapsible navigation links, nested sections, and a footer profile button.",
+    "category": "sidebar",
+    "framework": "shadcn",
+    "code": "import { useState } from 'react';\nimport { BarChart2, BookOpen, ChevronRight, Folder, Home, Settings, Users } from 'lucide-react';\n\nexport function SidebarNavigation() {\n  const [isCollapsed, setIsCollapsed] = useState(false);\n  const [activeItem, setActiveItem] = useState(\"Dashboard\");\n\n  const menuItems = [\n    { name: \"Dashboard\", icon: <Home className=\"h-5 w-5\" /> },\n    { name: \"Projects\", icon: <Folder className=\"h-5 w-5\" /> },\n    { name: \"Team\", icon: <Users className=\"h-5 w-5\" /> },\n    { name: \"Analytics\", icon: <BarChart2 className=\"h-5 w-5\" /> },\n    { name: \"Documents\", icon: <BookOpen className=\"h-5 w-5\" /> },\n    { name: \"Settings\", icon: <Settings className=\"h-5 w-5\" /> },\n  ];\n\n  return (\n    <aside \n      style={{ width: isCollapsed ? '72px' : '260px' }}\n      className=\"flex h-screen flex-col border-r border-border bg-card text-card-foreground transition-all duration-200\"\n    >\n      {/* Sidebar Header */}\n      <div className=\"flex h-16 items-center justify-between px-4 border-b border-border\">\n        {!isCollapsed && (\n          <span className=\"text-lg font-bold tracking-tight text-foreground\">OpenBlocks</span>\n        )}\n        <button \n          onClick={() => setIsCollapsed(!isCollapsed)}\n          className=\"rounded-md p-1.5 hover:bg-muted text-muted-foreground transition-colors ml-auto\"\n          aria-label=\"Toggle Sidebar\"\n        >\n          <ChevronRight className={`h-4.5 w-4.5 transition-transform duration-200 ${isCollapsed ? '' : 'rotate-180'}`} />\n        </button>\n      </div>\n\n      {/* Navigation List */}\n      <nav className=\"flex-1 space-y-1 px-2 py-4 overflow-y-auto\">\n        {menuItems.map((item) => {\n          const isActive = activeItem === item.name;\n          return (\n            <button\n              key={item.name}\n              onClick={() => setActiveItem(item.name)}\n              className={`flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${\n                isActive \n                  ? 'bg-primary text-primary-foreground' \n                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'\n              }`}\n            >\n              <span className=\"shrink-0\">{item.icon}</span>\n              {!isCollapsed && <span>{item.name}</span>}\n            </button>\n          );\n        })}\n      </nav>\n\n      {/* Sidebar Footer User profile */}\n      <div className=\"border-t border-border p-4\">\n        <div className=\"flex items-center gap-3\">\n          <img \n            src=\"/placeholder.jpg\" \n            alt=\"User profile\" \n            className=\"h-9 w-9 rounded-full bg-muted object-cover\" \n          />\n          {!isCollapsed && (\n            <div className=\"min-w-0 flex-1\">\n              <p className=\"text-sm font-semibold truncate text-foreground\">Aswin</p>\n              <p className=\"text-xs text-muted-foreground truncate\">aswin@example.com</p>\n            </div>\n          )}\n        </div>\n      </div>\n    </aside>\n  );\n}",
+    "tags": [
+      "sidebar",
+      "navigation",
+      "admin",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
