@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **Slider Revolution, Pioneer UI & UI-Layouts Components**: Added `data/layout_revolution_components.json` containing 3 premium layouts (Slider Revolution CSS Floating Bubbles Background, Pioneer UI Glassmorphic Particle Card, and UI-Layouts macOS Genie Minimize Effect).
 - **3D WebGL Three.js Components**: Added `data/threejs_components.json` containing 2 premium 3D WebGL components (ThreeJS Interactive Fog Sphere and ThreeJS Particle Shooting Star Trail).
 - **Skiper UI, StackSorted & FreeFrontend Components**: Added `data/creative_ui_components.json` containing 3 premium components (Skiper UI AI Chat Prompt Input, StackSorted Magnetic Glowing Button, and FreeFrontend Liquid Hover Button).
 - **Origin UI, Efferd & MVPBlocks Components**: Added `data/mvp_ui_components.json` containing 3 premium components (Origin UI Interactive Input Slider, Efferd Magazine Blog Grid, and MVPBlocks Interactive FAQ Accordion).

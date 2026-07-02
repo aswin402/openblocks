@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Slider Revolution CSS Floating Bubbles Background",
+    "description": "A pure CSS animated background featuring glowing, randomized bubbles floating upwards with smooth parallax drifting keyframes.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"bubbles-container\">\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  <div class=\"bubble\"></div>\n  \n  <div class=\"bubbles-content\">\n    <h4>Fluid Bubble Space</h4>\n    <p>Pure CSS animated floating background particles</p>\n  </div>\n</div>\n\n<style>\n.bubbles-container {\n  position: relative;\n  width: 100%;\n  height: 350px;\n  background: linear-gradient(180deg, #09090b 0%, #18181b 100%);\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1;\n}\n\n.bubbles-content {\n  position: relative;\n  z-index: 10;\n  text-align: center;\n  pointer-events: none;\n  color: #ffffff;\n  font-family: system-ui, sans-serif;\n}\n\n.bubbles-content h4 {\n  font-size: 1.125rem;\n  font-weight: 700;\n  margin: 0;\n}\n\n.bubbles-content p {\n  font-size: 0.75rem;\n  color: #a1a1aa;\n  margin-top: 0.25rem;\n}\n\n.bubble {\n  position: absolute;\n  bottom: -60px;\n  background: radial-gradient(circle, rgba(0, 173, 181, 0.4) 0%, rgba(0, 173, 181, 0) 70%);\n  border-radius: 50%;\n  pointer-events: none;\n  animation: float-up infinite linear;\n}\n\n/* Generate bubble sizing & speeds */\n.bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 12s; animation-delay: 0s; }\n.bubble:nth-child(2) { width: 120px; height: 120px; left: 30%; animation-duration: 18s; animation-delay: 2s; }\n.bubble:nth-child(3) { width: 60px; height: 60px; left: 50%; animation-duration: 10s; animation-delay: 4s; }\n.bubble:nth-child(4) { width: 100px; height: 100px; left: 70%; animation-duration: 15s; animation-delay: 1s; }\n.bubble:nth-child(5) { width: 70px; height: 70px; left: 85%; animation-duration: 14s; animation-delay: 3s; }\n.bubble:nth-child(6) { width: 90px; height: 90px; left: 20%; animation-duration: 16s; animation-delay: 5s; }\n.bubble:nth-child(7) { width: 110px; height: 110px; left: 60%; animation-duration: 20s; animation-delay: 6s; }\n\n@keyframes float-up {\n  0% {\n    transform: translateY(0) scale(0.8) rotate(0deg);\n    opacity: 0;\n  }\n  10% {\n    opacity: 0.8;\n  }\n  90% {\n    opacity: 0.8;\n  }\n  100% {\n    transform: translateY(-420px) scale(1.2) rotate(360deg);\n    opacity: 0;\n  }\n}\n</style>",
+    "tags": [
+      "bubbles",
+      "css",
+      "background",
+      "sliderrevolution",
+      "purecss"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Pioneer UI Glassmorphic Particle Card",
+    "description": "A glassmorphism-styled card with interactive floating background nodes reacting to cursor hover distance.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Cpu } from 'lucide-react';\n\nexport function PioneerParticleCard() {\n  const [coords, setCoords] = useState({ x: 0, y: 0 });\n  const [hovered, setHovered] = useState(false);\n\n  const handleMouseMove = (e) => {\n    const rect = e.currentTarget.getBoundingClientRect();\n    setCoords({\n      x: e.clientX - rect.left,\n      y: e.clientY - rect.top\n    });\n  };\n\n  return (\n    <div \n      onMouseMove={handleMouseMove}\n      onMouseEnter={() => setHovered(true)}\n      onMouseLeave={() => setHovered(false)}\n      className=\"relative w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/60 p-6 text-white backdrop-blur-xl shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-default\"\n    >\n      {/* Glow highlight follow cursor */}\n      {hovered && (\n        <span \n          style={{\n            left: coords.x,\n            top: coords.y,\n            transform: 'translate(-50%, -50%)',\n            pointerEvents: 'none'\n          }}\n          className=\"absolute h-40 w-40 rounded-full bg-primary/20 blur-3xl transition-opacity duration-300\"\n        />\n      )}\n\n      <div className=\"relative z-10 flex flex-col gap-4\">\n        <div className=\"flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary\">\n          <Cpu className=\"h-6 w-6 animate-pulse\" />\n        </div>\n        <div>\n          <h4 className=\"text-lg font-bold tracking-tight text-white\">Pioneer Processing Unit</h4>\n          <p className=\"text-sm text-neutral-400 mt-1.5 leading-relaxed\">\n            Accelerate AI developer prompt cycles locally using native system threads.\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "glassmorphism",
+      "pioneerui",
+      "hover",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "UI-Layouts macOS Genie Minimize Effect",
+    "description": "An interactive application frame replicating the macOS Genie warp minimize effect into a bottom dock bar.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Maximize2, Minimize2, Terminal } from 'lucide-react';\n\nexport function GenieMinimize() {\n  const [isMinimized, setIsMinimized] = useState(false);\n\n  return (\n    <div className=\"w-full max-w-lg mx-auto border border-border bg-card rounded-2xl overflow-hidden shadow-2xl p-4\">\n      {/* Top Application Bar */}\n      <div className=\"flex items-center justify-between border-b border-border pb-3 mb-4\">\n        <div className=\"flex items-center gap-2\">\n          <span className=\"h-3.5 w-3.5 rounded-full bg-rose-500 cursor-pointer\" onClick={() => setIsMinimized(true)} />\n          <span className=\"h-3.5 w-3.5 rounded-full bg-amber-400\" />\n          <span className=\"h-3.5 w-3.5 rounded-full bg-emerald-500 cursor-pointer\" onClick={() => setIsMinimized(false)} />\n        </div>\n        <span className=\"text-xs font-mono text-muted-foreground\">openblocks-terminal.sh</span>\n      </div>\n\n      {/* Window Body with Genie warp classes */}\n      <div \n        className={`relative bg-neutral-950 rounded-xl p-4 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${\n          isMinimized\n            ? 'opacity-0 scale-[0.05] translate-y-[150px] rotate-[15deg] pointer-events-none'\n            : 'opacity-100 scale-100 translate-y-0 rotate-0'\n        }`}\n      >\n        <div className=\"flex items-center gap-2 text-emerald-400 font-mono text-sm mb-4\">\n          <Terminal className=\"h-4 w-4\" />\n          <span>openblocks v0.0.3 initialized</span>\n        </div>\n        <pre className=\"text-xs font-mono text-neutral-400 select-none\">\n          {`root@openblocks:~$ cargo run -- serve\\n`}\n          {`[INFO] Starting MCP server on stdio...\\n`}\n          {`[INFO] Loaded 704 components successfully.`}\n        </pre>\n      </div>\n\n      {/* Bottom Dock Bar simulated */}\n      <div className=\"flex justify-center border-t border-border/60 mt-6 pt-4\">\n        <div className=\"flex items-center gap-4 bg-muted/40 border border-border/80 px-4 py-2 rounded-2xl shadow-inner\">\n          <button \n            onClick={() => setIsMinimized(!isMinimized)}\n            className={`relative p-2 rounded-xl transition-all ${isMinimized ? 'bg-primary/20 text-primary scale-110' : 'hover:bg-muted text-muted-foreground'}`}\n          >\n            {isMinimized ? <Maximize2 className=\"h-5 w-5\" /> : <Minimize2 className=\"h-5 w-5\" />}\n          </button>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "genie",
+      "macos",
+      "minimize",
+      "uilayouts",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

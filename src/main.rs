@@ -132,6 +132,10 @@ async fn main() -> Result<()> {
             let threejs_count = db.seed_from_file("data/threejs_components.json")?;
             eprintln!("Seeded {} 3D WebGL Three.js components", threejs_count);
 
+            tracing::info!("Seeding database with Slider Revolution, Pioneer UI & UI-Layouts components...");
+            let layout_revolution_count = db.seed_from_file("data/layout_revolution_components.json")?;
+            eprintln!("Seeded {} Slider Revolution, Pioneer UI & UI-Layouts components", layout_revolution_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
