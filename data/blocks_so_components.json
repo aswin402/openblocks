@@ -1,0 +1,59 @@
+[
+  {
+    "name": "blocks.so SaaS Plan Approval Card",
+    "description": "An interactive agent-task plan approval block displaying step sequences, editable details, checklist toggles, and status responses.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { CheckCircle2, Circle, Play, XCircle } from 'lucide-react';\n\nexport function PlanApprovalCard() {\n  const [steps, setSteps] = useState([\n    { id: 1, text: \"Initialize cargo compilation check\", done: true },\n    { id: 2, text: \"Execute database integration unit tests\", done: true },\n    { id: 3, text: \"Push commit changes to origin main\", done: false }\n  ]);\n  const [status, setStatus] = useState(\"pending\"); // pending, approved, rejected\n\n  const toggleStep = (id) => {\n    if (status !== \"pending\") return;\n    setSteps((prev) => \n      prev.map((step) => step.id === id ? { ...step, done: !step.done } : step)\n    );\n  };\n\n  return (\n    <div className=\"w-full max-w-md mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl\">\n      <div className=\"flex items-center justify-between mb-4 border-b border-border pb-4\">\n        <div>\n          <h4 className=\"font-bold tracking-tight text-foreground\">AI Agent Execution Plan</h4>\n          <p className=\"text-xs text-muted-foreground mt-0.5\">Review and authorise next tasks</p>\n        </div>\n        <span className={`text-xs px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider ${\n          status === \"approved\"\n            ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20'\n            : status === \"rejected\"\n            ? 'bg-rose-500/10 text-rose-500 border border-rose-500/20'\n            : 'bg-amber-500/10 text-amber-500 border border-amber-500/20'\n        }`}>\n          {status}\n        </span>\n      </div>\n\n      {/* Plan Steps Checklist */}\n      <div className=\"space-y-3 mb-6\">\n        {steps.map((step) => (\n          <div \n            key={step.id}\n            onClick={() => toggleStep(step.id)}\n            className={`flex items-center gap-3 p-3 rounded-xl border border-border/60 bg-muted/20 transition-all ${\n              status === \"pending\" ? 'cursor-pointer hover:bg-muted/50' : 'opacity-80'\n            }`}\n          >\n            {step.done ? (\n              <CheckCircle2 className=\"h-5 w-5 text-emerald-500 shrink-0\" />\n            ) : (\n              <Circle className=\"h-5 w-5 text-muted-foreground shrink-0\" />\n            )}\n            <span className={`text-sm ${step.done ? 'line-through text-muted-foreground' : 'text-foreground'}`}>\n              {step.text}\n            </span>\n          </div>\n        ))}\n      </div>\n\n      {/* Action Authorisations */}\n      {status === \"pending\" ? (\n        <div className=\"flex items-center gap-3\">\n          <button\n            onClick={() => setStatus(\"rejected\")}\n            className=\"flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold border border-border hover:bg-muted text-foreground transition-all\"\n          >\n            <XCircle className=\"h-4 w-4 text-rose-500\" />\n            <span>Reject</span>\n          </button>\n          \n          <button\n            onClick={() => setStatus(\"approved\")}\n            className=\"flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-bold bg-primary hover:bg-primary/95 text-primary-foreground shadow-md transition-all\"\n          >\n            <Play className=\"h-4 w-4 fill-current\" />\n            <span>Approve</span>\n          </button>\n        </div>\n      ) : (\n        <div className=\"text-center text-xs text-muted-foreground font-mono\">\n          {status === \"approved\" ? \"✓ Tasks authorised for runner execution.\" : \"✗ Plan rejected. Re-diagnosing errors...\"}\n        </div>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "agent",
+      "plan",
+      "approval",
+      "blocksso",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Mega Menu",
+    "description": "A responsive navigation mega-menu featuring multi-column navigation grids, active tabs, search fields, and profile dropdowns.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { BookOpen, ChevronDown, Cpu, Sparkles } from 'lucide-react';\n\nexport function FlowbiteMegaMenu() {\n  const [menuOpen, setMenuOpen] = useState(false);\n\n  const links = [\n    { title: \"System Architecture\", desc: \"Check the local Connection engine.\", icon: <Cpu className=\"h-5 w-5 text-primary\" /> },\n    { title: \"OpenBlocks Library\", desc: \"Browse over 700+ seed components.\", icon: <Sparkles className=\"h-5 w-5 text-primary\" /> },\n    { title: \"Documentation\", desc: \"Read guides and CHANGELOG details.\", icon: <BookOpen className=\"h-5 w-5 text-primary\" /> }\n  ];\n\n  return (\n    <nav className=\"relative w-full border border-border bg-card text-card-foreground rounded-2xl shadow-lg z-50\">\n      <div className=\"flex items-center justify-between p-4 px-6\">\n        <div className=\"flex items-center gap-8\">\n          <span className=\"text-lg font-bold tracking-tight text-foreground\">OpenBlocks</span>\n          \n          <div className=\"hidden md:flex items-center gap-6\">\n            <button \n              onClick={() => setMenuOpen(!menuOpen)}\n              className=\"flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors\"\n            >\n              <span>Discover Kits</span>\n              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${menuOpen ? 'rotate-180' : ''}`} />\n            </button>\n          </div>\n        </div>\n\n        <button className=\"px-4 py-2 bg-primary hover:bg-primary/95 text-primary-foreground text-xs font-bold uppercase rounded-lg transition-colors\">\n          Configure CLI\n        </button>\n      </div>\n\n      {/* Mega Menu Dropdown grid */}\n      {menuOpen && (\n        <div className=\"absolute top-full left-0 right-0 border-t border-border bg-card p-6 grid md:grid-cols-3 gap-6 rounded-b-2xl shadow-xl animate-[slide-down_0.2s_ease-out_forwards]\">\n          {links.map((link) => (\n            <a \n              key={link.title} \n              href={`#${link.title.toLowerCase().replace(/\\s/g, '-')}`} \n              className=\"flex gap-4 p-4 rounded-xl border border-border/40 bg-muted/10 hover:bg-muted/40 transition-colors\"\n            >\n              <div className=\"h-10 w-10 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center shrink-0\">\n                {link.icon}\n              </div>\n              <div>\n                <h5 className=\"text-sm font-bold text-foreground\">{link.title}</h5>\n                <p className=\"text-xs text-muted-foreground mt-1 leading-normal\">{link.desc}</p>\n              </div>\n            </a>\n          ))}\n        </div>\n      )}\n\n      <style>{`\n        @keyframes slide-down {\n          from {\n            opacity: 0;\n            transform: translateY(-8px);\n          }\n          to {\n            opacity: 1;\n            transform: translateY(0);\n          }\n        }\n      `}</style>\n    </nav>\n  );\n}",
+    "tags": [
+      "navbar",
+      "megamenu",
+      "flowbite",
+      "navigation",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "21st.dev AI Prompt Diff View",
+    "description": "An interactive code/text diff viewer displaying additions and removals side-by-side or stacked, inspired by community agent elements.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { FileCode2, GitMerge } from 'lucide-react';\n\nexport function PromptDiffView() {\n  const [isSplit, setIsSplit] = useState(true);\n\n  const diffLines = [\n    { type: \"rem\", text: \"- cargo build\" },\n    { type: \"add\", text: \"+ cargo build --release\" },\n    { type: \"unchanged\", text: \"  cargo test\" }\n  ];\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto border border-border bg-card rounded-2xl overflow-hidden shadow-xl text-foreground\">\n      {/* Diff Header Controls */}\n      <div className=\"flex items-center justify-between p-4 border-b border-border bg-muted/20\">\n        <div className=\"flex items-center gap-2\">\n          <FileCode2 className=\"h-5 w-5 text-primary\" />\n          <span className=\"text-sm font-bold tracking-tight\">Execution Command Diff</span>\n        </div>\n        \n        <button\n          onClick={() => setIsSplit(!isSplit)}\n          className=\"flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-xs font-semibold hover:bg-muted transition-colors\"\n        >\n          <GitMerge className=\"h-3.5 w-3.5\" />\n          <span>{isSplit ? \"Unified View\" : \"Split View\"}</span>\n        </button>\n      </div>\n\n      {/* Diff Code Window */}\n      <div className=\"p-4 bg-neutral-950 font-mono text-xs overflow-x-auto\">\n        {isSplit ? (\n          <div className=\"grid grid-cols-2 gap-4 divide-x divide-white/5\">\n            {/* Left Column (Removals) */}\n            <div className=\"space-y-1.5\">\n              <span className=\"text-[10px] text-muted-foreground uppercase font-bold tracking-wider block mb-2\">Original</span>\n              {diffLines.filter((l) => l.type !== \"add\").map((l, i) => (\n                <div key={i} className={`p-1 rounded ${l.type === \"rem\" ? 'bg-rose-500/10 text-rose-400 border-l-2 border-rose-500' : 'text-neutral-500'}`}>\n                  {l.text}\n                </div>\n              ))}\n            </div>\n            {/* Right Column (Additions) */}\n            <div className=\"space-y-1.5 pl-4\">\n              <span className=\"text-[10px] text-muted-foreground uppercase font-bold tracking-wider block mb-2\">Revised</span>\n              {diffLines.filter((l) => l.type !== \"rem\").map((l, i) => (\n                <div key={i} className={`p-1 rounded ${l.type === \"add\" ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-500' : 'text-neutral-500'}`}>\n                  {l.text}\n                </div>\n              ))}\n            </div>\n          </div>\n        ) : (\n          <div className=\"space-y-1.5\">\n            {diffLines.map((line, idx) => (\n              <div \n                key={idx}\n                className={`p-1.5 rounded border-l-2 ${\n                  line.type === \"add\"\n                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500'\n                    : line.type === \"rem\"\n                    ? 'bg-rose-500/10 text-rose-400 border-rose-500'\n                    : 'text-neutral-400 border-transparent'\n                }`}\n              >\n                {line.text}\n              </div>\n            ))}\n          </div>\n        )}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "diff",
+      "code",
+      "agent",
+      "21stdev",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

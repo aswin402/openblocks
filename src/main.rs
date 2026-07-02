@@ -140,6 +140,10 @@ async fn main() -> Result<()> {
             let shadcn_space_count = db.seed_from_file("data/shadcn_space_components.json")?;
             eprintln!("Seeded {} Shadcn Space Templates & Dashboards", shadcn_space_count);
 
+            tracing::info!("Seeding database with blocks.so, Flowbite React & 21st.dev components...");
+            let blocks_so_count = db.seed_from_file("data/blocks_so_components.json")?;
+            eprintln!("Seeded {} blocks.so, Flowbite React & 21st.dev components", blocks_so_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
