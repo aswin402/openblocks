@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **Premium Scraped Website Components**: Added `data/premium_scraped_components.json` containing 60 highly premium elements direct from investigated platforms: Flowbite React (Sidebars, Carousels), 21st.dev (AI Chat prompt input widgets, auth blocks), Aceternity UI (Bento card grids, overlays), SvelteBits (elastic accordions, scramble codes), and Motion.dev (tickers).
 - **Extra Rich UI Elements**: Added `data/extra_rich_components.json` containing 4 premium components (Flowbite React Custom Chronological Timeline, 21st.dev AI Tool Call Execution Simulator, yui540 comimi Single Page Slide Reader, and Fontshare Typography Pair Matcher).
 - **Expanded Color Palettes**: Added 5 new premium color palettes inspired by design ecosystems (Bauhaus Modernism, Fontshare Editorial, LiveKit Aura, Aceternity Dark, Muted Autumn).
 - **Motion & SvelteBits Components**: Added `data/motion_svelte_components.json` containing 2 premium components (Motion Expanding Modal Overlay and SvelteBits Decrypted Text Effect).

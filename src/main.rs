@@ -160,6 +160,10 @@ async fn main() -> Result<()> {
             let generated_count = db.seed_from_file("data/generated_components.json")?;
             eprintln!("Seeded {} generated premium components", generated_count);
 
+            tracing::info!("Seeding database with premium scraped website components...");
+            let premium_scraped_count = db.seed_from_file("data/premium_scraped_components.json")?;
+            eprintln!("Seeded {} premium scraped website components", premium_scraped_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);

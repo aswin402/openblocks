@@ -1,0 +1,1048 @@
+[
+  {
+    "name": "Flowbite React Sidebar Dropdown Navigation",
+    "description": "A responsive sidebar navigation menu featuring expandable multi-level dropdown submenus, status indicators, and notification badges.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown, ChevronUp, Home, Inbox, LogOut, Settings, ShoppingBag, Users } from 'lucide-react';\n\nexport function FlowbiteSidebar() {\n  const [isProductsOpen, setIsProductsOpen] = useState(false);\n\n  return (\n    <aside className=\"w-64 h-screen border-r border-border bg-card text-card-foreground flex flex-col justify-between p-4\">\n      <div className=\"space-y-6\">\n        <div className=\"flex items-center gap-2.5 px-2\">\n          <span className=\"h-7 w-7 rounded-lg bg-primary\" />\n          <span className=\"font-extrabold tracking-tight text-foreground\">Flowbite React</span>\n        </div>\n\n        <nav className=\"space-y-1.5\">\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold bg-primary/10 text-primary transition-colors\">\n            <Home className=\"h-4.5 w-4.5\" />\n            <span>Dashboard</span>\n          </button>\n\n          {/* Expandable Dropdown */}\n          <div>\n            <button \n              onClick={() => setIsProductsOpen(!isProductsOpen)}\n              className=\"flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\"\n            >\n              <div className=\"flex items-center gap-3\">\n                <ShoppingBag className=\"h-4.5 w-4.5\" />\n                <span>E-Commerce</span>\n              </div>\n              {isProductsOpen ? <ChevronUp className=\"h-4 w-4\" /> : <ChevronDown className=\"h-4 w-4\" />}\n            </button>\n            {isProductsOpen && (\n              <div className=\"pl-10 pr-2 py-1.5 space-y-1\">\n                <a href=\"#products\" className=\"block text-xs py-1.5 text-muted-foreground hover:text-foreground\">Products</a>\n                <a href=\"#billing\" className=\"block text-xs py-1.5 text-muted-foreground hover:text-foreground\">Billing</a>\n                <a href=\"#invoice\" className=\"block text-xs py-1.5 text-muted-foreground hover:text-foreground\">Invoice</a>\n              </div>\n            )}\n          </div>\n\n          <button className=\"flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n            <div className=\"flex items-center gap-3\">\n              <Inbox className=\"h-4.5 w-4.5\" />\n              <span>Inbox</span>\n            </div>\n            <span className=\"bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full\">14</span>\n          </button>\n\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n            <Users className=\"h-4.5 w-4.5\" />\n            <span>Users</span>\n          </button>\n        </nav>\n      </div>\n\n      <div className=\"space-y-1\">\n        <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n          <Settings className=\"h-4.5 w-4.5\" />\n          <span>Settings</span>\n        </button>\n        <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-rose-500 hover:bg-rose-500/10 transition-colors\">\n          <LogOut className=\"h-4.5 w-4.5\" />\n          <span>Sign Out</span>\n        </button>\n      </div>\n    </aside>\n  );\n}",
+    "tags": [
+      "sidebar",
+      "navigation",
+      "flowbite",
+      "dropdown",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Custom Slider Carousel",
+    "description": "An interactive slideshow carousel component with dot indicators, play/pause controls, and sliding transitions.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState, useEffect } from 'react';\nimport { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';\n\nexport function FlowbiteCarousel() {\n  const slides = [\n    { title: \"Fluid Web Interfaces\", desc: \"Crafting beautiful components with React\", color: \"bg-gradient-to-tr from-sky-500 to-indigo-600\" },\n    { title: \"High-Interaction UI\", desc: \"Engaging layouts with premium animations\", color: \"bg-gradient-to-tr from-purple-500 to-pink-600\" },\n    { title: \"Sleek SaaS Dashboard Templates\", desc: \"Ready-to-use admin shells\", color: \"bg-gradient-to-tr from-emerald-500 to-cyan-600\" }\n  ];\n  const [curr, setCurr] = useState(0);\n  const [isPlaying, setIsPlaying] = useState(true);\n\n  useEffect(() => {\n    if (!isPlaying) return;\n    const interval = setInterval(() => {\n      setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));\n    }, 4000);\n    return () => clearInterval(interval);\n  }, [isPlaying]);\n\n  return (\n    <div className=\"relative w-full max-w-xl mx-auto overflow-hidden rounded-3xl aspect-[16/9] shadow-2xl\">\n      {/* Slides Container */}\n      <div \n        className=\"flex transition-transform duration-700 ease-out h-full\"\n        style={{ transform: `translateX(-${curr * 100}%)` }}\n      >\n        {slides.map((slide, idx) => (\n          <div key={idx} className={`w-full h-full shrink-0 flex flex-col justify-end p-8 text-white ${slide.color}`}>\n            <h3 className=\"text-2xl font-extrabold tracking-tight\">{slide.title}</h3>\n            <p className=\"text-sm text-white/80 mt-2\">{slide.desc}</p>\n          </div>\n        ))}\n      </div>\n\n      {/* Nav Controls */}\n      <button \n        onClick={() => setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1))}\n        className=\"absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all\"\n      >\n        <ChevronLeft className=\"h-5 w-5\" />\n      </button>\n      <button \n        onClick={() => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1))}\n        className=\"absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all\"\n      >\n        <ChevronRight className=\"h-5 w-5\" />\n      </button>\n\n      {/* Play/Pause Control */}\n      <button \n        onClick={() => setIsPlaying(!isPlaying)}\n        className=\"absolute bottom-4 right-4 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all\"\n      >\n        {isPlaying ? <Pause className=\"h-4 w-4\" /> : <Play className=\"h-4 w-4\" />}\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "carousel",
+      "slider",
+      "flowbite",
+      "interactive",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "21st.dev AI Chat Prompt Input with Actions",
+    "description": "An interactive, expandable AI prompt text input element featuring file attachments, system instructions, and token metrics.",
+    "category": "input",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Paperclip, Send, Sparkles, Terminal } from 'lucide-react';\n\nexport function AIChatPromptInput() {\n  const [prompt, setPrompt] = useState(\"\");\n  const characterLimit = 400;\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto border border-border bg-card rounded-2xl shadow-xl p-4 space-y-4\">\n      {/* Prompt Area */}\n      <div className=\"relative border border-border/80 focus-within:border-primary/80 focus-within:ring-2 focus-within:ring-primary/20 rounded-xl bg-background transition-all\">\n        <textarea \n          value={prompt}\n          onChange={(e) => setPrompt(e.target.value.slice(0, characterLimit))}\n          placeholder=\"Ask the AI coder to build a component...\"\n          rows={3}\n          className=\"w-full p-4 bg-transparent text-sm focus:outline-none resize-none placeholder-muted-foreground text-foreground\"\n        />\n        <div className=\"flex items-center justify-between p-3 border-t border-border/40 bg-muted/10\">\n          <div className=\"flex items-center gap-1.5\">\n            <button className=\"p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-all\">\n              <Paperclip className=\"h-4 w-4\" />\n            </button>\n            <button className=\"p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-all flex items-center gap-1.5 text-[10px] font-bold uppercase\">\n              <Sparkles className=\"h-3.5 w-3.5 text-primary\" />\n              <span>Select Template</span>\n            </button>\n          </div>\n\n          <div className=\"flex items-center gap-3\">\n            <span className=\"text-[10px] text-muted-foreground font-mono\">\n              {prompt.length}/{characterLimit}\n            </span>\n            <button \n              disabled={!prompt.trim()}\n              className=\"p-2.5 rounded-lg bg-primary hover:bg-primary/95 text-primary-foreground transition-all disabled:opacity-40\"\n            >\n              <Send className=\"h-4 w-4\" />\n            </button>\n          </div>\n        </div>\n      </div>\n\n      {/* Suggested Chips */}\n      <div className=\"flex flex-wrap gap-2\">\n        {[\"Add glow effect\", \"Make Svelte 5\", \"WebGL Particles\"].map((chip) => (\n          <button \n            key={chip}\n            onClick={() => setPrompt(chip)}\n            className=\"px-3 py-1.5 rounded-lg border border-border bg-muted/30 hover:bg-muted hover:text-foreground text-[10px] font-semibold text-muted-foreground transition-all\"\n          >\n            {chip}\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "chat",
+      "prompt",
+      "input",
+      "ai",
+      "21stdev",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity UI Animated Card Hover Grid",
+    "description": "An interactive bento-grid of cards featuring a modern hover-effect outline and glowing radial background highlighting.",
+    "category": "grid",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Code2, Compass, Layers } from 'lucide-react';\n\nexport function CardHoverGrid() {\n  const cards = [\n    { title: \"Development Tools\", desc: \"MCP servers bridging AI assistants directly with systems.\", icon: <Code2 className=\"h-5 w-5 text-primary\" /> },\n    { title: \"Navigation Architecture\", desc: \"Build rich responsive menus and sidebars cleanly.\", icon: <Compass className=\"h-5 w-5 text-primary\" /> },\n    { title: \"Component Sandbox\", desc: \"Fuzzy search and export over 700 components.\", icon: <Layers className=\"h-5 w-5 text-primary\" /> }\n  ];\n  const [hoveredIdx, setHoveredIdx] = useState(null);\n\n  return (\n    <div className=\"grid md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto p-4 bg-background text-foreground\">\n      {cards.map((card, idx) => (\n        <div \n          key={idx}\n          onMouseEnter={() => setHoveredIdx(idx)}\n          onMouseLeave={() => setHoveredIdx(null)}\n          className=\"relative group block p-6 h-full w-full border border-border bg-card rounded-2xl overflow-hidden cursor-default transition-all duration-300\"\n        >\n          {/* Animated Glow Backdrop */}\n          {hoveredIdx === idx && (\n            <span className=\"absolute inset-0 h-full w-full bg-primary/5 rounded-2xl blur-md scale-95 transition-all duration-300\" />\n          )}\n\n          <div className=\"relative z-10 flex flex-col gap-4\">\n            <div className=\"h-10 w-10 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center\">\n              {card.icon}\n            </div>\n            <div>\n              <h4 className=\"text-sm font-bold text-foreground\">{card.title}</h4>\n              <p className=\"text-xs text-muted-foreground mt-2 leading-relaxed\">{card.desc}</p>\n            </div>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "bento",
+      "grid",
+      "hover",
+      "glow",
+      "aceternity",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Animated Elastic Accordion",
+    "description": "An interactive accordion container showcasing smooth elastic spring height expand animations upon title selection.",
+    "category": "accordion",
+    "framework": "css",
+    "code": "<div class=\"elastic-accordion\">\n  <div class=\"accordion-item\">\n    <input type=\"checkbox\" id=\"acc-toggle-1\" class=\"acc-checkbox\">\n    <label for=\"acc-toggle-1\" class=\"acc-label\">\n      <span>SvelteBits Integration</span>\n      <span class=\"acc-icon\">+</span>\n    </label>\n    <div class=\"acc-content\">\n      <p>SvelteBits provides over 130 components specifically built for Svelte 5 utilizing Tailwind CSS for beautiful styling.</p>\n    </div>\n  </div>\n\n  <div class=\"accordion-item\">\n    <input type=\"checkbox\" id=\"acc-toggle-2\" class=\"acc-checkbox\">\n    <label for=\"acc-toggle-2\" class=\"acc-label\">\n      <span>Svelte 5 Reactive Features</span>\n      <span class=\"acc-icon\">+</span>\n    </label>\n    <div class=\"acc-content\">\n      <p>Utilize modern Svelte runes like $state and $derived to bind values with minimal compile overhead.</p>\n    </div>\n  </div>\n</div>\n\n<style>\n.elastic-accordion {\n  width: 100%;\n  max-width: 450px;\n  margin: 0 auto;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  background: #09090b;\n  border-radius: 1rem;\n  overflow: hidden;\n  font-family: system-ui, sans-serif;\n  color: #ffffff;\n}\n\n.accordion-item {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n}\n\n.accordion-item:last-child {\n  border-bottom: none;\n}\n\n.acc-checkbox {\n  display: none;\n}\n\n.acc-label {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem;\n  font-size: 0.875rem;\n  font-weight: 700;\n  cursor: pointer;\n  background: transparent;\n  transition: background 0.2s;\n  user-select: none;\n}\n\n.acc-label:hover {\n  background: rgba(255, 255, 255, 0.02);\n}\n\n.acc-icon {\n  font-size: 1.125rem;\n  color: #00adb5;\n  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);\n}\n\n.acc-content {\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s;\n  padding: 0 1.25rem;\n  background: rgba(0, 0, 0, 0.2);\n}\n\n.acc-content p {\n  font-size: 0.75rem;\n  color: #a1a1aa;\n  line-height: 1.5;\n  margin: 0;\n}\n\n/* Open Accordion State */\n.acc-checkbox:checked ~ .acc-content {\n  max-height: 100px;\n  padding: 1.25rem;\n}\n\n.acc-checkbox:checked ~ .acc-label .acc-icon {\n  transform: rotate(45deg);\n  color: #ffffff;\n}\n</style>",
+    "tags": [
+      "accordion",
+      "sveltebits",
+      "elastic",
+      "animation",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Motion.dev Infinite Slider Ticker",
+    "description": "An infinite marquee ticker displaying client logs or sponsor brands with continuous velocity based on Framer Motion.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"ticker-wrapper\">\n  <div class=\"ticker-content\">\n    <span>SHADCN UI</span>\n    <span>\u2022</span>\n    <span>ACETERNITY UI</span>\n    <span>\u2022</span>\n    <span>MAGIC UI</span>\n    <span>\u2022</span>\n    <span>FLOWBITE REACT</span>\n    <span>\u2022</span>\n    <span>SVELTE BITS</span>\n    <span>\u2022</span>\n  </div>\n</div>\n\n<style>\n.ticker-wrapper {\n  width: 100%;\n  overflow: hidden;\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n  border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n  background: #09090b;\n  padding: 1rem 0;\n  display: flex;\n  align-items: center;\n}\n\n.ticker-content {\n  display: flex;\n  gap: 2rem;\n  white-space: nowrap;\n  animation: ticker-slide 20s linear infinite;\n  font-family: monospace;\n  font-size: 0.75rem;\n  font-weight: 700;\n  color: #a1a1aa;\n}\n\n@keyframes ticker-slide {\n  from { transform: translateX(0); }\n  to { transform: translateX(-50%); }\n}\n</style>",
+    "tags": [
+      "ticker",
+      "marquee",
+      "motion",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "Flowbite React Accordion Variant 1",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 1.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV1() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 1</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant1",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 2",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 2.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-2\">\n  <h4 class=\"scramble-txt-2\">RUNNING WORKER 2</h4>\n</div>\n<style>\n.scramble-box-2 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-2 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant2",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 3",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 3.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV3() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 3</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant3",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 4",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 4.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV4() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant4",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 5",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 5.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV5() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 5</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant5",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 6",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 6.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV6() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 6</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant6",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 7",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 7.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-7\">\n  <h4 class=\"scramble-txt-7\">RUNNING WORKER 7</h4>\n</div>\n<style>\n.scramble-box-7 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-7 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant7",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 8",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 8.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV8() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 8</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant8",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 9",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 9.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV9() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant9",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 10",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 10.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV10() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 10</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant10",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 11",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 11.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV11() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 11</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant11",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 12",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 12.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-12\">\n  <h4 class=\"scramble-txt-12\">RUNNING WORKER 12</h4>\n</div>\n<style>\n.scramble-box-12 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-12 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant12",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 13",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 13.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV13() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 13</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant13",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 14",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 14.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV14() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant14",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 15",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 15.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV15() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 15</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant15",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 16",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 16.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV16() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 16</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant16",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 17",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 17.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-17\">\n  <h4 class=\"scramble-txt-17\">RUNNING WORKER 17</h4>\n</div>\n<style>\n.scramble-box-17 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-17 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant17",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 18",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 18.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV18() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 18</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant18",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 19",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 19.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV19() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant19",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 20",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 20.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV20() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 20</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant20",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 21",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 21.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV21() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 21</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant21",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 22",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 22.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-22\">\n  <h4 class=\"scramble-txt-22\">RUNNING WORKER 22</h4>\n</div>\n<style>\n.scramble-box-22 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-22 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant22",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 23",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 23.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV23() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 23</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant23",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 24",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 24.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV24() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant24",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 25",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 25.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV25() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 25</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant25",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 26",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 26.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV26() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 26</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant26",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 27",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 27.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-27\">\n  <h4 class=\"scramble-txt-27\">RUNNING WORKER 27</h4>\n</div>\n<style>\n.scramble-box-27 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-27 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant27",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 28",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 28.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV28() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 28</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant28",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 29",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 29.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV29() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant29",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 30",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 30.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV30() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 30</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant30",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 31",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 31.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV31() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 31</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant31",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 32",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 32.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-32\">\n  <h4 class=\"scramble-txt-32\">RUNNING WORKER 32</h4>\n</div>\n<style>\n.scramble-box-32 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-32 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant32",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 33",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 33.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV33() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 33</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant33",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 34",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 34.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV34() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant34",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 35",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 35.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV35() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 35</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant35",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 36",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 36.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV36() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 36</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant36",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 37",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 37.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-37\">\n  <h4 class=\"scramble-txt-37\">RUNNING WORKER 37</h4>\n</div>\n<style>\n.scramble-box-37 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-37 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant37",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 38",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 38.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV38() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 38</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant38",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 39",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 39.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV39() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant39",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 40",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 40.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV40() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 40</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant40",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 41",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 41.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV41() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 41</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant41",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 42",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 42.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-42\">\n  <h4 class=\"scramble-txt-42\">RUNNING WORKER 42</h4>\n</div>\n<style>\n.scramble-box-42 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-42 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant42",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 43",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 43.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV43() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 43</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant43",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 44",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 44.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV44() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant44",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 45",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 45.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV45() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 45</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant45",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 46",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 46.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV46() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 46</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant46",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 47",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 47.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-47\">\n  <h4 class=\"scramble-txt-47\">RUNNING WORKER 47</h4>\n</div>\n<style>\n.scramble-box-47 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-47 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant47",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 48",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 48.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV48() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 48</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant48",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 49",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 49.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV49() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant49",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Style Bento Card Variant 50",
+    "description": "A responsive, modern visual grid block detailing SaaS data metrics with hover card glows, Variant 50.",
+    "category": "card",
+    "framework": "react",
+    "code": "export function BentoCardV50() {\n  return (\n    <div className=\"relative group p-6 rounded-2xl border border-border bg-card hover:bg-muted/30 transition-all duration-300 overflow-hidden\">\n      <div className=\"absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-500\" />\n      <span className=\"text-[10px] font-bold text-muted-foreground uppercase\">Metrics Segment</span>\n      <h3 className=\"text-xl font-extrabold text-foreground mt-2\">Data Flow 50</h3>\n      <p className=\"text-xs text-muted-foreground mt-1 leading-relaxed\">\n        High-interaction components tracking performance and local CPU thread operations.\n      </p>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "bento",
+      "aceternity",
+      "variant50",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Flowbite React Accordion Variant 51",
+    "description": "A responsive collasping accordion questions item designed with custom borders, Variant 51.",
+    "category": "accordion",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function FlowbiteAccordionV51() {\n  const [open, setOpen] = useState(false);\n  return (\n    <div className=\"border-b border-border py-4 w-full max-w-md mx-auto\">\n      <button \n        onClick={() => setOpen(!open)}\n        className=\"flex items-center justify-between w-full text-sm font-bold text-left text-foreground\"\n      >\n        <span>Security Layer Check 51</span>\n        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />\n      </button>\n      {open && (\n        <p className=\"text-xs text-muted-foreground mt-2.5 leading-relaxed\">\n          Verify localized connections safely inside the stdio runner. All SQLite logs are structured.\n        </p>\n      )}\n    </div>\n  );\n}",
+    "tags": [
+      "accordion",
+      "flowbite",
+      "variant51",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "SvelteBits Scramble Code Variant 52",
+    "description": "A scramble-effect character decoding visual title designed for technical layouts, Variant 52.",
+    "category": "other",
+    "framework": "css",
+    "code": "<div class=\"scramble-box-52\">\n  <h4 class=\"scramble-txt-52\">RUNNING WORKER 52</h4>\n</div>\n<style>\n.scramble-box-52 {\n  padding: 1.5rem;\n  background: #09090b;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 0.75rem;\n  text-align: center;\n  font-family: monospace;\n}\n.scramble-txt-52 {\n  font-size: 1rem;\n  color: #00adb5;\n  letter-spacing: 0.1em;\n  margin: 0;\n}\n</style>",
+    "tags": [
+      "scramble",
+      "text",
+      "sveltebits",
+      "variant52",
+      "css"
+    ],
+    "dependencies": []
+  },
+  {
+    "name": "21st.dev Auth Form Block Variant 53",
+    "description": "A responsive registration inputs panel with check validation outline, Variant 53.",
+    "category": "auth",
+    "framework": "react",
+    "code": "export function AuthBlockV53() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-card p-6 rounded-2xl shadow-lg space-y-4\">\n      <h4 className=\"font-bold text-foreground\">SaaS Validation 53</h4>\n      <input \n        type=\"password\" \n        placeholder=\"Enter credentials\" \n        className=\"w-full p-2.5 bg-muted border border-border rounded-xl text-xs text-foreground focus:outline-none\"\n      />\n      <button className=\"w-full py-2.5 bg-primary text-primary-foreground text-xs font-semibold rounded-xl\">\n        Authorize Session\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "form",
+      "21stdev",
+      "variant53",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion.dev Animated Tab Menu Variant 54",
+    "description": "An interactive sliding overlay bar highlighting active menu sections, Variant 54.",
+    "category": "navbar",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function TabMenuV54() {\n  const tabs = [\"Code\", \"Database\", \"Server\"];\n  const [active, setActive] = useState(\"Code\");\n\n  return (\n    <div className=\"flex items-center gap-2 bg-muted/60 border border-border p-1.5 rounded-xl w-fit mx-auto\">\n      {tabs.map((tab) => (\n        <button\n          key={tab}\n          onClick={() => setActive(tab)}\n          className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${\n            active === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'\n          }`}\n        >\n          {tab}\n        </button>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "tabs",
+      "navigation",
+      "motion",
+      "variant54",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
