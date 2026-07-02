@@ -111,11 +111,13 @@
     </g>
   </g>
 
-  <!-- Typography -->
-  <g class="title-group" transform="translate(280, 110)">
-    <!-- Main Title -->
-    <text class="text-title" x="0" y="20">Open<tspan fill="url(#grad1)">Blocks</tspan></text>
-    <!-- Subtitle -->
-    <text class="text-subtitle" x="5" y="60">Rust-Native MCP Server for Web Development</text>
+  <!-- Typography with layout wrap to prevent CSS animation override cut-offs -->
+  <g transform="translate(280, 100)">
+    <g class="title-group">
+      <!-- Main Title -->
+      <text class="text-title" x="0" y="20">Open<tspan fill="url(#grad1)">Blocks</tspan></text>
+      <!-- Subtitle -->
+      <text class="text-subtitle" x="5" y="60">Rust-Native MCP Server for Web Development</text>
+    </g>
   </g>
 </svg>
