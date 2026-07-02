@@ -1,0 +1,59 @@
+[
+  {
+    "name": "LiveKit Agents UI Live Audio Speech Visualizer",
+    "description": "An interactive WebGL/SVG voice waveform visualizer supporting simulated voice speech, agent response thinking states, and track toggles.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useEffect, useState } from 'react';\nimport { Mic, MicOff, Volume2 } from 'lucide-react';\n\nexport function AudioSpeechVisualizer() {\n  const [state, setState] = useState(\"thinking\"); // listening, thinking, speaking, muted\n  const [bars, setBars] = useState(Array(15).fill(20));\n\n  useEffect(() => {\n    if (state === \"muted\") {\n      setBars(Array(15).fill(4));\n      return;\n    }\n\n    const interval = setInterval(() => {\n      setBars((prev) => \n        prev.map(() => {\n          if (state === \"thinking\") {\n            // Slow pulsing waves\n            return Math.sin(Date.now() / 200) * 10 + 20;\n          }\n          // Active dynamic speech waves\n          return Math.random() * 40 + 8;\n        })\n      );\n    }, 100);\n\n    return () => clearInterval(interval);\n  }, [state]);\n\n  return (\n    <div className=\"w-full max-w-sm mx-auto border border-border bg-[#09090b] text-white p-6 rounded-2xl shadow-xl flex flex-col items-center justify-between\">\n      {/* Agent Voice Status Header */}\n      <div className=\"flex items-center justify-between w-full mb-6\">\n        <div className=\"flex items-center gap-2\">\n          <span className={`h-2.5 w-2.5 rounded-full ${state === 'listening' ? 'bg-emerald-500 animate-ping' : 'bg-primary'}`} />\n          <span className=\"text-xs font-semibold uppercase tracking-wider text-muted-foreground\">Agent Voice Session</span>\n        </div>\n        <span className=\"text-xs text-neutral-400 capitalize\">{state}</span>\n      </div>\n\n      {/* Animated Waveform Bars */}\n      <div className=\"flex items-center justify-center gap-1.5 h-32 w-full mb-8\">\n        {bars.map((height, i) => (\n          <span \n            key={i}\n            style={{ height: `${height}px` }}\n            className={`w-1 rounded-full transition-all duration-100 ${\n              state === \"muted\"\n                ? 'bg-neutral-800'\n                : state === \"speaking\"\n                ? 'bg-[#00adb5]'\n                : 'bg-primary/60'\n            }`}\n          />\n        ))}\n      </div>\n\n      {/* Interactive Controls */}\n      <div className=\"flex items-center justify-center gap-4 border-t border-white/5 pt-6 w-full\">\n        <button \n          onClick={() => setState(state === \"muted\" ? \"listening\" : \"muted\")}\n          className={`p-3 rounded-full border transition-all ${state === \"muted\" ? 'bg-rose-500/20 border-rose-500 text-rose-500' : 'bg-neutral-900 border-white/10 hover:bg-neutral-800 text-muted-foreground'}`}\n        >\n          {state === \"muted\" ? <MicOff className=\"h-5 w-5\" /> : <Mic className=\"h-5 w-5\" />}\n        </button>\n        \n        <button \n          onClick={() => setState(state === \"speaking\" ? \"listening\" : \"speaking\")}\n          className={`px-5 py-2.5 rounded-xl border text-xs font-bold transition-all border-white/10 bg-neutral-900 hover:bg-neutral-800 flex items-center gap-2 text-white`}\n        >\n          <Volume2 className=\"h-4 w-4 text-primary\" />\n          <span>Simulate Reply</span>\n        </button>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "livekit",
+      "voice",
+      "visualizer",
+      "waveform",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Fontshare Typeface Tester Playground",
+    "description": "An interactive font sandbox permitting custom phrase entry, weight/size tweaking, and typography layout testing.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Type } from 'lucide-react';\n\nexport function FontsharePlayground() {\n  const [text, setText] = useState(\"Beautiful typography empowers visual design stories.\");\n  const [fontSize, setFontSize] = useState(24);\n  const [fontWeight, setFontWeight] = useState(400);\n  const [fontFamily, setFontFamily] = useState(\"sans-serif\");\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl space-y-6\">\n      {/* Controls Bar */}\n      <div className=\"grid grid-cols-3 gap-4 border-b border-border pb-6\">\n        <div>\n          <label className=\"text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">Font Family</label>\n          <select \n            value={fontFamily}\n            onChange={(e) => setFontFamily(e.target.value)}\n            className=\"w-full mt-1.5 p-2 bg-muted border border-border rounded-xl text-xs focus:outline-none text-foreground\"\n          >\n            <option value=\"sans-serif\">System Sans</option>\n            <option value=\"serif\">System Serif</option>\n            <option value=\"monospace\">System Monospace</option>\n          </select>\n        </div>\n\n        <div>\n          <label className=\"text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">Size ({fontSize}px)</label>\n          <input \n            type=\"range\" \n            min=\"16\" \n            max=\"64\" \n            value={fontSize} \n            onChange={(e) => setFontSize(Number(e.target.value))}\n            className=\"w-full mt-3 accent-primary cursor-pointer\"\n          />\n        </div>\n\n        <div>\n          <label className=\"text-[10px] font-bold text-muted-foreground uppercase tracking-wider\">Weight ({fontWeight})</label>\n          <input \n            type=\"range\" \n            min=\"300\" \n            max=\"900\" \n            step=\"100\" \n            value={fontWeight} \n            onChange={(e) => setFontWeight(Number(e.target.value))}\n            className=\"w-full mt-3 accent-primary cursor-pointer\"\n          />\n        </div>\n      </div>\n\n      {/* Text Tester Area */}\n      <div className=\"relative border border-border/80 bg-muted/20 p-6 rounded-xl min-h-[140px] flex items-center justify-center\">\n        <textarea \n          value={text}\n          onChange={(e) => setText(e.target.value)}\n          style={{\n            fontSize: `${fontSize}px`,\n            fontWeight: fontWeight,\n            fontFamily: fontFamily\n          }}\n          className=\"w-full bg-transparent resize-none border-none focus:outline-none text-center text-foreground\"\n        />\n        <div className=\"absolute bottom-3 right-3 flex items-center gap-1 text-[10px] text-muted-foreground\">\n          <Type className=\"h-3.5 w-3.5\" />\n          <span>Fontshare Sandbox</span>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "font",
+      "typeface",
+      "fontshare",
+      "sandbox",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "yui540 comimi Manga Comic Viewer",
+    "description": "An interactive manga panel viewer supporting split-page layouts, RTL reading directions, page scaling, and page navigation indicators.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { BookOpen, ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';\n\nexport function MangaViewer() {\n  const [currentPage, setCurrentPage] = useState(1);\n  const [isRTL, setIsRTL] = useState(true);\n  const totalPages = 8;\n\n  const nextPage = () => {\n    setCurrentPage((prev) => (isRTL ? Math.max(1, prev - 1) : Math.min(totalPages, prev + 1)));\n  };\n\n  const prevPage = () => {\n    setCurrentPage((prev) => (isRTL ? Math.min(totalPages, prev + 1) : Math.max(1, prev - 1)));\n  };\n\n  return (\n    <div className=\"w-full max-w-lg mx-auto border border-border bg-neutral-900 text-white rounded-2xl overflow-hidden shadow-2xl p-4\">\n      {/* Viewer Header Options */}\n      <div className=\"flex items-center justify-between border-b border-white/5 pb-3 mb-4\">\n        <div className=\"flex items-center gap-2\">\n          <BookOpen className=\"h-5 w-5 text-primary\" />\n          <span className=\"text-xs font-semibold\">Comimi Manga Sandbox</span>\n        </div>\n        \n        <button \n          onClick={() => setIsRTL(!isRTL)}\n          className=\"flex items-center gap-1.5 px-3 py-1 bg-white/5 hover:bg-white/10 rounded-lg text-xs transition-all\"\n        >\n          <RefreshCw className=\"h-3.5 w-3.5 text-primary\" />\n          <span>{isRTL ? \"RTL (Right to Left)\" : \"LTR (Left to Right)\"}</span>\n        </button>\n      </div>\n\n      {/* Comic Page Viewport Panels */}\n      <div className=\"relative aspect-[4/3] bg-neutral-950 rounded-xl overflow-hidden flex items-center justify-center border border-white/5\">\n        <div className=\"grid grid-cols-2 h-full w-full p-6 gap-3\">\n          {/* Page Panel Left */}\n          <div className=\"bg-neutral-800/40 border border-white/10 rounded-lg flex items-center justify-center text-center p-4\">\n            <div>\n              <span className=\"text-[10px] text-muted-foreground uppercase font-bold tracking-wider\">Page</span>\n              <h3 className=\"text-3xl font-extrabold text-white mt-1\">{currentPage}</h3>\n            </div>\n          </div>\n          {/* Page Panel Right */}\n          <div className=\"bg-neutral-800/40 border border-white/10 rounded-lg flex items-center justify-center text-center p-4\">\n            <div>\n              <span className=\"text-[10px] text-muted-foreground uppercase font-bold tracking-wider\">Page</span>\n              <h3 className=\"text-3xl font-extrabold text-white mt-1\">{currentPage + 1 <= totalPages ? currentPage + 1 : \"End\"}</h3>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      {/* Navigation Controls footer */}\n      <div className=\"flex items-center justify-between mt-4\">\n        <button \n          onClick={prevPage}\n          className=\"p-2 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white border border-white/10\"\n        >\n          <ChevronLeft className=\"h-5 w-5\" />\n        </button>\n        \n        <span className=\"text-xs text-neutral-400 font-mono\">Spread {currentPage} - {currentPage + 1 <= totalPages ? currentPage + 1 : totalPages} of {totalPages}</span>\n\n        <button \n          onClick={nextPage}\n          className=\"p-2 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-white border border-white/10\"\n        >\n          <ChevronRight className=\"h-5 w-5\" />\n        </button>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "manga",
+      "comic",
+      "viewer",
+      "comimi",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

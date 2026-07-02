@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **LiveKit, Fontshare & comimi Components**: Added `data/agents_font_components.json` containing 3 premium components (LiveKit Agents UI Live Audio Speech Visualizer, Fontshare Typeface Tester Playground, and yui540 comimi Manga Comic Viewer).
 - **blocks.so, Flowbite React & 21st.dev Components**: Added `data/blocks_so_components.json` containing 3 premium components (blocks.so SaaS Plan Approval Card, Flowbite React Mega Menu, and 21st.dev AI Prompt Diff View).
 - **Shadcn Space Templates & Dashboards**: Added `data/shadcn_space_components.json` containing 3 premium layouts (Shadcn Space Admin Dashboard Shell, Shadcn Space Analytics Card Grid, and Shadcn Space Multi-step Registration).
 - **Slider Revolution, Pioneer UI & UI-Layouts Components**: Added `data/layout_revolution_components.json` containing 3 premium layouts (Slider Revolution CSS Floating Bubbles Background, Pioneer UI Glassmorphic Particle Card, and UI-Layouts macOS Genie Minimize Effect).

@@ -144,6 +144,10 @@ async fn main() -> Result<()> {
             let blocks_so_count = db.seed_from_file("data/blocks_so_components.json")?;
             eprintln!("Seeded {} blocks.so, Flowbite React & 21st.dev components", blocks_so_count);
 
+            tracing::info!("Seeding database with LiveKit, Fontshare & comimi components...");
+            let agents_font_count = db.seed_from_file("data/agents_font_components.json")?;
+            eprintln!("Seeded {} LiveKit, Fontshare & comimi components", agents_font_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
