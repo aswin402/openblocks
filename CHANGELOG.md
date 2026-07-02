@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **Hover.dev, Landingfolio, FreeFrontend & DevSnap Components**: Added `data/interactive_effects_components.json` containing 4 premium components (Hover.dev Mouse Image Trail, Landingfolio Premium Pricing Deck, FreeFrontend Vector Wave Canvas, and DevSnap Sparticles Canvas Effect).
 - **DesignPrompts, ReUI, Magic UI & Aceternity Components**: Added `data/advanced_ui_components.json` containing 4 premium components (DesignPrompts Bauhaus Editorial Hero, ReUI Interactive Stepper, Magic UI Animated Beam, and Aceternity UI Text Generate Effect).
 - **MCP Prompts Support**: Implemented `list_prompts` and `get_prompt` protocols in the server handler, enabling client agents to request templated instructions for tasks like `build_landing_page` and `register_new_component`.
 - **Unit Test Coverage Expansion**: Added 6 new unit tests covering all database operations for palettes and gradients, raising overall code reliability.

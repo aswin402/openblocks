@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Hover.dev Mouse Image Trail",
+    "description": "An interactive container that spawns a trail of custom visual cards at the mouse cursor coordinates with staggered animation and automatic cleanup.",
+    "category": "section",
+    "framework": "react",
+    "code": "import { useRef, useState } from 'react';\n\nexport function MouseImageTrail() {\n  const containerRef = useRef(null);\n  const [items, setItems] = useState([]);\n  const lastMousePos = useRef({ x: 0, y: 0 });\n  const itemCounter = useRef(0);\n\n  const handleMouseMove = (e) => {\n    if (!containerRef.current) return;\n    const rect = containerRef.current.getBoundingClientRect();\n    const x = e.clientX - rect.left;\n    const y = e.clientY - rect.top;\n\n    const dist = Math.hypot(x - lastMousePos.current.x, y - lastMousePos.current.y);\n\n    // Spawn a new trail card every 60px of movement\n    if (dist > 60) {\n      lastMousePos.current = { x, y };\n      const id = itemCounter.current++;\n      \n      // Generate a random gradient color for the trail item card\n      const gradients = [\n        'from-pink-500 to-rose-500',\n        'from-purple-500 to-indigo-500',\n        'from-cyan-500 to-blue-500',\n        'from-emerald-500 to-teal-500',\n        'from-amber-500 to-orange-500'\n      ];\n      const randomGrad = gradients[id % gradients.length];\n\n      const newItem = {\n        id,\n        x,\n        y,\n        gradient: randomGrad,\n        rotation: (Math.random() - 0.5) * 30\n      };\n\n      setItems((prev) => [...prev, newItem]);\n\n      // Auto-cleanup after 800ms\n      setTimeout(() => {\n        setItems((prev) => prev.filter((item) => item.id !== id));\n      }, 800);\n    }\n  };\n\n  return (\n    <div\n      ref={containerRef}\n      onMouseMove={handleMouseMove}\n      className=\"relative h-[400px] w-full overflow-hidden rounded-2xl border border-border bg-neutral-950 flex items-center justify-center select-none cursor-crosshair\"\n    >\n      <div className=\"text-center z-10 pointer-events-none\">\n        <p className=\"text-xl font-bold tracking-tight text-white/90\">\n          Move mouse across this panel\n        </p>\n        <p className=\"text-xs text-neutral-500 mt-1\">\n          Generates a staggered gradient card trail\n        </p>\n      </div>\n\n      {/* Trail Cards Render */}\n      {items.map((item) => (\n        <div\n          key={item.id}\n          style={{\n            left: item.x,\n            top: item.y,\n            transform: `translate(-50%, -50%) rotate(${item.rotation}deg)`,\n            pointerEvents: 'none'\n          }}\n          className={`absolute h-20 w-16 rounded-xl border border-white/20 bg-gradient-to-br ${item.gradient} opacity-80 shadow-2xl animate-[trail-fade_0.8s_ease-out_forwards]`}\n        />\n      ))}\n\n      <style>{`\n        @keyframes trail-fade {\n          0% {\n            opacity: 0.8;\n            scale: 0.2;\n          }\n          20% {\n            opacity: 0.9;\n            scale: 1.05;\n          }\n          100% {\n            opacity: 0;\n            scale: 0.5;\n            transform: translate(-50%, -50%) translateY(40px) scale(0.5);\n          }\n        }\n      `}</style>\n    </div>\n  );\n}",
+    "tags": [
+      "trail",
+      "cursor",
+      "interactive",
+      "hoverdev",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Landingfolio Premium Pricing Deck",
+    "description": "A responsive business pricing layout containing monthly/yearly toggles, highlighted feature badges, detailed checklist icons, and custom call-to-actions.",
+    "category": "pricing",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Check, ShieldCheck } from 'lucide-react';\n\nexport function PremiumPricing() {\n  const [isYearly, setIsYearly] = useState(false);\n\n  const plans = [\n    {\n      name: \"Starter\",\n      desc: \"Perfect for testing and personal sandbox environments.\",\n      priceMonthly: 0,\n      priceYearly: 0,\n      features: [\n        \"1 Active workspace directory\",\n        \"1,000 Component views / mo\",\n        \"Fuzzy tag search filters\",\n        \"Community discord access\"\n      ],\n      cta: \"Start Sandbox\",\n      popular: false\n    },\n    {\n      name: \"Pro Developer\",\n      desc: \"Best for professional builders and creative freelancers.\",\n      priceMonthly: 29,\n      priceYearly: 19,\n      features: [\n        \"Unlimited workspaces\",\n        \"Full custom theme presets\",\n        \"Interactive MiniJinja templates\",\n        \"Prioritized component requests\",\n        \"24/7 Server diagnostic help\"\n      ],\n      cta: \"Go Pro Trial\",\n      popular: true\n    }\n  ];\n\n  return (\n    <div className=\"w-full max-w-5xl mx-auto py-12 px-4 bg-background text-foreground\">\n      {/* Period Toggle */}\n      <div className=\"text-center mb-12\">\n        <h2 className=\"text-3xl font-extrabold tracking-tight mb-4\">Simple, Transparent Pricing</h2>\n        <p className=\"text-muted-foreground mb-6\">Choose the plan that suits your development workflow.</p>\n        \n        <div className=\"inline-flex items-center gap-3 bg-muted p-1 rounded-full border border-border\">\n          <button\n            onClick={() => setIsYearly(false)}\n            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${\n              !isYearly ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground'\n            }`}\n          >\n            Monthly\n          </button>\n          <button\n            onClick={() => setIsYearly(true)}\n            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${\n              isYearly ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground'\n            }`}\n          >\n            Yearly (Save 30%)\n          </button>\n        </div>\n      </div>\n\n      {/* Pricing Cards Grid */}\n      <div className=\"grid md:grid-cols-2 gap-8 max-w-4xl mx-auto\">\n        {plans.map((plan) => {\n          const price = isYearly ? plan.priceYearly : plan.priceMonthly;\n          return (\n            <div\n              key={plan.name}\n              className={`relative flex flex-col justify-between border rounded-2xl p-8 bg-card shadow-lg transition-all duration-300 ${\n                plan.popular\n                  ? 'border-primary ring-2 ring-primary/10 scale-105'\n                  : 'border-border'\n              }`}\n            >\n              {plan.popular && (\n                <span className=\"absolute top-0 right-6 -translate-y-1/2 inline-flex items-center gap-1.5 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase rounded-full shadow-md\">\n                  <ShieldCheck className=\"h-3.5 w-3.5\" />\n                  Most Popular\n                </span>\n              )}\n\n              <div>\n                <h3 className=\"text-2xl font-bold tracking-tight text-foreground\">{plan.name}</h3>\n                <p className=\"text-sm text-muted-foreground mt-2 min-h-10\">{plan.desc}</p>\n                \n                <div className=\"mt-6 flex items-baseline gap-1\">\n                  <span className=\"text-4xl font-extrabold\">${price}</span>\n                  <span className=\"text-muted-foreground text-sm\">/ month</span>\n                </div>\n\n                <ul className=\"mt-8 space-y-4\">\n                  {plan.features.map((feat) => (\n                    <li key={feat} className=\"flex items-center gap-3 text-sm text-foreground/80\">\n                      <Check className=\"h-4 w-4 text-emerald-500 shrink-0\" />\n                      <span>{feat}</span>\n                    </li>\n                  ))}\n                </ul>\n              </div>\n\n              <button\n                className={`w-full mt-8 py-3 px-4 rounded-xl text-sm font-semibold transition-all ${\n                  plan.popular\n                    ? 'bg-primary hover:bg-primary/95 text-primary-foreground shadow-md shadow-primary/10'\n                    : 'bg-muted hover:bg-muted/80 text-foreground border border-border'\n                }`}\n              >\n                {plan.cta}\n              </button>\n            </div>\n          );\n        })}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "pricing",
+      "card",
+      "landingfolio",
+      "billing",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "FreeFrontend Vector Wave Canvas",
+    "description": "An automated background rendering overlapping, smooth vector sine waves using HTML5 Canvas coordinates, simulating flowing fluids.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useEffect, useRef } from 'react';\n\nexport function VectorWaveCanvas() {\n  const canvasRef = useRef(null);\n\n  useEffect(() => {\n    const canvas = canvasRef.current;\n    if (!canvas) return;\n    const ctx = canvas.getContext('2d');\n    let animationFrameId;\n\n    const resizeCanvas = () => {\n      canvas.width = canvas.parentElement.clientWidth;\n      canvas.height = canvas.parentElement.clientHeight || 300;\n    };\n    resizeCanvas();\n    window.addEventListener('resize', resizeCanvas);\n\n    let step = 0;\n    const render = () => {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      // Draw three wave layers with varying attributes\n      drawWave(ctx, canvas.width, canvas.height, step, 50, 'rgba(0, 173, 181, 0.15)', 0.005);\n      drawWave(ctx, canvas.width, canvas.height, step + 100, 70, 'rgba(0, 173, 181, 0.08)', 0.003);\n      drawWave(ctx, canvas.width, canvas.height, step + 200, 30, 'rgba(0, 173, 181, 0.2)', 0.007);\n\n      step += 1;\n      animationFrameId = requestAnimationFrame(render);\n    };\n    render();\n\n    return () => {\n      cancelAnimationFrame(animationFrameId);\n      window.removeEventListener('resize', resizeCanvas);\n    };\n  }, []);\n\n  const drawWave = (ctx, w, h, step, amplitude, fillStyle, frequency) => {\n    ctx.beginPath();\n    ctx.moveTo(0, h);\n\n    for (let x = 0; x <= w; x += 10) {\n      const y = h / 2 + Math.sin(x * frequency + step * 0.02) * amplitude;\n      ctx.lineTo(x, y);\n    }\n\n    ctx.lineTo(w, h);\n    ctx.lineTo(0, h);\n    ctx.fillStyle = fillStyle;\n    ctx.fill();\n  };\n\n  return (\n    <div className=\"relative w-full h-[300px] border border-border bg-neutral-900 overflow-hidden rounded-2xl\">\n      <canvas ref={canvasRef} className=\"absolute inset-0 block w-full h-full\" />\n      <div className=\"absolute inset-0 flex items-center justify-center text-center p-6 z-10 pointer-events-none select-none\">\n        <div>\n          <h4 className=\"text-lg font-bold tracking-tight text-white\">Liquid Wave Simulator</h4>\n          <p className=\"text-xs text-neutral-400 mt-0.5\">Smooth vector waves rendering on canvas</p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "canvas",
+      "wave",
+      "background",
+      "freefrontend",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "DevSnap Sparticles Canvas Effect",
+    "description": "A high-performance particle background system simulating floating, glowing sand particles on a canvas container.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useEffect, useRef } from 'react';\n\nexport function SparticlesCanvas() {\n  const canvasRef = useRef(null);\n\n  useEffect(() => {\n    const canvas = canvasRef.current;\n    if (!canvas) return;\n    const ctx = canvas.getContext('2d');\n    let animationFrameId;\n\n    const resizeCanvas = () => {\n      canvas.width = canvas.parentElement.clientWidth;\n      canvas.height = canvas.parentElement.clientHeight || 300;\n    };\n    resizeCanvas();\n    window.addEventListener('resize', resizeCanvas);\n\n    const particleCount = 60;\n    const particles = [];\n\n    for (let i = 0; i < particleCount; i++) {\n      particles.push({\n        x: Math.random() * canvas.width,\n        y: Math.random() * canvas.height,\n        size: Math.random() * 2 + 1,\n        speedY: -(Math.random() * 0.5 + 0.2),\n        speedX: (Math.random() - 0.5) * 0.3,\n        opacity: Math.random() * 0.6 + 0.2\n      });\n    }\n\n    const render = () => {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      particles.forEach((p) => {\n        p.y += p.speedY;\n        p.x += p.speedX;\n\n        // Reset particle if it floats past top boundary\n        if (p.y < 0) {\n          p.y = canvas.height;\n          p.x = Math.random() * canvas.width;\n        }\n        if (p.x < 0 || p.x > canvas.width) {\n          p.x = Math.random() * canvas.width;\n        }\n\n        ctx.beginPath();\n        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);\n        ctx.fillStyle = `rgba(0, 173, 181, ${p.opacity})`;\n        ctx.fill();\n      });\n\n      animationFrameId = requestAnimationFrame(render);\n    };\n    render();\n\n    return () => {\n      cancelAnimationFrame(animationFrameId);\n      window.removeEventListener('resize', resizeCanvas);\n    };\n  }, []);\n\n  return (\n    <div className=\"relative w-full h-[300px] border border-border bg-neutral-950 overflow-hidden rounded-2xl\">\n      <canvas ref={canvasRef} className=\"absolute inset-0 block w-full h-full\" />\n      <div className=\"absolute inset-0 flex items-center justify-center text-center p-6 z-10 pointer-events-none select-none\">\n        <div>\n          <h4 className=\"text-lg font-bold tracking-tight text-white\">Sparticles Starfield</h4>\n          <p className=\"text-xs text-neutral-400 mt-0.5\">High-performance canvas particles background</p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "particles",
+      "canvas",
+      "background",
+      "devsnap",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
