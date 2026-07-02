@@ -7,6 +7,8 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **MCP Prompts Support**: Implemented `list_prompts` and `get_prompt` protocols in the server handler, enabling client agents to request templated instructions for tasks like `build_landing_page` and `register_new_component`.
+- **Unit Test Coverage Expansion**: Added 6 new unit tests covering all database operations for palettes and gradients, raising overall code reliability.
 - **React Bits & Community Components**: Added `data/react_bits_components.json` containing 4 premium components from React Bits, React Components, and official Shadcn Blocks (Tilted Card, True Focus Text, Glass Time Card, and Shadcn UI Sidebar Navigation).
 - **React Animated Components**: Added a new database seed file `data/animated_components.json` containing 6 premium interactive React blocks inspired by Motion Primitives, Aceternity UI, and BuildUI (Sparkles Background, Magnified Dock, Text Reveal, Glowing Grid, Resizable Panel, Magnetic Hover).
 - **Shadcn UI React Components**: Added a new database seed file `data/shadcn_components.json` containing 6 premium, responsive React + Tailwind CSS blocks (Product Card, Login Form, Pricing Deck, Hero Banner, Bento Grid, Accordion FAQ).

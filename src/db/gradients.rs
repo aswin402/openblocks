@@ -539,3 +539,67 @@ pub fn seed_popular_gradients(conn: &Connection) -> Result<usize> {
 
     Ok(seeded)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::db::connection::open_connection;
+    use crate::db::migrations::get_migrations;
+
+    fn setup_test_db() -> Connection {
+        let mut conn = open_connection(":memory:").unwrap();
+        let migrations = get_migrations();
+        migrations.to_latest(&mut conn).unwrap();
+        conn
+    }
+
+    #[test]
+    fn test_insert_and_get_gradient() {
+        let conn = setup_test_db();
+        let new_gradient = NewGradient {
+            name: "Ocean breeze".into(),
+            css: "linear-gradient(to right, #00c6ff, #0072ff)".into(),
+            colors: vec!["#00c6ff".into(), "#0072ff".into()],
+            tags: vec!["blue".into(), "ocean".into()],
+        };
+
+        let inserted = insert_gradient(&conn, &new_gradient).unwrap();
+        assert_eq!(inserted.name, "Ocean breeze");
+        assert_eq!(inserted.colors.len(), 2);
+
+        let fetched = get_gradient(&conn, &inserted.id).unwrap();
+        assert_eq!(fetched.id, inserted.id);
+        assert_eq!(fetched.name, "Ocean breeze");
+    }
+
+    #[test]
+    fn test_delete_gradient() {
+        let conn = setup_test_db();
+        let new_gradient = NewGradient {
+            name: "Temp Gradient".into(),
+            css: "linear-gradient(to right, #000, #fff)".into(),
+            colors: vec!["#000".into(), "#fff".into()],
+            tags: vec![],
+        };
+
+        let inserted = insert_gradient(&conn, &new_gradient).unwrap();
+        assert!(delete_gradient(&conn, &inserted.id).is_ok());
+        assert!(get_gradient(&conn, &inserted.id).is_err());
+    }
+
+    #[test]
+    fn test_seed_popular_gradients() {
+        let conn = setup_test_db();
+        // Since seed_popular_gradients seeds 40 default gradients:
+        let seeded = seed_popular_gradients(&conn).unwrap();
+        assert_eq!(seeded, 40);
+
+        let list = list_gradients(&conn).unwrap();
+        assert_eq!(list.len(), 40);
+
+        // Seeding again should be a no-op
+        let seeded_again = seed_popular_gradients(&conn).unwrap();
+        assert_eq!(seeded_again, 0);
+    }
+}
+

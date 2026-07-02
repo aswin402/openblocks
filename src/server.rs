@@ -658,4 +658,126 @@ impl ServerHandler for OpenBlocksServer {
             ..Default::default()
         }
     }
+
+    async fn list_prompts(
+        &self,
+        _request: Option<rmcp::model::PaginatedRequestParams>,
+        _context: rmcp::service::RequestContext<rmcp::service::RoleServer>,
+    ) -> Result<rmcp::model::ListPromptsResult, rmcp::model::ErrorData> {
+        let prompts = vec![
+            rmcp::model::Prompt {
+                name: "build_landing_page".to_string(),
+                title: Some("Build a Landing Page".to_string()),
+                description: Some("Guides the AI agent on how to search, retrieve, and assemble a responsive web landing page using components from the local OpenBlocks database.".to_string()),
+                arguments: Some(vec![
+                    rmcp::model::PromptArgument {
+                        name: "theme".to_string(),
+                        title: Some("Visual Theme".to_string()),
+                        description: Some("Visual styling theme such as 'dark mode', 'minimalist', 'glassmorphism', or 'gradients'.".to_string()),
+                        required: Some(false),
+                    },
+                    rmcp::model::PromptArgument {
+                        name: "framework".to_string(),
+                        title: Some("UI Framework".to_string()),
+                        description: Some("Target UI framework/library (e.g. 'tailwind', 'shadcn', 'heroui', 'css').".to_string()),
+                        required: Some(false),
+                    },
+                ]),
+                icons: None,
+                meta: None,
+            },
+            rmcp::model::Prompt {
+                name: "register_new_component".to_string(),
+                title: Some("Register a Custom Component".to_string()),
+                description: Some("Guides the developer to design, build, and add a new custom component directly to the local OpenBlocks registry.".to_string()),
+                arguments: Some(vec![
+                    rmcp::model::PromptArgument {
+                        name: "component_name".to_string(),
+                        title: Some("Component Name".to_string()),
+                        description: Some("The name of the component to create (e.g., 'Glassmorphic Login Form').".to_string()),
+                        required: Some(true),
+                    },
+                ]),
+                icons: None,
+                meta: None,
+            },
+        ];
+        Ok(rmcp::model::ListPromptsResult {
+            prompts,
+            next_cursor: None,
+            meta: None,
+        })
+    }
+
+    async fn get_prompt(
+        &self,
+        request: rmcp::model::GetPromptRequestParams,
+        _context: rmcp::service::RequestContext<rmcp::service::RoleServer>,
+    ) -> Result<rmcp::model::GetPromptResult, rmcp::model::ErrorData> {
+        match request.name.as_str() {
+            "build_landing_page" => {
+                let theme = request.arguments
+                    .as_ref()
+                    .and_then(|args| args.get("theme"))
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("dark mode");
+                let framework = request.arguments
+                    .as_ref()
+                    .and_then(|args| args.get("framework"))
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("react/tailwind");
+
+                let message_content = format!(
+                    "Act as an expert frontend engineer. You are tasked with building a modern landing page using the OpenBlocks MCP server.\n\n\
+                     Step 1: Search for components in the local registry matching categories: navbar, hero, feature, pricing, faq, and footer.\n\
+                     Step 2: Use theme '{}' and framework '{}'.\n\
+                     Step 3: Retrieve the full code blocks using get_component.\n\
+                     Step 4: Output the assembled, production-ready landing page code combining these blocks. Ensure proper layout and styling flow.",
+                    theme, framework
+                );
+
+                Ok(rmcp::model::GetPromptResult {
+                    description: Some("Guides the AI agent to build a landing page using OpenBlocks.".to_string()),
+                    messages: vec![
+                        rmcp::model::PromptMessage {
+                            role: rmcp::model::PromptMessageRole::User,
+                            content: rmcp::model::PromptMessageContent::text(message_content),
+                        }
+                    ],
+                })
+            }
+            "register_new_component" => {
+                let component_name = request.arguments
+                    .as_ref()
+                    .and_then(|args| args.get("component_name"))
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("My Custom Component");
+
+                let message_content = format!(
+                    "You want to register a new component named '{}' in the OpenBlocks database.\n\n\
+                     Please provide:\n\
+                     1. The target category (navbar, hero, footer, card, form, modal, table, pricing, testimonial, cta, feature, faq, contact, auth, dashboard, settings, profile, landing, blog, ecommerce, error, loading, notification, section, other).\n\
+                     2. The framework tag (tailwind, css, scss, shadcn, react).\n\
+                     3. The responsive React, HTML, or CSS code.\n\
+                     4. Relational tags for search indexing.\n\n\
+                     Then, call the add_component tool to save it into the library.",
+                    component_name
+                );
+
+                Ok(rmcp::model::GetPromptResult {
+                    description: Some("Guides the developer to register a custom component.".to_string()),
+                    messages: vec![
+                        rmcp::model::PromptMessage {
+                            role: rmcp::model::PromptMessageRole::User,
+                            content: rmcp::model::PromptMessageContent::text(message_content),
+                        }
+                    ],
+                })
+            }
+            other => Err(rmcp::model::ErrorData::invalid_params(
+                format!("Unknown prompt: '{}'", other),
+                None,
+            )),
+        }
+    }
 }

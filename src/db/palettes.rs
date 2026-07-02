@@ -255,3 +255,74 @@ pub fn seed_popular_palettes(conn: &Connection) -> Result<usize> {
 
     Ok(seeded)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::db::connection::open_connection;
+    use crate::db::migrations::get_migrations;
+
+    fn setup_test_db() -> Connection {
+        let mut conn = open_connection(":memory:").unwrap();
+        let migrations = get_migrations();
+        migrations.to_latest(&mut conn).unwrap();
+        conn
+    }
+
+    #[test]
+    fn test_insert_and_get_palette() {
+        let conn = setup_test_db();
+        let new_palette = NewPalette {
+            name: "Test Forest".into(),
+            colors: vec![
+                "#1b4332".into(),
+                "#2d6a4f".into(),
+                "#40916c".into(),
+                "#52b788".into(),
+            ],
+            tags: vec!["green".into(), "nature".into()],
+        };
+
+        let inserted = insert_palette(&conn, &new_palette).unwrap();
+        assert_eq!(inserted.name, "Test Forest");
+        assert_eq!(inserted.colors.len(), 4);
+
+        let fetched = get_palette(&conn, &inserted.id).unwrap();
+        assert_eq!(fetched.id, inserted.id);
+        assert_eq!(fetched.name, "Test Forest");
+    }
+
+    #[test]
+    fn test_delete_palette() {
+        let conn = setup_test_db();
+        let new_palette = NewPalette {
+            name: "Delete Me".into(),
+            colors: vec![
+                "#000000".into(),
+                "#111111".into(),
+                "#222222".into(),
+                "#333333".into(),
+            ],
+            tags: vec![],
+        };
+
+        let inserted = insert_palette(&conn, &new_palette).unwrap();
+        assert!(delete_palette(&conn, &inserted.id).is_ok());
+        assert!(get_palette(&conn, &inserted.id).is_err());
+    }
+
+    #[test]
+    fn test_seed_popular_palettes() {
+        let conn = setup_test_db();
+        let seeded = seed_popular_palettes(&conn).unwrap();
+        assert_eq!(seeded, 10);
+
+        let list = list_palettes(&conn).unwrap();
+        assert_eq!(list.len(), 10);
+
+        // Seeding again should be a no-op
+        let seeded_again = seed_popular_palettes(&conn).unwrap();
+        assert_eq!(seeded_again, 0);
+    }
+}
+
