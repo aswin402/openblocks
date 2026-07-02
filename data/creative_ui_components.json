@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Skiper UI AI Chat Prompt Input",
+    "description": "An interactive chat input panel featuring prompt chip recommendations, validation counters, and action toggle buttons.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { CornerDownLeft, Sparkles, Wand2 } from 'lucide-react';\n\nexport function AIChatInput() {\n  const [text, setText] = useState(\"\");\n  const maxChars = 200;\n\n  const promptChips = [\n    \"Optimise my Tailwind layout\",\n    \"Explain local-first SQLite WAL\",\n    \"Write an interactive CSS ripple\"\n  ];\n\n  const handleChipClick = (chip) => {\n    if (text.length + chip.length <= maxChars) {\n      setText((prev) => (prev ? `${prev} ${chip}` : chip));\n    }\n  };\n\n  return (\n    <div className=\"w-full max-w-xl mx-auto border border-border bg-card p-4 rounded-2xl shadow-xl text-foreground\">\n      {/* Prompt Chips Bar */}\n      <div className=\"flex flex-wrap gap-2 mb-3\">\n        {promptChips.map((chip) => (\n          <button\n            key={chip}\n            onClick={() => handleChipClick(chip)}\n            className=\"flex items-center gap-1 px-3 py-1.5 rounded-full border border-border/80 bg-muted/30 hover:bg-muted text-xs font-medium transition-all text-muted-foreground hover:text-foreground\"\n          >\n            <Sparkles className=\"h-3 w-3 text-primary\" />\n            <span>{chip}</span>\n          </button>\n        ))}\n      </div>\n\n      {/* Main Input Textarea Area */}\n      <div className=\"relative border border-border focus-within:border-primary/80 focus-within:ring-2 focus-within:ring-primary/20 rounded-xl bg-background p-3 transition-all\">\n        <textarea\n          value={text}\n          onChange={(e) => setText(e.target.value.slice(0, maxChars))}\n          placeholder=\"Ask OpenBlocks agent or write query...\"\n          rows={3}\n          className=\"w-full resize-none bg-transparent text-sm focus:outline-none placeholder-muted-foreground text-foreground\"\n        />\n        \n        <div className=\"flex items-center justify-between border-t border-border/60 mt-3 pt-2 text-xs text-muted-foreground font-mono\">\n          <span>\n            {text.length}/{maxChars} chars\n          </span>\n          \n          <div className=\"flex items-center gap-2\">\n            <button \n              disabled={!text}\n              className=\"p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors disabled:opacity-40\"\n              aria-label=\"Improve Prompt\"\n            >\n              <Wand2 className=\"h-4 w-4\" />\n            </button>\n            <button\n              disabled={!text}\n              className=\"flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary/95 text-primary-foreground font-bold uppercase transition-all disabled:opacity-40\"\n              aria-label=\"Send Prompt\"\n            >\n              <span>Send</span>\n              <CornerDownLeft className=\"h-3.5 w-3.5\" />\n            </button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "chat",
+      "input",
+      "skiperui",
+      "ai",
+      "form",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "StackSorted Magnetic Glowing Button",
+    "description": "An interactive button designed after StackSorted inspiration, featuring glowing radial gradients and hover scale transitions.",
+    "category": "button",
+    "framework": "react",
+    "code": "import { useState } from 'react';\n\nexport function MagneticGlowingButton() {\n  const [coords, setCoords] = useState({ x: 0, y: 0 });\n  const [isHovered, setIsHovered] = useState(false);\n\n  const handleMouseMove = (e) => {\n    const rect = e.currentTarget.getBoundingClientRect();\n    const x = e.clientX - rect.left;\n    const y = e.clientY - rect.top;\n    setCoords({ x, y });\n  };\n\n  return (\n    <div className=\"flex items-center justify-center p-8 bg-neutral-950 rounded-2xl border border-white/5\">\n      <button\n        onMouseMove={handleMouseMove}\n        onMouseEnter={() => setIsHovered(true)}\n        onMouseLeave={() => setIsHovered(false)}\n        className=\"relative group overflow-hidden px-8 py-4 rounded-xl border border-white/10 bg-[#121214] text-white font-bold text-sm tracking-wide transition-all duration-300 hover:scale-105 active:scale-98 shadow-2xl\"\n      >\n        {/* Custom Glowing Radial Hover Layer */}\n        {isHovered && (\n          <span\n            style={{\n              left: coords.x,\n              top: coords.y,\n              pointerEvents: 'none'\n            }}\n            className=\"absolute -translate-x-1/2 -translate-y-1/2 h-32 w-32 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 opacity-40 blur-2xl transition-all duration-100 animate-pulse\"\n          />\n        )}\n        \n        <span className=\"relative z-10 flex items-center gap-2 group-hover:text-cyan-200 transition-colors\">\n          Unlock Premium Stack\n        </span>\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "button",
+      "glow",
+      "radial",
+      "stacksorted",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "FreeFrontend Liquid Hover Button",
+    "description": "A creative button component with a liquid keyframe animation background that expands and waves when hovered.",
+    "category": "button",
+    "framework": "react",
+    "code": "export function LiquidHoverButton() {\n  return (\n    <div className=\"flex items-center justify-center p-8 bg-[#FAF9F5] rounded-2xl border border-neutral-200\">\n      <button className=\"relative group overflow-hidden px-8 py-4 rounded-xl border-2 border-black bg-white text-black font-extrabold text-sm uppercase tracking-widest transition-all duration-300 hover:text-white\">\n        {/* Liquid wave background overlay */}\n        <span className=\"absolute inset-0 w-full h-full bg-[#2a2a2a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] z-0\" />\n        \n        {/* Animated wave clip layers inside */}\n        <span className=\"absolute left-0 bottom-full w-full h-4 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 28\" fill=\"%232a2a2a\"><path d=\"M0 15 Q 30 0, 60 15 T 120 15 L 120 28 L 0 28 Z\"/></svg>')] bg-[length:60px_14px] bg-repeat-x translate-y-full group-hover:-translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] z-0\" />\n        \n        <span className=\"relative z-10 flex items-center gap-1.5\">\n          Initialize Build\n        </span>\n      </button>\n    </div>\n  );\n}",
+    "tags": [
+      "button",
+      "liquid",
+      "hover",
+      "freefrontend",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

@@ -7,6 +7,7 @@ All notable changes to the OpenBlocks project will be documented in this file.
 ## [0.0.3] - 2026-07-02
 
 ### Added
+- **Skiper UI, StackSorted & FreeFrontend Components**: Added `data/creative_ui_components.json` containing 3 premium components (Skiper UI AI Chat Prompt Input, StackSorted Magnetic Glowing Button, and FreeFrontend Liquid Hover Button).
 - **Origin UI, Efferd & MVPBlocks Components**: Added `data/mvp_ui_components.json` containing 3 premium components (Origin UI Interactive Input Slider, Efferd Magazine Blog Grid, and MVPBlocks Interactive FAQ Accordion).
 - **Hover.dev, Landingfolio, FreeFrontend & DevSnap Components**: Added `data/interactive_effects_components.json` containing 4 premium components (Hover.dev Mouse Image Trail, Landingfolio Premium Pricing Deck, FreeFrontend Vector Wave Canvas, and DevSnap Sparticles Canvas Effect).
 - **DesignPrompts, ReUI, Magic UI & Aceternity Components**: Added `data/advanced_ui_components.json` containing 4 premium components (DesignPrompts Bauhaus Editorial Hero, ReUI Interactive Stepper, Magic UI Animated Beam, and Aceternity UI Text Generate Effect).

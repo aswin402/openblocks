@@ -124,6 +124,10 @@ async fn main() -> Result<()> {
             let mvp_ui_count = db.seed_from_file("data/mvp_ui_components.json")?;
             eprintln!("Seeded {} MVP & Developer UI components", mvp_ui_count);
 
+            tracing::info!("Seeding database with Creative & High-Interaction components...");
+            let creative_ui_count = db.seed_from_file("data/creative_ui_components.json")?;
+            eprintln!("Seeded {} Creative & High-Interaction components", creative_ui_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
