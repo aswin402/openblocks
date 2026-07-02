@@ -104,6 +104,10 @@ async fn main() -> Result<()> {
             let shadcn_count = db.seed_from_file("data/shadcn_components.json")?;
             eprintln!("Seeded {} Shadcn UI React components", shadcn_count);
 
+            tracing::info!("Seeding database with React animated components...");
+            let animated_count = db.seed_from_file("data/animated_components.json")?;
+            eprintln!("Seeded {} React animated components", animated_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);

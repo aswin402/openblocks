@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Aceternity Sparkles Background",
+    "description": "An interactive background particle system rendering customizable floating particles, perfect for modern landing page hero sections.",
+    "category": "hero",
+    "framework": "react",
+    "code": "import { useEffect, useRef, useState } from 'react';\n\nexport function SparklesBackground({\n  id = \"sparkles\",\n  background = \"transparent\",\n  minSize = 0.6,\n  maxSize = 1.8,\n  particleDensity = 100,\n  particleColor = \"#FFF\",\n  className = \"\"\n}) {\n  const canvasRef = useRef(null);\n  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });\n\n  useEffect(() => {\n    if (typeof window === \"undefined\") return;\n    const handleResize = () => {\n      if (canvasRef.current) {\n        const parent = canvasRef.current.parentElement;\n        if (parent) {\n          setDimensions({\n            width: parent.clientWidth,\n            height: parent.clientHeight\n          });\n        }\n      }\n    };\n    handleResize();\n    window.addEventListener(\"resize\", handleResize);\n    return () => window.removeEventListener(\"resize\", handleResize);\n  }, []);\n\n  useEffect(() => {\n    const canvas = canvasRef.current;\n    if (!canvas || dimensions.width === 0) return;\n    const ctx = canvas.getContext(\"2d\");\n    if (!ctx) return;\n\n    let animationFrameId;\n    const particles = [];\n\n    class Particle {\n      constructor(w, h) {\n        this.x = Math.random() * w;\n        this.y = Math.random() * h;\n        this.size = Math.random() * (maxSize - minSize) + minSize;\n        this.speedY = Math.random() * 0.5 + 0.1;\n        this.opacity = Math.random();\n        this.fadeSpeed = Math.random() * 0.02 + 0.005;\n        this.direction = Math.random() > 0.5 ? 1 : -1;\n      }\n      update(w, h) {\n        this.y -= this.speedY;\n        if (this.y < 0) this.y = h;\n        this.opacity += this.fadeSpeed * this.direction;\n        if (this.opacity > 1 || this.opacity < 0) {\n          this.direction = -this.direction;\n        }\n      }\n      draw(c) {\n        c.fillStyle = particleColor;\n        c.globalAlpha = Math.max(0, Math.min(1, this.opacity));\n        c.beginPath();\n        c.arc(this.x, this.y, this.size, 0, Math.PI * 2);\n        c.fill();\n      }\n    }\n\n    const particleCount = Math.floor((dimensions.width * dimensions.height) / (10000 / particleDensity) * 0.1);\n    for (let i = 0; i < particleCount; i++) {\n      particles.push(new Particle(dimensions.width, dimensions.height));\n    }\n\n    const animate = () => {\n      ctx.clearRect(0, 0, dimensions.width, dimensions.height);\n      particles.forEach((p) => {\n        p.update(dimensions.width, dimensions.height);\n        p.draw(ctx);\n      });\n      animationFrameId = requestAnimationFrame(animate);\n    };\n    animate();\n\n    return () => {\n      cancelAnimationFrame(animationFrameId);\n    };\n  }, [dimensions, minSize, maxSize, particleDensity, particleColor]);\n\n  return (\n    <canvas\n      ref={canvasRef}\n      id={id}\n      width={dimensions.width}\n      height={dimensions.height}\n      style={{ background }}\n      className={`pointer-events-none block w-full h-full ${className}`}\n    />\n  );\n}",
+    "tags": [
+      "particles",
+      "sparkles",
+      "aceternity",
+      "background",
+      "canvas",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "BuildUI Magnified Dock",
+    "description": "A macOS-inspired dock component where icons scale up smoothly based on mouse proximity.",
+    "category": "navigation",
+    "framework": "react",
+    "code": "import { useRef, useState } from 'react';\n\nexport function MagnifiedDock({ items = [] }) {\n  const [hoveredIndex, setHoveredIndex] = useState(null);\n  const dockRef = useRef(null);\n\n  const getScale = (index) => {\n    if (hoveredIndex === null) return 1;\n    const dist = Math.abs(index - hoveredIndex);\n    if (dist === 0) return 1.5;\n    if (dist === 1) return 1.25;\n    if (dist === 2) return 1.1;\n    return 1;\n  };\n\n  return (\n    <div className=\"flex items-center justify-center py-10\">\n      <div \n        ref={dockRef}\n        onMouseLeave={() => setHoveredIndex(null)}\n        className=\"flex items-end gap-4 rounded-3xl border border-white/10 bg-neutral-900/80 px-4 pb-3 pt-4 backdrop-blur-md shadow-2xl\"\n      >\n        {items.map((item, idx) => {\n          const scale = getScale(idx);\n          return (\n            <button\n              key={idx}\n              onMouseEnter={() => setHoveredIndex(idx)}\n              style={{\n                transform: `scale(${scale})`,\n                transition: 'transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1)',\n                transformOrigin: 'bottom center'\n              }}\n              className=\"flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-800 text-white shadow-md hover:bg-neutral-700 transition-colors\"\n              aria-label={item.label || `Dock Item ${idx + 1}`}\n            >\n              {item.icon}\n            </button>\n          );\n        })}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "dock",
+      "magnified",
+      "macos",
+      "buildui",
+      "navigation",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion Primitives Text Reveal",
+    "description": "Splits a string of text into words and animates their entry with fade-in and slide-up transitions using standard React animation patterns.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useEffect, useRef, useState } from 'react';\n\nexport function TextReveal({ \n  text = \"Experience modern animation patterns built for speeds.\", \n  className = \"\"\n}) {\n  const containerRef = useRef(null);\n  const [isVisible, setIsVisible] = useState(false);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting) {\n          setIsVisible(true);\n          observer.unobserve(entry.target);\n        }\n      },\n      { threshold: 0.1 }\n    );\n    if (containerRef.current) {\n      observer.observe(containerRef.current);\n    }\n    return () => {\n      if (containerRef.current) {\n        observer.disconnect();\n      }\n    };\n  }, []);\n\n  const words = text.split(\" \");\n\n  return (\n    <p \n      ref={containerRef} \n      className={`flex flex-wrap text-2xl font-semibold tracking-tight text-foreground ${className}`}\n    >\n      {words.map((word, idx) => (\n        <span \n          key={idx} \n          style={{\n            opacity: isVisible ? 1 : 0,\n            transform: isVisible ? 'translateY(0)' : 'translateY(12px)',\n            transition: `opacity 0.5s ease-out ${idx * 0.08}s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.08}s`,\n            display: 'inline-block'\n          }}\n          className=\"mr-2.5 mb-1.5\"\n        >\n          {word}\n        </span>\n      ))}\n    </p>\n  );\n}",
+    "tags": [
+      "text",
+      "reveal",
+      "inview",
+      "motion-primitives",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity Glowing Grid Background",
+    "description": "A glowing grid panel featuring customizable grid overlay accents and pulsing linear gradients, perfect for dark-themed application headers.",
+    "category": "hero",
+    "framework": "react",
+    "code": "export function GlowingGridBackground({ \n  gridColor = \"rgba(128,128,128,0.07)\", \n  glowColor = \"rgba(99,102,241,0.15)\",\n  className = \"\"\n}) {\n  return (\n    <div className={`relative flex h-[400px] w-full items-center justify-center overflow-hidden bg-slate-950 ${className}`}>\n      {/* Grid Pattern Background overlay */}\n      <div \n        style={{\n          backgroundImage: `linear-gradient(to right, ${gridColor} 1px, transparent 1px), linear-gradient(to bottom, ${gridColor} 1px, transparent 1px)`,\n          backgroundSize: \"24px 24px\"\n        }}\n        className=\"absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)]\"\n      />\n      \n      {/* Glowing center gradients */}\n      <div \n        style={{ backgroundColor: glowColor }}\n        className=\"absolute h-[250px] w-[500px] rounded-full blur-[100px] -z-10 animate-pulse\"\n      />\n\n      <div className=\"text-center z-10 px-4\">\n        <h2 className=\"text-3xl font-extrabold text-white sm:text-4xl\">Pulsing Grid Panel</h2>\n        <p className=\"mt-2 text-slate-400 max-w-sm mx-auto text-sm\">A stylized grid overlay system inspired by Aceternity layouts.</p>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "grid",
+      "glow",
+      "aceternity",
+      "background",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "BuildUI Resizable Panel",
+    "description": "A container panel that automatically animates height transitions dynamically using CSS custom properties when children expand or collapse.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { useEffect, useRef, useState } from 'react';\n\nexport function ResizablePanel({ children, className = \"\" }) {\n  const containerRef = useRef(null);\n  const [height, setHeight] = useState('auto');\n\n  useEffect(() => {\n    if (!containerRef.current) return;\n    const resizeObserver = new ResizeObserver((entries) => {\n      for (let entry of entries) {\n        setHeight(entry.contentRect.height);\n      }\n    });\n    \n    // Observe the single inner child wrapper\n    const innerWrapper = containerRef.current.firstChild;\n    if (innerWrapper) {\n      resizeObserver.observe(innerWrapper);\n    }\n    \n    return () => resizeObserver.disconnect();\n  }, [children]);\n\n  return (\n    <div \n      ref={containerRef}\n      style={{\n        height: height === 'auto' ? 'auto' : `${height}px`,\n        transition: 'height 0.25s cubic-bezier(0.25, 1, 0.5, 1)'\n      }}\n      className={`overflow-hidden relative ${className}`}\n    >\n      <div>{children}</div>\n    </div>\n  );\n}",
+    "tags": [
+      "resizable",
+      "panel",
+      "height",
+      "buildui",
+      "animation",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Motion Primitives Magnetic Hover",
+    "description": "A wrapper component that attracts child elements towards the mouse cursor dynamically, providing feedback on pointer hover.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useRef, useState } from 'react';\n\nexport function MagneticHover({ children, range = 35, className = \"\" }) {\n  const ref = useRef(null);\n  const [position, setPosition] = useState({ x: 0, y: 0 });\n\n  const handleMouseMove = (e) => {\n    if (!ref.current) return;\n    const { clientX, clientY } = e;\n    const { left, top, width, height } = ref.current.getBoundingClientRect();\n    const centerX = left + width / 2;\n    const centerY = top + height / 2;\n    \n    const distanceX = clientX - centerX;\n    const distanceY = clientY - centerY;\n    \n    // Calculate relative distance within range threshold\n    const distance = Math.hypot(distanceX, distanceY);\n    if (distance < range) {\n      setPosition({ x: distanceX * 0.35, y: distanceY * 0.35 });\n    } else {\n      setPosition({ x: 0, y: 0 });\n    }\n  };\n\n  const handleMouseLeave = () => {\n    setPosition({ x: 0, y: 0 });\n  };\n\n  return (\n    <div\n      ref={ref}\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n      style={{\n        transform: `translate3d(${position.x}px, ${position.y}px, 0)`,\n        transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'\n      }}\n      className={`inline-block ${className}`}\n    >\n      {children}\n    </div>\n  );\n}",
+    "tags": [
+      "magnetic",
+      "hover",
+      "cursor",
+      "motion-primitives",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
