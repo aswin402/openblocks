@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Shadcn UI Product Card",
+    "description": "An elegant card layout featuring a product image placeholder, badge, product title, user rating star icons, price tag, and an Add to Cart action button.",
+    "category": "card",
+    "framework": "shadcn",
+    "code": "import { Heart, ShoppingCart, Star } from 'lucide-react';\n\nexport function ProductCard({ \n  image = \"/placeholder.jpg\", \n  category = \"Electronics\", \n  title = \"Wireless Noise Cancelling Headphones\", \n  rating = 4.8, \n  reviewsCount = 128, \n  price = \"$299.00\",\n  originalPrice = \"$349.00\",\n  isNew = true\n}) {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md\">\n      <div className=\"relative aspect-video w-full overflow-hidden bg-muted\">\n        <img \n          src={image} \n          alt={title} \n          className=\"h-full w-full object-cover transition-transform duration-300 hover:scale-105\" \n        />\n        {isNew && (\n          <span className=\"absolute top-3 left-3 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground\">\n            New\n          </span>\n        )}\n        <button \n          className=\"absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/80 text-muted-foreground backdrop-blur-xs transition-colors hover:bg-background hover:text-foreground\" \n          aria-label=\"Add to Wishlist\"\n        >\n          <Heart className=\"h-4.5 w-4.5\" />\n        </button>\n      </div>\n      <div className=\"p-5\">\n        <span className=\"text-xs font-medium tracking-wider text-muted-foreground uppercase\">\n          {category}\n        </span>\n        <h3 className=\"mt-1 text-lg font-semibold tracking-tight text-foreground line-clamp-2\">\n          {title}\n        </h3>\n        <div className=\"mt-2.5 flex items-center gap-1.5\">\n          <div className=\"flex items-center text-amber-500\">\n            <Star className=\"h-4 w-4 fill-current\" />\n            <span className=\"ml-1 text-sm font-medium text-foreground\">{rating}</span>\n          </div>\n          <span className=\"text-xs text-muted-foreground\">({reviewsCount} reviews)</span>\n        </div>\n        <div className=\"mt-4 flex items-center justify-between\">\n          <div className=\"flex items-baseline gap-2\">\n            <span className=\"text-xl font-bold text-foreground\">{price}</span>\n            {originalPrice && (\n              <span className=\"text-sm text-muted-foreground line-through\">{originalPrice}</span>\n            )}\n          </div>\n          <button className=\"inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring\">\n            <ShoppingCart className=\"h-4 w-4\" />\n            Add to cart\n          </button>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "card",
+      "product",
+      "ecommerce",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Login Form",
+    "description": "A classic minimalist login card layout with email, password inputs, Forgot Password link, Google / GitHub oauth provider buttons, and a Submit button.",
+    "category": "auth",
+    "framework": "shadcn",
+    "code": "import { Github } from 'lucide-react';\n\nexport function LoginForm() {\n  return (\n    <div className=\"mx-auto w-full max-w-md rounded-xl border border-border bg-card p-6 text-card-foreground shadow-xs sm:p-8\">\n      <div className=\"flex flex-col space-y-1.5 text-center sm:text-left\">\n        <h2 className=\"text-2xl font-semibold tracking-tight text-foreground\">\n          Welcome back\n        </h2>\n        <p className=\"text-sm text-muted-foreground\">\n          Enter your credentials to access your account\n        </p>\n      </div>\n      <div className=\"mt-6 space-y-4\">\n        <div className=\"grid grid-cols-2 gap-3\">\n          <button className=\"inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground\">\n            <svg className=\"h-4 w-4\" viewBox=\"0 0 24 24\">\n              <path d=\"M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z\" fill=\"#4285F4\" />\n              <path d=\"M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z\" fill=\"#34A853\" />\n              <path d=\"M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z\" fill=\"#FBBC05\" />\n              <path d=\"M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z\" fill=\"#EA4335\" />\n            </svg>\n            Google\n          </button>\n          <button className=\"inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground\">\n            <Github className=\"h-4 w-4\" />\n            GitHub\n          </button>\n        </div>\n        <div className=\"relative flex items-center justify-center\">\n          <span className=\"absolute w-full border-t border-border\"></span>\n          <span className=\"relative bg-card px-2.5 text-xs text-muted-foreground uppercase\">\n            Or continue with\n          </span>\n        </div>\n        <div className=\"space-y-3\">\n          <div className=\"space-y-1\">\n            <label className=\"text-xs font-semibold text-foreground uppercase tracking-wider\" htmlFor=\"email\">\n              Email Address\n            </label>\n            <input \n              id=\"email\" \n              type=\"email\" \n              placeholder=\"name@example.com\"\n              className=\"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\"\n            />\n          </div>\n          <div className=\"space-y-1\">\n            <div className=\"flex items-center justify-between\">\n              <label className=\"text-xs font-semibold text-foreground uppercase tracking-wider\" htmlFor=\"password\">\n                Password\n              </label>\n              <a href=\"#\" className=\"text-xs text-muted-foreground hover:underline\">\n                Forgot password?\n              </a>\n            </div>\n            <input \n              id=\"password\" \n              type=\"password\" \n              placeholder=\"••••••••\"\n              className=\"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\"\n            />\n          </div>\n          <button className=\"inline-flex w-full h-9 items-center justify-center rounded-md bg-primary text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring\">\n            Sign In\n          </button>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "login",
+      "form",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Pricing Deck",
+    "description": "A three-tier pricing grid layout (Free, Pro, Enterprise) with features checklist, highlight borders, and Call to Action buttons.",
+    "category": "pricing",
+    "framework": "shadcn",
+    "code": "import { Check } from 'lucide-react';\n\nexport function PricingDeck() {\n  const plans = [\n    {\n      name: \"Starter\",\n      price: \"$0\",\n      period: \"forever\",\n      desc: \"Essential tools for developers starting a personal project.\",\n      features: [\"3 active repositories\", \"Basic analytics dashboard\", \"Community forum access\", \"100 builds per month\"],\n      action: \"Get started for free\",\n      popular: false\n    },\n    {\n      name: \"Professional\",\n      price: \"$19\",\n      period: \"per month\",\n      desc: \"Advanced capabilities for high-performance indie developers.\",\n      features: [\"Unlimited repositories\", \"Priority developer email support\", \"Advanced custom analytics\", \"10,000 builds per month\", \"Team seats (up to 5)\"],\n      action: \"Start 14-day free trial\",\n      popular: true\n    },\n    {\n      name: \"Enterprise\",\n      price: \"Custom\",\n      period: \"contact sales\",\n      desc: \"Premium control, compliance, and support for organizations.\",\n      features: [\"Unlimited builds and seats\", \"Dedicated Slack support channel\", \"Custom SSO & SAML integration\", \"HIPAA & SOC2 compliance logs\", \"99.9% uptime SLA guarantee\"],\n      action: \"Contact Sales\",\n      popular: false\n    }\n  ];\n\n  return (\n    <div className=\"mx-auto max-w-6xl px-4 py-8\">\n      <div className=\"text-center mb-12\">\n        <h2 className=\"text-3xl font-bold tracking-tight text-foreground sm:text-4xl\">Predictable Pricing</h2>\n        <p className=\"mt-3 text-lg text-muted-foreground\">Choose the tier that matches your development requirements.</p>\n      </div>\n      <div className=\"grid grid-cols-1 gap-8 md:grid-cols-3\">\n        {plans.map((plan) => (\n          <div \n            key={plan.name} \n            className={`relative flex flex-col rounded-2xl border bg-card p-6 shadow-xs text-card-foreground ${\n              plan.popular ? 'border-primary shadow-md scale-105 md:z-10' : 'border-border'\n            }`}\n          >\n            {plan.popular && (\n              <span className=\"absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground uppercase tracking-wide\">\n                Most Popular\n              </span>\n            )}\n            <div className=\"mb-6\">\n              <h3 className=\"text-lg font-semibold text-foreground\">{plan.name}</h3>\n              <p className=\"mt-2 text-xs text-muted-foreground line-clamp-2\">{plan.desc}</p>\n              <div className=\"mt-4 flex items-baseline gap-1\">\n                <span className=\"text-4xl font-extrabold tracking-tight text-foreground\">{plan.price}</span>\n                <span className=\"text-sm text-muted-foreground\">/{plan.period}</span>\n              </div>\n            </div>\n            <ul className=\"space-y-3 flex-1 mb-8\">\n              {plan.features.map((feat) => (\n                <li key={feat} className=\"flex items-start gap-2.5 text-sm\">\n                  <Check className=\"h-4.5 w-4.5 text-primary shrink-0 mt-0.5\" />\n                  <span className=\"text-muted-foreground\">{feat}</span>\n                </li>\n              ))}\n            </ul>\n            <button \n              className={`w-full inline-flex h-10 items-center justify-center rounded-lg text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring ${\n                plan.popular \n                  ? 'bg-primary text-primary-foreground hover:bg-primary/90' \n                  : 'border border-input bg-background hover:bg-accent hover:text-accent-foreground'\n              }`}\n            >\n              {plan.action}\n            </button>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "pricing",
+      "tiers",
+      "grid",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Hero Banner",
+    "description": "A centered high-impact landing page hero section with badges, bold headline, descriptive subtext, CTA action buttons, and secondary links.",
+    "category": "hero",
+    "framework": "shadcn",
+    "code": "import { ArrowRight, Terminal } from 'lucide-react';\n\nexport function HeroBanner() {\n  return (\n    <section className=\"relative overflow-hidden bg-background py-20 lg:py-32\">\n      {/* Grid Pattern Background overlay */}\n      <div className=\"absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]\" />\n      \n      <div className=\"container mx-auto max-w-4xl px-4 text-center\">\n        <div className=\"inline-flex items-center gap-2.5 rounded-full border border-border bg-muted/50 px-3.5 py-1 text-sm font-medium text-foreground backdrop-blur-xs\">\n          <Terminal className=\"h-4 w-4 text-primary\" />\n          <span>OpenBlocks v0.0.3 Live on GitHub</span>\n        </div>\n        \n        <h1 className=\"mt-6 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl\">\n          Scaffold your interfaces <br />\n          <span className=\"bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent\">\n            Lightning Fast\n          </span>\n        </h1>\n        \n        <p className=\"mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl\">\n          Pre-built UI components and website templates served directly to your AI agent. Reduce context size and speed up generation cycles.\n        </p>\n        \n        <div className=\"mt-10 flex flex-wrap items-center justify-center gap-4\">\n          <a \n            href=\"#\" \n            className=\"inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90 hover:scale-[1.01] active:scale-[0.98]\"\n          >\n            Get Started\n            <ArrowRight className=\"h-4 w-4\" />\n          </a>\n          <a \n            href=\"#\" \n            className=\"inline-flex h-11 items-center justify-center rounded-lg border border-input bg-background px-6 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground\"\n          >\n            Documentation\n          </a>\n        </div>\n      </div>\n    </section>\n  );\n}",
+    "tags": [
+      "hero",
+      "landing",
+      "banner",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Bento Grid",
+    "description": "A bento-box grid feature display displaying various features, stats, or metrics in asymmetrical grid blocks with gradient glows.",
+    "category": "feature",
+    "framework": "shadcn",
+    "code": "import { Cpu, Globe, Lock, Zap } from 'lucide-react';\n\nexport function BentoGrid() {\n  return (\n    <div className=\"mx-auto max-w-5xl px-4 py-12\">\n      <div className=\"text-center mb-10\">\n        <h2 className=\"text-3xl font-bold tracking-tight text-foreground\">Engineered for Speed</h2>\n        <p className=\"mt-2 text-sm text-muted-foreground\">A grid of features built on local-first components.</p>\n      </div>\n      <div className=\"grid grid-cols-1 md:grid-cols-3 gap-4\">\n        {/* Box 1 (Double width) */}\n        <div className=\"md:col-span-2 rounded-xl border border-border bg-card p-6 text-card-foreground shadow-2xs flex flex-col justify-between min-h-[220px]\">\n          <div className=\"flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary\">\n            <Cpu className=\"h-5 w-5\" />\n          </div>\n          <div className=\"mt-4\">\n            <h3 className=\"text-lg font-semibold text-foreground\">Rust-Native Core</h3>\n            <p className=\"mt-1 text-sm text-muted-foreground\">\n              Built with zero-cost abstractions, compiling to a standalone binary. Fast load times, zero Node.js startup lag, and highly stable concurrency loops.\n            </p>\n          </div>\n        </div>\n        \n        {/* Box 2 (Single width) */}\n        <div className=\"rounded-xl border border-border bg-card p-6 text-card-foreground shadow-2xs flex flex-col justify-between\">\n          <div className=\"flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary\">\n            <Zap className=\"h-5 w-5\" />\n          </div>\n          <div className=\"mt-4\">\n            <h3 className=\"text-lg font-semibold text-foreground\">Sub-ms Search</h3>\n            <p className=\"mt-1 text-sm text-muted-foreground\">\n              Fuzzy search index processes queries under 1 millisecond.\n            </p>\n          </div>\n        </div>\n        \n        {/* Box 3 (Single width) */}\n        <div className=\"rounded-xl border border-border bg-card p-6 text-card-foreground shadow-2xs flex flex-col justify-between\">\n          <div className=\"flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary\">\n            <Lock className=\"h-5 w-5\" />\n          </div>\n          <div className=\"mt-4\">\n            <h3 className=\"text-lg font-semibold text-foreground\">Local-First</h3>\n            <p className=\"mt-1 text-sm text-muted-foreground\">\n              Data is stored offline in SQLite with WAL mode enabled.\n            </p>\n          </div>\n        </div>\n        \n        {/* Box 4 (Double width) */}\n        <div className=\"md:col-span-2 rounded-xl border border-border bg-card p-6 text-card-foreground shadow-2xs flex flex-col justify-between min-h-[220px]\">\n          <div className=\"flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary\">\n            <Globe className=\"h-5 w-5\" />\n          </div>\n          <div className=\"mt-4\">\n            <h3 className=\"text-lg font-semibold text-foreground\">Multi-Framework Support</h3>\n            <p className=\"mt-1 text-sm text-muted-foreground\">\n              Easily store and manage components across multiple frameworks including Vanilla CSS, SCSS, Tailwind CSS, Shadcn UI, and React/JSX components.\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "bento",
+      "grid",
+      "features",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn UI Accordion FAQ",
+    "description": "A collapsible accordion layout for frequently asked questions, built using clean state transitions.",
+    "category": "faq",
+    "framework": "shadcn",
+    "code": "import { useState } from 'react';\nimport { ChevronDown } from 'lucide-react';\n\nexport function AccordionFaq() {\n  const [openIndex, setOpenIndex] = useState(null);\n\n  const faqs = [\n    {\n      q: \"What is OpenBlocks?\",\n      a: \"OpenBlocks is a local-first, Rust-native Model Context Protocol (MCP) server that provides a structured registry of components and layout templates for AI coding agents.\"\n    },\n    {\n      q: \"How does it save context tokens?\",\n      a: \"Instead of asking an LLM to generate code from scratch, agents search and retrieve existing components by UUID, passing only modular IDs until rendering, which prevents context window bloat.\"\n    },\n    {\n      q: \"Which clients are supported?\",\n      a: \"OpenBlocks exposes standard stdio transport tools, which makes it compatible with any MCP client including Claude Desktop, Cursor, Cline, Roo Code, and Windsurf.\"\n    }\n  ];\n\n  const toggle = (idx) => {\n    setOpenIndex(openIndex === idx ? null : idx);\n  };\n\n  return (\n    <div className=\"mx-auto w-full max-w-2xl px-4 py-8\">\n      <h2 className=\"text-2xl font-bold tracking-tight text-center text-foreground mb-6\">\n        Frequently Asked Questions\n      </h2>\n      <div className=\"divide-y divide-border border-y border-border\">\n        {faqs.map((faq, idx) => {\n          const isOpen = openIndex === idx;\n          return (\n            <div key={idx} className=\"py-4\">\n              <button \n                onClick={() => toggle(idx)}\n                className=\"flex w-full items-center justify-between text-left font-medium text-foreground transition-colors hover:text-primary\"\n              >\n                <span>{faq.q}</span>\n                <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />\n              </button>\n              <div className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}>\n                <div className=\"overflow-hidden text-sm text-muted-foreground leading-relaxed\">\n                  {faq.a}\n                </div>\n              </div>\n            </div>\n          );\n        })}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "faq",
+      "accordion",
+      "collapse",
+      "shadcn",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]

@@ -34,3 +34,5 @@ thiserror = "2"
 anyhow = "1"
 dirs = "6"
 clap = { version = "4", features = ["derive", "env"] }
+
+[workspace]
