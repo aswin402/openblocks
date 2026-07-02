@@ -1,0 +1,78 @@
+[
+  {
+    "name": "DesignPrompts Bauhaus Editorial Hero",
+    "description": "An asymmetrical hero section inspired by the Bauhaus design language, featuring bold typography, heavy borders, geometric shapes, and a minimalist color scheme.",
+    "category": "hero",
+    "framework": "react",
+    "code": "import { ArrowUpRight } from 'lucide-react';\n\nexport function BauhausHero() {\n  return (\n    <section className=\"relative w-full border-4 border-black bg-[#FAF9F5] text-black p-8 md:p-16 font-mono\">\n      {/* Grid Pattern Background */}\n      <div className=\"absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-[0.03] pointer-events-none\">\n        {Array.from({ length: 36 }).map((_, i) => (\n          <div key={i} className=\"border border-black\" />\n        ))}\n      </div>\n\n      <div className=\"relative z-10 flex flex-col md:flex-row gap-12 items-stretch\">\n        {/* Text Area */}\n        <div className=\"flex-1 flex flex-col justify-between border-b-4 md:border-b-0 md:border-r-4 border-black pb-8 md:pb-0 md:pr-12\">\n          <div>\n            <span className=\"inline-block px-3 py-1 bg-yellow-400 border-2 border-black font-bold uppercase tracking-widest text-xs mb-6\">\n              Issue No. 01\n            </span>\n            <h1 className=\"text-5xl md:text-7xl font-extrabold tracking-tight leading-none uppercase mb-8\">\n              Form <br />\n              <span className=\"bg-red-500 text-white px-2 inline-block -rotate-1 transform\">Follows</span> <br />\n              Function\n            </h1>\n          </div>\n          <p className=\"text-md leading-relaxed max-w-md font-sans text-neutral-700\">\n            A design philosophy stating that the shape of a building or object should primarily relate to its intended function or purpose.\n          </p>\n        </div>\n\n        {/* Visual / Interactive Area */}\n        <div className=\"flex-1 flex flex-col justify-between gap-8 md:pl-12\">\n          <div className=\"relative h-64 bg-blue-600 border-4 border-black flex items-center justify-center overflow-hidden\">\n            {/* Geometric accents */}\n            <div className=\"absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-yellow-400 border-4 border-black\" />\n            <div className=\"absolute -top-8 -right-8 w-32 h-32 bg-red-500 border-4 border-black rotate-45 transform\" />\n            <span className=\"text-white font-bold text-lg tracking-widest uppercase z-10 select-none\">\n              [ EST. 1919 ]\n            </span>\n          </div>\n\n          <div className=\"flex flex-wrap gap-4\">\n            <a \n              href=\"#explore\" \n              className=\"flex items-center gap-2 px-6 py-4 bg-black text-white hover:bg-yellow-400 hover:text-black border-2 border-black font-bold uppercase tracking-wider transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none translate-y-0 hover:translate-y-[4px] hover:translate-x-[4px]\"\n            >\n              <span>Explore Archives</span>\n              <ArrowUpRight className=\"h-4 w-4\" />\n            </a>\n            <a \n              href=\"#learn\" \n              className=\"px-6 py-4 bg-transparent border-2 border-black font-bold uppercase tracking-wider hover:bg-black hover:text-[#FAF9F5] transition-colors duration-200\"\n            >\n              Read Manifesto\n            </a>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}",
+    "tags": [
+      "bauhaus",
+      "minimalist",
+      "editorial",
+      "designprompts",
+      "hero",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "ReUI Interactive Stepper",
+    "description": "A polished multi-step wizard component featuring completed checkmarks, progress indicators, responsive layouts, and slide-in transition animations for active content panels.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Check, ChevronLeft, ChevronRight } from 'lucide-react';\n\nexport function ReUIStepper() {\n  const [currentStep, setCurrentStep] = useState(1);\n  const steps = [\n    { id: 1, title: \"Account Details\", desc: \"Set username and security password\" },\n    { id: 2, title: \"Personal Profile\", desc: \"Tell us about your organization\" },\n    { id: 3, title: \"Confirm Details\", desc: \"Review and deploy config\" },\n  ];\n\n  const handleNext = () => {\n    if (currentStep < steps.length) {\n      setCurrentStep((prev) => prev + 1);\n    }\n  };\n\n  const handleBack = () => {\n    if (currentStep > 1) {\n      setCurrentStep((prev) => prev - 1);\n    }\n  };\n\n  return (\n    <div className=\"w-full max-w-3xl mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl\">\n      {/* Stepper Header Grid */}\n      <div className=\"grid grid-cols-3 gap-4 mb-8\">\n        {steps.map((step) => {\n          const isCompleted = currentStep > step.id;\n          const isActive = currentStep === step.id;\n          return (\n            <div key={step.id} className=\"flex flex-col gap-2 relative\">\n              <div className=\"flex items-center gap-3\">\n                <div \n                  className={`flex h-8 w-8 items-center justify-center rounded-full border text-xs font-bold transition-all duration-300 ${\n                    isCompleted\n                      ? 'bg-emerald-500 border-emerald-500 text-white'\n                      : isActive\n                      ? 'bg-primary border-primary text-primary-foreground shadow-md ring-4 ring-primary/20'\n                      : 'bg-muted border-border text-muted-foreground'\n                  }`}\n                >\n                  {isCompleted ? <Check className=\"h-4.5 w-4.5\" /> : step.id}\n                </div>\n                <span className={`text-sm font-semibold truncate hidden md:inline ${\n                  isActive ? 'text-foreground' : 'text-muted-foreground'\n                }`}>\n                  {step.title}\n                </span>\n              </div>\n              <div \n                className={`h-1.5 rounded-full bg-muted overflow-hidden mt-1`}\n              >\n                <div \n                  style={{ width: isCompleted ? '100%' : isActive ? '50%' : '0%' }}\n                  className=\"h-full bg-primary transition-all duration-500 ease-in-out\"\n                />\n              </div>\n            </div>\n          );\n        })}\n      </div>\n\n      {/* Active Panel Content Box */}\n      <div className=\"min-h-48 border border-dashed border-border rounded-xl p-6 flex flex-col justify-center bg-muted/20 transition-all duration-300\">\n        <h3 className=\"text-lg font-bold tracking-tight text-foreground mb-1\">\n          {steps[currentStep - 1].title}\n        </h3>\n        <p className=\"text-sm text-muted-foreground mb-6\">\n          {steps[currentStep - 1].desc}\n        </p>\n        \n        <div className=\"text-sm border border-border/60 bg-muted/40 p-4 rounded-lg text-foreground font-mono\">\n          {currentStep === 1 && <p>root@openblocks:~$ enter username & email...</p>}\n          {currentStep === 2 && <p>root@openblocks:~$ enter location & bio details...</p>}\n          {currentStep === 3 && <p>root@openblocks:~$ deploy openblocks-server --init</p>}\n        </div>\n      </div>\n\n      {/* Navigation Buttons */}\n      <div className=\"flex items-center justify-between border-t border-border mt-6 pt-4\">\n        <button\n          onClick={handleBack}\n          disabled={currentStep === 1}\n          className=\"inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-lg bg-background hover:bg-muted text-foreground transition-colors disabled:opacity-50 disabled:pointer-events-none\"\n        >\n          <ChevronLeft className=\"h-4 w-4\" />\n          <span>Back</span>\n        </button>\n        \n        <button\n          onClick={handleNext}\n          disabled={currentStep === steps.length}\n          className=\"inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary hover:bg-primary/95 text-primary-foreground transition-colors disabled:opacity-50 disabled:pointer-events-none\"\n        >\n          <span>Continue</span>\n          <ChevronRight className=\"h-4 w-4\" />\n        </button>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "stepper",
+      "reui",
+      "wizard",
+      "steps",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Magic UI Animated Beam",
+    "description": "An interactive diagram component displaying glowing inputs connected to a central server node using animated SVG path strokes.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { Database, Terminal, User } from 'lucide-react';\n\nexport function AnimatedBeam() {\n  return (\n    <div className=\"relative flex h-[350px] w-full max-w-[500px] items-center justify-between overflow-hidden rounded-2xl border border-border bg-card p-10 shadow-2xl mx-auto\">\n      {/* Left Input Nodes Column */}\n      <div className=\"flex flex-col gap-12 z-10\">\n        <div className=\"flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] text-primary\">\n          <User className=\"h-5 w-5\" />\n        </div>\n        <div className=\"flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] text-primary\">\n          <Terminal className=\"h-5 w-5\" />\n        </div>\n      </div>\n\n      {/* Center Server Node */}\n      <div className=\"flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary bg-background shadow-[0_0_30px_-5px_rgba(var(--primary-rgb),0.5)] text-primary z-10\">\n        <Database className=\"h-8 w-8 animate-pulse\" />\n      </div>\n\n      {/* Background SVG Animated Beams */}\n      <svg className=\"absolute inset-0 pointer-events-none h-full w-full\" xmlns=\"http://www.w3.org/2000/svg\">\n        <defs>\n          <linearGradient id=\"beam-grad-1\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n            <stop offset=\"0%\" stopColor=\"var(--primary)\" stopOpacity=\"0\" />\n            <stop offset=\"50%\" stopColor=\"var(--primary)\" stopOpacity=\"1\" />\n            <stop offset=\"100%\" stopColor=\"var(--primary)\" stopOpacity=\"0\" />\n          </linearGradient>\n        </defs>\n        \n        {/* Path Top Input to Server */}\n        <path \n          d=\"M 88 124 L 250 175\"\n          fill=\"none\" \n          stroke=\"var(--border)\" \n          strokeWidth=\"2\" \n          strokeDasharray=\"4 4\"\n        />\n        <path \n          d=\"M 88 124 L 250 175\"\n          fill=\"none\" \n          stroke=\"url(#beam-grad-1)\" \n          strokeWidth=\"3\" \n          className=\"animate-[dash_3s_linear_infinite]\"\n          style={{\n            strokeDasharray: '40 80',\n            strokeDashoffset: 120\n          }}\n        />\n\n        {/* Path Bottom Input to Server */}\n        <path \n          d=\"M 88 226 L 250 175\"\n          fill=\"none\" \n          stroke=\"var(--border)\" \n          strokeWidth=\"2\" \n          strokeDasharray=\"4 4\"\n        />\n        <path \n          d=\"M 88 226 L 250 175\"\n          fill=\"none\" \n          stroke=\"url(#beam-grad-1)\" \n          strokeWidth=\"3\" \n          className=\"animate-[dash_3s_linear_infinite]\"\n          style={{\n            strokeDasharray: '40 80',\n            strokeDashoffset: 120,\n            animationDelay: '1.5s'\n          }}\n        />\n      </svg>\n\n      {/* Inject custom CSS keyframes inline for self-containment */}\n      <style>{`\n        @keyframes dash {\n          to {\n            stroke-dashoffset: -120;\n          }\n        }\n      `}</style>\n    </div>\n  );\n}",
+    "tags": [
+      "beam",
+      "magicui",
+      "animated",
+      "svg",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Aceternity UI Text Generate Effect",
+    "description": "A dynamic text typography component that splits copy by word boundaries and animates them with custom staggered delay transitions.",
+    "category": "other",
+    "framework": "react",
+    "code": "import { useEffect, useState } from 'react';\n\nexport function TextGenerateEffect({\n  words = \"Make your developer interfaces look stunning and interactive with openblocks.\",\n  className = \"\"\n}) {\n  const [visibleCount, setVisibleCount] = useState(0);\n  const wordsArray = words.split(\" \");\n\n  useEffect(() => {\n    const timer = setInterval(() => {\n      setVisibleCount((prev) => {\n        if (prev < wordsArray.length) {\n          return prev + 1;\n        }\n        clearInterval(timer);\n        return prev;\n      });\n    }, 150);\n\n    return () => clearInterval(timer);\n  }, [wordsArray.length]);\n\n  return (\n    <div className={`font-bold tracking-tight text-3xl md:text-5xl leading-tight ${className}`}>\n      <div className=\"mt-4\">\n        <div className=\"flex flex-wrap gap-x-3 gap-y-2 dark:text-white text-black\">\n          {wordsArray.map((word, idx) => {\n            const isVisible = idx < visibleCount;\n            return (\n              <span\n                key={idx}\n                style={{\n                  opacity: isVisible ? 1 : 0,\n                  filter: isVisible ? 'blur(0px)' : 'blur(4px)',\n                  transform: isVisible ? 'translateY(0px)' : 'translateY(10px)',\n                  transition: 'opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease'\n                }}\n                className=\"inline-block\"\n              >\n                {word}\n              </span>\n            );\n          })}\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "typography",
+      "animation",
+      "generate",
+      "aceternity",
+      "react"
+    ],
+    "dependencies": [
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
