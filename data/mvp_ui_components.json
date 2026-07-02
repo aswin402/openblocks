@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Origin UI Interactive Input Slider",
+    "description": "A synchronized range slider and numeric input control featuring warning validation indicators, slide trackers, and clean hover indicators.",
+    "category": "form",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { Sliders } from 'lucide-react';\n\nexport function InteractiveInputSlider() {\n  const [value, setValue] = useState(50);\n  const min = 0;\n  const max = 100;\n\n  const handleSliderChange = (e) => {\n    setValue(Number(e.target.value));\n  };\n\n  const handleInputChange = (e) => {\n    const val = Number(e.target.value);\n    if (val >= min && val <= max) {\n      setValue(val);\n    }\n  };\n\n  const percentage = ((value - min) / (max - min)) * 100;\n\n  return (\n    <div className=\"w-full max-w-md mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl\">\n      <div className=\"flex items-center justify-between mb-4\">\n        <div className=\"flex items-center gap-2\">\n          <Sliders className=\"h-5 w-5 text-primary\" />\n          <label className=\"text-sm font-bold tracking-tight text-foreground\">Value Range Settings</label>\n        </div>\n        <span className={`text-xs px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider ${\n          value > 85 \n            ? 'bg-rose-500/10 text-rose-500 border border-rose-500/20'\n            : 'bg-primary/10 text-primary border border-primary/20'\n        }`}>\n          {value > 85 ? 'High Load' : 'Optimal'}\n        </span>\n      </div>\n\n      <div className=\"flex items-center gap-6\">\n        {/* Range Slider Control */}\n        <div className=\"relative flex-1\">\n          <input\n            type=\"range\"\n            min={min}\n            max={max}\n            value={value}\n            onChange={handleSliderChange}\n            style={{\n              background: `linear-gradient(to right, var(--primary) 0%, var(--primary) ${percentage}%, var(--muted) ${percentage}%, var(--muted) 100%)`\n            }}\n            className=\"w-full h-2 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-background [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:hover:scale-110\"\n          />\n        </div>\n\n        {/* Numeric Input Display */}\n        <div className=\"relative w-20\">\n          <input\n            type=\"number\"\n            min={min}\n            max={max}\n            value={value}\n            onChange={handleInputChange}\n            className=\"w-full text-center py-2 px-3 text-sm border border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 font-mono font-bold text-foreground\"\n          />\n        </div>\n      </div>\n\n      <div className=\"mt-4 flex items-center justify-between text-xs text-muted-foreground font-mono\">\n        <span>Min: {min}</span>\n        <span>Max: {max}</span>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "slider",
+      "input",
+      "originui",
+      "interactive",
+      "form",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Efferd Magazine Blog Grid",
+    "description": "A modern magazine-style blog card grid featuring dynamic categories, cover scales, hover effects, and reader timeline metrics.",
+    "category": "card",
+    "framework": "react",
+    "code": "import { Calendar, Clock, Heart } from 'lucide-react';\n\nexport function MagazineBlogGrid() {\n  const articles = [\n    {\n      id: 1,\n      category: \"Architecture\",\n      title: \"The Influence of Bauhaus Design on Modern App Shells\",\n      desc: \"How clean grids and minimalist geometric layouts shape developer tooling frameworks today.\",\n      date: \"Jul 02, 2026\",\n      readTime: \"5 min\",\n      likes: 124,\n      gradient: \"from-pink-500 to-rose-500\"\n    },\n    {\n      id: 2,\n      category: \"Infrastructure\",\n      title: \"Building Local-First Localhost MCP Middleware Tools\",\n      desc: \"Exposing relational databases, simsearch indexes, and palettes to remote code models directly.\",\n      date: \"Jun 28, 2026\",\n      readTime: \"8 min\",\n      likes: 92,\n      gradient: \"from-cyan-500 to-blue-500\"\n    }\n  ];\n\n  return (\n    <div className=\"grid md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto py-8 px-4 bg-background text-foreground\">\n      {articles.map((article) => (\n        <article \n          key={article.id}\n          className=\"group relative flex flex-col justify-between border border-border bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1\"\n        >\n          {/* Colored header pattern */}\n          <div className={`h-3 bg-gradient-to-r ${article.gradient}`} />\n          \n          <div className=\"p-6 flex-1 flex flex-col justify-between\">\n            <div>\n              <span className=\"text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full\">\n                {article.category}\n              </span>\n              <h3 className=\"text-xl font-bold tracking-tight text-foreground mt-4 leading-snug group-hover:text-primary transition-colors\">\n                {article.title}\n              </h3>\n              <p className=\"text-sm text-muted-foreground mt-3 leading-relaxed\">\n                {article.desc}\n              </p>\n            </div>\n\n            <div className=\"flex items-center justify-between border-t border-border mt-6 pt-4 text-xs text-muted-foreground font-mono\">\n              <div className=\"flex items-center gap-4\">\n                <span className=\"flex items-center gap-1\">\n                  <Calendar className=\"h-3.5 w-3.5\" />\n                  {article.date}\n                </span>\n                <span className=\"flex items-center gap-1\">\n                  <Clock className=\"h-3.5 w-3.5\" />\n                  {article.readTime}\n                </span>\n              </div>\n              <button className=\"flex items-center gap-1 hover:text-rose-500 transition-colors\">\n                <Heart className=\"h-3.5 w-3.5\" />\n                <span>{article.likes}</span>\n              </button>\n            </div>\n          </div>\n        </article>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "blog",
+      "grid",
+      "efferd",
+      "cards",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "MVPBlocks Interactive FAQ Accordion",
+    "description": "An interactive accordion container featuring smooth, staggered open/close transitions, responsive layouts, and visual indicator icons.",
+    "category": "faq",
+    "framework": "react",
+    "code": "import { useState } from 'react';\nimport { ChevronDown, HelpCircle } from 'lucide-react';\n\nexport function FAQAccordion() {\n  const [activeIndex, setActiveIndex] = useState(null);\n\n  const faqs = [\n    {\n      question: \"How do I connect OpenBlocks to Cursor IDE or Claude Desktop?\",\n      answer: \"Open your client configurations settings and register OpenBlocks as an stdio MCP server. Check the README file for copy-paste-ready JSON configs.\"\n    },\n    {\n      question: \"Can I register custom styling templates or frameworks?\",\n      answer: \"Absolutely! OpenBlocks supports any client framework aliasing. Simply use the add_component tool or add it to database seed files.\"\n    },\n    {\n      question: \"Is there a limit to components stored in the database?\",\n      answer: \"No. The backend uses SQLite, meaning it scales comfortably to thousands of components with indexing and search remaining fast.\"\n    }\n  ];\n\n  const toggleIndex = (idx) => {\n    setActiveIndex(activeIndex === idx ? null : idx);\n  };\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto border border-border bg-card text-card-foreground p-6 rounded-2xl shadow-xl\">\n      <div className=\"flex items-center gap-2 mb-6 border-b border-border pb-4\">\n        <HelpCircle className=\"h-5 w-5 text-primary\" />\n        <h3 className=\"text-lg font-bold tracking-tight text-foreground\">Frequently Asked Questions</h3>\n      </div>\n\n      <div className=\"space-y-4\">\n        {faqs.map((faq, idx) => {\n          const isOpen = activeIndex === idx;\n          return (\n            <div \n              key={idx} \n              className=\"border border-border rounded-xl overflow-hidden transition-all duration-200 bg-muted/10\"\n            >\n              <button\n                onClick={() => toggleIndex(idx)}\n                className=\"w-full flex items-center justify-between p-4 text-left font-semibold text-sm hover:bg-muted/40 transition-colors text-foreground\"\n              >\n                <span>{faq.question}</span>\n                <ChevronDown className={`h-4.5 w-4.5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />\n              </button>\n\n              <div \n                style={{ height: isOpen ? 'auto' : '0px' }}\n                className=\"overflow-hidden transition-all duration-300 ease-in-out bg-background/50 border-t border-border/40\"\n              >\n                <div className=\"p-4 text-sm leading-relaxed text-muted-foreground\">\n                  {faq.answer}\n                </div>\n              </div>\n            </div>\n          );\n        })}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "faq",
+      "accordion",
+      "mvpblocks",
+      "interactive",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
