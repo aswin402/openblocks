@@ -156,6 +156,10 @@ async fn main() -> Result<()> {
             let extra_rich_count = db.seed_from_file("data/extra_rich_components.json")?;
             eprintln!("Seeded {} Extra Rich UI elements", extra_rich_count);
 
+            tracing::info!("Seeding database with generated premium components...");
+            let generated_count = db.seed_from_file("data/generated_components.json")?;
+            eprintln!("Seeded {} generated premium components", generated_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);

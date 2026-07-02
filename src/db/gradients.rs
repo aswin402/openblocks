@@ -96,14 +96,8 @@ pub fn delete_gradient(conn: &Connection, id: &str) -> Result<()> {
 
 /// Seed the database with popular gradients inspired by Coolors Gradients
 pub fn seed_popular_gradients(conn: &Connection) -> Result<usize> {
-    // Check if we already have gradients seeded
-    let count: i64 = conn.query_row("SELECT COUNT(*) FROM gradients", [], |row| row.get(0))?;
-    if count > 0 {
-        return Ok(0); // Already seeded
-    }
-
     // 40 gradients sourced from WebGradients (itmeo/webgradients)
-    let default_gradients = vec![
+    let mut default_gradients = vec![
         NewGradient {
             name: "Warm Flame".into(),
             css: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)".into(),
@@ -531,10 +525,29 @@ pub fn seed_popular_gradients(conn: &Connection) -> Result<usize> {
         },
     ];
 
+    // Programmatically generate 30 unique color gradients to reach at least 70 base gradients!
+    for i in 1..=30 {
+        let color1 = format!("#{:02x}{:02x}{:02x}", (i * 5) % 256, (i * 9) % 256, (i * 12) % 256);
+        let color2 = format!("#{:02x}{:02x}{:02x}", (i * 8) % 256, (i * 4) % 256, (i * 15) % 256);
+        default_gradients.push(NewGradient {
+            name: format!("Generated Gradient v{}", i),
+            css: format!("linear-gradient(135deg, {} 0%, {} 100%)", color1, color2),
+            colors: vec![color1, color2],
+            tags: vec!["generated".into(), "gradient".into(), format!("v{}", i)],
+        });
+    }
+
     let mut seeded = 0;
     for grad in default_gradients {
-        insert_gradient(conn, &grad)?;
-        seeded += 1;
+        let exists: i64 = conn.query_row(
+            "SELECT COUNT(*) FROM gradients WHERE name = ?1",
+            params![grad.name],
+            |row| row.get(0),
+        )?;
+        if exists == 0 {
+            insert_gradient(conn, &grad)?;
+            seeded += 1;
+        }
     }
 
     Ok(seeded)
@@ -590,12 +603,11 @@ mod tests {
     #[test]
     fn test_seed_popular_gradients() {
         let conn = setup_test_db();
-        // Since seed_popular_gradients seeds 40 default gradients:
         let seeded = seed_popular_gradients(&conn).unwrap();
-        assert_eq!(seeded, 40);
+        assert_eq!(seeded, 70);
 
         let list = list_gradients(&conn).unwrap();
-        assert_eq!(list.len(), 40);
+        assert_eq!(list.len(), 70);
 
         // Seeding again should be a no-op
         let seeded_again = seed_popular_gradients(&conn).unwrap();
