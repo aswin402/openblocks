@@ -9,6 +9,11 @@ This document compiles all UI design systems, component libraries, interactive W
 | Library Name | Description | Sourced Component Example |
 | :--- | :--- | :--- |
 | [Shadcn UI Blocks](https://ui.shadcn.com/blocks) | Official interactive components by Shadcn | Sidebar navigation layouts, pricing plans |
+| [Shadcn Studio](https://shadcnstudio.com/blocks) | Pre-built templates, blocks and components | Dashboard analytics, hero sections |
+| [Shadcn UI Blocks Marketplace](https://www.shadcnui-blocks.com/blocks) | Curated collection of premium Shadcn/ui layouts | Interactive SaaS pages |
+| [HeroUI / NextUI](https://heroui.com) | Beautiful, fast and modern React UI library | Premium dark mode interfaces |
+| [Uiverse](https://uiverse.io) | Community-driven collection of custom UI elements | Creative buttons, inputs, loader animations |
+| [Tailblocks](https://tailblocks.cc) | Ready-to-use Tailwind CSS blocks | Responsive hero, header, pricing, footer grids |
 | [Aceternity UI](https://ui.aceternity.com/components) | High-end visual effects and interactive layouts | Glowing text generation, dynamic grid systems |
 | [Magic UI](https://magicui.design/docs/components) | Sleek, animated components for modern SaaS landing pages | Animated connecting beam flow networks |
 | [React Bits](https://www.reactbits.dev/get-started/index) | Lightweight, performance-optimized micro-interaction elements | Tilted visual card, focus spotlight texts |
