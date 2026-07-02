@@ -243,6 +243,82 @@ pub fn seed_popular_palettes(conn: &Connection) -> Result<usize> {
                 "gold".into(),
                 "warm".into(),
                 "royal".into(),
+                "autumn".into(),
+            ],
+        },
+        NewPalette {
+            name: "Bauhaus Modernism".into(),
+            colors: vec![
+                "#1a1a1a".into(),
+                "#e63946".into(),
+                "#ffb703".into(),
+                "#1d3557".into(),
+            ],
+            tags: vec![
+                "bauhaus".into(),
+                "primary".into(),
+                "design".into(),
+                "classic".into(),
+            ],
+        },
+        NewPalette {
+            name: "Fontshare Editorial".into(),
+            colors: vec![
+                "#0f0f11".into(),
+                "#f5f5f7".into(),
+                "#3a3a3c".into(),
+                "#d1d1d6".into(),
+            ],
+            tags: vec![
+                "typography".into(),
+                "editorial".into(),
+                "minimalist".into(),
+                "gray".into(),
+            ],
+        },
+        NewPalette {
+            name: "LiveKit Aura".into(),
+            colors: vec![
+                "#080710".into(),
+                "#5f26cd".into(),
+                "#12a0ff".into(),
+                "#ffffff".into(),
+            ],
+            tags: vec![
+                "glow".into(),
+                "aura".into(),
+                "livekit".into(),
+                "purple".into(),
+            ],
+        },
+        NewPalette {
+            name: "Aceternity Dark".into(),
+            colors: vec![
+                "#000000".into(),
+                "#09090b".into(),
+                "#3b82f6".into(),
+                "#8b5cf6".into(),
+            ],
+            tags: vec![
+                "aceternity".into(),
+                "sleek".into(),
+                "dark".into(),
+                "blue".into(),
+            ],
+        },
+        NewPalette {
+            name: "Muted Autumn".into(),
+            colors: vec![
+                "#2c302e".into(),
+                "#4f5d75".into(),
+                "#d1ac00".into(),
+                "#f7ebec".into(),
+            ],
+            tags: vec![
+                "autumn".into(),
+                "muted".into(),
+                "cozy".into(),
+                "natural".into(),
             ],
         },
     ];
@@ -315,10 +391,10 @@ mod tests {
     fn test_seed_popular_palettes() {
         let conn = setup_test_db();
         let seeded = seed_popular_palettes(&conn).unwrap();
-        assert_eq!(seeded, 10);
+        assert_eq!(seeded, 15);
 
         let list = list_palettes(&conn).unwrap();
-        assert_eq!(list.len(), 10);
+        assert_eq!(list.len(), 15);
 
         // Seeding again should be a no-op
         let seeded_again = seed_popular_palettes(&conn).unwrap();
