@@ -128,6 +128,10 @@ async fn main() -> Result<()> {
             let creative_ui_count = db.seed_from_file("data/creative_ui_components.json")?;
             eprintln!("Seeded {} Creative & High-Interaction components", creative_ui_count);
 
+            tracing::info!("Seeding database with 3D WebGL Three.js components...");
+            let threejs_count = db.seed_from_file("data/threejs_components.json")?;
+            eprintln!("Seeded {} 3D WebGL Three.js components", threejs_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);
