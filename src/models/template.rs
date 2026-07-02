@@ -8,9 +8,9 @@ pub struct Template {
     pub id: Uuid,
     pub name: String,
     pub description: String,
-    pub layout: serde_json::Value,     // Layout definition
-    pub component_ids: Vec<Uuid>,      // Ordered component references
-    pub variables: serde_json::Value,  // Customizable variables
+    pub layout: serde_json::Value,    // Layout definition
+    pub component_ids: Vec<Uuid>,     // Ordered component references
+    pub variables: serde_json::Value, // Customizable variables
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }

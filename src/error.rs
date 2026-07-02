@@ -11,7 +11,9 @@ pub enum OpenBlocksError {
     #[error("Palette not found: {0}")]
     PaletteNotFound(String),
 
-    #[error("Invalid category: '{0}'. Valid: navbar, hero, footer, sidebar, card, form, modal, table, pricing, testimonial, cta, feature, faq, contact, auth, dashboard, settings, profile, landing, blog, ecommerce, error, loading, notification, section, other")]
+    #[error(
+        "Invalid category: '{0}'. Valid: navbar, hero, footer, sidebar, card, form, modal, table, pricing, testimonial, cta, feature, faq, contact, auth, dashboard, settings, profile, landing, blog, ecommerce, error, loading, notification, section, other"
+    )]
     InvalidCategory(String),
 
     #[error("Invalid framework: '{0}'. Valid: tailwind, css, scss, shadcn")]

@@ -1,6 +1,6 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
-use tracing_subscriber::{fmt, EnvFilter};
+use tracing_subscriber::{EnvFilter, fmt};
 
 mod config;
 mod db;
@@ -41,12 +41,12 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     // CRITICAL: Log to stderr ONLY — stdout is the MCP JSON-RPC channel
-    let filter = EnvFilter::try_from_default_env()
-        .unwrap_or_else(|_| EnvFilter::new(&cli.log_level));
+    let filter =
+        EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new(&cli.log_level));
 
     fmt()
         .with_env_filter(filter)
-        .with_writer(std::io::stderr)  // NEVER use stdout
+        .with_writer(std::io::stderr) // NEVER use stdout
         .init();
 
     tracing::info!("OpenBlocks v{}", env!("CARGO_PKG_VERSION"));
@@ -132,8 +132,6 @@ async fn main() -> Result<()> {
             eprintln!("  Categories: {}", stats.categories.len());
             eprintln!("  Frameworks: {}", stats.frameworks.len());
         }
-
-
     }
 
     Ok(())

@@ -38,7 +38,9 @@ impl Default for Config {
                 transport: "stdio".into(),
                 bind_address: None,
             },
-            logging: LoggingConfig { level: "info".into() },
+            logging: LoggingConfig {
+                level: "info".into(),
+            },
         }
     }
 }

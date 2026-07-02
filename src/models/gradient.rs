@@ -1,5 +1,5 @@
-use serde::{Deserialize, Serialize};
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Clone, JsonSchema)]
 pub struct Gradient {
@@ -27,13 +27,19 @@ pub struct NewGradient {
 impl NewGradient {
     pub fn validate(&self) -> Result<(), crate::error::OpenBlocksError> {
         if self.name.trim().is_empty() {
-            return Err(crate::error::OpenBlocksError::Validation("Gradient name cannot be empty".into()));
+            return Err(crate::error::OpenBlocksError::Validation(
+                "Gradient name cannot be empty".into(),
+            ));
         }
         if self.css.trim().is_empty() {
-            return Err(crate::error::OpenBlocksError::Validation("Gradient CSS string cannot be empty".into()));
+            return Err(crate::error::OpenBlocksError::Validation(
+                "Gradient CSS string cannot be empty".into(),
+            ));
         }
         if self.colors.is_empty() {
-            return Err(crate::error::OpenBlocksError::Validation("Gradient must contain at least one color".into()));
+            return Err(crate::error::OpenBlocksError::Validation(
+                "Gradient must contain at least one color".into(),
+            ));
         }
         Ok(())
     }

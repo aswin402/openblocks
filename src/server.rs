@@ -1,12 +1,12 @@
 use crate::db::Database;
 use crate::models::component::{NewComponent, UpdateComponent};
-use crate::models::template::NewTemplate;
-use crate::models::palette::NewPalette;
 use crate::models::gradient::NewGradient;
+use crate::models::palette::NewPalette;
+use crate::models::template::NewTemplate;
 use crate::search::SearchEngine;
-use rmcp::{tool, tool_router, tool_handler, ServerHandler};
-use rmcp::model::{CallToolResult, Content, ErrorData};
 use rmcp::handler::server::wrapper::Parameters;
+use rmcp::model::{CallToolResult, Content, ErrorData};
+use rmcp::{ServerHandler, tool, tool_handler, tool_router};
 use schemars::JsonSchema;
 use serde::Deserialize;
 use std::sync::{Arc, Mutex};
@@ -132,9 +132,13 @@ struct DeleteGradientInput {
 
 #[tool_router]
 impl OpenBlocksServer {
-
-    #[tool(description = "Search the UI component library. Fuzzy matches against component names, descriptions, and tags. Optionally filter by category (navbar, hero, footer, card, form, modal, pricing, etc.) and framework (tailwind, css, scss, shadcn). Returns component metadata (no code) — use get_component to retrieve code.")]
-    async fn search_components(&self, Parameters(input): Parameters<SearchInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Search the UI component library. Fuzzy matches against component names, descriptions, and tags. Optionally filter by category (navbar, hero, footer, card, form, modal, pricing, etc.) and framework (tailwind, css, scss, shadcn). Returns component metadata (no code) — use get_component to retrieve code."
+    )]
+    async fn search_components(
+        &self,
+        Parameters(input): Parameters<SearchInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let limit = input.limit.unwrap_or(10);
 
         let search = self.inner.search.lock().unwrap();
@@ -147,15 +151,15 @@ impl OpenBlocksServer {
         for id in matching_ids.into_iter() {
             if let Ok(component) = db.get_component(&id.to_string()) {
                 // Apply filters
-                if let Some(ref cat) = input.category {
-                    if component.category.to_string() != *cat {
-                        continue;
-                    }
+                if let Some(ref cat) = input.category
+                    && component.category.to_string() != *cat
+                {
+                    continue;
                 }
-                if let Some(ref fw) = input.framework {
-                    if component.framework.to_string() != *fw {
-                        continue;
-                    }
+                if let Some(ref fw) = input.framework
+                    && component.framework.to_string() != *fw
+                {
+                    continue;
                 }
                 results.push(serde_json::json!({
                     "id": component.id,
@@ -179,12 +183,17 @@ impl OpenBlocksServer {
         });
 
         Ok(CallToolResult::success(vec![Content::text(
-            serde_json::to_string_pretty(&response).unwrap()
+            serde_json::to_string_pretty(&response).unwrap(),
         )]))
     }
 
-    #[tool(description = "Get the full details and source code of a component by its ID. Use this after search_components to retrieve the actual code.")]
-    async fn get_component(&self, Parameters(input): Parameters<GetInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Get the full details and source code of a component by its ID. Use this after search_components to retrieve the actual code."
+    )]
+    async fn get_component(
+        &self,
+        Parameters(input): Parameters<GetInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_component(&input.id) {
             Ok(component) => {
@@ -195,8 +204,13 @@ impl OpenBlocksServer {
         }
     }
 
-    #[tool(description = "Add a new UI component to the library. Provide name, description, category (navbar/hero/footer/card/form/modal/pricing/etc.), framework (tailwind/css/scss/shadcn), the HTML/CSS/JS code, and searchable tags.")]
-    async fn add_component(&self, Parameters(input): Parameters<NewComponent>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Add a new UI component to the library. Provide name, description, category (navbar/hero/footer/card/form/modal/pricing/etc.), framework (tailwind/css/scss/shadcn), the HTML/CSS/JS code, and searchable tags."
+    )]
+    async fn add_component(
+        &self,
+        Parameters(input): Parameters<NewComponent>,
+    ) -> Result<CallToolResult, ErrorData> {
         // Validate input
         if let Err(e) = input.validate() {
             return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
@@ -217,15 +231,20 @@ impl OpenBlocksServer {
                     "message": "Component added successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
-    #[tool(description = "Update an existing component. Provide the component ID and any fields to change (name, description, code, tags, category, framework). Unchanged fields keep their current values. Creates a version history entry.")]
-    async fn update_component(&self, Parameters(input): Parameters<UpdateComponent>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Update an existing component. Provide the component ID and any fields to change (name, description, code, tags, category, framework). Unchanged fields keep their current values. Creates a version history entry."
+    )]
+    async fn update_component(
+        &self,
+        Parameters(input): Parameters<UpdateComponent>,
+    ) -> Result<CallToolResult, ErrorData> {
         if let Err(e) = input.validate() {
             return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
         }
@@ -248,15 +267,20 @@ impl OpenBlocksServer {
                     "message": "Component updated successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
-    #[tool(description = "Delete a component from the library by its ID. This action is permanent.")]
-    async fn delete_component(&self, Parameters(input): Parameters<DeleteInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Delete a component from the library by its ID. This action is permanent."
+    )]
+    async fn delete_component(
+        &self,
+        Parameters(input): Parameters<DeleteInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.delete_component(&input.id) {
             Ok(()) => {
@@ -271,14 +295,16 @@ impl OpenBlocksServer {
                     "message": "Component deleted successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
-    #[tool(description = "List all available component categories with the count of components in each.")]
+    #[tool(
+        description = "List all available component categories with the count of components in each."
+    )]
     async fn list_categories(&self) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_category_counts() {
@@ -302,7 +328,9 @@ impl OpenBlocksServer {
         }
     }
 
-    #[tool(description = "Get library-wide statistics: total components, total templates, category breakdown, framework breakdown.")]
+    #[tool(
+        description = "Get library-wide statistics: total components, total templates, category breakdown, framework breakdown."
+    )]
     async fn get_stats(&self) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_stats() {
@@ -329,7 +357,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Get a single template by its ID.")]
-    async fn get_template(&self, Parameters(input): Parameters<GetTemplateInput>) -> Result<CallToolResult, ErrorData> {
+    async fn get_template(
+        &self,
+        Parameters(input): Parameters<GetTemplateInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_template(&input.id) {
             Ok(template) => {
@@ -340,8 +371,13 @@ impl OpenBlocksServer {
         }
     }
 
-    #[tool(description = "Add a new website template. Provide name, description, component_ids (ordered list of component UUIDs), layout (JSON object specifying base template/structure), and variables (default parameters).")]
-    async fn add_template(&self, Parameters(input): Parameters<NewTemplate>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Add a new website template. Provide name, description, component_ids (ordered list of component UUIDs), layout (JSON object specifying base template/structure), and variables (default parameters)."
+    )]
+    async fn add_template(
+        &self,
+        Parameters(input): Parameters<NewTemplate>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.insert_template(&input) {
             Ok(template) => {
@@ -351,7 +387,7 @@ impl OpenBlocksServer {
                     "message": "Template added successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
@@ -359,7 +395,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Delete a template by its ID.")]
-    async fn delete_template(&self, Parameters(input): Parameters<DeleteTemplateInput>) -> Result<CallToolResult, ErrorData> {
+    async fn delete_template(
+        &self,
+        Parameters(input): Parameters<DeleteTemplateInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.delete_template(&input.id) {
             Ok(()) => {
@@ -368,28 +407,36 @@ impl OpenBlocksServer {
                     "message": "Template deleted successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
-    #[tool(description = "Scaffold a complete website page from a template ID, substituting customizable template variables.")]
-    async fn scaffold_page(&self, Parameters(input): Parameters<ScaffoldInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Scaffold a complete website page from a template ID, substituting customizable template variables."
+    )]
+    async fn scaffold_page(
+        &self,
+        Parameters(input): Parameters<ScaffoldInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.scaffold_page(&input.template_id, &input.variables) {
-            Ok(html) => {
-                Ok(CallToolResult::success(vec![Content::text(html)]))
-            }
+            Ok(html) => Ok(CallToolResult::success(vec![Content::text(html)])),
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
     // --- Import / Export Tools ---
 
-    #[tool(description = "Import components from a local JSON file path. The file must contain a JSON array of components.")]
-    async fn import_components(&self, Parameters(input): Parameters<ImportInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Import components from a local JSON file path. The file must contain a JSON array of components."
+    )]
+    async fn import_components(
+        &self,
+        Parameters(input): Parameters<ImportInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.seed_from_file(&input.file_path) {
             Ok(count) => {
@@ -404,15 +451,20 @@ impl OpenBlocksServer {
                     "message": format!("Successfully imported {} components", count)
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
         }
     }
 
-    #[tool(description = "Export components to a local JSON file path. Optionally filter by category and/or framework.")]
-    async fn export_components(&self, Parameters(input): Parameters<ExportInput>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Export components to a local JSON file path. Optionally filter by category and/or framework."
+    )]
+    async fn export_components(
+        &self,
+        Parameters(input): Parameters<ExportInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         let category = input.category.as_deref();
         let framework = input.framework.as_deref();
@@ -422,7 +474,10 @@ impl OpenBlocksServer {
                 match serde_json::to_string_pretty(&components) {
                     Ok(json) => {
                         if let Err(e) = std::fs::write(&input.output_path, json) {
-                            return Ok(CallToolResult::error(vec![Content::text(format!("Failed to write file: {}", e))]));
+                            return Ok(CallToolResult::error(vec![Content::text(format!(
+                                "Failed to write file: {}",
+                                e
+                            ))]));
                         }
                         let response = serde_json::json!({
                             "count": components.len(),
@@ -430,7 +485,7 @@ impl OpenBlocksServer {
                             "message": format!("Successfully exported {} components", components.len())
                         });
                         Ok(CallToolResult::success(vec![Content::text(
-                            serde_json::to_string_pretty(&response).unwrap()
+                            serde_json::to_string_pretty(&response).unwrap(),
                         )]))
                     }
                     Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
@@ -455,7 +510,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Get details of a single color palette by its ID.")]
-    async fn get_palette(&self, Parameters(input): Parameters<GetPaletteInput>) -> Result<CallToolResult, ErrorData> {
+    async fn get_palette(
+        &self,
+        Parameters(input): Parameters<GetPaletteInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_palette(&input.id) {
             Ok(palette) => {
@@ -466,8 +524,13 @@ impl OpenBlocksServer {
         }
     }
 
-    #[tool(description = "Add a new color palette to the library. Provide a name, exactly 4 hex color codes, and descriptive tags (e.g. ['dark', 'pastel', 'warm', 'nordic']).")]
-    async fn add_palette(&self, Parameters(input): Parameters<NewPalette>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Add a new color palette to the library. Provide a name, exactly 4 hex color codes, and descriptive tags (e.g. ['dark', 'pastel', 'warm', 'nordic'])."
+    )]
+    async fn add_palette(
+        &self,
+        Parameters(input): Parameters<NewPalette>,
+    ) -> Result<CallToolResult, ErrorData> {
         if let Err(e) = input.validate() {
             return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
         }
@@ -480,7 +543,7 @@ impl OpenBlocksServer {
                     "message": "Palette added successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
@@ -488,7 +551,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Delete a color palette from the library by its ID.")]
-    async fn delete_palette(&self, Parameters(input): Parameters<DeletePaletteInput>) -> Result<CallToolResult, ErrorData> {
+    async fn delete_palette(
+        &self,
+        Parameters(input): Parameters<DeletePaletteInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.delete_palette(&input.id) {
             Ok(()) => {
@@ -497,7 +563,7 @@ impl OpenBlocksServer {
                     "message": "Palette deleted successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
@@ -519,7 +585,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Get details of a single color gradient by its ID.")]
-    async fn get_gradient(&self, Parameters(input): Parameters<GetGradientInput>) -> Result<CallToolResult, ErrorData> {
+    async fn get_gradient(
+        &self,
+        Parameters(input): Parameters<GetGradientInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.get_gradient(&input.id) {
             Ok(gradient) => {
@@ -530,8 +599,13 @@ impl OpenBlocksServer {
         }
     }
 
-    #[tool(description = "Add a new color gradient to the library. Provide a name, CSS description string (e.g. 'linear-gradient(90deg, #ff007f 0%, #7f00ff 100%)'), and list of hex color codes.")]
-    async fn add_gradient(&self, Parameters(input): Parameters<NewGradient>) -> Result<CallToolResult, ErrorData> {
+    #[tool(
+        description = "Add a new color gradient to the library. Provide a name, CSS description string (e.g. 'linear-gradient(90deg, #ff007f 0%, #7f00ff 100%)'), and list of hex color codes."
+    )]
+    async fn add_gradient(
+        &self,
+        Parameters(input): Parameters<NewGradient>,
+    ) -> Result<CallToolResult, ErrorData> {
         if let Err(e) = input.validate() {
             return Ok(CallToolResult::error(vec![Content::text(e.to_string())]));
         }
@@ -544,7 +618,7 @@ impl OpenBlocksServer {
                     "message": "Gradient added successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),
@@ -552,7 +626,10 @@ impl OpenBlocksServer {
     }
 
     #[tool(description = "Delete a color gradient from the library by its ID.")]
-    async fn delete_gradient(&self, Parameters(input): Parameters<DeleteGradientInput>) -> Result<CallToolResult, ErrorData> {
+    async fn delete_gradient(
+        &self,
+        Parameters(input): Parameters<DeleteGradientInput>,
+    ) -> Result<CallToolResult, ErrorData> {
         let db = self.inner.db.lock().unwrap();
         match db.delete_gradient(&input.id) {
             Ok(()) => {
@@ -561,7 +638,7 @@ impl OpenBlocksServer {
                     "message": "Gradient deleted successfully"
                 });
                 Ok(CallToolResult::success(vec![Content::text(
-                    serde_json::to_string_pretty(&response).unwrap()
+                    serde_json::to_string_pretty(&response).unwrap(),
                 )]))
             }
             Err(e) => Ok(CallToolResult::error(vec![Content::text(e.to_string())])),

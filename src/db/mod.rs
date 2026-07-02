@@ -1,16 +1,16 @@
-pub mod connection;
-pub mod migrations;
 pub mod components;
-pub mod templates;
-pub mod palettes;
+pub mod connection;
 pub mod gradients;
+pub mod migrations;
+pub mod palettes;
+pub mod templates;
 
 use crate::error::Result;
 use crate::models::component::{Component, NewComponent, UpdateComponent};
-use crate::models::template::{Template, NewTemplate};
-use crate::models::palette::{Palette, NewPalette};
 use crate::models::gradient::{Gradient, NewGradient};
-use crate::models::{Stats, CategoryCount, FrameworkCount};
+use crate::models::palette::{NewPalette, Palette};
+use crate::models::template::{NewTemplate, Template};
+use crate::models::{CategoryCount, FrameworkCount, Stats};
 use rusqlite::{Connection, params};
 
 pub struct Database {
@@ -25,7 +25,8 @@ impl Database {
 
     pub fn run_migrations(&mut self) -> Result<()> {
         let migrations = migrations::get_migrations();
-        migrations.to_latest(&mut self.conn)
+        migrations
+            .to_latest(&mut self.conn)
             .map_err(|_e| crate::error::OpenBlocksError::Database(rusqlite::Error::InvalidQuery))?;
         Ok(())
     }
@@ -69,20 +70,16 @@ impl Database {
     }
 
     pub fn get_stats(&self) -> Result<Stats> {
-        let total_components: i64 = self.conn.query_row(
-            "SELECT COUNT(*) FROM components",
-            [],
-            |row| row.get(0)
-        )?;
-        let total_templates: i64 = self.conn.query_row(
-            "SELECT COUNT(*) FROM templates",
-            [],
-            |row| row.get(0)
-        )?;
-        
+        let total_components: i64 =
+            self.conn
+                .query_row("SELECT COUNT(*) FROM components", [], |row| row.get(0))?;
+        let total_templates: i64 =
+            self.conn
+                .query_row("SELECT COUNT(*) FROM templates", [], |row| row.get(0))?;
+
         let categories = self.get_category_counts()?;
         let frameworks = self.get_framework_counts()?;
-        
+
         Ok(Stats {
             total_components,
             total_templates,
@@ -112,14 +109,14 @@ impl Database {
         // Read file
         let content = std::fs::read_to_string(path)?;
         let new_components: Vec<NewComponent> = serde_json::from_str(&content)?;
-        
+
         let mut count = 0;
         for new in new_components {
             // Check if name already exists to avoid duplicates during repeated seeding
             let exists: i64 = self.conn.query_row(
                 "SELECT COUNT(*) FROM components WHERE name = ?1",
                 params![new.name],
-                |row| row.get(0)
+                |row| row.get(0),
             )?;
             if exists == 0 {
                 self.insert_component(&new)?;
@@ -136,7 +133,7 @@ impl Database {
         variables: &serde_json::Value,
     ) -> Result<String> {
         let template = self.get_template(template_id)?;
-        
+
         let mut env = minijinja::Environment::new();
 
         // Load each component's code
@@ -154,33 +151,38 @@ impl Database {
         env.add_template("page", base)
             .map_err(|e| crate::error::OpenBlocksError::Render(e.to_string()))?;
 
-        let tmpl = env.get_template("page")
+        let tmpl = env
+            .get_template("page")
             .map_err(|e| crate::error::OpenBlocksError::Render(e.to_string()))?;
 
         let combined_sections = sections.join("\n\n");
 
         let mut merged_vars = serde_json::Map::new();
-        
+
         // Load default variables from template
         if let Some(obj) = template.variables.as_object() {
             for (k, v) in obj {
                 merged_vars.insert(k.clone(), v.clone());
             }
         }
-        
+
         // Override with user-provided variables
         if let Some(obj) = variables.as_object() {
             for (k, v) in obj {
                 merged_vars.insert(k.clone(), v.clone());
             }
         }
-        
+
         // Add default sections
-        merged_vars.insert("sections".to_string(), serde_json::Value::String(combined_sections));
+        merged_vars.insert(
+            "sections".to_string(),
+            serde_json::Value::String(combined_sections),
+        );
 
         let merged_value = serde_json::Value::Object(merged_vars);
-        
-        let rendered = tmpl.render(merged_value)
+
+        let rendered = tmpl
+            .render(merged_value)
             .map_err(|e| crate::error::OpenBlocksError::Render(e.to_string()))?;
 
         Ok(rendered)

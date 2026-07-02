@@ -23,26 +23,29 @@ By providing a structured interface for UI building blocks, OpenBlocks significa
 
 ## 🛠️ Getting Started
 
-### 1. Build from Source
-Ensure you have Rust and Cargo installed:
+### Quick Install (Pre-compiled Binaries)
+To install OpenBlocks and seed the database using the automated installer shell script:
+```bash
+curl -fsSL https://raw.githubusercontent.com/aswin402/openblocks/main/scripts/install.sh | bash
+```
+> [!NOTE]
+> If the installation directory `/usr/local/bin` is not writable, the script will install the binary to `~/.local/bin/` and seed the database. Make sure `~/.local/bin` is in your `PATH`.
+
+### Build from Source
+If you prefer to compile the project yourself, ensure you have Rust and Cargo installed:
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/openblocks.git
+git clone https://github.com/aswin402/openblocks.git
 cd openblocks
 
 # Build release binary
 cargo build --release
-```
 
-### 2. Seed Starter Components
-Populate your database with the built-in starter blocks (Navbar, Hero, Footer, etc.):
-```bash
-cargo run --release -- seed
-```
+# Seed starter components
+./target/release/openblocks seed
 
-### 3. Verify Stats
-```bash
-cargo run --release -- stats
+# Verify stats
+./target/release/openblocks stats
 ```
 
 ---
@@ -95,6 +98,21 @@ Add the following to your AI client configuration files to integrate OpenBlocks.
 
 ### Claude Desktop
 Add to `~/.config/Claude/claude_desktop_config.json`:
+
+**Option A (Pre-compiled Binary - Recommended):**
+```json
+{
+  "mcpServers": {
+    "openblocks": {
+      "command": "openblocks",
+      "args": ["serve"]
+    }
+  }
+}
+```
+*(If installed to `~/.local/bin`, replace `"openblocks"` with the absolute path: `"/home/YOUR_USER/.local/bin/openblocks"`)*
+
+**Option B (From Source / Cargo):**
 ```json
 {
   "mcpServers": {
@@ -110,7 +128,7 @@ Add to `~/.config/Claude/claude_desktop_config.json`:
 Go to **Settings > Features > MCP**, click **+ Add New MCP Server**:
 - **Name**: `openblocks`
 - **Type**: `command`
-- **Command**: `cargo run --manifest-path /path/to/openblocks/Cargo.toml -- serve`
+- **Command**: `openblocks serve` (or `cargo run --manifest-path /path/to/openblocks/Cargo.toml -- serve`)
 
 ---
 

@@ -1,9 +1,10 @@
-use rusqlite_migration::{Migrations, M};
+use rusqlite_migration::{M, Migrations};
 
 pub fn get_migrations() -> Migrations<'static> {
     Migrations::new(vec![
         // Migration 1: Initial schema
-        M::up(r#"
+        M::up(
+            r#"
             CREATE TABLE IF NOT EXISTS components (
                 id              TEXT PRIMARY KEY NOT NULL,
                 name            TEXT NOT NULL,
@@ -46,9 +47,11 @@ pub fn get_migrations() -> Migrations<'static> {
             CREATE INDEX IF NOT EXISTS idx_components_updated ON components(updated_at);
             CREATE INDEX IF NOT EXISTS idx_component_versions_cid ON component_versions(component_id);
             CREATE INDEX IF NOT EXISTS idx_templates_name ON templates(name);
-        "#),
+        "#,
+        ),
         // Migration 2: Add palettes table
-        M::up(r#"
+        M::up(
+            r#"
             CREATE TABLE IF NOT EXISTS palettes (
                 id              TEXT PRIMARY KEY NOT NULL,
                 name            TEXT NOT NULL,
@@ -57,9 +60,11 @@ pub fn get_migrations() -> Migrations<'static> {
                 created_at      TEXT NOT NULL
             );
             CREATE INDEX IF NOT EXISTS idx_palettes_name ON palettes(name);
-        "#),
+        "#,
+        ),
         // Migration 3: Add gradients table
-        M::up(r#"
+        M::up(
+            r#"
             CREATE TABLE IF NOT EXISTS gradients (
                 id              TEXT PRIMARY KEY NOT NULL,
                 name            TEXT NOT NULL,
@@ -69,6 +74,7 @@ pub fn get_migrations() -> Migrations<'static> {
                 created_at      TEXT NOT NULL
             );
             CREATE INDEX IF NOT EXISTS idx_gradients_name ON gradients(name);
-        "#),
+        "#,
+        ),
     ])
 }

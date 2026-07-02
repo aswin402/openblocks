@@ -1,5 +1,5 @@
-use serde::{Deserialize, Serialize};
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Clone, JsonSchema)]
 pub struct Palette {
@@ -23,14 +23,21 @@ pub struct NewPalette {
 impl NewPalette {
     pub fn validate(&self) -> Result<(), crate::error::OpenBlocksError> {
         if self.name.trim().is_empty() {
-            return Err(crate::error::OpenBlocksError::Validation("Palette name cannot be empty".into()));
+            return Err(crate::error::OpenBlocksError::Validation(
+                "Palette name cannot be empty".into(),
+            ));
         }
         if self.colors.len() != 4 {
-            return Err(crate::error::OpenBlocksError::Validation("Palette must contain exactly 4 colors".into()));
+            return Err(crate::error::OpenBlocksError::Validation(
+                "Palette must contain exactly 4 colors".into(),
+            ));
         }
         for color in &self.colors {
             if !color.starts_with('#') || (color.len() != 7 && color.len() != 4) {
-                return Err(crate::error::OpenBlocksError::Validation(format!("Invalid hex color format: {}", color)));
+                return Err(crate::error::OpenBlocksError::Validation(format!(
+                    "Invalid hex color format: {}",
+                    color
+                )));
             }
         }
         Ok(())

@@ -2,7 +2,7 @@ use crate::error::{OpenBlocksError, Result};
 use crate::models::component::{Component, NewComponent, UpdateComponent};
 use crate::models::{CategoryCount, FrameworkCount};
 use chrono::{DateTime, Utc};
-use rusqlite::{params, Connection};
+use rusqlite::{Connection, params};
 use uuid::Uuid;
 
 /// Insert a new component into the database
@@ -40,33 +40,35 @@ pub fn get_component_by_id(conn: &Connection, id: &str) -> Result<Component> {
          FROM components WHERE id = ?1"
     )?;
 
-    let component = stmt.query_row(params![id], |row| {
-        let created_str: String = row.get(10)?;
-        let updated_str: String = row.get(11)?;
+    let component = stmt
+        .query_row(params![id], |row| {
+            let created_str: String = row.get(10)?;
+            let updated_str: String = row.get(11)?;
 
-        let created_at = DateTime::parse_from_rfc3339(&created_str)
-            .map(|dt| dt.with_timezone(&Utc))
-            .unwrap_or_else(|_| Utc::now());
+            let created_at = DateTime::parse_from_rfc3339(&created_str)
+                .map(|dt| dt.with_timezone(&Utc))
+                .unwrap_or_else(|_| Utc::now());
 
-        let updated_at = DateTime::parse_from_rfc3339(&updated_str)
-            .map(|dt| dt.with_timezone(&Utc))
-            .unwrap_or_else(|_| Utc::now());
+            let updated_at = DateTime::parse_from_rfc3339(&updated_str)
+                .map(|dt| dt.with_timezone(&Utc))
+                .unwrap_or_else(|_| Utc::now());
 
-        Ok(Component {
-            id: row.get::<_, String>(0)?.parse().unwrap_or_default(),
-            name: row.get(1)?,
-            description: row.get(2)?,
-            category: row.get::<_, String>(3)?.parse().unwrap_or_default(),
-            framework: row.get::<_, String>(4)?.parse().unwrap_or_default(),
-            code: row.get(5)?,
-            dependencies: serde_json::from_str(&row.get::<_, String>(6)?).unwrap_or_default(),
-            tags: serde_json::from_str(&row.get::<_, String>(7)?).unwrap_or_default(),
-            preview_html: row.get(8)?,
-            version: row.get(9)?,
-            created_at,
-            updated_at,
+            Ok(Component {
+                id: row.get::<_, String>(0)?.parse().unwrap_or_default(),
+                name: row.get(1)?,
+                description: row.get(2)?,
+                category: row.get::<_, String>(3)?.parse().unwrap_or_default(),
+                framework: row.get::<_, String>(4)?.parse().unwrap_or_default(),
+                code: row.get(5)?,
+                dependencies: serde_json::from_str(&row.get::<_, String>(6)?).unwrap_or_default(),
+                tags: serde_json::from_str(&row.get::<_, String>(7)?).unwrap_or_default(),
+                preview_html: row.get(8)?,
+                version: row.get(9)?,
+                created_at,
+                updated_at,
+            })
         })
-    }).map_err(|_| OpenBlocksError::ComponentNotFound(id.to_string()))?;
+        .map_err(|_| OpenBlocksError::ComponentNotFound(id.to_string()))?;
 
     Ok(component)
 }
@@ -95,7 +97,10 @@ pub fn update_component(conn: &Connection, update: &UpdateComponent) -> Result<C
     // Build dynamic UPDATE query
     let new_version = existing.version + 1;
     let name = update.name.as_deref().unwrap_or(&existing.name);
-    let description = update.description.as_deref().unwrap_or(&existing.description);
+    let description = update
+        .description
+        .as_deref()
+        .unwrap_or(&existing.description);
     let code = update.code.as_deref().unwrap_or(&existing.code);
     let existing_category = existing.category.to_string();
     let category = update.category.as_deref().unwrap_or(&existing_category);
@@ -116,7 +121,18 @@ pub fn update_component(conn: &Connection, update: &UpdateComponent) -> Result<C
            name = ?1, description = ?2, code = ?3, category = ?4, framework = ?5,
            tags = ?6, dependencies = ?7, version = ?8, updated_at = ?9
            WHERE id = ?10"#,
-        params![name, description, code, category, framework, tags, deps, new_version, now, update.id],
+        params![
+            name,
+            description,
+            code,
+            category,
+            framework,
+            tags,
+            deps,
+            new_version,
+            now,
+            update.id
+        ],
     )?;
 
     get_component_by_id(conn, &update.id)
@@ -159,9 +175,8 @@ pub fn list_components(
     }
 
     let mut stmt = conn.prepare(&sql)?;
-    let params: Vec<&dyn rusqlite::types::ToSql> = param_values.iter()
-        .map(|p| p.as_ref())
-        .collect();
+    let params: Vec<&dyn rusqlite::types::ToSql> =
+        param_values.iter().map(|p| p.as_ref()).collect();
 
     let rows = stmt.query_map(params.as_slice(), |row| {
         let created_str: String = row.get(10)?;
@@ -203,7 +218,7 @@ pub fn list_all_components(conn: &Connection) -> Result<Vec<Component>> {
 /// Get category counts
 pub fn get_category_counts(conn: &Connection) -> Result<Vec<CategoryCount>> {
     let mut stmt = conn.prepare(
-        "SELECT category, COUNT(*) FROM components GROUP BY category ORDER BY COUNT(*) DESC"
+        "SELECT category, COUNT(*) FROM components GROUP BY category ORDER BY COUNT(*) DESC",
     )?;
     let rows = stmt.query_map([], |row| {
         Ok(CategoryCount {
@@ -221,7 +236,7 @@ pub fn get_category_counts(conn: &Connection) -> Result<Vec<CategoryCount>> {
 /// Get framework counts
 pub fn get_framework_counts(conn: &Connection) -> Result<Vec<FrameworkCount>> {
     let mut stmt = conn.prepare(
-        "SELECT framework, COUNT(*) FROM components GROUP BY framework ORDER BY COUNT(*) DESC"
+        "SELECT framework, COUNT(*) FROM components GROUP BY framework ORDER BY COUNT(*) DESC",
     )?;
     let rows = stmt.query_map([], |row| {
         Ok(FrameworkCount {
@@ -306,4 +321,3 @@ mod tests {
         assert_eq!(updated.version, 2);
     }
 }
-

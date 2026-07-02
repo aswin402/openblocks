@@ -1,6 +1,6 @@
+use serde::{Deserialize, Serialize};
 use std::fmt;
 use std::str::FromStr;
-use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq, Hash, Default)]
 #[serde(rename_all = "lowercase")]
@@ -29,16 +29,20 @@ pub enum Category {
     Error,
     Loading,
     Notification,
-    Section,       // Generic section
+    Section, // Generic section
     #[default]
-    Other,         // Catch-all
+    Other, // Catch-all
 }
 
 impl fmt::Display for Category {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", serde_json::to_string(self)
-            .unwrap_or_default()
-            .trim_matches('"'))
+        write!(
+            f,
+            "{}",
+            serde_json::to_string(self)
+                .unwrap_or_default()
+                .trim_matches('"')
+        )
     }
 }
 
@@ -63,9 +67,13 @@ pub enum Framework {
 
 impl fmt::Display for Framework {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", serde_json::to_string(self)
-            .unwrap_or_default()
-            .trim_matches('"'))
+        write!(
+            f,
+            "{}",
+            serde_json::to_string(self)
+                .unwrap_or_default()
+                .trim_matches('"')
+        )
     }
 }
 

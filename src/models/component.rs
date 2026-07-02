@@ -3,8 +3,8 @@ use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::error::{OpenBlocksError, Result};
 use super::enums::{Category, Framework};
+use crate::error::{OpenBlocksError, Result};
 
 /// A UI component stored in the library
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -47,28 +47,28 @@ impl NewComponent {
     pub fn validate(&self) -> Result<()> {
         if self.name.trim().is_empty() || self.name.len() > 200 {
             return Err(OpenBlocksError::Validation(
-                "Name must be between 1 and 200 characters".into()
+                "Name must be between 1 and 200 characters".into(),
             ));
         }
         if self.description.trim().is_empty() || self.description.len() > 2000 {
             return Err(OpenBlocksError::Validation(
-                "Description must be between 1 and 2000 characters".into()
+                "Description must be between 1 and 2000 characters".into(),
             ));
         }
         if self.code.trim().is_empty() {
-            return Err(OpenBlocksError::Validation(
-                "Code cannot be empty".into()
-            ));
+            return Err(OpenBlocksError::Validation("Code cannot be empty".into()));
         }
         if self.tags.is_empty() {
             return Err(OpenBlocksError::Validation(
-                "At least one tag is required".into()
+                "At least one tag is required".into(),
             ));
         }
         // Validate category and framework parse correctly
-        self.category.parse::<Category>()
+        self.category
+            .parse::<Category>()
             .map_err(|_| OpenBlocksError::InvalidCategory(self.category.clone()))?;
-        self.framework.parse::<Framework>()
+        self.framework
+            .parse::<Framework>()
             .map_err(|_| OpenBlocksError::InvalidFramework(self.framework.clone()))?;
         Ok(())
     }
@@ -97,40 +97,42 @@ pub struct UpdateComponent {
 
 impl UpdateComponent {
     pub fn validate(&self) -> Result<()> {
-        if let Some(ref name) = self.name {
-            if name.trim().is_empty() || name.len() > 200 {
-                return Err(OpenBlocksError::Validation(
-                    "Updated name must be between 1 and 200 characters".into()
-                ));
-            }
+        if let Some(ref name) = self.name
+            && (name.trim().is_empty() || name.len() > 200)
+        {
+            return Err(OpenBlocksError::Validation(
+                "Updated name must be between 1 and 200 characters".into(),
+            ));
         }
-        if let Some(ref description) = self.description {
-            if description.trim().is_empty() || description.len() > 2000 {
-                return Err(OpenBlocksError::Validation(
-                    "Updated description must be between 1 and 2000 characters".into()
-                ));
-            }
+        if let Some(ref description) = self.description
+            && (description.trim().is_empty() || description.len() > 2000)
+        {
+            return Err(OpenBlocksError::Validation(
+                "Updated description must be between 1 and 2000 characters".into(),
+            ));
         }
-        if let Some(ref code) = self.code {
-            if code.trim().is_empty() {
-                return Err(OpenBlocksError::Validation(
-                    "Updated code cannot be empty".into()
-                ));
-            }
+        if let Some(ref code) = self.code
+            && code.trim().is_empty()
+        {
+            return Err(OpenBlocksError::Validation(
+                "Updated code cannot be empty".into(),
+            ));
         }
-        if let Some(ref tags) = self.tags {
-            if tags.is_empty() {
-                return Err(OpenBlocksError::Validation(
-                    "Updated tags cannot be empty (must have at least one tag)".into()
-                ));
-            }
+        if let Some(ref tags) = self.tags
+            && tags.is_empty()
+        {
+            return Err(OpenBlocksError::Validation(
+                "Updated tags cannot be empty (must have at least one tag)".into(),
+            ));
         }
         if let Some(ref category) = self.category {
-            category.parse::<Category>()
+            category
+                .parse::<Category>()
                 .map_err(|_| OpenBlocksError::InvalidCategory(category.clone()))?;
         }
         if let Some(ref framework) = self.framework {
-            framework.parse::<Framework>()
+            framework
+                .parse::<Framework>()
                 .map_err(|_| OpenBlocksError::InvalidFramework(framework.clone()))?;
         }
         Ok(())
@@ -152,7 +154,9 @@ pub struct SearchQuery {
     pub limit: usize,
 }
 
-fn default_limit() -> usize { 10 }
+fn default_limit() -> usize {
+    10
+}
 
 /// A search result (component metadata without full code)
 #[derive(Debug, Clone, Serialize, Deserialize)]
