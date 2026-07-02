@@ -136,6 +136,10 @@ async fn main() -> Result<()> {
             let layout_revolution_count = db.seed_from_file("data/layout_revolution_components.json")?;
             eprintln!("Seeded {} Slider Revolution, Pioneer UI & UI-Layouts components", layout_revolution_count);
 
+            tracing::info!("Seeding database with Shadcn Space Templates & Dashboards...");
+            let shadcn_space_count = db.seed_from_file("data/shadcn_space_components.json")?;
+            eprintln!("Seeded {} Shadcn Space Templates & Dashboards", shadcn_space_count);
+
             tracing::info!("Seeding database with CSS button components...");
             let css_button_count = db.seed_from_file("data/css_buttons.json")?;
             eprintln!("Seeded {} CSS button components", css_button_count);

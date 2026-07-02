@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Shadcn Space Admin Dashboard Shell",
+    "description": "A comprehensive responsive admin dashboard layout template containing collapsible navigation menus, KPI cards, and activity feeds.",
+    "category": "dashboard",
+    "framework": "shadcn",
+    "code": "import { useState } from 'react';\nimport { BarChart3, Bell, LayoutDashboard, Search, Settings, Users } from 'lucide-react';\n\nexport function AdminDashboardShell() {\n  const [sidebarOpen, setSidebarOpen] = useState(true);\n\n  const stats = [\n    { label: \"Monthly Recurring Revenue\", value: \"$24,892\", change: \"+12.3% from last month\" },\n    { label: \"Active Developer Seats\", value: \"1,248\", change: \"+8.4% from last week\" },\n    { label: \"Average Server Latency\", value: \"42ms\", change: \"-4% (optimal)\" }\n  ];\n\n  return (\n    <div className=\"flex h-screen w-full overflow-hidden bg-background text-foreground\">\n      {/* Sidebar Panel */}\n      <aside \n        style={{ width: sidebarOpen ? '240px' : '72px' }}\n        className=\"flex flex-col border-r border-border bg-card transition-all duration-300 shrink-0\"\n      >\n        <div className=\"flex h-16 items-center justify-between px-4 border-b border-border\">\n          {sidebarOpen ? <span className=\"font-extrabold tracking-tight text-primary\">ShadcnSpace</span> : <span className=\"font-bold text-primary\">S</span>}\n          <button \n            onClick={() => setSidebarOpen(!sidebarOpen)}\n            className=\"p-1.5 rounded-lg hover:bg-muted text-muted-foreground transition-colors hidden md:block\"\n          >\n            |||\n          </button>\n        </div>\n        <nav className=\"flex-1 space-y-1 p-2\">\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold bg-primary text-primary-foreground\">\n            <LayoutDashboard className=\"h-4.5 w-4.5\" />\n            {sidebarOpen && <span>Overview</span>}\n          </button>\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n            <Users className=\"h-4.5 w-4.5\" />\n            {sidebarOpen && <span>Seats</span>}\n          </button>\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n            <BarChart3 className=\"h-4.5 w-4.5\" />\n            {sidebarOpen && <span>Analytics</span>}\n          </button>\n          <button className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors\">\n            <Settings className=\"h-4.5 w-4.5\" />\n            {sidebarOpen && <span>Settings</span>}\n          </button>\n        </nav>\n      </aside>\n\n      {/* Main Layout Area */}\n      <div className=\"flex flex-1 flex-col overflow-hidden\">\n        {/* Header */}\n        <header className=\"flex h-16 items-center justify-between border-b border-border bg-card px-6\">\n          <div className=\"flex items-center gap-3 border border-border bg-muted/30 px-3 py-1.5 rounded-xl w-64\">\n            <Search className=\"h-4 w-4 text-muted-foreground\" />\n            <input \n              type=\"text\" \n              placeholder=\"Search stats...\" \n              className=\"w-full bg-transparent text-xs focus:outline-none placeholder-muted-foreground text-foreground\"\n            />\n          </div>\n          <div className=\"flex items-center gap-4\">\n            <button className=\"relative p-2 rounded-xl hover:bg-muted text-muted-foreground hover:text-foreground transition-colors\">\n              <Bell className=\"h-5 w-5\" />\n              <span className=\"absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-rose-500\" />\n            </button>\n            <img src=\"/placeholder.jpg\" alt=\"Avatar\" className=\"h-9 w-9 rounded-full bg-muted border border-border\" />\n          </div>\n        </header>\n\n        {/* Dashboard Content */}\n        <main className=\"flex-1 overflow-y-auto p-6 space-y-6\">\n          <div className=\"grid sm:grid-cols-3 gap-6\">\n            {stats.map((stat) => (\n              <div key={stat.label} className=\"border border-border bg-card rounded-2xl p-6 shadow-sm flex flex-col justify-between\">\n                <div>\n                  <span className=\"text-xs font-semibold text-muted-foreground uppercase tracking-wider\">{stat.label}</span>\n                  <h3 className=\"text-3xl font-extrabold tracking-tight mt-2 text-foreground\">{stat.value}</h3>\n                </div>\n                <span className=\"text-xs text-emerald-500 font-mono mt-4\">{stat.change}</span>\n              </div>\n            ))}\n          </div>\n        </main>\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "dashboard",
+      "layout",
+      "admin",
+      "shadcnspace",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn Space Analytics Card Grid",
+    "description": "A modular dashboard grid featuring KPI counters, data list components, and visual alerts built on shadcn conventions.",
+    "category": "dashboard",
+    "framework": "shadcn",
+    "code": "import { ArrowUpRight, TrendingUp } from 'lucide-react';\n\nexport function AnalyticsCardGrid() {\n  const dataItems = [\n    { title: \"Active Users\", count: \"12,482\", trend: \"+14.2%\" },\n    { title: \"Conversion Rate\", count: \"3.8%\", trend: \"+1.5%\" }\n  ];\n\n  return (\n    <div className=\"grid sm:grid-cols-2 gap-6 w-full max-w-4xl mx-auto py-8 px-4 bg-background text-foreground\">\n      {dataItems.map((item) => (\n        <div key={item.title} className=\"border border-border bg-card rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300\">\n          <div className=\"flex items-center justify-between border-b border-border pb-4 mb-4\">\n            <h4 className=\"text-sm font-semibold text-muted-foreground uppercase tracking-wider\">{item.title}</h4>\n            <div className=\"h-8 w-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary\">\n              <TrendingUp className=\"h-4.5 w-4.5\" />\n            </div>\n          </div>\n          <div className=\"flex items-baseline justify-between\">\n            <h3 className=\"text-3xl font-extrabold tracking-tight text-foreground\">{item.count}</h3>\n            <span className=\"flex items-center gap-0.5 text-xs text-emerald-500 font-bold\">\n              <span>{item.trend}</span>\n              <ArrowUpRight className=\"h-3.5 w-3.5\" />\n            </span>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}",
+    "tags": [
+      "analytics",
+      "card",
+      "grid",
+      "shadcnspace",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "Shadcn Space Multi-step Registration",
+    "description": "A clean visual auth layout designed for SaaS registration with email input validation, password checks, and progress indicators.",
+    "category": "auth",
+    "framework": "shadcn",
+    "code": "import { useState } from 'react';\nimport { Check, Mail, ShieldCheck } from 'lucide-react';\n\nexport function MultiStepRegistration() {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [step, setStep] = useState(1);\n\n  const isEmailValid = email.includes(\"@\") && email.includes(\".\");\n  const isPasswordValid = password.length >= 8;\n\n  return (\n    <div className=\"w-full max-w-md mx-auto border border-border bg-card text-card-foreground p-8 rounded-2xl shadow-xl\">\n      {/* Logo & Header */}\n      <div className=\"text-center mb-8\">\n        <div className=\"inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary mb-4\">\n          <ShieldCheck className=\"h-6 w-6\" />\n        </div>\n        <h3 className=\"text-2xl font-bold tracking-tight\">Create Account</h3>\n        <p className=\"text-sm text-muted-foreground mt-1\">Setup your credentials to initialize build.</p>\n      </div>\n\n      {/* Visual Form Panels */}\n      <div className=\"space-y-4\">\n        {step === 1 && (\n          <div className=\"space-y-4\">\n            <label className=\"text-xs font-semibold uppercase tracking-wider text-muted-foreground\">Email Address</label>\n            <div className=\"relative flex items-center border border-border focus-within:border-primary/80 focus-within:ring-2 focus-within:ring-primary/20 rounded-xl bg-background px-3 py-2.5 transition-all\">\n              <Mail className=\"h-4.5 w-4.5 text-muted-foreground shrink-0 mr-3\" />\n              <input \n                type=\"email\" \n                value={email} \n                onChange={(e) => setEmail(e.target.value)} \n                placeholder=\"name@domain.com\" \n                className=\"w-full bg-transparent text-sm focus:outline-none text-foreground\"\n              />\n            </div>\n            <button \n              disabled={!isEmailValid}\n              onClick={() => setStep(2)}\n              className=\"w-full py-3 px-4 rounded-xl text-sm font-semibold bg-primary hover:bg-primary/95 text-primary-foreground transition-all disabled:opacity-50\"\n            >\n              Continue\n            </button>\n          </div>\n        )}\n\n        {step === 2 && (\n          <div className=\"space-y-4\">\n            <label className=\"text-xs font-semibold uppercase tracking-wider text-muted-foreground\">Choose Secure Password</label>\n            <div className=\"relative flex items-center border border-border focus-within:border-primary/80 focus-within:ring-2 focus-within:ring-primary/20 rounded-xl bg-background px-3 py-2.5 transition-all\">\n              <input \n                type=\"password\" \n                value={password} \n                onChange={(e) => setPassword(e.target.value)} \n                placeholder=\"••••••••\" \n                className=\"w-full bg-transparent text-sm focus:outline-none text-foreground\"\n              />\n            </div>\n            <ul className=\"text-xs text-muted-foreground space-y-2 mt-2 font-mono\">\n              <li className=\"flex items-center gap-2\">\n                <Check className={`h-4 w-4 ${isPasswordValid ? 'text-emerald-500' : 'text-neutral-500'}`} />\n                <span>At least 8 characters long</span>\n              </li>\n            </ul>\n            <button \n              disabled={!isPasswordValid}\n              onClick={() => setStep(3)}\n              className=\"w-full py-3 px-4 rounded-xl text-sm font-semibold bg-primary hover:bg-primary/95 text-primary-foreground transition-all disabled:opacity-50\"\n            >\n              Create Credentials\n            </button>\n          </div>\n        )}\n\n        {step === 3 && (\n          <div className=\"text-center py-6 space-y-4 animate-pulse\">\n            <div className=\"inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 mb-2\">\n              <Check className=\"h-5 w-5\" />\n            </div>\n            <h4 className=\"font-bold text-foreground\">Registration Successful</h4>\n            <p className=\"text-xs text-muted-foreground\">Verification confirmation sent to {email}.</p>\n          </div>\n        )}\n      </div>\n    </div>\n  );\n}",
+    "tags": [
+      "auth",
+      "register",
+      "form",
+      "shadcnspace",
+      "react"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "react",
+      "tailwindcss"
+    ]
+  }
+]
